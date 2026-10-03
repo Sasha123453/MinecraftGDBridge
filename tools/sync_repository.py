@@ -82,7 +82,7 @@ Minecraft Java 1.20.1 supplies the world and camera. Geometry Dash 2.2081 / Geod
 
 ## This installation
 
-Git project: C:\MinecraftGDBridge. Runtime/toolchains currently remain in the original workspace to keep the existing installation working. The ignored .local.json records its path. Control.ps1 routes background commands to that runtime. No remote is configured and nothing has been pushed.
+Git project: C:\MinecraftGDBridge. Runtime/toolchains currently remain in the original workspace to keep the existing installation working. The ignored .local.json records its path. Control.ps1 routes background commands to that runtime. GitHub remote: https://github.com/Sasha123453/MinecraftGDBridge.
 
 Build inputs still expect the existing workspace/toolchains. Source migration is complete; portable build/setup consolidation is pending. Do not run copied installation scripts until runtime paths are configured. No game binaries, saves/worlds, downloaded levels, recordings or proprietary texture assets are committed. source-sync.json records copied files and hashes.
 
