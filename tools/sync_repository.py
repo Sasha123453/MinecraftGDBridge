@@ -54,6 +54,7 @@ outputs/music/
 *.zip
 *.7z
 *.png
+!outputs/Scene-Target-Selected.png
 *.mp4
 *.log
 *.lnk

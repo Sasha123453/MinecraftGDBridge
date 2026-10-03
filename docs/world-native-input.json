@@ -1,0 +1,202 @@
+{
+  "checkedAt": "2026-10-03T10:08:46.132Z",
+  "kind": "normal native jump after releasing bridge pause",
+  "samples": [
+    {
+      "time": 0,
+      "x": 0,
+      "y": 105,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 86,
+      "x": 0,
+      "y": 105,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 162,
+      "x": 0,
+      "y": 105,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 241,
+      "x": 0,
+      "y": 105,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 318,
+      "x": 0,
+      "y": 105,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 394,
+      "x": 0,
+      "y": 105,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 472,
+      "x": 0,
+      "y": 105,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 551,
+      "x": 0,
+      "y": 105,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 627,
+      "x": 0,
+      "y": 105,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 704,
+      "x": 0,
+      "y": 105,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 782,
+      "x": 0,
+      "y": 105,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 860,
+      "x": 242.78741455078125,
+      "y": 136.95120239257812,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 937,
+      "x": 242.78741455078125,
+      "y": 136.95120239257812,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 1014,
+      "x": 242.78741455078125,
+      "y": 136.95120239257812,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 1091,
+      "x": 242.78741455078125,
+      "y": 136.95120239257812,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 1169,
+      "x": 242.78741455078125,
+      "y": 136.95120239257812,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 1247,
+      "x": 242.78741455078125,
+      "y": 136.95120239257812,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 1323,
+      "x": 242.78741455078125,
+      "y": 136.95120239257812,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 1401,
+      "x": 242.78741455078125,
+      "y": 136.95120239257812,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 1479,
+      "x": 242.78741455078125,
+      "y": 136.95120239257812,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 1558,
+      "x": 242.78741455078125,
+      "y": 136.95120239257812,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 1636,
+      "x": 242.78741455078125,
+      "y": 136.95120239257812,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 1715,
+      "x": 242.78741455078125,
+      "y": 136.95120239257812,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    },
+    {
+      "time": 1793,
+      "x": 242.78741455078125,
+      "y": 136.95120239257812,
+      "dead": false,
+      "authority": "minecraft-world",
+      "diagnosticNoclip": false
+    }
+  ],
+  "maxX": 242.78741455078125,
+  "maxY": 136.95120239257812,
+  "deadSamples": 0,
+  "noclipSamples": 0
+}
