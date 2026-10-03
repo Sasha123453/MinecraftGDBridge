@@ -1,9 +1,9 @@
 {
-  "sourceStage": "gd-transition-next",
+  "sourceStage": "gd-world-authority-next",
   "files": [
     {
       "path": "outputs/bridge/minecraft/build.gradle",
-      "sha256": "88bc3a51bb3f92ba758c044f819b8e706651255d26e8802e0b73080e7c770d8f",
+      "sha256": "6e705562c4dc17705c28af37697d0e3b71a60cb5434bef41911af4ddbd1b0001",
       "bytes": 771
     },
     {
@@ -28,7 +28,7 @@
     },
     {
       "path": "outputs/bridge/minecraft/src/main/resources/fabric.mod.json",
-      "sha256": "bdfa41725bf709cf0d1939163b05825bd376e7792f4b4d935cef8a217a8e03be",
+      "sha256": "567c43fcaa4ed599694a05c34dbe946ef772c23f43184a1293572bb066537d11",
       "bytes": 532
     },
     {
@@ -63,13 +63,13 @@
     },
     {
       "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/GDBridge.java",
-      "sha256": "84b908ad3e9d529c43e21bc632c7125016a981a2cbf5b84806aac0d89be534cd",
-      "bytes": 21279
+      "sha256": "972b9559e27a855b73ce2d2fdbcc928428fb4f52a33f9001ac0fa906ade805eb",
+      "bytes": 21883
     },
     {
       "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/GDBridgeCommon.java",
-      "sha256": "5648c57cb0e18408b67c65960c06096b1dacbbdc6e43f168fb1a4c17a3245294",
-      "bytes": 594
+      "sha256": "d53e6544f23edf5d095f15446983e438fede38dd7f9e7c61cb2e31e863e9faf8",
+      "bytes": 1603
     },
     {
       "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/GDPlayerRenderer.java",
@@ -88,8 +88,8 @@
     },
     {
       "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/NativeGDVisuals.java",
-      "sha256": "3db48cd97c39a4c9a771fad8732c122e9320a42411e46d88329393f25d12af96",
-      "bytes": 20932
+      "sha256": "e7f420db76e345f63c566e27f14702c5074428a5a4483a540d8dfccfe64d0b67",
+      "bytes": 21336
     },
     {
       "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/NativeObjectBodies3D.java",
@@ -103,13 +103,28 @@
     },
     {
       "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/SceneBlueprint.java",
-      "sha256": "27d272453cb7e7b61d5912da8b8bd31c314279e448166b6d02069d1c0a49d63d",
-      "bytes": 4969
+      "sha256": "e1b1ec2b97b65fa50dfcb40290fc36f56fae42ad0d1c2ab421173ed84749d429",
+      "bytes": 6894
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/StoneSpikeBlock.java",
+      "sha256": "b76fac3d63d94bcec0b721fa092e31ef016eb8d637c1a0c7494539884841b268",
+      "bytes": 2853
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/StoneSpikeBlockEntity.java",
+      "sha256": "4363dfb5b0151f2d080a59a868e1ec042890eac03bb58b2811a526d780b031f5",
+      "bytes": 333
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/StoneSpikeRenderer.java",
+      "sha256": "640b293f2214ea8418ce24146a844da31502e578fe2f13c0c07902986ab062a5",
+      "bytes": 2587
     },
     {
       "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/WorldEditor.java",
-      "sha256": "0f7e39314c19ac9d2aecf9ad3d933657257c4cfcc90ec66d7d1cd8cf83305b54",
-      "bytes": 19603
+      "sha256": "1ea8ed0f49bf247b2f90643f497a2fdd48412c4608ad755f568c22cd70951abd",
+      "bytes": 25099
     },
     {
       "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/mixin/CameraMixin.java",
@@ -137,6 +152,31 @@
       "bytes": 979
     },
     {
+      "path": "outputs/bridge/minecraft/src/main/resources/assets/gdbridge/blockstates/stone_spike.json",
+      "sha256": "155ff259bb79de6685d21b1db8b92632824ad6101f853f83a0cfa6f3403567b0",
+      "bytes": 57
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/resources/assets/gdbridge/lang/en_us.json",
+      "sha256": "005c8383cece02e553200ca454b38a21d688a5d60e15234176d7234637f4f4dd",
+      "bytes": 45
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/resources/assets/gdbridge/lang/ru_ru.json",
+      "sha256": "ff2ca32da670b0cb451dfb5693418419c487f94202b5426f5a8dead7847b15a8",
+      "bytes": 57
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/resources/assets/gdbridge/models/block/stone_spike.json",
+      "sha256": "c705918d9e40e2acab24de0b37cdec42adaecf56969314f48077f98873ba8120",
+      "bytes": 64
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/resources/assets/gdbridge/models/item/stone_spike.json",
+      "sha256": "e19ab2eb65c87ff0819aa1a17c6e3257b9bb078422940b46bf8e2ca59350ed80",
+      "bytes": 35
+    },
+    {
       "path": "outputs/bridge/minecraft/work/mc-project-cache/8.8/gc.properties",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "bytes": 0
@@ -157,29 +197,29 @@
       "bytes": 0
     },
     {
-      "path": "outputs/bridge/gd-transition-next/build.py",
+      "path": "outputs/bridge/gd-world-authority-next/build.py",
       "sha256": "73a1ebb28e303be0d33f2b7156480b6cd83407424dc08d9bea749a8b1cdb5e72",
       "bytes": 1500
     },
     {
-      "path": "outputs/bridge/gd-transition-next/CMakeLists.txt",
+      "path": "outputs/bridge/gd-world-authority-next/CMakeLists.txt",
       "sha256": "e00d8b951521860fa12a01591429a301b7c3a6984ccda627f89b4998bf756b72",
       "bytes": 830
     },
     {
-      "path": "outputs/bridge/gd-transition-next/mod.json",
-      "sha256": "0db93061ca4c476baf38d56e66cc0b3ebb12b5c61ab55b44aeb8e07f0e59df40",
+      "path": "outputs/bridge/gd-world-authority-next/mod.json",
+      "sha256": "bdf695431a8d32a6c649d60d7e5fc0c77c6558f3bcea6908b856acb8c60fafc0",
       "bytes": 313
     },
     {
-      "path": "outputs/bridge/gd-transition-next/PROTOCOL.txt",
+      "path": "outputs/bridge/gd-world-authority-next/PROTOCOL.txt",
       "sha256": "80a58e34a2d552dd97efded080269608abe54e55acacc7a5ebd12b05ca3281e0",
       "bytes": 18518
     },
     {
-      "path": "outputs/bridge/gd-transition-next/src/main.cpp",
-      "sha256": "24d32aac34465d049d23523cacceba03edbc3b5dcb4b502e7697cbbac324abae",
-      "bytes": 73277
+      "path": "outputs/bridge/gd-world-authority-next/src/main.cpp",
+      "sha256": "81202337cc42368b1a3c7950839a1489b7a9728aa1728e70edf84f3cfd1226b2",
+      "bytes": 73806
     },
     {
       "path": "outputs/Add-Music.ps1",
@@ -218,8 +258,8 @@
     },
     {
       "path": "outputs/Install-VisualBatch.ps1",
-      "sha256": "da162da49999dad4b87c841f670268dbeb11deaab121d3182d03947d0fe37146",
-      "bytes": 4684
+      "sha256": "b5b756bdd9c6456812c68691f7ee60ff55e1f2db8f40a48fcec0126a040a7bde",
+      "bytes": 4710
     },
     {
       "path": "outputs/Polish-Status.txt",
@@ -238,8 +278,8 @@
     },
     {
       "path": "outputs/README.txt",
-      "sha256": "b46e838cd2e3d000c9f467367093400b18427996a140c40140610554cab61d02",
-      "bytes": 8691
+      "sha256": "ba192b43279b1cc535a5d4aa0da480b78100c2e1b6445c31860e81d0c642d9ce",
+      "bytes": 3971
     },
     {
       "path": "outputs/Root-Control.mjs",
@@ -373,8 +413,8 @@
     },
     {
       "path": "outputs/Scene-Target.json",
-      "sha256": "8d6cf4e4840b49eab938a6b4f78b366459f37747910c371d4d523407c7d7cb1c",
-      "bytes": 1335
+      "sha256": "8c90f2fc39bda001c8877cfd9994c2f45747a04ba56a5a355ff55c6ffe5489dc",
+      "bytes": 1477
     }
   ]
 }

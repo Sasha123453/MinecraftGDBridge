@@ -1,0 +1,11 @@
+{
+  "geode": "5.9.0",
+  "gd": {
+    "win": "2.2081"
+  },
+  "id": "experiment.minecraft_bridge",
+  "name": "Minecraft GD Bridge",
+  "version": "v0.4.3",
+  "developer": "Local experiment",
+  "description": "Minecraft-authored levels, original GD visuals and native level blueprints on localhost:18471."
+}

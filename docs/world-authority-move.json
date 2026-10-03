@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-10-03T10:00:36.971Z",
+  "authority": "minecraft-world",
+  "cells": 2714,
+  "counts": {
+    "spike": 832,
+    "special": 234,
+    "solid": 1648
+  },
+  "move": {
+    "minecraftFrom": [
+      29,
+      72,
+      0
+    ],
+    "minecraftTo": [
+      30,
+      72,
+      0
+    ],
+    "gdBefore": {
+      "id": 1,
+      "x": 885,
+      "y": 255,
+      "scale": 1,
+      "rotation": 0
+    },
+    "gdAfter": {
+      "id": 1,
+      "x": 915,
+      "y": 255,
+      "scale": 1,
+      "rotation": 0
+    },
+    "newNativeColliderExists": true,
+    "oldNativeColliderExists": false,
+    "newNativeBounds": {
+      "w": 30,
+      "h": 30
+    }
+  },
+  "scope": "x=0..512, y=67..100, z=0; outside remains original GD physics"
+}

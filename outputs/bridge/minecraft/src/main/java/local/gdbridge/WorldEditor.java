@@ -22,7 +22,13 @@ public final class WorldEditor {
     private static volatile JsonObject scene;
     private static Map<BlockPos,List<JsonObject>> templates=new HashMap<>();
     private static Map<BlockPos,Block> templateMaterials=new HashMap<>();
+    private static volatile boolean worldGeometryAuthoritative;
+    private static boolean worldGeometryShown;
+    private static volatile long requiredBuildRevision;
     public static boolean nativeGeometry(){return scene!=null;}
+    public static boolean worldGeometryAuthoritative(){return worldGeometryAuthoritative;}
+    public static boolean worldGeometryActive(GDBridge.Frame frame){return worldGeometryAuthoritative&&frame!=null&&frame.packet().has("authority")&&frame.packet().get("authority").getAsString().equals("minecraft-world")&&frame.packet().has("buildRevision")&&frame.packet().get("buildRevision").getAsLong()>=requiredBuildRevision;}
+    public static boolean ownsGameplayPoint(double x,double y){return x>=0&&x<=15390&&y>=90&&y<=1110;}
     private record SceneryBox(BlockPos from,BlockPos to,BlockState state){}
     public static void applyScenery(MinecraftClient mc,String filename) throws java.io.IOException {
         if(!worldName.equals("GDBridge-XO")||mc.getServer()==null)throw new IllegalStateException("Scenery only in isolated GDBridge-XO");
@@ -41,17 +47,18 @@ public final class WorldEditor {
     private static BlockPos sceneryPos(JsonArray a){return sceneryPos(a,false);}
     private static BlockPos sceneryPos(JsonArray a,boolean terrainFloor){BlockPos pos=new BlockPos(a.get(0).getAsInt(),a.get(1).getAsInt(),a.get(2).getAsInt());if(pos.getX()<0||pos.getX()>512||pos.getY()<50||pos.getY()>90||pos.getZ()<-16||pos.getZ()>24||(!terrainFloor&&pos.getZ()==0))throw new IllegalArgumentException("Scenery outside safe region or z=0");return pos;}
     private static Block sceneryMaterial(String name){return switch(name){case "minecraft:dirt"->Blocks.DIRT;case "minecraft:grass_block"->Blocks.GRASS_BLOCK;case "minecraft:stone"->Blocks.STONE;case "minecraft:stone_bricks"->Blocks.STONE_BRICKS;case "minecraft:mossy_stone_bricks"->Blocks.MOSSY_STONE_BRICKS;case "minecraft:grass"->Blocks.GRASS;case "minecraft:air"->Blocks.AIR;case "minecraft:oak_log"->Blocks.OAK_LOG;case "minecraft:oak_planks"->Blocks.OAK_PLANKS;case "minecraft:oak_leaves"->Blocks.OAK_LEAVES;case "minecraft:bookshelf"->Blocks.BOOKSHELF;case "minecraft:lantern"->Blocks.LANTERN;case "minecraft:torch"->Blocks.TORCH;case "minecraft:cobblestone"->Blocks.COBBLESTONE;case "minecraft:deepslate"->Blocks.DEEPSLATE;case "minecraft:bedrock"->Blocks.BEDROCK;case "minecraft:diamond_ore"->Blocks.DIAMOND_ORE;case "minecraft:iron_ore"->Blocks.IRON_ORE;case "minecraft:coal_ore"->Blocks.COAL_ORE;case "minecraft:redstone_ore"->Blocks.REDSTONE_ORE;case "minecraft:granite"->Blocks.GRANITE;case "minecraft:diorite"->Blocks.DIORITE;case "minecraft:obsidian"->Blocks.OBSIDIAN;case "minecraft:nether_bricks"->Blocks.NETHER_BRICKS;case "minecraft:netherrack"->Blocks.NETHERRACK;case "minecraft:lava"->Blocks.LAVA;case "minecraft:birch_log"->Blocks.BIRCH_LOG;case "minecraft:birch_leaves"->Blocks.BIRCH_LEAVES;case "minecraft:water"->Blocks.WATER;case "minecraft:glass"->Blocks.GLASS;default->throw new IllegalArgumentException("Unsupported scenery block "+name);};}
-    public static void resetWorld(String name){worldName=name;prepared=false;columns.clear();authored=List.of();scene=null;templates=new HashMap<>();templateMaterials=new HashMap<>();}
+    public static void resetWorld(String name){worldName=name;prepared=false;columns.clear();authored=List.of();scene=null;templates=new HashMap<>();templateMaterials=new HashMap<>();worldGeometryAuthoritative=false;worldGeometryShown=false;requiredBuildRevision=0;}
     public static void importBlueprint(MinecraftClient mc,String filename) throws java.io.IOException {
         if(!worldName.equals("GDBridge-XO"))throw new IllegalStateException("Import only into isolated GDBridge-XO");
         if(mc.getServer()==null)throw new IllegalStateException("No local server");
         var blueprint=SceneBlueprint.read(filename);if(!editing)toggle();
         mc.getServer().execute(()->{
             ServerWorld world=mc.getServer().getOverworld();
-            for(var old:templateMaterials.entrySet())if(!blueprint.blocks().containsKey(old.getKey())&&world.getBlockState(old.getKey()).isOf(old.getValue()))world.setBlockState(old.getKey(),Blocks.AIR.getDefaultState(),3);
+            for(var old:templateMaterials.entrySet())if(!blueprint.blocks().containsKey(old.getKey())){BlockState actual=world.getBlockState(old.getKey());boolean ownedConvertedSpike=worldGeometryAuthoritative&&old.getValue()==Blocks.MAGMA_BLOCK&&actual.isOf(GDBridgeCommon.STONE_SPIKE);if(actual.isOf(old.getValue())||ownedConvertedSpike)world.setBlockState(old.getKey(),Blocks.AIR.getDefaultState(),3);}
             for(var entry:blueprint.blocks().entrySet())world.setBlockState(entry.getKey(),entry.getValue().getDefaultState(),3);
             List<Cell> importedCells=new ArrayList<>();for(var entry:blueprint.blocks().entrySet())importedCells.add(new Cell(entry.getKey(),entry.getValue().getDefaultState(),true));
             scene=blueprint.source();templates=new HashMap<>(blueprint.groups());templateMaterials=new HashMap<>(blueprint.blocks());
+            worldGeometryAuthoritative=false;
             mc.execute(()->{authored=List.copyOf(importedCells);restoreMarkers(mc,editing);});
             try{Path output=mc.runDirectory.toPath().resolve("config/gdbridge/scene-"+worldName+".json");Files.createDirectories(output.getParent());Files.writeString(output,scene.toString());}catch(Exception e){message="Scene metadata save failed: "+e.getMessage();}
             message="Imported "+templates.size()+" Minecraft markers; "+blueprint.clipped()+" outside range";
@@ -104,32 +111,56 @@ public final class WorldEditor {
         message="Reading Minecraft blocks...";
         server.execute(()->{
             ServerWorld world=server.getOverworld();JsonArray objects=new JsonArray();List<Cell> cells=new ArrayList<>();int unsupported=0;
+            // This conversion owns real world cells. It never changes source blueprints.
+            // Only existing imported magma markers become the placeable spike block.
+            for(var entry:templates.entrySet()){
+                BlockPos pos=entry.getKey();BlockState state=world.getBlockState(pos);
+                if(!state.isOf(Blocks.MAGMA_BLOCK))continue;
+                JsonObject hazard=entry.getValue().stream().filter(o->o.has("type")&&o.get("type").getAsString().equals("hazard")).findFirst().orElse(null);
+                double rotation=hazard!=null&&hazard.has("rotation")?hazard.get("rotation").getAsDouble():0;
+                world.setBlockState(pos,GDBridgeCommon.STONE_SPIKE.getDefaultState().with(StoneSpikeBlock.FACING,StoneSpikeBlock.facing(rotation)),3);
+                templateMaterials.put(pos,GDBridgeCommon.STONE_SPIKE);
+            }
             for(int x=0;x<=512;x++)for(int y=67;y<=100;y++){
                 BlockPos pos=new BlockPos(x,y,0);BlockState state=world.getBlockState(pos);if(state.isAir())continue;
-                int id=SceneBlueprint.id(state);boolean dynamic=id!=1||scene!=null;
+                if(state.isOf(Blocks.MAGMA_BLOCK)||state.isOf(Blocks.IRON_BARS)){state=GDBridgeCommon.STONE_SPIKE.getDefaultState();world.setBlockState(pos,state,3);}
+                int id=SceneBlueprint.id(state);boolean dynamic=SceneBlueprint.isSpecialMarker(state);
                 if(id==1&&!state.isFullCube(world,pos)){unsupported++;continue;}
                 var original=templates.get(pos);
-                if(original!=null&&state.isOf(templateMaterials.get(pos)))for(JsonObject object:original)objects.add(object.deepCopy());
-                else {JsonObject object=new JsonObject();object.addProperty("id",id);object.addProperty("x",(x+.5)*30);object.addProperty("y",(y+.5-64)*30);objects.add(object);}
+                objects.add(SceneBlueprint.worldObject(pos,state,original!=null&&state.isOf(templateMaterials.get(pos))?original:null));
                 cells.add(new Cell(pos,state,dynamic));
             }
+            // Capture both ends on the integrated server thread: no later tick
+            // or client-side marker hiding can change this audit snapshot.
+            JsonObject manifest=new JsonObject();manifest.addProperty("v",1);manifest.addProperty("world",worldName);manifest.addProperty("geometryAuthority","minecraft-world");manifest.addProperty("scope","x=0..512, y=67..100, z=0; outside remains original GD physics");manifest.addProperty("exportedAtEpochMs",System.currentTimeMillis());manifest.addProperty("cellCount",cells.size());manifest.addProperty("unsupportedCells",unsupported);manifest.add("objects",objects.deepCopy());JsonArray actualCells=new JsonArray();JsonObject counts=new JsonObject();
+            for(int i=0;i<cells.size();i++){Cell cell=cells.get(i);JsonObject actual=new JsonObject();JsonArray position=new JsonArray();position.add(cell.pos.getX());position.add(cell.pos.getY());position.add(cell.pos.getZ());actual.add("pos",position);actual.addProperty("block",net.minecraft.registry.Registries.BLOCK.getId(cell.state.getBlock()).toString());actual.addProperty("state",cell.state.toString());actual.add("compiled",objects.get(i).deepCopy());actual.addProperty("hiddenMarker",cell.hazard);actualCells.add(actual);String type=cell.hazard?"special":cell.state.isOf(GDBridgeCommon.STONE_SPIKE)?"spike":"solid";counts.addProperty(type,counts.has(type)?counts.get(type).getAsInt()+1:1);}
+            manifest.add("cells",actualCells);manifest.add("counts",counts);try{Path output=Path.of("C:/Users/shelk/Documents/Codex/2026-10-02/minecraft-java-geometry-dash-nasgubb-xo/outputs/bridge/runtime/world-authority-export.json");Files.createDirectories(output.getParent());Files.writeString(output,manifest.toString());}catch(Exception e){message="Export audit save failed: "+e.getMessage();return;}
             int skipped=unsupported;mc.execute(()->{
                 JsonObject command=new JsonObject();command.addProperty("cmd","load-minecraft-level");command.addProperty("name","Minecraft Build");command.add("objects",objects);
-                command.addProperty("rangeMaxX",scene!=null&&scene.has("rangeMaxX")?scene.get("rangeMaxX").getAsDouble():15390);
-                command.addProperty("rangeMinY",90);command.addProperty("rangeMaxY",1080);
+                command.addProperty("worldGeometryAuthoritative",true);
+                command.addProperty("authority","minecraft-world");
+                command.addProperty("rangeMaxX",15390);
+                command.addProperty("rangeMinY",90);command.addProperty("rangeMaxY",1110);
                 if(scene!=null){if(scene.has("rawLevelString"))command.add("baseRawLevelString",scene.get("rawLevelString"));if(scene.has("levelString"))command.add("baseLevelString",scene.get("levelString"));if(scene.has("songId"))command.add("songId",scene.get("songId"));if(scene.has("audioTrack"))command.add("audioTrack",scene.get("audioTrack"));command.addProperty("name",scene.has("name")?scene.get("name").getAsString()+" / Minecraft":"Minecraft Blueprint");}
+                var oldFrame=GDBridge.FRAME.get();long nextRevision=oldFrame!=null&&oldFrame.packet().has("buildRevision")?oldFrame.packet().get("buildRevision").getAsLong()+1:1;
                 if(!GDBridge.send(command)){message="GD disconnected. Keep building; press F6 after reconnect.";return;}
+                requiredBuildRevision=nextRevision;
+                worldGeometryAuthoritative=true;
+                if(scene!=null){scene.addProperty("worldGeometryAuthoritative",true);try{Files.writeString(mc.runDirectory.toPath().resolve("config/gdbridge/scene-"+worldName+".json"),scene.toString());}catch(Exception e){message="World mode active; metadata save failed: "+e.getMessage();}}
                 authored=List.copyOf(cells);GDBridge.setProgrammaticJump(false);GDBridge.sendJump(false);mc.options.attackKey.setPressed(false);mc.options.useKey.setPressed(false);editing=false;
                 JsonObject play=new JsonObject();play.addProperty("cmd","build-mode");play.addProperty("active",false);GDBridge.send(play);
                 mc.options.setPerspective(Perspective.THIRD_PERSON_BACK);mc.player.noClip=true;mc.player.setNoGravity(true);mc.player.setInvisible(true);
-                restoreMarkers(mc,false);message="Minecraft level: "+cells.size()+" objects"+(skipped>0?"; "+skipped+" non-cube blocks skipped":"");
+                // Reveal world geometry after native physics confirms the scene.
+                worldGeometryShown=false;
+                restoreMarkers(mc,false);message="Minecraft world collision: "+cells.size()+" cells (voxel conversion)"+(skipped>0?"; "+skipped+" non-cube blocks skipped":"");
             });
         });
     }
-    // Magma is an authoring marker. Hide only its client copy in play; retain server data.
+    // Client-only authoring visibility never changes integrated-server cells.
     public static void restoreMarkers(MinecraftClient mc,boolean show) {
         if(mc.world==null)return;
-        for(Cell cell:authored)if(cell.hazard){BlockState wanted=show?cell.state:Blocks.AIR.getDefaultState();if(!mc.world.getBlockState(cell.pos).equals(wanted))mc.world.setBlockState(cell.pos,wanted,18);}
+        boolean waitingForCompiledPhysics=worldGeometryAuthoritative&&!worldGeometryActive(GDBridge.FRAME.get());
+        for(Cell cell:authored)if(cell.hazard||waitingForCompiledPhysics||show){BlockState wanted=show?cell.state:Blocks.AIR.getDefaultState();if(!mc.world.getBlockState(cell.pos).equals(wanted))mc.world.setBlockState(cell.pos,wanted,18);}
     }
     public static int objectCount(){return authored.size();}
     public static void tick(MinecraftClient mc) {
@@ -139,9 +170,9 @@ public final class WorldEditor {
             try {server.save(false,true,true);Path source=mc.runDirectory.toPath().resolve("saves/"+worldName),backup=mc.runDirectory.toPath().resolve("saves/"+worldName+"-before-authoring");
                 if(!Files.exists(backup)&&Files.exists(source))try(var paths=Files.walk(source)){for(Path path:paths.toList()){if(path.getFileName().toString().equals("session.lock"))continue;Path target=backup.resolve(source.relativize(path));if(Files.isDirectory(path))Files.createDirectories(target);else Files.copy(path,target);}}
             }catch(Exception e){message="World backup failed: "+e.getMessage();return;}
-            try{Path saved=mc.runDirectory.toPath().resolve("config/gdbridge/scene-"+worldName+".json");if(Files.exists(saved)){var restored=SceneBlueprint.from(com.google.gson.JsonParser.parseString(Files.readString(saved)).getAsJsonObject());scene=restored.source();templates=new HashMap<>(restored.groups());templateMaterials=new HashMap<>(restored.blocks());}}catch(Exception e){message="Scene metadata restore failed: "+e.getMessage();}
+            try{Path saved=mc.runDirectory.toPath().resolve("config/gdbridge/scene-"+worldName+".json");if(Files.exists(saved)){var restored=SceneBlueprint.from(com.google.gson.JsonParser.parseString(Files.readString(saved)).getAsJsonObject());scene=restored.source();templates=new HashMap<>(restored.groups());templateMaterials=new HashMap<>(restored.blocks());worldGeometryAuthoritative=scene.has("worldGeometryAuthoritative")&&scene.get("worldGeometryAuthoritative").getAsBoolean();List<Cell> restoredCells=new ArrayList<>();ServerWorld restoredWorld=server.getOverworld();for(BlockPos pos:templates.keySet()){BlockState state=restoredWorld.getBlockState(pos);if(worldGeometryAuthoritative&&templateMaterials.get(pos)==Blocks.MAGMA_BLOCK&&state.isOf(GDBridgeCommon.STONE_SPIKE))templateMaterials.put(pos,GDBridgeCommon.STONE_SPIKE);if(!state.isAir())restoredCells.add(new Cell(pos,state,worldGeometryAuthoritative?SceneBlueprint.isSpecialMarker(state):true));}authored=List.copyOf(restoredCells);}}catch(Exception e){message="Scene metadata restore failed: "+e.getMessage();}
             ServerWorld world=server.getOverworld();world.setTimeOfDay(6000);world.setWeather(0,0,false,false);
-            var player=server.getPlayerManager().getPlayer(mc.player.getUuid());if(player!=null){Block[] palette={Blocks.STONE,Blocks.MAGMA_BLOCK,Blocks.STONE_BRICKS,Blocks.WHITE_CONCRETE,Blocks.GLASS,Blocks.OAK_PLANKS,Blocks.GRASS_BLOCK,Blocks.OAK_LOG,Blocks.OAK_LEAVES};for(int i=0;i<palette.length;i++)if(player.getInventory().getStack(i).isEmpty())player.getInventory().setStack(i,new ItemStack(palette[i],64));player.currentScreenHandler.sendContentUpdates();}
+            var player=server.getPlayerManager().getPlayer(mc.player.getUuid());if(player!=null){Block[] palette={Blocks.STONE,GDBridgeCommon.STONE_SPIKE,Blocks.STONE_BRICKS,Blocks.WHITE_CONCRETE,Blocks.GLASS,Blocks.OAK_PLANKS,Blocks.GRASS_BLOCK,Blocks.OAK_LOG,Blocks.OAK_LEAVES};for(int i=0;i<palette.length;i++)if(player.getInventory().getStack(i).isEmpty())player.getInventory().setStack(i,new ItemStack(palette[i],64));player.currentScreenHandler.sendContentUpdates();}
         });}
         int center=(int)Math.floor(mc.player.getX());List<Integer> next=new ArrayList<>();
         for(int x=Math.max(-48,center-40);x<Math.max(80,center+65)&&next.size()<4;x++)if(columns.add(x))next.add(x);
@@ -150,7 +181,7 @@ public final class WorldEditor {
             if(Math.floorMod(x,12)==0){int height=4+Math.floorMod(x,3),base=terrainTop(-9)+1;for(int y=base;y<base+height;y++)putIfAir(world,new BlockPos(x,y,-9),Blocks.OAK_LOG);
                 for(int dy=-2;dy<=1;dy++)for(int dx=-2;dx<=2;dx++)for(int dz=-2;dz<=2;dz++)if(Math.abs(dx)+Math.abs(dz)<5&&(dy<1||Math.abs(dx)<=1&&Math.abs(dz)<=1))putIfAir(world,new BlockPos(x+dx,base+height+dy,-9+dz),Blocks.OAK_LEAVES);}
         }});
-        if(!editing)restoreMarkers(mc,false);
+        if(!editing){boolean activeWorld=worldGeometryActive(GDBridge.FRAME.get());if(activeWorld&&!worldGeometryShown){for(Cell cell:authored)if(!cell.hazard)mc.world.setBlockState(cell.pos,cell.state,18);}worldGeometryShown=activeWorld;restoreMarkers(mc,false);}
     }
     private static void putIfAir(ServerWorld world,BlockPos pos,Block block){if(world.getBlockState(pos).isAir())world.setBlockState(pos,block.getDefaultState(),3);}
     private static int terrainTop(int z){return !worldName.equals("GDBridge-XO")?66:z>=2?64:z<=-2?65:66;}

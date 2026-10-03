@@ -35,9 +35,10 @@ public final class SceneBlueprint {
             try {
                 double x=object.get("x").getAsDouble(),y=object.get("y").getAsDouble();
                 if(!Double.isFinite(x)||!Double.isFinite(y)||x<0||x>maxX||y<90||y>1080){clipped++;continue;}
+                String type=object.has("type")?object.get("type").getAsString():"solid";
+                if((type.equals("solid")||type.equals("hazard"))&&hiddenCollisionHelper(object)){clipped++;continue;}
                 BlockPos cell=new BlockPos((int)Math.round(x/30-.5),(int)Math.round(64+y/30-.5),0);
                 JsonObject preserved=object.deepCopy();groups.computeIfAbsent(cell,key->new ArrayList<>()).add(preserved);
-                String type=object.has("type")?object.get("type").getAsString():"solid";
                 int priority=switch(type){case "portal"->4;case "orb"->3;case "hazard"->2;default->1;};
                 if(priority>=priorities.getOrDefault(cell,0)){blocks.put(cell,marker(object));priorities.put(cell,priority);}
             }catch(RuntimeException error){clipped++;}
@@ -56,10 +57,30 @@ public final class SceneBlueprint {
     }
     public static int id(BlockState state) {
         if(state.isAir())return 0;Block b=state.getBlock();
-        if(b==Blocks.MAGMA_BLOCK||b==Blocks.IRON_BARS)return 8;
+        if(b==GDBridgeCommon.STONE_SPIKE||b==Blocks.MAGMA_BLOCK||b==Blocks.IRON_BARS)return 8;
         if(b==Blocks.GOLD_BLOCK)return 36;if(b==Blocks.DIAMOND_BLOCK)return 84;if(b==Blocks.REDSTONE_BLOCK)return 141;
         if(b==Blocks.GLASS)return 12;if(b==Blocks.AMETHYST_BLOCK)return 13;if(b==Blocks.COPPER_BLOCK)return 47;if(b==Blocks.EMERALD_BLOCK)return 111;if(b==Blocks.LAPIS_BLOCK)return 660;
         if(b==Blocks.YELLOW_CONCRETE)return 200;if(b==Blocks.BLUE_CONCRETE)return 201;if(b==Blocks.GREEN_CONCRETE)return 202;if(b==Blocks.PINK_CONCRETE)return 203;if(b==Blocks.RED_CONCRETE)return 1334;
         return 1;
+    }
+    public static boolean isSpecialMarker(BlockState state){int id=id(state);return id!=0&&id!=1&&id!=8;}
+    private static boolean hiddenCollisionHelper(JsonObject object){
+        for(String key:List.of("invisible","disabled","noTouch","passable"))if(object.has(key)&&object.get(key).getAsBoolean())return true;
+        // Property 121 is the native NoTouch editor option. Do not turn it into
+        // a visible colliding full cube while importing a world build.
+        if(object.has("data")){String[] values=object.get("data").getAsString().split(",");for(int i=0;i+1<values.length;i+=2)if(values[i].equals("121")&&values[i+1].equals("1"))return true;}
+        return false;
+    }
+    /** Actual cell state, rather than old sub-cell GD obstacle records, owns collision. */
+    public static JsonObject worldObject(BlockPos cell,BlockState state,List<JsonObject> originals){
+        int id=id(state);JsonObject object=new JsonObject();
+        if(isSpecialMarker(state)&&originals!=null){
+            JsonObject chosen=null;int priority=-1;
+            for(JsonObject candidate:originals){String type=candidate.has("type")?candidate.get("type").getAsString():"solid";int p=type.equals("portal")?2:type.equals("orb")?1:-1;if(p>priority){priority=p;chosen=candidate;}}
+            if(chosen!=null){object=chosen.deepCopy();id=object.has("id")?object.get("id").getAsInt():id;}
+        }
+        object.addProperty("id",id);object.addProperty("x",(cell.getX()+.5)*30);object.addProperty("y",(cell.getY()+.5-64)*30);
+        object.addProperty("scale",1);object.addProperty("rotation",state.isOf(GDBridgeCommon.STONE_SPIKE)?StoneSpikeBlock.gdRotation(state):isSpecialMarker(state)&&object.has("rotation")?object.get("rotation").getAsDouble():0);
+        return object;
     }
 }

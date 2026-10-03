@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-10-03T09:36:51.314Z",
+  "versions": {
+    "minecraft": "0.4.1",
+    "gd": "0.4.2"
+  },
+  "transition": "original Auto XO to Minecraft-authored native level",
+  "sourceRecords": {
+    "original": 38644,
+    "exported": 38644
+  },
+  "nativePhysical": {
+    "original": 9354,
+    "exported": 9354
+  },
+  "matched": {
+    "original": 9353,
+    "exported": 9353
+  },
+  "telemetry": {
+    "seq": 22818,
+    "x": 1985.224365234375,
+    "source": "minecraft",
+    "levelCompleted": false,
+    "paused": false
+  },
+  "recording": {
+    "directory": "recording-1791019979206-710d6388",
+    "frames": 399,
+    "seconds": 19.9954203,
+    "actualFps": 19.9983101930357,
+    "startX": 0,
+    "endX": 4977.89794921875,
+    "deadFrames": 0,
+    "noclipFrames": 0
+  },
+  "limits": [
+    "Equal counts do not prove every transformed property is identical",
+    "Visual artifacts and missing effects remain",
+    "Full level completion not yet verified"
+  ]
+}

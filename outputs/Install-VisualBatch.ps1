@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory=$true)][string]$MinecraftPackage,
-    [ValidateSet('gd-visual-next','gd-visibility-next','gd-import-next','gd-baseline-next','gd-safe-import-next','gd-audit-next','gd-hazard-visuals-next','gd-geometry-metadata-next','gd-coordinate-fix-next','gd-transition-next')][string]$GeometryDashStage='gd-coordinate-fix-next',
+    [ValidateSet('gd-visual-next','gd-visibility-next','gd-import-next','gd-baseline-next','gd-safe-import-next','gd-audit-next','gd-hazard-visuals-next','gd-geometry-metadata-next','gd-coordinate-fix-next','gd-transition-next','gd-world-authority-next')][string]$GeometryDashStage='gd-coordinate-fix-next',
     [Parameter(Mandatory=$true)][ValidatePattern('^[A-Fa-f0-9]{64}$')][string]$MinecraftSha256,
     [Parameter(Mandatory=$true)][ValidatePattern('^[A-Fa-f0-9]{64}$')][string]$GeometryDashSha256
 )

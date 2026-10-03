@@ -36,7 +36,7 @@ public final class NativeGDVisuals {
     /** Standard entity buffers provide Minecraft lightmap, normals and Iris entity/shadow passes. */
     public static void renderWorldLit(MatrixStack matrices,VertexConsumerProvider buffers,JsonObject packet,double ox,double oy,double oz,int light){
         if(packet==null)return;retireUnused();JsonArray layers=array(packet,"avatarLayers");
-        float front=(float)(1.02-oz);
+        float front=(float)(1.085-oz);
         for(int i=0;layers!=null&&i<Math.min(MAX_LAYERS,layers.size());i++){
             JsonObject layer=layers.get(i).getAsJsonObject();Vertex[] quad=vertices(array(layer,"vertices"),4);if(quad==null||quad.length!=4)continue;
             int source=blend(number(layer,"blendSource",GL11.GL_ONE)),destination=blend(number(layer,"blendDestination",GL11.GL_ONE_MINUS_SRC_ALPHA));
@@ -45,14 +45,17 @@ public final class NativeGDVisuals {
             RenderLayer renderLayer=NativeGDRenderLayers.get(tex.id,source,destination);
             VertexConsumer consumer=buffers.getBuffer(renderLayer);int localLight=quadLight(quad,light);int materialLight=glow?0xF000F0:localLight;
             float us=(float)number(layer,"textureWidth",tex.width)/tex.width,vs=(float)number(layer,"textureHeight",tex.height)/tex.height;
-            float z=front+i*.0002f;
+            float z=front+i*.0005f;
             for(Vertex v:quad)litVertex(consumer,matrices,v,ox,oy,z,v.u*us,v.v*vs,materialLight,0,0,1);
         }
         JsonArray objects=array(packet,"objectLayers");
         Map<Integer,GDBridge.Obj> nativeObjects=new HashMap<>();var current=GDBridge.getRenderFrame();if(current!=null)for(var object:current.objects())nativeObjects.put(object.id(),object);
+        boolean worldGeometry=WorldEditor.worldGeometryActive(current);
+        Map<Integer,Integer> objectLayerRanks=new HashMap<>();
         for(int i=0;objects!=null&&i<Math.min(512,objects.size());i++){
             JsonObject layer=objects.get(i).getAsJsonObject();GDBridge.Obj object=nativeObjects.get(number(layer,"id",-1));
             if(object==null||!object.visualEnabled())continue;
+            if(worldGeometry&&WorldEditor.ownsGameplayPoint(object.x(),object.y())&&(object.type().equals("solid")||object.type().equals("hazard")))continue;
             if(object.type().equals("hazard")&&NativeSpikes3D.supports(object))continue;
             if(BridgeVisualStyle.volume()&&NativeObjectBodies3D.bodyOnly(object))continue;
             Vertex[] quad=vertices(array(layer,"vertices"),4);if(quad==null||quad.length!=4)continue;
@@ -60,7 +63,9 @@ public final class NativeGDVisuals {
             Texture tex=texture(string(layer,"path"),source==GL11.GL_ONE);if(tex==null)continue;boolean glow=destination==GL11.GL_ONE;
             VertexConsumer consumer=buffers.getBuffer(NativeGDRenderLayers.get(tex.id,source,destination));int materialLight=glow?0xF000F0:quadLight(quad,light);
             float us=(float)number(layer,"textureWidth",tex.width)/tex.width,vs=(float)number(layer,"textureHeight",tex.height)/tex.height;
-            float z=(float)(1.025-oz)+i*.000002f;for(Vertex v:quad)litVertex(consumer,matrices,v,ox,oy,z,v.u*us,v.v*vs,materialLight,0,0,1);
+            int rank=objectLayerRanks.merge(object.id(),1,Integer::sum)-1;
+            if(rank>=96)continue;
+            float z=(float)(1.025-oz)+rank*.0005f;for(Vertex v:quad)litVertex(consumer,matrices,v,ox,oy,z,v.u*us,v.v*vs,materialLight,0,0,1);
         }
         // Real trail vertices remain native. Only native additive materials are emissive.
         JsonArray trails=array(packet,"trails");

@@ -52,6 +52,7 @@ public class GDBridge implements ClientModInitializer {
         WorldRenderEvents.BLOCK_OUTLINE.register((context,outline)->!active()||WorldEditor.editing);
         Thread thread=new Thread(GDBridge::listen,"GD-Bridge-IPC"); thread.setDaemon(true); thread.start();
         EntityRendererRegistry.register(GDBridgeCommon.PLAYER,GDPlayerRenderer::new);
+        net.minecraft.client.render.block.entity.BlockEntityRendererFactories.register(GDBridgeCommon.STONE_SPIKE_ENTITY,StoneSpikeRenderer::new);
         HudRenderCallback.EVENT.register((draw,delta)->{
             MinecraftClient mc=MinecraftClient.getInstance(); Frame f=FRAME.get();
             if(f!=null&&!WorldEditor.editing){String percent=String.format(Locale.ROOT,"%.1f%%",f.percent);int width=mc.textRenderer.getWidth(percent),cx=draw.getScaledWindowWidth()/2;draw.drawTextWithShadow(mc.textRenderer,percent,cx-width/2,8,0xFFFFFF);}
@@ -116,6 +117,7 @@ public class GDBridge implements ClientModInitializer {
                     j.addProperty("level",num(f.packet,"level",0));j.addProperty("levelCompleted",bool(f.packet,"levelCompleted"));j.addProperty("source",str(f.packet,"source","geometry-dash"));j.addProperty("buildRevision",num(f.packet,"buildRevision",0));j.addProperty("avatarLayers",f.packet.has("avatarLayers")?f.packet.getAsJsonArray("avatarLayers").size():-1);j.addProperty("trailLayers",f.packet.has("trails")?f.packet.getAsJsonArray("trails").size():-1);
                     j.addProperty("objectLayers",f.packet.has("objectLayers")?f.packet.getAsJsonArray("objectLayers").size():-1);j.addProperty("worldTime",mc.world.getTimeOfDay());j.addProperty("ambientDarkness",mc.world.getAmbientDarkness());j.addProperty("packedWorldLight",WorldRenderer.getLightmapCoordinates(mc.world,BlockPos.ofFloored(f.x/30,64+f.y/30,.5)));j.addProperty("avatarRenderPath","native-entity-world-lit");j.addProperty("fps",mc.getCurrentFps());
                     }
+                    if(f!=null){j.addProperty("authority",str(f.packet,"authority","geometry-dash"));j.addProperty("worldGeometryActive",WorldEditor.worldGeometryActive(f));}
                     j.addProperty("world",WorldEditor.worldName);j.addProperty("visualStyle",BridgeVisualStyle.mode);j.addProperty("cameraDistance",BridgeCamera.distance);j.addProperty("cameraYaw",BridgeCamera.yaw);j.addProperty("cameraPitch",BridgeCamera.pitch);j.addProperty("controlResult",BridgeControl.result);j.addProperty("recording",BridgeRecorder.active());if(f!=null)j.addProperty("diagnosticNoclip",bool(f.packet,"diagnosticNoclip"));j.addProperty("gpu",org.lwjgl.opengl.GL11.glGetString(org.lwjgl.opengl.GL11.GL_RENDERER));Files.writeString(dir.resolve("status.json"),j.toString());
                 }catch(Exception ignored) {}
             }
@@ -177,8 +179,11 @@ public class GDBridge implements ClientModInitializer {
     }
     public static void renderObjectsLit(MatrixStack m,VertexConsumerProvider buffers,Frame frame,double ox,double oy,double oz){
         MinecraftClient mc=MinecraftClient.getInstance();if(mc.world==null)return;
+        // In a compiled Minecraft build, world blocks own obstacle geometry.
+        boolean worldGeometry=WorldEditor.worldGeometryActive(frame);
         boolean nativeCards=frame.packet.has("objectLayers");
         for(Obj o:frame.objects){if(Math.abs(o.x-frame.x)>1200)continue;double x=o.x/30,y=64+o.y/30,w=Math.max(.04,o.w/30),h=Math.max(.04,o.h/30);int light=WorldRenderer.getLightmapCoordinates(mc.world,BlockPos.ofFloored(x,y,.5));
+            if(worldGeometry&&WorldEditor.ownsGameplayPoint(o.x(),o.y())&&(o.type.equals("solid")||o.type.equals("hazard")))continue;
             // Hidden native collision helpers retain GD physics, but must not
             // become visible Minecraft walls or spikes. Missing visualEnabled
             // defaults to true when decoding older senders.

@@ -12,15 +12,16 @@
   },
   "importGoal": "Reusable native GD source import; keep physics and native triggers in GD; Minecraft geometry/decorations from actual native object records",
   "status": "Implementation in progress; selected reference is generated concept, not current game screenshot",
-  "updatedAt": "2026-10-03T09:22:26.398Z",
+  "updatedAt": "2026-10-03T10:03:53.905Z",
   "currentDirection": {
-    "geometry": "Minecraft platforms, collision obstacles and spikes with world materials/light/depth",
-    "nativeGD": "Authoritative physics, original character/icon, trail/wave, portals, orbs and pads; special-object volume is optional",
+    "geometry": "Actual placed Minecraft world blocks and gdbridge:stone_spike blocks define GD collision geometry",
+    "nativeGD": "Physics, character/trails and original specials bound to placed Minecraft authoring markers; volumetric specials optional",
     "camera": "Stable GD camera window with smooth chapter transitions; do not follow wave oscillations",
     "qaLevel": 58835426,
     "manualLevel": 58898913,
     "reference": "outputs/Scene-Target-Selected.png",
     "generatorDeferred": true,
-    "defaultStyle": "hybrid"
+    "defaultStyle": "hybrid",
+    "authority": "Minecraft server block states in x0..512/y67..100/z0; original GD continuation outside this first region"
   }
 }
