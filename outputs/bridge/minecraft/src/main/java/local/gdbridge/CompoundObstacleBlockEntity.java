@@ -18,7 +18,12 @@ public final class CompoundObstacleBlockEntity extends BlockEntity {
     public void setPieces(List<JsonObject> originals){
         if(originals.size()>1024)throw new IllegalArgumentException("Compound cell exceeds 1024 pieces");List<JsonObject> result=new ArrayList<>();
         for(JsonObject original:originals){JsonObject piece=original.deepCopy();double x=CompoundGeometry.number(piece,"x",Double.NaN),y=CompoundGeometry.number(piece,"y",Double.NaN);if(!Double.isFinite(x)||!Double.isFinite(y))throw new IllegalArgumentException("Non-finite compound coordinates");piece.addProperty("localX",x/30-pos.getX());piece.addProperty("localY",64+y/30-pos.getY());result.add(piece);}
-        originX=pos.getX();originY=pos.getY();pieces=List.copyOf(result);rebuildShapes();markDirty();if(world!=null)world.updateListeners(pos,getCachedState(),getCachedState(),3);
+        originX=pos.getX();originY=pos.getY();pieces=List.copyOf(result);rebuildShapes();markDirty();if(world!=null){
+            int emission=0;
+            for(JsonObject piece:pieces){String type=CompoundGeometry.text(piece,"type","");int id=(int)CompoundGeometry.number(piece,"id",0);if(!CompoundGeometry.visible(piece))continue;int light=type.equals("portal")?8:type.equals("orb")?(id==35||id==67||id==140||id==1332?4:5):0;emission=Math.max(emission,light);}
+            BlockState current=world.getBlockState(pos);if(current.isOf(GDBridgeCommon.COMPOUND_OBSTACLE)&&current.get(CompoundObstacleBlock.EMISSION)!=emission)world.setBlockState(pos,current.with(CompoundObstacleBlock.EMISSION,emission),3);
+            world.updateListeners(pos,getCachedState(),getCachedState(),3);
+        }
     }
     public List<JsonObject> exportPieces(){List<JsonObject> result=new ArrayList<>();double dx=(pos.getX()-originX)*30.0,dy=(pos.getY()-originY)*30.0;for(JsonObject stored:pieces){JsonObject copy=stored.deepCopy();copy.addProperty("x",CompoundGeometry.number(copy,"x",0)+dx);copy.addProperty("y",CompoundGeometry.number(copy,"y",0)+dy);WorldEditor.shiftGeometryCoordinates(copy,dx,dy);copy.remove("localX");copy.remove("localY");result.add(copy);}return result;}
     public VoxelShape collision(){return collision;}

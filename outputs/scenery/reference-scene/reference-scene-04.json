@@ -1,0 +1,91 @@
+{
+  "schema": "gdbridge-scenery-plan-v1",
+  "name": "Sunny reference scene 4/5",
+  "targetWorld": "GDBridge-Reference",
+  "seed": 20261003,
+  "timeOfDay": 1800,
+  "batchIndex": 4,
+  "batchCount": 5,
+  "cellBudget": 13208,
+  "notes": "Apply ordered to isolated showcase world after native geometry import. Every normal box stays off Z0. Bright morning lighting; no cave/XO decorations.",
+  "boxes": [
+    {
+      "block": "minecraft:air",
+      "from": [
+        -16,
+        62,
+        2
+      ],
+      "to": [
+        110,
+        66,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:air",
+      "from": [
+        -16,
+        67,
+        1
+      ],
+      "to": [
+        110,
+        67,
+        1
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        -16,
+        63,
+        1
+      ],
+      "to": [
+        110,
+        65,
+        1
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        -16,
+        66,
+        1
+      ],
+      "to": [
+        110,
+        66,
+        1
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        -16,
+        61,
+        2
+      ],
+      "to": [
+        110,
+        63,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        -16,
+        64,
+        2
+      ],
+      "to": [
+        110,
+        64,
+        12
+      ]
+    }
+  ]
+}

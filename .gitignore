@@ -1,6 +1,7 @@
 # Generated runtime, third-party downloads and local configuration
 work/
 .local.json
+**/*.local.json
 **/.gradle/
 **/build/
 **/dist/

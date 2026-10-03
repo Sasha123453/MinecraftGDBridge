@@ -69,7 +69,7 @@ public class GDBridge implements ClientModInitializer {
             BridgeCamera.reload(mc);BridgeVisualStyle.reload(mc);BridgeControl.tick(mc);BridgeRecorder.tick(mc);
             if(!autoLoaded && mc.currentScreen instanceof net.minecraft.client.gui.screen.TitleScreen){
                 autoLoaded=true;
-                String selected="GDBridge";try{Path choice=mc.runDirectory.toPath().resolve("config/gdbridge/selected-world.json");if(Files.exists(choice)){String candidate=JsonParser.parseString(Files.readString(choice)).getAsJsonObject().get("world").getAsString();if(Set.of("GDBridge","GDBridge-XO","GDBridge-GeometryTests").contains(candidate))selected=candidate;}}catch(Exception ignored){}WorldEditor.resetWorld(selected);
+                String selected="GDBridge";try{Path choice=mc.runDirectory.toPath().resolve("config/gdbridge/selected-world.json");if(Files.exists(choice)){String candidate=JsonParser.parseString(Files.readString(choice)).getAsJsonObject().get("world").getAsString();if(Set.of("GDBridge","GDBridge-XO","GDBridge-GeometryTests","GDBridge-Reference").contains(candidate))selected=candidate;}}catch(Exception ignored){}WorldEditor.resetWorld(selected);
                 if(Files.exists(mc.runDirectory.toPath().resolve("saves/"+selected+"/level.dat"))) mc.createIntegratedServerLoader().start(mc.currentScreen,selected);
                 else {
                     net.minecraft.world.GameRules rules=new net.minecraft.world.GameRules();

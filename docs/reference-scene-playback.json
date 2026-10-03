@@ -1,0 +1,62 @@
+{
+  "checkedAt": "2026-10-03T16:23:22.6308953Z",
+  "minecraftVersion": "0.4.8",
+  "gdVersion": "0.4.6",
+  "minecraftSHA256": "FE3949DA7ECD584334524AC461D21EFB4369862FEF82D48F50E8AC27799BC3CD",
+  "gdSHA256": "5074C5FDABDFB781A0BD22110D5730754ADC09E79A7B3D4715BE7E58E67C782C",
+  "world": "GDBridge-Reference",
+  "geometryAuthority": "minecraft-world",
+  "worldAuthorityCheck": "docs/reference-world-authority.json",
+  "completed": true,
+  "completionUsedNoclip": false,
+  "jumps": 0,
+  "recordingFrames": 239,
+  "deadFrames": 0,
+  "noclipFrames": 0,
+  "videoSHA256": "8B6807E05B9F10409791641C06FAA1F6AA0DB4E40529CCA1730659F0204A6441",
+  "desktopCapture": false,
+  "camera": {
+    "distance": 8,
+    "height": 2.3,
+    "yaw": 170,
+    "offsetX": 5.6,
+    "pitch": 5.5
+  },
+  "portalLight": [
+    {
+      "pos": [
+        28,
+        68,
+        0
+      ],
+      "lightEmission": 8,
+      "blockLight": 8,
+      "adjacentLightSamples": [
+        {
+          "zOffset": -1,
+          "blockLight": 7,
+          "block": "minecraft:air"
+        },
+        {
+          "zOffset": 1,
+          "blockLight": 7,
+          "block": "minecraft:air"
+        }
+      ]
+    }
+  ],
+  "visualReviewedFrames": [
+    30,
+    50,
+    60,
+    100,
+    160,
+    220
+  ],
+  "limits": [
+    "Ordinary Minecraft blocklight; colored light on neighboring surfaces is not established.",
+    "Sampled native frames reviewed, not exhaustive flicker/effect validation.",
+    "Native implicit floor/ceiling remains separate and unresolved.",
+    "Short original forest AUTO course; no XO reconstruction."
+  ]
+}

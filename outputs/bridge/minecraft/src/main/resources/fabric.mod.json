@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "gdbridge",
-  "version": "0.4.6",
+  "version": "0.4.8",
   "accessWidener": "gdbridge.accesswidener",
   "name": "Geometry Dash Minecraft Bridge",
   "description": "Live Geometry Dash player and collision geometry rendered in Minecraft via loopback IPC.",

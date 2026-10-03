@@ -1,0 +1,88 @@
+{
+  "schema": "gdbridge-reference-scene-manifest-v1",
+  "generator": "tools/scenery/Build-ReferenceScene.cjs",
+  "deterministic": true,
+  "seed": 20261003,
+  "source": {
+    "file": "reference-auto-source.json",
+    "sha256": "9cb27bafcebd79f893f169832589faf24884b1eb06c5347e45a521df11c40667"
+  },
+  "sourceObjectCount": 20,
+  "nominalCourseBlocks": 58,
+  "reference": "outputs/Scene-Target-Selected.png",
+  "sceneBounds": {
+    "minX": -16,
+    "maxX": 110,
+    "minY": 61,
+    "maxY": 84,
+    "minZ": -16,
+    "maxZ": 12,
+    "forbiddenNormalZ": 0
+  },
+  "applyOrder": [
+    {
+      "file": "reference-scene-01.json",
+      "sha256": "2fd2e07551173cad40c48c27cfb0667ab8436a867295dc2d7046e34d622de495",
+      "cells": 14720,
+      "boxes": 1
+    },
+    {
+      "file": "reference-scene-02.json",
+      "sha256": "1f1384f341c8b7be6be25022a8f8fcfb02be569e4779f7e3e457582c74520f09",
+      "cells": 14720,
+      "boxes": 1
+    },
+    {
+      "file": "reference-scene-03.json",
+      "sha256": "44bc07806f820e6dc5a6d68af92ba37095a8864534fd77aafa47af27028bd475",
+      "cells": 11200,
+      "boxes": 1
+    },
+    {
+      "file": "reference-scene-04.json",
+      "sha256": "7849ae9423fc67fec73e7c518ee3c8291d32e6d7848823df2a800dd7eca2d3aa",
+      "cells": 13208,
+      "boxes": 6
+    },
+    {
+      "file": "reference-scene-05.json",
+      "sha256": "6bcb601b411a94e52e278c9a71aa7e90c4831dcb412e64cf000fd9779c9ebcb9",
+      "cells": 11967,
+      "boxes": 260
+    }
+  ],
+  "optionalRouteFloor": {
+    "file": "reference-route-floor.optional.json",
+    "sha256": "9f5daa3a974bc7c7bf97be6c10d0e9b77e5310ad1906dda882d5d6092efb76cc"
+  },
+  "totalRequestedCells": 65815,
+  "totalBoxes": 269,
+  "visualDesign": [
+    "Warm bright forest instead of XO environments",
+    "Near lane grass edge with exposed dirt and a lower layered foreground",
+    "Visible foreground terraces and stones at Z3..5, below the icon route",
+    "Two staggered oak layers with small raised crown tiers and low rear shrubs",
+    "Off-plane finish decoration extends to X110; native20 objects and Z0 floor remain unchanged",
+    "Grass clumps, mossed rear relics and low foreground stones",
+    "Native original avatar with optional pixel textured special models provided separately"
+  ],
+  "preconditions": [
+    "Isolated GDBridge-Reference world and fresh reference-auto-source native load/import",
+    "Scenery API permits isolated reference world, fern/flowers/moss and off-plane X110",
+    "Root copies numbered JSON plans into runtime outputs/bridge/levels, then applies in order",
+    "Remove unrelated former off-plane geometry outside this footprint separately if it is visible"
+  ],
+  "verification": {
+    "liveApplied": false,
+    "renderVerified": false,
+    "autoVerified": false,
+    "geometryVerified": false
+  },
+  "limits": [
+    "AUTO spacing starts from proven fixture A, but added platform steps and wider landing platform need runtime validation",
+    "Cube-return portal keeps native cube gameplay; optional cyan model changes appearance only",
+    "Orb is a real native interactive object but is not necessary for the no-input route",
+    "Scenery never touches gameplay Z0; route recolor is separately bounded below native floor",
+    "No generated texture, shader output or concept is a live evidence frame"
+  ]
+}

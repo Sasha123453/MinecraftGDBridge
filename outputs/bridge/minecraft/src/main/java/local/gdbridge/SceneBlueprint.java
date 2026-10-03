@@ -42,8 +42,16 @@ public final class SceneBlueprint {
                 if(priority>=priorities.getOrDefault(cell,0)){blocks.put(cell,marker(object));priorities.put(cell,priority);}
             }catch(RuntimeException error){clipped++;}
         }
-        Map<BlockPos,List<JsonObject>> frozen=new LinkedHashMap<>();groups.forEach((cell,records)->{frozen.put(cell,List.copyOf(records));blocks.put(cell,GDBridgeCommon.COMPOUND_OBSTACLE);});
+        Map<BlockPos,List<JsonObject>> frozen=new LinkedHashMap<>();groups.forEach((cell,records)->{frozen.put(cell,List.copyOf(records));blocks.put(cell,referenceBlock(cell,records));});
         return new Blueprint(source,Collections.unmodifiableMap(frozen),Collections.unmodifiableMap(blocks),clipped);
+    }
+    private static Block referenceBlock(BlockPos cell,List<JsonObject> records){
+        if(!WorldEditor.worldName.equals("GDBridge-Reference")||records.size()!=1)return GDBridgeCommon.COMPOUND_OBSTACLE;
+        JsonObject piece=records.get(0);int id=(int)CompoundGeometry.number(piece,"id",0);
+        boolean aligned=Math.abs(CompoundGeometry.number(piece,"x",0)-(cell.getX()+.5)*30)<.001&&Math.abs(CompoundGeometry.number(piece,"y",0)-(cell.getY()+.5-64)*30)<.001;
+        boolean unit=Math.abs(CompoundGeometry.number(piece,"scale",1)-1)<.001&&Math.abs(CompoundGeometry.number(piece,"rotation",0)%360)<.001;
+        if(!aligned||!unit||!CompoundGeometry.visible(piece)||CompoundGeometry.raw(piece,"4",0)!=0||CompoundGeometry.raw(piece,"5",0)!=0)return GDBridgeCommon.COMPOUND_OBSTACLE;
+        return id==1?Blocks.STONE_BRICKS:id==8?GDBridgeCommon.STONE_SPIKE:GDBridgeCommon.COMPOUND_OBSTACLE;
     }
     public static Block marker(JsonObject object) {
         int id=object.has("id")?object.get("id").getAsInt():object.has("objectId")?object.get("objectId").getAsInt():1;

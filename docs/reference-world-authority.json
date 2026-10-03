@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-10-03T16:19:43.4411694Z",
+  "authority": "minecraft-world",
+  "passed": true,
+  "scope": "z=0, x=-2..77, y=65..104",
+  "authoringRegion": {
+    "minX": -2,
+    "maxX": 77,
+    "minY": 65,
+    "maxY": 104
+  },
+  "cells": 180,
+  "counts": {
+    "solid": 167,
+    "spike": 6,
+    "special": 7
+  },
+  "unsupportedCells": 0,
+  "nativeTotal": 180,
+  "matchedCells": 180,
+  "missingCells": 0,
+  "dimensionCheckedCells": 167,
+  "dimensionMismatches": 0,
+  "unmatchedNativeObjects": 0,
+  "positionToleranceGDUnits": 0.005,
+  "manifestWrittenUtc": "2026-10-03T16:19:41.0427797Z",
+  "nativeWrittenUtc": "2026-10-03T16:19:41.1644071Z",
+  "manifestSHA256": "DAD550AD1BD0EFF5A50B38A09000DFD56B68173442A5537D59B4182E24949342",
+  "nativeSHA256": "A2160FE8187F8E5C806F5430DFFCA5164749503472DB97CA997632AC7C373827",
+  "mismatchExamples": [],
+  "nativeSpikeBoundsExamples": [
+    {
+      "id": 8,
+      "x": 705.0,
+      "y": 105.0,
+      "w": 6,
+      "h": 12,
+      "expectedBoundsProvided": false
+    },
+    {
+      "id": 8,
+      "x": 1005.0,
+      "y": 105.0,
+      "w": 6,
+      "h": 12,
+      "expectedBoundsProvided": false
+    },
+    {
+      "id": 8,
+      "x": 1035.0,
+      "y": 105.0,
+      "w": 6,
+      "h": 12,
+      "expectedBoundsProvided": false
+    },
+    {
+      "id": 8,
+      "x": 1365.0,
+      "y": 105.0,
+      "w": 6,
+      "h": 12,
+      "expectedBoundsProvided": false
+    },
+    {
+      "id": 8,
+      "x": 1395.0,
+      "y": 105.0,
+      "w": 6,
+      "h": 12,
+      "expectedBoundsProvided": false
+    }
+  ],
+  "limitation": "Checks compiled-cell IDs, centers and unit full-solid dimensions. Spike sizes are checked only when the manifest provides expected native bounds; native forgiving hitboxes are preserved. Native continuation can add unmatched objects. Does not verify unchanged XO geometry, normal completion, invisible planes, or full trigger/effect behavior."
+}

@@ -87,7 +87,7 @@ public final class BridgeControl {
         return command;
     }
     private static void openWorld(MinecraftClient mc,String name){
-        if(!Set.of("GDBridge","GDBridge-XO","GDBridge-GeometryTests").contains(name))throw new IllegalArgumentException("Use an isolated bridge world");
+        if(!Set.of("GDBridge","GDBridge-XO","GDBridge-GeometryTests","GDBridge-Reference").contains(name))throw new IllegalArgumentException("Use an isolated bridge world");
         if(mc.world!=null){mc.world.disconnect();mc.disconnect(new net.minecraft.client.gui.screen.ProgressScreen(true));}WorldEditor.resetWorld(name);WorldEditor.editing=true;
         try{Path selected=mc.runDirectory.toPath().resolve("config/gdbridge/selected-world.json");Files.createDirectories(selected.getParent());Files.writeString(selected,"{\"world\":\""+name+"\"}");}catch(Exception ignored){}
         JsonObject pause=new JsonObject();pause.addProperty("cmd","build-mode");pause.addProperty("active",true);GDBridge.send(pause);

@@ -1,0 +1,19 @@
+{
+  "reference": "outputs/Scene-Target-Selected.png",
+  "world": "GDBridge-Reference",
+  "camera": {
+    "yaw": 170,
+    "playerHeight": 1.2,
+    "distance": 8,
+    "pitch": 5.5,
+    "height": 2.3,
+    "offsetX": 5.6,
+    "debugHud": false,
+    "cubeDeadzone": 3.3
+  },
+  "timeOfDay": 3000,
+  "visualStyle": "volume",
+  "portalBlockLight": 8,
+  "orbBlockLight": 5,
+  "padBlockLight": 4
+}

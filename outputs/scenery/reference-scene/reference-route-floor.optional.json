@@ -1,0 +1,50 @@
+{
+  "schema": "gdbridge-scenery-plan-v1",
+  "name": "Sunny reference route floor materials",
+  "targetWorld": "GDBridge-Reference",
+  "timeOfDay": 1800,
+  "cellBudget": 273,
+  "notes": "Requires scenery validator to permit dirt/grass_block terrainFloor. Same full-cell collision envelope below native floor; never changes authored pieces at Y67+.",
+  "boxes": [],
+  "terrainFloor": [
+    {
+      "block": "minecraft:stone",
+      "from": [
+        -16,
+        64,
+        0
+      ],
+      "to": [
+        74,
+        64,
+        0
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        -16,
+        65,
+        0
+      ],
+      "to": [
+        74,
+        65,
+        0
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        -16,
+        66,
+        0
+      ],
+      "to": [
+        74,
+        66,
+        0
+      ]
+    }
+  ]
+}

@@ -1,107 +1,134 @@
 package local.gdbridge;
 
 import net.minecraft.client.render.*;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.RotationAxis;
 import org.joml.Vector3f;
 
-/** Minecraft materials for native-sized playable objects; GD owns their behavior. */
+/** Pixel models sized and positioned by native GD; these models never alter physics. */
 public final class NativeObjectBodies3D {
-    private static final int SEGMENTS=24;
-    private NativeObjectBodies3D() {}
-    public static boolean renderable(GDBridge.Obj object){return object.visualColor()>=0&&Double.isFinite(object.bodyWidth())&&Double.isFinite(object.bodyHeight())&&object.bodyWidth()>0&&object.bodyHeight()>0&&object.bodyWidth()<=360&&object.bodyHeight()<=360;}
-    public static boolean bodyOnly(GDBridge.Obj object){return renderable(object)&&(object.type().equals("portal")||object.type().equals("orb"));}
-    public static void render(MatrixStack matrices,VertexConsumerProvider buffers,GDBridge.Obj object,double ox,double oy,double oz,int light){
-        // Never substitute canonical portal/orb colors for the live GD material.
-        if(!renderable(object))return;
-        double width=object.bodyWidth()/30,height=object.bodyHeight()/30;
-        matrices.push();matrices.translate(object.bodyX()/30-ox,64+object.bodyY()/30-oy,.71-oz);
-        matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees((float)-object.bodyRotation()));
-        VertexConsumer material=blockMaterial(buffers,"white_concrete");
-        if(object.type().equals("portal")) {
-            VertexConsumer stone=blockMaterial(buffers,"obsidian");
-            ring(matrices,material,stone,width*.47,height*.47,.77,.30,object.visualColor(),light);
-        }else if(isPad(object.objectId())) {
-            pad(matrices,material,blockMaterial(buffers,"stone_bricks"),blockMaterial(buffers,"gold_block"),width*.47,height*.44,.26,object.visualColor(),light);
-        }else {
-            ring(matrices,material,material,width*.45,height*.45,.80,.11,object.visualColor(),light);
-            sphere(matrices,material,width*.34,height*.34,.29,object.visualColor(),light);
-        }
-        if(object.nativeAdditive()&&!isPad(object.objectId())){
-            VertexConsumer glow=blockGlow(buffers);
-            double rx=width*(object.type().equals("portal")?.375:.45),ry=height*(object.type().equals("portal")?.375:.45);
-            glowRim(matrices,glow,rx,ry,object.visualColor());
-        }
-        matrices.pop();
-    }
+    private static final int FULL_LIGHT=0xF000F0;
+    private NativeObjectBodies3D(){}
+    public static boolean renderable(GDBridge.Obj o){return (o.visualColor()>=0||reference())&&Double.isFinite(o.bodyWidth())&&Double.isFinite(o.bodyHeight())&&o.bodyWidth()>0&&o.bodyHeight()>0&&o.bodyWidth()<=360&&o.bodyHeight()<=360;}
+    public static boolean bodyOnly(GDBridge.Obj o){return renderable(o)&&(o.type().equals("portal")||o.type().equals("orb"));}
+    private static boolean reference(){return WorldEditor.worldName.equals("GDBridge-Reference");}
     private static boolean isPad(int id){return id==35||id==67||id==140||id==1332||id==3004;}
-    private static VertexConsumer blockMaterial(VertexConsumerProvider buffers,String name){
-        // Vanilla resource-pack sprites, not painted approximations. Entity cutout
-        // binds the atlas with blur=false/mipmap=false, retaining nearest pixels.
-        var sprite=MinecraftClient.getInstance().getBakedModelManager().getAtlas(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).getSprite(new Identifier("minecraft","block/"+name));
-        return sprite.getTextureSpecificVertexConsumer(buffers.getBuffer(RenderLayer.getEntityCutoutNoCull(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE)));
-    }
-    private static VertexConsumer blockGlow(VertexConsumerProvider buffers){var sprite=MinecraftClient.getInstance().getBakedModelManager().getAtlas(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).getSprite(new Identifier("minecraft","block/white_concrete"));return sprite.getTextureSpecificVertexConsumer(buffers.getBuffer(NativeGDRenderLayers.get(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE,org.lwjgl.opengl.GL11.GL_ONE,org.lwjgl.opengl.GL11.GL_ONE)));}
-    private static void glowRim(MatrixStack matrices,VertexConsumer consumer,double rx,double ry,int color){for(int i=0;i<SEGMENTS;i++){double a=i*Math.PI*2/SEGMENTS,b=(i+1)*Math.PI*2/SEGMENTS;double[] oa=ellipse(rx,ry,a,.302),ob=ellipse(rx,ry,b,.302),ia=ellipse(rx*.965,ry*.965,a,.302),ib=ellipse(rx*.965,ry*.965,b,.302);quad(matrices,consumer,oa,ob,ib,ia,color,0xF000F0,faceUV(oa,ob,ib,ia,rx,ry));}}
-    private static double[] ellipse(double rx,double ry,double angle,double z){return new double[]{rx*Math.cos(angle),ry*Math.sin(angle),z};}
-    private static void ring(MatrixStack m,VertexConsumer front,VertexConsumer side,double rx,double ry,double inner,double depth,int color,int light){
-        for(int i=0;i<SEGMENTS;i++){
-            double a=i*Math.PI*2/SEGMENTS,b=(i+1)*Math.PI*2/SEGMENTS;
-            double[] oa=ellipse(rx,ry,a,depth),ob=ellipse(rx,ry,b,depth),ia=ellipse(rx*inner,ry*inner,a,depth),ib=ellipse(rx*inner,ry*inner,b,depth);
-            double[] oaa=ellipse(rx,ry,a,-depth),obb=ellipse(rx,ry,b,-depth),iaa=ellipse(rx*inner,ry*inner,a,-depth),ibb=ellipse(rx*inner,ry*inner,b,-depth);
-            quad(m,front,oa,ob,ib,ia,color,light,faceUV(oa,ob,ib,ia,rx,ry));quad(m,front,oaa,iaa,ibb,obb,color,light,faceUV(oaa,iaa,ibb,obb,rx,ry));
-            int sideColor=side==front?color:0xFFFFFF;
-            double arc=Math.hypot(ob[0]-oa[0],ob[1]-oa[1]);float tileWidth=(float)Math.min(1,arc),tileDepth=(float)Math.min(1,depth*2);
-            // One pixel per roughly 1/16 block, instead of stretching a complete
-            // 16-pixel block texture across each narrow ring segment.
-            float u0=(float)((i*arc)%1);if(u0+tileWidth>1)u0=0;
-            float[][] wallUV={{u0,0},{u0,tileDepth},{u0+tileWidth,tileDepth},{u0+tileWidth,0}};
-            quad(m,side,oa,oaa,obb,ob,sideColor,light,wallUV);quad(m,side,ia,ib,ibb,iaa,sideColor,light,wallUV);
+    public static void render(MatrixStack m,VertexConsumerProvider buffers,GDBridge.Obj o,double ox,double oy,double oz,int light){
+        if(!renderable(o)||!o.visualEnabled())return;
+        boolean showcase=reference(),portal=o.type().equals("portal"),pad=isPad(o.objectId());
+        int color=showcase&&portal&&o.objectId()==12?0x42E6F8:o.visualColor();
+        if(color<0)color=0xFFD63D;
+        double width=o.bodyWidth()/30,height=o.bodyHeight()/30;
+        m.push();m.translate(o.bodyX()/30-ox,64+o.bodyY()/30-oy,.71-oz);
+        m.multiply(RotationAxis.POSITIVE_Z.rotationDegrees((float)-o.bodyRotation()));
+        // A separate texture layer can flush Immediate's shared builder. Draw
+        // the entire interior first, atlas geometry second, and additive last.
+        if(portal)pixelDisc(m,PixelSpecialMaterials.interior(buffers),width*.405,height*.405,.245,0x185F69,light,24,portalRows(width,height));
+        VertexConsumer white=PixelSpecialMaterials.block(buffers,"white_concrete");
+        VertexConsumer stone=PixelSpecialMaterials.block(buffers,"stone_bricks");
+        VertexConsumer obsidian=PixelSpecialMaterials.block(buffers,"obsidian");
+        VertexConsumer gold=PixelSpecialMaterials.block(buffers,"gold_block");
+        if(portal){
+            int rows=portalRows(width,height);
+            pixelRing(m,obsidian,obsidian,width*.48,height*.48,.76,-.27,.285,0xFFFFFF,0xFFFFFF,light,24,rows);
+            pixelRing(m,white,obsidian,width*.465,height*.465,.83,-.12,.302,color,0xFFFFFF,light,24,rows);
+            // Only the narrow pixel edge is emissive; obsidian and the broad
+            // colored shoulder still receive real Minecraft lighting.
+            pixelRing(m,white,white,width*.457,height*.457,.91,.292,.304,PixelSpecialMaterials.whiteMix(color,.66),color,FULL_LIGHT,24,rows);
+        }else if(pad){
+            pad(m,white,stone,gold,width,height,color,light);
+        }else{
+            boolean yellow=isYellow(color);
+            VertexConsumer metal=yellow?gold:white;int metalColor=yellow?0xFFFFFF:color;
+            pixelRing(m,metal,metal,width*.46,height*.46,.79,.18,.27,metalColor,metalColor,light,24,24);
+            pixelRing(m,white,metal,width*.405,height*.405,.91,.264,.284,PixelSpecialMaterials.whiteMix(color,.65),metalColor,light,24,24);
+            pixelCore(m,white,width*.315,height*.315,color,light);
         }
-        // Deliberately no center cap: the world remains visible through a portal.
+        if(showcase||o.nativeAdditive()){
+            VertexConsumer glow=PixelSpecialMaterials.glow(buffers);
+            if(portal){
+                pixelRingFace(m,glow,width*.448,height*.448,.91,.308,PixelSpecialMaterials.tint(color,.55),24,portalRows(width,height));
+                if(showcase)motes(m,glow,width,height,color);
+            }else if(pad){
+                double rx=width*.36,y=padTop(height);
+                quad(m,glow,p(-rx,y,-.19),p(-rx,y,.297),p(rx,y,.297),p(rx,y,-.19),PixelSpecialMaterials.tint(color,.36),FULL_LIGHT);
+                rect(m,glow,-rx,y-height*.17,rx,y,.301,PixelSpecialMaterials.tint(color,.34),FULL_LIGHT);
+            }else{
+                pixelRingFace(m,glow,width*.438,height*.438,.92,.291,PixelSpecialMaterials.tint(color,.27),24,24);
+                pixelDisc(m,glow,width*.255,height*.255,.307,PixelSpecialMaterials.tint(color,.22),FULL_LIGHT,16,16);
+            }
+        }
+        m.pop();
     }
-    private static double[] spherePoint(double rx,double ry,double rz,double lat,double angle){return new double[]{rx*Math.cos(lat)*Math.cos(angle),ry*Math.cos(lat)*Math.sin(angle),rz*Math.sin(lat)};}
-    private static void sphere(MatrixStack m,VertexConsumer consumer,double rx,double ry,double rz,int color,int light){
-        for(int row=0;row<8;row++)for(int i=0;i<SEGMENTS;i++){
-            double a=i*Math.PI*2/SEGMENTS,b=(i+1)*Math.PI*2/SEGMENTS,l0=-Math.PI/2+row*Math.PI/8,l1=-Math.PI/2+(row+1)*Math.PI/8;
-            quad(m,consumer,spherePoint(rx,ry,rz,l0,a),spherePoint(rx,ry,rz,l0,b),spherePoint(rx,ry,rz,l1,b),spherePoint(rx,ry,rz,l1,a),color,light);
+    private static boolean isYellow(int c){return ((c>>16)&255)>180&&((c>>8)&255)>130&&(c&255)<160;}
+    private static int portalRows(double w,double h){return Math.max(24,Math.min(80,(int)Math.round(24*h/w)));}
+    /** Horizontal voxel runs make a staircase ellipse with real side faces. */
+    private static void pixelRing(MatrixStack m,VertexConsumer face,VertexConsumer side,double rx,double ry,double inner,double back,double front,int color,int sideColor,int light,int columns,int rows){
+        for(int row=0;row<rows;row++){
+            int start=-1;
+            for(int col=0;col<=columns;col++){
+                boolean on=col<columns&&ringCell(col,row,columns,rows,inner);
+                if(on&&start<0)start=col;
+                if(!on&&start>=0){box(m,face,side,-rx+2*rx*start/columns,-ry+2*ry*row/rows,back,-rx+2*rx*col/columns,-ry+2*ry*(row+1)/rows,front,color,sideColor,light);start=-1;}
+            }
         }
     }
-    private static void pad(MatrixStack m,VertexConsumer face,VertexConsumer stone,VertexConsumer gold,double rx,double ry,double depth,int color,int light){
-        double bevel=Math.min(rx,ry)*.30;
-        double[][] outline={{-rx+bevel,-ry},{rx-bevel,-ry},{rx,-ry+bevel},{rx,ry-bevel},{rx-bevel,ry},{-rx+bevel,ry},{-rx,ry-bevel},{-rx,-ry+bevel}};
-        for(int i=0;i<outline.length;i++){
-            double[] a=outline[i],b=outline[(i+1)%outline.length];
-            double[] af={a[0]*.94,a[1]*.94,depth},bf={b[0]*.94,b[1]*.94,depth},ab={a[0],a[1],-depth},bb={b[0],b[1],-depth};
-            double[] shoulderA={a[0],a[1],depth-.08},shoulderB={b[0],b[1],depth-.08};
-            double[] insetA={a[0]*.76,a[1]*.76,depth+.001},insetB={b[0]*.76,b[1]*.76,depth+.001};
-            float tileWidth=(float)Math.min(1,Math.hypot(b[0]-a[0],b[1]-a[1])),tileDepth=(float)Math.min(1,depth*2-.08);
-            quad(m,stone,shoulderA,ab,bb,shoulderB,0xFFFFFF,light,new float[][]{{0,0},{0,tileDepth},{tileWidth,tileDepth},{tileWidth,0}});
-            quad(m,gold,af,shoulderA,shoulderB,bf,0xFFFFFF,light,faceUV(af,shoulderA,shoulderB,bf,rx,ry));
-            quad(m,gold,af,bf,insetB,insetA,0xFFFFFF,light,faceUV(af,bf,insetB,insetA,rx,ry));
-            double[] center={0,0,depth+.001};quad(m,face,center,insetA,insetB,insetB,color,light,faceUV(center,insetA,insetB,insetB,rx,ry));
-            double[] backCenter={0,0,-depth};quad(m,gold,backCenter,bb,ab,ab,0xFFFFFF,light,faceUV(backCenter,bb,ab,ab,rx,ry));
+    private static boolean ringCell(int x,int y,int columns,int rows,double inner){double u=(x+.5)*2/columns-1,v=(y+.5)*2/rows-1,d=u*u+v*v;return d<=1&&d>=inner*inner;}
+    private static void pixelRingFace(MatrixStack m,VertexConsumer v,double rx,double ry,double inner,double z,int color,int columns,int rows){
+        for(int row=0;row<rows;row++){int start=-1;for(int col=0;col<=columns;col++){boolean on=col<columns&&ringCell(col,row,columns,rows,inner);if(on&&start<0)start=col;if(!on&&start>=0){rect(m,v,-rx+2*rx*start/columns,-ry+2*ry*row/rows,-rx+2*rx*col/columns,-ry+2*ry*(row+1)/rows,z,color,FULL_LIGHT);start=-1;}}}
+    }
+    private static void pixelDisc(MatrixStack m,VertexConsumer v,double rx,double ry,double z,int color,int light,int columns,int rows){
+        for(int row=0;row<rows;row++){
+            double y=(row+.5)*2/rows-1;int half=(int)Math.floor(Math.sqrt(Math.max(0,1-y*y))*columns*.5);if(half==0)continue;
+            double x0=-2*rx*half/columns,x1=-x0,y0=-ry+2*ry*row/rows,y1=-ry+2*ry*(row+1)/rows;
+            quad(m,v,p(x0,y0,z),p(x1,y0,z),p(x1,y1,z),p(x0,y1,z),color,light,new float[][]{{(float)(.5+x0/(2*rx)),(float)(.5+y0/(2*ry))},{(float)(.5+x1/(2*rx)),(float)(.5+y0/(2*ry))},{(float)(.5+x1/(2*rx)),(float)(.5+y1/(2*ry))},{(float)(.5+x0/(2*rx)),(float)(.5+y1/(2*ry))}});
         }
     }
-    private static float[][] faceUV(double[] a,double[] b,double[] c,double[] d,double rx,double ry){double[][] points={a,b,c,d};float[][] result=new float[4][2];for(int i=0;i<4;i++){result[i][0]=(float)(.5+points[i][0]/(2*rx));result[i][1]=(float)(.5+points[i][1]/(2*ry));}return result;}
-    private static void quad(MatrixStack m,VertexConsumer consumer,double[] a,double[] b,double[] c,double[] d,int color,int light){
-        quad(m,consumer,a,b,c,d,color,light,new float[][]{{0,0},{1,0},{1,1},{0,1}});
+    private static void pixelCore(MatrixStack m,VertexConsumer v,double rx,double ry,int color,int light){
+        for(int row=0;row<16;row++){
+            double y=(row+.5)/8-1;int half=(int)Math.floor(Math.sqrt(Math.max(0,1-y*y))*8);if(half==0)continue;
+            double x=rx*half/8,z=.26+.04*Math.sqrt(Math.max(0,1-y*y));int shade=PixelSpecialMaterials.whiteMix(color,.12+.10*(1-y));
+            box(m,v,v,-x,-ry+2*ry*row/16,.19,x,-ry+2*ry*(row+1)/16,z,shade,PixelSpecialMaterials.tint(color,.72),light);
+        }
+    }
+    private static void pad(MatrixStack m,VertexConsumer face,VertexConsumer stone,VertexConsumer gold,double width,double height,int color,int light){
+        // Four-GD-unit pads still need a visible stone plinth. Its bottom stays
+        // anchored to the native visual footprint; this is decorative geometry.
+        double rx=width*.47,bottom=-height*.5,shoulder=padShoulder(height),top=padTop(height);
+        box(m,stone,stone,-rx,bottom,-.30,rx,shoulder,.29,0xFFFFFF,0xFFFFFF,light);
+        VertexConsumer edge=isYellow(color)?gold:face;int edgeColor=isYellow(color)?0xFFFFFF:PixelSpecialMaterials.tint(color,.78);
+        box(m,edge,edge,-rx*.91,shoulder,-.25,rx*.91,shoulder+(top-shoulder)*.68,.298,edgeColor,edgeColor,light);
+        box(m,face,edge,-rx*.76,shoulder+(top-shoulder)*.40,-.19,rx*.76,top,.30,PixelSpecialMaterials.whiteMix(color,.25),edgeColor,light);
+    }
+    private static double padShoulder(double height){return -height*.5+Math.max(.18,height*.58);}
+    private static double padTop(double height){return padShoulder(height)+Math.max(.05,height*.28);}
+    private static void motes(MatrixStack m,VertexConsumer v,double width,double height,int color){
+        double[][] dots={{-.58,.23},{.58,-.13},{-.52,-.35},{.12,.56},{.55,.32}};double size=Math.min(width,height)*.035;
+        for(double[] dot:dots)rect(m,v,width*dot[0]-size*.5,height*dot[1]-size*.5,width*dot[0]+size*.5,height*dot[1]+size*.5,.292,PixelSpecialMaterials.tint(color,.40),FULL_LIGHT);
+    }
+    private static double[] p(double x,double y,double z){return new double[]{x,y,z};}
+    private static void rect(MatrixStack m,VertexConsumer v,double x0,double y0,double x1,double y1,double z,int color,int light){quad(m,v,p(x0,y0,z),p(x1,y0,z),p(x1,y1,z),p(x0,y1,z),color,light);}
+    private static void box(MatrixStack m,VertexConsumer face,VertexConsumer side,double x0,double y0,double z0,double x1,double y1,double z1,int color,int sideColor,int light){
+        rect(m,face,x0,y0,x1,y1,z1,color,light);
+        quad(m,side,p(x1,y0,z0),p(x0,y0,z0),p(x0,y1,z0),p(x1,y1,z0),sideColor,light);
+        quad(m,side,p(x0,y0,z0),p(x0,y0,z1),p(x0,y1,z1),p(x0,y1,z0),sideColor,light);
+        quad(m,side,p(x1,y0,z1),p(x1,y0,z0),p(x1,y1,z0),p(x1,y1,z1),sideColor,light);
+        quad(m,side,p(x0,y1,z0),p(x0,y1,z1),p(x1,y1,z1),p(x1,y1,z0),sideColor,light);
+        quad(m,side,p(x0,y0,z1),p(x0,y0,z0),p(x1,y0,z0),p(x1,y0,z1),sideColor,light);
+    }
+    private static void quad(MatrixStack m,VertexConsumer v,double[] a,double[] b,double[] c,double[] d,int color,int light){
+        double horizontal=Math.min(1,Math.sqrt(Math.pow(b[0]-a[0],2)+Math.pow(b[1]-a[1],2)+Math.pow(b[2]-a[2],2))),vertical=Math.min(1,Math.sqrt(Math.pow(d[0]-a[0],2)+Math.pow(d[1]-a[1],2)+Math.pow(d[2]-a[2],2)));
+        quad(m,v,a,b,c,d,color,light,new float[][]{{0,(float)vertical},{(float)horizontal,(float)vertical},{(float)horizontal,0},{0,0}});
     }
     private static void quad(MatrixStack m,VertexConsumer consumer,double[] a,double[] b,double[] c,double[] d,int color,int light,float[][] uv){
         Vector3f normal=new Vector3f((float)(b[0]-a[0]),(float)(b[1]-a[1]),(float)(b[2]-a[2])).cross(new Vector3f((float)(c[0]-a[0]),(float)(c[1]-a[1]),(float)(c[2]-a[2])));
-        if(normal.lengthSquared()<1e-10f)normal.set(0,0,a[2]>=0?1:-1);else normal.normalize();
+        if(normal.lengthSquared()<1e-10f)normal.set(0,0,1);else normal.normalize();
         double[][] vertices={a,b,c,d};
         for(int i=0;i<4;i++){
-            // SpriteTexturedVertexConsumer.vertex/color return the raw delegate.
-            // Keep each call on the wrapper so texture() maps into THIS block sprite.
+            // Keep calls on the sprite wrapper: chained calls bypass UV mapping.
             consumer.vertex(m.peek().getPositionMatrix(),(float)vertices[i][0],(float)vertices[i][1],(float)vertices[i][2]);
-            consumer.color((color>>16)&255,(color>>8)&255,color&255,255);
-            consumer.texture(Math.max(0,Math.min(1,uv[i][0])),Math.max(0,Math.min(1,uv[i][1])));
-            consumer.overlay(OverlayTexture.DEFAULT_UV);consumer.light(light);
-            consumer.normal(m.peek().getNormalMatrix(),normal.x,normal.y,normal.z);consumer.next();
+            consumer.color((color>>16)&255,(color>>8)&255,color&255,255);consumer.texture(uv[i][0],uv[i][1]);
+            consumer.overlay(OverlayTexture.DEFAULT_UV);consumer.light(light);consumer.normal(m.peek().getNormalMatrix(),normal.x,normal.y,normal.z);consumer.next();
         }
     }
 }

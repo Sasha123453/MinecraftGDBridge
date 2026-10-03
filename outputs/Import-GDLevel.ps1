@@ -33,7 +33,7 @@ $profileRoot=Join-Path (Get-BridgeRuntimeOutputs) 'launcher/data/instances/gdbri
 $statusPath=Join-Path $profileRoot 'config/gdbridge/status.json'
 if(-not(Test-Path -LiteralPath $statusPath -PathType Leaf)){throw 'Minecraft bridge status is unavailable. Start the isolated bridge first.'}
 $initialStatus=Get-Content -Raw -LiteralPath $statusPath | ConvertFrom-Json
-if(-not $initialStatus.worldLoaded -or [string]$initialStatus.world -notin @('GDBridge-XO','GDBridge-GeometryTests')){throw 'Open an isolated GDBridge-XO or GDBridge-GeometryTests world before importing.'}
+if(-not $initialStatus.worldLoaded -or [string]$initialStatus.world -notin @('GDBridge-XO','GDBridge-GeometryTests','GDBridge-Reference')){throw 'Open an isolated bridge course world before importing.'}
 $scenePath=Join-Path $profileRoot ('config/gdbridge/scene-'+[string]$initialStatus.world+'.json')
 $readyTimer=[Diagnostics.Stopwatch]::StartNew()
 while($initialStatus.worldOperationBusy -and $readyTimer.Elapsed.TotalSeconds -lt $WaitSeconds){

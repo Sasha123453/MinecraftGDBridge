@@ -1,0 +1,26 @@
+{
+  "schema": "gdbridge-scenery-plan-v1",
+  "name": "Sunny reference scene 3/5",
+  "targetWorld": "GDBridge-Reference",
+  "seed": 20261003,
+  "timeOfDay": 1800,
+  "batchIndex": 3,
+  "batchCount": 5,
+  "cellBudget": 11200,
+  "notes": "Apply ordered to isolated showcase world after native geometry import. Every normal box stays off Z0. Bright morning lighting; no cave/XO decorations.",
+  "boxes": [
+    {
+      "block": "minecraft:air",
+      "from": [
+        76,
+        65,
+        -16
+      ],
+      "to": [
+        110,
+        84,
+        -1
+      ]
+    }
+  ]
+}
