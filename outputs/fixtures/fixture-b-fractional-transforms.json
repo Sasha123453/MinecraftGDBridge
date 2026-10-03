@@ -1,0 +1,192 @@
+{
+  "fixture": true,
+  "fixtureVersion": 1,
+  "provenance": "Original hand-authored bridge test geometry, not a downloaded level",
+  "license": "CC0-1.0 for authored fixture geometry and metadata; no game assets included",
+  "id": 900000102,
+  "levelId": 900000102,
+  "name": "Bridge fixture B - fractional transforms",
+  "creator": "MinecraftGDBridge fixtures",
+  "songId": 0,
+  "audioTrack": 0,
+  "downloadMusic": false,
+  "levelString": "H4sIAAAAAAAACn2PSw7EMAhDL2RVmIR8NKueocfI_fcjSNpOF9MNRjzjkLErBGNPUXPUAmLsNWqLCWUKQzRWDqK6KCiGcSQwu2Z0HxsorgWka4Wa47a0L6VAU8TxbNSbD0EoUjYkVEOBICm45qa26UTbTWWzi-fJmX6oXjjZG65y4r7i_Yz7deeOu--g-I-v1xsUrf2_zjmlvAdQ80roMhOmg8hxRHiyPkOWw25HOf_xTJHNPCecX8yM0MEBAgAA",
+  "rawLevelString": "kA2,0,kA3,0,kA4,0,kA6,1,kA7,1,kA8,0,kA10,0,kA11,0,kA22,0,kS1,70,kS2,105,kS3,145,kS4,90,kS5,100,kS6,110,kS7,255,kS8,255,kS9,255,kS10,230,kS11,230,kS12,230;1,1,2,345,3,75,6,0,32,1;1,1,2,525.25,3,75.75,6,0,32,0.5;1,1,2,524.25,3,135,6,0,32,0.25;1,1,2,535.25,3,135,6,0,32,0.25;1,1,2,705.25,3,195.75,6,45,32,1;1,1,2,705.5,3,90.25,6,90,32,0.5;1,8,2,885.25,3,75.75,6,0,32,0.5;1,8,2,1065.5,3,90.25,6,90,32,0.5;1,8,2,1245.25,3,90.75,6,90,32,1,4,1;1,8,2,1425.5,3,90.25,6,0,32,1,5,1;1,8,2,1605.25,3,90.75,6,90,32,0.5,4,1,5,1;",
+  "fixtureMetadata": {
+    "purpose": "Separated elevated samples for exact centers, half/quarter scale, 45/90-degree rotation and flips. Two disjoint quarter-scale blocks share one editor cell and must remain separate pieces. Ordinary route stays clear; this is a geometry inspection fixture.",
+    "sourceObjectCount": 11,
+    "counts": {
+      "solid": 6,
+      "spike": 5,
+      "pad": 0,
+      "orb": 0,
+      "portal": 0
+    },
+    "coordinates": "x/y are native world GD units; serialized key 3 is y - 90; 30 units = one Minecraft block",
+    "nativeImplicitFloorY": 90,
+    "floorVerifiedInThisFixture": false,
+    "autoCandidate": false,
+    "autoVerified": false,
+    "nativePlaybackVerified": false,
+    "exactMinecraftGeometryVerified": false,
+    "completionVerified": false,
+    "compressionRoundtripVerified": true,
+    "samples": [
+      {
+        "id": 1,
+        "x": 345.0,
+        "y": 165.0,
+        "editorY": 75.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "unit block control"
+      },
+      {
+        "id": 1,
+        "x": 525.25,
+        "y": 165.75,
+        "editorY": 75.75,
+        "scale": 0.5,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "half-scale fractional block"
+      },
+      {
+        "id": 1,
+        "x": 524.25,
+        "y": 225.0,
+        "editorY": 135.0,
+        "scale": 0.25,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "same editor cell pair A; distinct quarter-scale piece"
+      },
+      {
+        "id": 1,
+        "x": 535.25,
+        "y": 225.0,
+        "editorY": 135.0,
+        "scale": 0.25,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "same editor cell pair B; 11 units from A, 3.5-unit visual gap"
+      },
+      {
+        "id": 1,
+        "x": 705.25,
+        "y": 285.75,
+        "editorY": 195.75,
+        "scale": 1.0,
+        "rotation": 45.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "unit block rotated 45 degrees"
+      },
+      {
+        "id": 1,
+        "x": 705.5,
+        "y": 180.25,
+        "editorY": 90.25,
+        "scale": 0.5,
+        "rotation": 90.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "half-scale fractional block rotated 90"
+      },
+      {
+        "id": 8,
+        "x": 885.25,
+        "y": 165.75,
+        "editorY": 75.75,
+        "scale": 0.5,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "half-scale fractional spike"
+      },
+      {
+        "id": 8,
+        "x": 1065.5,
+        "y": 180.25,
+        "editorY": 90.25,
+        "scale": 0.5,
+        "rotation": 90.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "half-scale spike rotated 90"
+      },
+      {
+        "id": 8,
+        "x": 1245.25,
+        "y": 180.75,
+        "editorY": 90.75,
+        "scale": 1.0,
+        "rotation": 90.0,
+        "flipX": true,
+        "flipY": false,
+        "role": "horizontal flip and 90-degree rotation"
+      },
+      {
+        "id": 8,
+        "x": 1425.5,
+        "y": 180.25,
+        "editorY": 90.25,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": true,
+        "role": "vertical flip"
+      },
+      {
+        "id": 8,
+        "x": 1605.25,
+        "y": 180.75,
+        "editorY": 90.75,
+        "scale": 0.5,
+        "rotation": 90.0,
+        "flipX": true,
+        "flipY": true,
+        "role": "both flips and 90-degree rotation"
+      }
+    ],
+    "sourceEvidence": {
+      "localNativeSerializer": "outputs/bridge/gd-world-authority-next/src/main.cpp: objectRecord keys 1/2/3/6/32; native Y = serialized editor Y + 90",
+      "localNativeLoader": "outputs/bridge/gd-world-authority-next/src/main.cpp: LevelLoader.beginData decompresses levelString and creates a temporary native PlayLayer without saving",
+      "objectSerialization": "https://github.com/nekitdev/gd.py/blob/master/gd/api/objects.py",
+      "nativeObjectIDs": "https://github.com/nekitdev/gd.py/blob/master/gd/enums.py",
+      "headerSerialization": "https://github.com/nekitdev/gd.py/blob/master/gd/api/header.py",
+      "note": "gd.py sources establish the fixture format and conventional IDs; actual behavior in the installed GD build remains a separate runtime test."
+    },
+    "sameCellPieceTest": {
+      "centersGD": [
+        [
+          524.25,
+          225
+        ],
+        [
+          535.25,
+          225
+        ]
+      ],
+      "scale": 0.25,
+      "visualSideGDUnits": 7.5,
+      "centerSeparationGDUnits": 11,
+      "unrotatedVisualGapGDUnits": 3.5,
+      "ownerCell": [
+        17,
+        71,
+        0
+      ],
+      "ownershipFormula": "Java Math.round(x/30 - 0.5), Math.round(64 + y/30 - 0.5), z=0",
+      "required": "Preserve both distinct source pieces within the same editor cell; do not collapse them into a single full block.",
+      "nativeBoundsVerified": false,
+      "exactMinecraftPiecePreservationVerified": false
+    },
+    "verification": "Load native GD source first, capture fresh blueprint/framebuffer evidence, compare every center/scale/rotation and actual collision bounds, then test exact Minecraft reproduction. Current voxel import may snap fractional/half-scale samples and is not proof of exact conversion."
+  }
+}

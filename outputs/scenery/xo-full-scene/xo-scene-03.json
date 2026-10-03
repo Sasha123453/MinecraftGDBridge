@@ -1,0 +1,220 @@
+{
+  "schema": "gdbridge-scenery-plan-v1",
+  "name": "XO full scene 3/15",
+  "targetWorld": "GDBridge-XO",
+  "seed": 20261003,
+  "batchIndex": 3,
+  "batchCount": 15,
+  "cellBudget": 15983,
+  "notes": "Scenery only. Apply sequentially after existing intro plans and foreground-caps-cleanup; exact authored roof cleanup first. Native gameplay plane Z0 is forbidden.",
+  "boxes": [
+    {
+      "from": [
+        121,
+        65,
+        -7
+      ],
+      "to": [
+        270,
+        151,
+        -7
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        121,
+        152,
+        -9
+      ],
+      "to": [
+        270,
+        152,
+        -1
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        121,
+        65,
+        -6
+      ],
+      "to": [
+        270,
+        65,
+        -1
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        124,
+        66,
+        -6
+      ],
+      "to": [
+        125,
+        151,
+        -5
+      ],
+      "block": "minecraft:oak_log"
+    },
+    {
+      "from": [
+        127,
+        67,
+        -6
+      ],
+      "to": [
+        136,
+        73,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        127,
+        74,
+        -6
+      ],
+      "to": [
+        136,
+        74,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        130,
+        68,
+        -6
+      ],
+      "to": [
+        132,
+        68,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        131,
+        69,
+        -3
+      ],
+      "to": [
+        131,
+        69,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        127,
+        88,
+        -6
+      ],
+      "to": [
+        136,
+        94,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        127,
+        95,
+        -6
+      ],
+      "to": [
+        136,
+        95,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        130,
+        89,
+        -6
+      ],
+      "to": [
+        132,
+        89,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        131,
+        90,
+        -3
+      ],
+      "to": [
+        131,
+        90,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        127,
+        110,
+        -6
+      ],
+      "to": [
+        136,
+        116,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        127,
+        117,
+        -6
+      ],
+      "to": [
+        136,
+        117,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        130,
+        111,
+        -6
+      ],
+      "to": [
+        132,
+        111,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        131,
+        112,
+        -3
+      ],
+      "to": [
+        131,
+        112,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    }
+  ]
+}

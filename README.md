@@ -1,28 +1,21 @@
 # Minecraft × Geometry Dash
 
-Actual Minecraft world blocks define the playable obstacles. Geometry Dash supplies native physics, input, triggers, icons and original portals/orbs/pads. Both games run concurrently over localhost TCP18471.
+MC bridge 0.4.6 (Minecraft 1.20.1 / Fabric) and GD bridge 0.4.6 (GD 2.2081 / Geode) are compiled, installed and verified on simple fixtures. The batch fixes completed-level restart, restores ordinary blocks after the physics ACK and scales obstacle depth proportionally. Package hashes and playback evidence: `docs/geometry-fixture-a-playback.json`.
 
-Current versions: Minecraft1.20.1/Fabric bridge0.4.2 and GeometryDash2.2081/Geode bridge0.4.3.
+The current milestone is exact native GD geometry → stored Minecraft pieces → F6 native physics, using small original fixtures before returning to XO. Minecraft server blocks/piece data define edited obstacles; GD supplies actual movement and collisions.
+Original GD avatar, trails/wave, portals, orbs and pads remain the default. Special-object volume is optional; compound editor cells preserve multiple source pieces instead of merging them into a full cube.
+Art target: `outputs/Scene-Target-Selected.png` — nearby side camera, readable native icon, warm light and layered foreground/background with real occlusion. It is a concept, not gameplay evidence.
 
-## Develop here
+Canonical sources: `outputs/bridge/minecraft` and `outputs/bridge/gd-world-authority-next`. Ignored `.local.json` maps the separate runtime/toolchains; `outputs/Runtime-Paths.ps1` resolves them.
+Build: `.\Build-Bridge.ps1 -Target minecraft` or `-Target gd`. Build, installation and live verification are separate steps.
+Control: `.\outputs\Control-Bridge.ps1 -Action <action> -PayloadJson '<json>'`. F7 edits; F6 scans/compiles the world. Use explicit `-Action resume-world` to close only the Minecraft pause menu and allow queued server work.
+Native framebuffer recording uses real timestamps and no desktop capture/focus/input. A command ACK confirms receipt, not completion. Run `outputs/Verify-GeometryFixture.ps1` with `-FixturePath` and an optional `-OutputPath docs/geometry-fixture-a.json` after fresh exports.
 
-Project: C:/MinecraftGDBridge. Current sources are outputs/bridge/minecraft and outputs/bridge/gd-world-authority-next. Previous transition-stage sources remain as a historical snapshot; use the world-authority stage. Runtime/toolchains remain in the original workspace while build paths are consolidated. The ignored .local.json points to that runtime. Control.ps1 sends background native commands. Remote: https://github.com/Sasha123453/MinecraftGDBridge (main). SSH through ssh.github.com:443 is used for authenticated Git access on this machine.
-
-- outputs/README.txt: Russian usage and current verified limitations.
-- outputs/scenery: generated decoration plans.
-- tools/scenery: scene generators.
-- outputs/shaders: preset configuration, not shader binaries.
-- outputs/Scene-Target-Selected.png: selected art reference.
-- docs/world-authority-move.json: actual Minecraft-block to native-GD collider verification.
-
-## Build and play
-
-F7 enters Minecraft Creative. Place actual full-cube blocks and stone-spike blocks in the gameplay layer. F6 reads server block states, compiles native GD collision objects, then reveals the real Minecraft geometry after GD acknowledges the new scene. Original special sprites bind to marker cells; native GD physics remain authoritative during playback.
-
-First scope: X0..512, Y67..100, Z0. Ordinary full cubes become native GDID1 at exact cell centers; the real gdbridge:stone_spike becomes GDID8. Outside the first region original GD continuation is retained. Stairs/slabs are not supported yet. Gold/glass/etc. are currently reserved special markers; dedicated marker blocks are planned.
-
-The tested conversion of EasyXO58898913 contains2714cells (1648solids/832spikes/234specials). All native object centers matched. Moving a real stone block from(29,72,0) to(30,72,0) moved its native collider by30GDunits and removed the old collider. The block was restored. Voxel conversion changes the course; normal full completion is not verified. Noclip recordings are visual QA only. Original level files and worlds are backed up.
-
-Compilation passed. The earlier level-transition crash was fixed with two-phase oldscene retirement before newPlayLayer creation, and runtime transitions have passed. Visual quality and particle/effect coverage are still being improved.
-
-Game binaries, saves/worlds, downloaded levels, toolchains, textures, compiled packages and videos are excluded from Git. See source-sync.json for source hashes.
+- Fixture A: all 12 source pieces roundtripped, including transforms and available visual-quad/hitbox metadata; zero mismatches. Evidence: `docs/geometry-fixture-a.json`.
+- Fixture B: all 11 pieces roundtripped, including fractional/half/quarter scale, 45°/90° rotations, flips and two distinct pieces in cell (17,71,0); zero geometry-metadata mismatches. Evidence: `docs/geometry-fixture-b.json`.
+- Fixture A completed normally with zero deaths, no input and noclip off in a 12-second recording (239 frames, 20 FPS). Sampled visual QA found the avatar visible through completion and no duplicate faces or flicker in reviewed neighboring frames; native texture-load errors: zero. Evidence: `docs/geometry-fixture-a-playback.json`.
+- Moving compound cell (17,71,0) to (18,71,0) shifted both quarter-scale native colliders by 30 units and removed their old positions; restoring the cell passed fixture B again. Evidence: `docs/compound-world-move.json`.
+- Fixture C: all 5 separated special/reference pieces roundtripped with exact transforms and available geometry metadata; zero mismatches (`docs/geometry-fixture-c.json`). Slopes, moving geometry, effects and broader shape/trigger behavior remain untested; a universal exact importer is not established.
+- Historical XO position checks: `docs/world-authority-full.json` matched 11,378 cells; `docs/world-authority-move.json` verified a 2,714-cell export and one block move. Neither proves unchanged XO geometry or full normal XO completion.
+Native implicit floor/ceiling authority remains unresolved. Vanilla stairs/slabs are unsupported; native forgiving spike hitboxes must not be enlarged to their visual bounds. The 15 full-scene plans are prepared, not applied/visually verified.
+Keep game binaries, licensed assets, downloaded levels, worlds, toolchains, compiled packages, recordings, secrets and local settings out of Git. See `AGENTS.md`; fixture geometry is original and asset-free.

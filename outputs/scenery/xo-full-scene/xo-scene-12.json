@@ -1,0 +1,1390 @@
+{
+  "schema": "gdbridge-scenery-plan-v1",
+  "name": "XO full scene 12/15",
+  "targetWorld": "GDBridge-XO",
+  "seed": 20261003,
+  "batchIndex": 12,
+  "batchCount": 15,
+  "cellBudget": 7962,
+  "notes": "Scenery only. Apply sequentially after existing intro plans and foreground-caps-cleanup; exact authored roof cleanup first. Native gameplay plane Z0 is forbidden.",
+  "boxes": [
+    {
+      "from": [
+        1041,
+        152,
+        -9
+      ],
+      "to": [
+        1190,
+        152,
+        -1
+      ],
+      "block": "minecraft:netherrack"
+    },
+    {
+      "from": [
+        1041,
+        65,
+        -6
+      ],
+      "to": [
+        1190,
+        65,
+        -1
+      ],
+      "block": "minecraft:netherrack"
+    },
+    {
+      "from": [
+        1045,
+        66,
+        -6
+      ],
+      "to": [
+        1047,
+        150,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1048,
+        70,
+        -6
+      ],
+      "to": [
+        1059,
+        71,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1049,
+        72,
+        -5
+      ],
+      "to": [
+        1049,
+        72,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1049,
+        73,
+        -4
+      ],
+      "to": [
+        1049,
+        73,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1048,
+        92,
+        -6
+      ],
+      "to": [
+        1059,
+        93,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1049,
+        94,
+        -5
+      ],
+      "to": [
+        1049,
+        94,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1049,
+        95,
+        -4
+      ],
+      "to": [
+        1049,
+        95,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1048,
+        114,
+        -6
+      ],
+      "to": [
+        1059,
+        115,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1049,
+        116,
+        -5
+      ],
+      "to": [
+        1049,
+        116,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1049,
+        117,
+        -4
+      ],
+      "to": [
+        1049,
+        117,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1048,
+        136,
+        -6
+      ],
+      "to": [
+        1059,
+        137,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1049,
+        138,
+        -5
+      ],
+      "to": [
+        1049,
+        138,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1049,
+        139,
+        -4
+      ],
+      "to": [
+        1049,
+        139,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1063,
+        66,
+        -6
+      ],
+      "to": [
+        1065,
+        150,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1066,
+        70,
+        -6
+      ],
+      "to": [
+        1077,
+        71,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1067,
+        72,
+        -5
+      ],
+      "to": [
+        1067,
+        72,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1067,
+        73,
+        -4
+      ],
+      "to": [
+        1067,
+        73,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1066,
+        92,
+        -6
+      ],
+      "to": [
+        1077,
+        93,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1067,
+        94,
+        -5
+      ],
+      "to": [
+        1067,
+        94,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1067,
+        95,
+        -4
+      ],
+      "to": [
+        1067,
+        95,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1066,
+        114,
+        -6
+      ],
+      "to": [
+        1077,
+        115,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1067,
+        116,
+        -5
+      ],
+      "to": [
+        1067,
+        116,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1067,
+        117,
+        -4
+      ],
+      "to": [
+        1067,
+        117,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1066,
+        136,
+        -6
+      ],
+      "to": [
+        1077,
+        137,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1067,
+        138,
+        -5
+      ],
+      "to": [
+        1067,
+        138,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1067,
+        139,
+        -4
+      ],
+      "to": [
+        1067,
+        139,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1081,
+        66,
+        -6
+      ],
+      "to": [
+        1083,
+        150,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1084,
+        70,
+        -6
+      ],
+      "to": [
+        1095,
+        71,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1085,
+        72,
+        -5
+      ],
+      "to": [
+        1085,
+        72,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1085,
+        73,
+        -4
+      ],
+      "to": [
+        1085,
+        73,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1084,
+        92,
+        -6
+      ],
+      "to": [
+        1095,
+        93,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1085,
+        94,
+        -5
+      ],
+      "to": [
+        1085,
+        94,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1085,
+        95,
+        -4
+      ],
+      "to": [
+        1085,
+        95,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1084,
+        114,
+        -6
+      ],
+      "to": [
+        1095,
+        115,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1085,
+        116,
+        -5
+      ],
+      "to": [
+        1085,
+        116,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1085,
+        117,
+        -4
+      ],
+      "to": [
+        1085,
+        117,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1084,
+        136,
+        -6
+      ],
+      "to": [
+        1095,
+        137,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1085,
+        138,
+        -5
+      ],
+      "to": [
+        1085,
+        138,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1085,
+        139,
+        -4
+      ],
+      "to": [
+        1085,
+        139,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1099,
+        66,
+        -6
+      ],
+      "to": [
+        1101,
+        150,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1102,
+        70,
+        -6
+      ],
+      "to": [
+        1113,
+        71,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1103,
+        72,
+        -5
+      ],
+      "to": [
+        1103,
+        72,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1103,
+        73,
+        -4
+      ],
+      "to": [
+        1103,
+        73,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1102,
+        92,
+        -6
+      ],
+      "to": [
+        1113,
+        93,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1103,
+        94,
+        -5
+      ],
+      "to": [
+        1103,
+        94,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1103,
+        95,
+        -4
+      ],
+      "to": [
+        1103,
+        95,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1102,
+        114,
+        -6
+      ],
+      "to": [
+        1113,
+        115,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1103,
+        116,
+        -5
+      ],
+      "to": [
+        1103,
+        116,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1103,
+        117,
+        -4
+      ],
+      "to": [
+        1103,
+        117,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1102,
+        136,
+        -6
+      ],
+      "to": [
+        1113,
+        137,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1103,
+        138,
+        -5
+      ],
+      "to": [
+        1103,
+        138,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1103,
+        139,
+        -4
+      ],
+      "to": [
+        1103,
+        139,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1117,
+        66,
+        -6
+      ],
+      "to": [
+        1119,
+        150,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1120,
+        70,
+        -6
+      ],
+      "to": [
+        1131,
+        71,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1121,
+        72,
+        -5
+      ],
+      "to": [
+        1121,
+        72,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1121,
+        73,
+        -4
+      ],
+      "to": [
+        1121,
+        73,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1120,
+        92,
+        -6
+      ],
+      "to": [
+        1131,
+        93,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1121,
+        94,
+        -5
+      ],
+      "to": [
+        1121,
+        94,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1121,
+        95,
+        -4
+      ],
+      "to": [
+        1121,
+        95,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1120,
+        114,
+        -6
+      ],
+      "to": [
+        1131,
+        115,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1121,
+        116,
+        -5
+      ],
+      "to": [
+        1121,
+        116,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1121,
+        117,
+        -4
+      ],
+      "to": [
+        1121,
+        117,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1120,
+        136,
+        -6
+      ],
+      "to": [
+        1131,
+        137,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1121,
+        138,
+        -5
+      ],
+      "to": [
+        1121,
+        138,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1121,
+        139,
+        -4
+      ],
+      "to": [
+        1121,
+        139,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1135,
+        66,
+        -6
+      ],
+      "to": [
+        1137,
+        150,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1138,
+        70,
+        -6
+      ],
+      "to": [
+        1149,
+        71,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1139,
+        72,
+        -5
+      ],
+      "to": [
+        1139,
+        72,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1139,
+        73,
+        -4
+      ],
+      "to": [
+        1139,
+        73,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1138,
+        92,
+        -6
+      ],
+      "to": [
+        1149,
+        93,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1139,
+        94,
+        -5
+      ],
+      "to": [
+        1139,
+        94,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1139,
+        95,
+        -4
+      ],
+      "to": [
+        1139,
+        95,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1138,
+        114,
+        -6
+      ],
+      "to": [
+        1149,
+        115,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1139,
+        116,
+        -5
+      ],
+      "to": [
+        1139,
+        116,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1139,
+        117,
+        -4
+      ],
+      "to": [
+        1139,
+        117,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1138,
+        136,
+        -6
+      ],
+      "to": [
+        1149,
+        137,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1139,
+        138,
+        -5
+      ],
+      "to": [
+        1139,
+        138,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1139,
+        139,
+        -4
+      ],
+      "to": [
+        1139,
+        139,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1153,
+        66,
+        -6
+      ],
+      "to": [
+        1155,
+        150,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1156,
+        70,
+        -6
+      ],
+      "to": [
+        1167,
+        71,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1157,
+        72,
+        -5
+      ],
+      "to": [
+        1157,
+        72,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1157,
+        73,
+        -4
+      ],
+      "to": [
+        1157,
+        73,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1156,
+        92,
+        -6
+      ],
+      "to": [
+        1167,
+        93,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1157,
+        94,
+        -5
+      ],
+      "to": [
+        1157,
+        94,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1157,
+        95,
+        -4
+      ],
+      "to": [
+        1157,
+        95,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1156,
+        114,
+        -6
+      ],
+      "to": [
+        1167,
+        115,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1157,
+        116,
+        -5
+      ],
+      "to": [
+        1157,
+        116,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1157,
+        117,
+        -4
+      ],
+      "to": [
+        1157,
+        117,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1156,
+        136,
+        -6
+      ],
+      "to": [
+        1167,
+        137,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1157,
+        138,
+        -5
+      ],
+      "to": [
+        1157,
+        138,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1157,
+        139,
+        -4
+      ],
+      "to": [
+        1157,
+        139,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1171,
+        66,
+        -6
+      ],
+      "to": [
+        1173,
+        150,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1174,
+        70,
+        -6
+      ],
+      "to": [
+        1185,
+        71,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1175,
+        72,
+        -5
+      ],
+      "to": [
+        1175,
+        72,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1175,
+        73,
+        -4
+      ],
+      "to": [
+        1175,
+        73,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1174,
+        92,
+        -6
+      ],
+      "to": [
+        1185,
+        93,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1175,
+        94,
+        -5
+      ],
+      "to": [
+        1175,
+        94,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1175,
+        95,
+        -4
+      ],
+      "to": [
+        1175,
+        95,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1174,
+        114,
+        -6
+      ],
+      "to": [
+        1185,
+        115,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1175,
+        116,
+        -5
+      ],
+      "to": [
+        1175,
+        116,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1175,
+        117,
+        -4
+      ],
+      "to": [
+        1175,
+        117,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        1174,
+        136,
+        -6
+      ],
+      "to": [
+        1185,
+        137,
+        -5
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1175,
+        138,
+        -5
+      ],
+      "to": [
+        1175,
+        138,
+        -4
+      ],
+      "block": "minecraft:nether_bricks"
+    },
+    {
+      "from": [
+        1175,
+        139,
+        -4
+      ],
+      "to": [
+        1175,
+        139,
+        -4
+      ],
+      "block": "minecraft:torch"
+    }
+  ]
+}

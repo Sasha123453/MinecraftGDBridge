@@ -8,6 +8,8 @@ work/
 outputs/launcher/bin/
 outputs/launcher/data/
 outputs/backups/
+outputs/visual-batch-install.json
+outputs/scenery/application.local.json
 outputs/bridge/runtime/
 outputs/bridge/recordings/
 outputs/bridge/levels/

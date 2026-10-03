@@ -24,9 +24,8 @@ public final class SceneBlueprint {
         catch(RuntimeException error){throw new IOException("Invalid native GD blueprint",error);}
     }
     public static Blueprint from(JsonObject original) {
-        JsonObject source=original.deepCopy();double maxX=15375;
-        if(source.has("rangeMaxX")){double supplied=source.get("rangeMaxX").getAsDouble();if(Double.isFinite(supplied)&&supplied>0)maxX=Math.min(supplied,maxX);}
-        source.addProperty("rangeMaxX",maxX);
+        JsonObject source=original.deepCopy();GameplayRegion region=GameplayRegion.from(source);
+        source.add("authoringRegion",region.json());source.addProperty("rangeMinX",region.minX()*30.0);source.addProperty("rangeMaxX",(region.maxX()+1)*30.0);source.addProperty("rangeMinY",(region.minY()-64)*30.0);source.addProperty("rangeMaxY",(region.maxY()+1-64)*30.0);
         Map<BlockPos,List<JsonObject>> groups=new LinkedHashMap<>();Map<BlockPos,Block> blocks=new LinkedHashMap<>();
         Map<BlockPos,Integer> priorities=new HashMap<>();int clipped=0;
         if(!source.has("objects")||!source.get("objects").isJsonArray())throw new IllegalArgumentException("Native objects array missing");
@@ -34,16 +33,16 @@ public final class SceneBlueprint {
             if(!entry.isJsonObject()){clipped++;continue;}JsonObject object=entry.getAsJsonObject();
             try {
                 double x=object.get("x").getAsDouble(),y=object.get("y").getAsDouble();
-                if(!Double.isFinite(x)||!Double.isFinite(y)||x<0||x>maxX||y<90||y>1080){clipped++;continue;}
+                if(!Double.isFinite(x)||!Double.isFinite(y)||!region.containsGD(x,y)){clipped++;continue;}
                 String type=object.has("type")?object.get("type").getAsString():"solid";
-                if((type.equals("solid")||type.equals("hazard"))&&hiddenCollisionHelper(object)){clipped++;continue;}
                 BlockPos cell=new BlockPos((int)Math.round(x/30-.5),(int)Math.round(64+y/30-.5),0);
+                if(!region.contains(cell)){clipped++;continue;}
                 JsonObject preserved=object.deepCopy();groups.computeIfAbsent(cell,key->new ArrayList<>()).add(preserved);
                 int priority=switch(type){case "portal"->4;case "orb"->3;case "hazard"->2;default->1;};
                 if(priority>=priorities.getOrDefault(cell,0)){blocks.put(cell,marker(object));priorities.put(cell,priority);}
             }catch(RuntimeException error){clipped++;}
         }
-        Map<BlockPos,List<JsonObject>> frozen=new LinkedHashMap<>();groups.forEach((cell,records)->frozen.put(cell,List.copyOf(records)));
+        Map<BlockPos,List<JsonObject>> frozen=new LinkedHashMap<>();groups.forEach((cell,records)->{frozen.put(cell,List.copyOf(records));blocks.put(cell,GDBridgeCommon.COMPOUND_OBSTACLE);});
         return new Blueprint(source,Collections.unmodifiableMap(frozen),Collections.unmodifiableMap(blocks),clipped);
     }
     public static Block marker(JsonObject object) {
@@ -57,13 +56,14 @@ public final class SceneBlueprint {
     }
     public static int id(BlockState state) {
         if(state.isAir())return 0;Block b=state.getBlock();
+        if(b==GDBridgeCommon.COMPOUND_OBSTACLE)return -1;
         if(b==GDBridgeCommon.STONE_SPIKE||b==Blocks.MAGMA_BLOCK||b==Blocks.IRON_BARS)return 8;
         if(b==Blocks.GOLD_BLOCK)return 36;if(b==Blocks.DIAMOND_BLOCK)return 84;if(b==Blocks.REDSTONE_BLOCK)return 141;
         if(b==Blocks.GLASS)return 12;if(b==Blocks.AMETHYST_BLOCK)return 13;if(b==Blocks.COPPER_BLOCK)return 47;if(b==Blocks.EMERALD_BLOCK)return 111;if(b==Blocks.LAPIS_BLOCK)return 660;
         if(b==Blocks.YELLOW_CONCRETE)return 200;if(b==Blocks.BLUE_CONCRETE)return 201;if(b==Blocks.GREEN_CONCRETE)return 202;if(b==Blocks.PINK_CONCRETE)return 203;if(b==Blocks.RED_CONCRETE)return 1334;
         return 1;
     }
-    public static boolean isSpecialMarker(BlockState state){int id=id(state);return id!=0&&id!=1&&id!=8;}
+    public static boolean isSpecialMarker(BlockState state){int id=id(state);return id>0&&id!=1&&id!=8;}
     private static boolean hiddenCollisionHelper(JsonObject object){
         for(String key:List.of("invisible","disabled","noTouch","passable"))if(object.has(key)&&object.get(key).getAsBoolean())return true;
         // Property 121 is the native NoTouch editor option. Do not turn it into

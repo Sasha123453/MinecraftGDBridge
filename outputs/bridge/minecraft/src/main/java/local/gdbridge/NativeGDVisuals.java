@@ -7,6 +7,7 @@ import java.nio.ByteBuffer;
 import java.nio.file.*;
 import java.util.*;
 import java.util.concurrent.*;
+import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.*;
 import net.minecraft.client.texture.NativeImage;
@@ -22,20 +23,42 @@ import org.lwjgl.opengl.GL14;
 public final class NativeGDVisuals {
     private static final Path RUNTIME = Path.of("C:/Users/shelk/Documents/Codex/2026-10-02/minecraft-java-geometry-dash-nasgubb-xo/outputs/bridge/runtime").toAbsolutePath().normalize();
     private static final int MAX_LAYERS=96, MAX_TRAILS=3, MAX_STRIP_VERTICES=2048, MAX_WAVE_VERTICES=6144;
-    private static final long MAX_CACHE_BYTES=128L*1024*1024;
+    private static final long MAX_CACHE_BYTES=256L*1024*1024;
     private record Texture(Identifier id,int width,int height,long bytes) {}
+    private record Retired(Texture texture,long releaseAfterFrame) {}
     private record Decoded(NativeImage image,int width,int height,long bytes) {}
     private record Vertex(float x,float y,float u,float v,int r,int g,int b,int a) {}
     private static final LinkedHashMap<String,Texture> TEXTURES=new LinkedHashMap<>(16,.75f,true);
+    private static final Map<String,Retired> RETIRED=new LinkedHashMap<>();
+    private static final Set<String> PINNED=new HashSet<>();
     private static final Map<String,Long> RETRY_AFTER=new HashMap<>();
     private static final Map<String,CompletableFuture<Decoded>> LOADING=new HashMap<>();
     private static final ExecutorService DECODER=Executors.newSingleThreadExecutor(r->{Thread t=new Thread(r,"GD original PNG decoder");t.setDaemon(true);return t;});
-    private static long textureBytes, serial;
+    private static long textureBytes, retiredBytes, serial, completedFrames;
+    static {
+        WorldRenderEvents.START.register(context->{
+            PINNED.clear();PINNED.add("white");
+            var frame=GDBridge.getRenderFrame();if(frame!=null)collectRequested(frame.packet(),PINNED);
+        });
+        WorldRenderEvents.END.register(context->{
+            // Iris may retain entity buffers until its shadow/translucent flush.
+            // Only retire after the whole world pass, with two further frames of grace.
+            var entries=RETIRED.entrySet().iterator();
+            while(entries.hasNext()){
+                var entry=entries.next();Retired retired=entry.getValue();
+                if(retired.releaseAfterFrame<=completedFrames&&!PINNED.contains(entry.getKey())){
+                    MinecraftClient.getInstance().getTextureManager().destroyTexture(retired.texture.id);
+                    retiredBytes-=retired.texture.bytes;entries.remove();
+                }
+            }
+            completedFrames++;
+        });
+    }
     private NativeGDVisuals() {}
 
     /** Standard entity buffers provide Minecraft lightmap, normals and Iris entity/shadow passes. */
     public static void renderWorldLit(MatrixStack matrices,VertexConsumerProvider buffers,JsonObject packet,double ox,double oy,double oz,int light){
-        if(packet==null)return;retireUnused();JsonArray layers=array(packet,"avatarLayers");
+        if(packet==null)return;collectRequested(packet,PINNED);retireUnused();JsonArray layers=array(packet,"avatarLayers");
         float front=(float)(1.085-oz);
         for(int i=0;layers!=null&&i<Math.min(MAX_LAYERS,layers.size());i++){
             JsonObject layer=layers.get(i).getAsJsonObject();Vertex[] quad=vertices(array(layer,"vertices"),4);if(quad==null||quad.length!=4)continue;
@@ -95,6 +118,7 @@ public final class NativeGDVisuals {
         consumer.vertex(matrices.peek().getPositionMatrix(),(float)(v.x/30-ox),(float)(64+v.y/30-oy),z).color(v.r,v.g,v.b,v.a).texture(u,vv).overlay(OverlayTexture.DEFAULT_UV).light(light).normal(matrices.peek().getNormalMatrix(),nx,ny,nz).next();
     }
     private static Texture whiteTexture(){
+        PINNED.add("white");
         Texture existing=TEXTURES.get("white");if(existing!=null)return existing;
         NativeImage image=new NativeImage(1,1,false);image.setColor(0,0,0xFFFFFFFF);Identifier id=new Identifier("gdbridge","trail_white");MinecraftClient.getInstance().getTextureManager().registerTexture(id,new NativeImageBackedTexture(image));
         Texture texture=new Texture(id,1,1,4);TEXTURES.put("white",texture);textureBytes+=4;return texture;
@@ -203,7 +227,13 @@ public final class NativeGDVisuals {
     private static Texture texture(String filename,boolean premultiply) {
         if(filename.isEmpty())return null;
         String key=filename+":"+premultiply;
+        PINNED.add(key);
         Texture cached=TEXTURES.get(key);if(cached!=null)return cached;
+        Retired reusable=RETIRED.remove(key);
+        if(reusable!=null){
+            retiredBytes-=reusable.texture.bytes;textureBytes+=reusable.texture.bytes;
+            TEXTURES.put(key,reusable.texture);return reusable.texture;
+        }
         if(System.nanoTime()<RETRY_AFTER.getOrDefault(key,0L))return null;
         CompletableFuture<Decoded> pending=LOADING.get(key);
         if(pending==null){
@@ -211,14 +241,21 @@ public final class NativeGDVisuals {
             return null;
         }
         if(!pending.isDone())return null;
-        LOADING.remove(key);
         Decoded decoded=pending.getNow(null);
-        if(decoded==null){RETRY_AFTER.put(key,System.nanoTime()+2_000_000_000L);return null;}
+        if(decoded==null){LOADING.remove(key);RETRY_AFTER.put(key,System.nanoTime()+2_000_000_000L);return null;}
+        // Keep a completed bounded decode pending if all current packet textures
+        // are pinned. Never delete a texture that an outstanding buffer can bind.
+        while(!TEXTURES.isEmpty()&&(TEXTURES.size()>=32||textureBytes+decoded.bytes>MAX_CACHE_BYTES)){
+            var entries=TEXTURES.entrySet().iterator();Map.Entry<String,Texture> victim=null;
+            while(entries.hasNext()){var entry=entries.next();if(!PINNED.contains(entry.getKey())){victim=entry;break;}}
+            if(victim==null||retiredBytes+victim.getValue().bytes>MAX_CACHE_BYTES)return null;
+            Texture old=victim.getValue();String oldKey=victim.getKey();entries.remove();textureBytes-=old.bytes;
+            RETIRED.put(oldKey,new Retired(old,completedFrames+2));retiredBytes+=old.bytes;
+        }
+        if(textureBytes+decoded.bytes>MAX_CACHE_BYTES)return null;
+        LOADING.remove(key);
         NativeImage image=decoded.image;
         try {
-            while(!TEXTURES.isEmpty()&&(TEXTURES.size()>=32||textureBytes+decoded.bytes>MAX_CACHE_BYTES)) {
-                var first=TEXTURES.entrySet().iterator();Texture old=first.next().getValue();first.remove();textureBytes-=old.bytes;MinecraftClient.getInstance().getTextureManager().destroyTexture(old.id);
-            }
             Identifier identifier=new Identifier("gdbridge","native_gd_"+(++serial));
             NativeImageBackedTexture upload=new NativeImageBackedTexture(image);image=null;
             MinecraftClient.getInstance().getTextureManager().registerTexture(identifier,upload);

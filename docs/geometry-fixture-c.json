@@ -1,0 +1,208 @@
+{
+  "checkedAt": "2026-10-03T12:31:50.3647600Z",
+  "fixtureId": 900000103,
+  "fixtureName": "Bridge fixture C - separate native specials",
+  "authority": "minecraft-world",
+  "world": "GDBridge-GeometryTests",
+  "passed": true,
+  "sourceMatchUnchanged": true,
+  "originalSourceCount": 5,
+  "storedTotal": 173,
+  "nativeTotal": 173,
+  "storedMatched": 5,
+  "nativeMatched": 5,
+  "storedPositionMatched": 5,
+  "nativePositionMatched": 5,
+  "storedRotationMatched": 5,
+  "nativeRotationMatched": 5,
+  "storedScaleMatched": 5,
+  "nativeScaleMatched": 5,
+  "storedFlipMatched": 5,
+  "nativeFlipMatched": 5,
+  "authoredRecordUnavailable": {
+    "stored": 0,
+    "native": 0
+  },
+  "storedExtras": 168,
+  "nativeExtras": 168,
+  "geometryFieldsChecked": 25,
+  "geometryMismatches": 0,
+  "geometryUnavailablePieces": 0,
+  "geometryFullyAvailable": true,
+  "sameCellPieces": null,
+  "storedSamples": [
+    {
+      "id": 35,
+      "x": 345.0,
+      "y": 90.0,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 36,
+      "x": 705.0,
+      "y": 165.0,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 13,
+      "x": 1065.0,
+      "y": 135.0,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 12,
+      "x": 1485.0,
+      "y": 135.0,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 1,
+      "x": 1845.0,
+      "y": 195.0,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    }
+  ],
+  "nativeSamples": [
+    {
+      "id": 35,
+      "x": 345.0,
+      "y": 90.0,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 36,
+      "x": 705.0,
+      "y": 165.0,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 13,
+      "x": 1065.0,
+      "y": 135.0,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 12,
+      "x": 1485.0,
+      "y": 135.0,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 1,
+      "x": 1845.0,
+      "y": 195.0,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    }
+  ],
+  "geometry": [
+    {
+      "id": 35,
+      "x": 345.0,
+      "y": 90.0,
+      "comparedFields": 5,
+      "unavailableFields": [
+        "triangleVertices"
+      ],
+      "mismatchedFields": []
+    },
+    {
+      "id": 36,
+      "x": 705.0,
+      "y": 165.0,
+      "comparedFields": 5,
+      "unavailableFields": [
+        "triangleVertices"
+      ],
+      "mismatchedFields": []
+    },
+    {
+      "id": 13,
+      "x": 1065.0,
+      "y": 135.0,
+      "comparedFields": 5,
+      "unavailableFields": [
+        "triangleVertices"
+      ],
+      "mismatchedFields": []
+    },
+    {
+      "id": 12,
+      "x": 1485.0,
+      "y": 135.0,
+      "comparedFields": 5,
+      "unavailableFields": [
+        "triangleVertices"
+      ],
+      "mismatchedFields": []
+    },
+    {
+      "id": 1,
+      "x": 1845.0,
+      "y": 195.0,
+      "comparedFields": 5,
+      "unavailableFields": [
+        "triangleVertices"
+      ],
+      "mismatchedFields": []
+    }
+  ],
+  "positionToleranceGDUnits": 0.005,
+  "scalarTolerance": 0.0001,
+  "geometryToleranceGDUnits": 0.01,
+  "fixtureSHA256": "DD733186A376EEB7E5D69CC4030DD6C91A1D23FB8F11A33F91FF1E2C1BE7D632",
+  "manifestSHA256": "C3B156E9D802D3E9425F58E037C922334390821427F760E46FB397385ED54BCC",
+  "nativeSHA256": "75CB28C198FCB93401CFEC53F401B074331C6BCC77F521A69A1E741D71EBB1A3",
+  "manifestWrittenUtc": "2026-10-03T12:31:48.8612927Z",
+  "nativeWrittenUtc": "2026-10-03T12:31:48.9821659Z",
+  "limitation": "Verifies fixture piece preservation and available stored-versus-native geometry metadata. Extra floor/continuation objects are reported separately. Missing metadata is not a geometry pass. Does not prove visual quality, normal completion, AUTO, or implicit-floor/ceiling authority."
+}

@@ -1,0 +1,101 @@
+{
+  "fixture": true,
+  "fixtureVersion": 1,
+  "provenance": "Original hand-authored bridge test geometry, not a downloaded level",
+  "license": "CC0-1.0 for authored fixture geometry and metadata; no game assets included",
+  "id": 900000103,
+  "levelId": 900000103,
+  "name": "Bridge fixture C - separate native specials",
+  "creator": "MinecraftGDBridge fixtures",
+  "songId": 0,
+  "audioTrack": 0,
+  "downloadMusic": false,
+  "levelString": "H4sIAAAAAAAACm2Puw0DMQxDF2Ih6mP7kOpmuDG8fx9QuQQJkIZP4INteZ8Owz6jMzsHiH3OztUN7QU2vI9cxBQctMK-Akwxcagu0MQBUpzwkl43j5s0ePR1fA-u4UFEwRFZ0HIDhnBQ_YBjmvpZ34IBbTNk8te4TK4_RmL1I_rHxzwBYSWPTBkBAAA=",
+  "rawLevelString": "kA2,0,kA3,0,kA4,0,kA6,1,kA7,1,kA8,0,kA10,0,kA11,0,kA22,0,kS1,70,kS2,105,kS3,145,kS4,90,kS5,100,kS6,110,kS7,255,kS8,255,kS9,255,kS10,230,kS11,230,kS12,230;1,35,2,345,3,0,6,0,32,1;1,36,2,705,3,75,6,0,32,1;1,13,2,1065,3,45,6,0,32,1;1,12,2,1485,3,45,6,0,32,1;1,1,2,1845,3,105,6,0,32,1;",
+  "fixtureMetadata": {
+    "purpose": "Yellow jump pad, yellow orb, ship portal and cube return portal in separate clear areas. Orb activation needs native input; no automatic completion is claimed.",
+    "sourceObjectCount": 5,
+    "counts": {
+      "solid": 1,
+      "spike": 0,
+      "pad": 1,
+      "orb": 1,
+      "portal": 2
+    },
+    "coordinates": "x/y are native world GD units; serialized key 3 is y - 90; 30 units = one Minecraft block",
+    "nativeImplicitFloorY": 90,
+    "floorVerifiedInThisFixture": false,
+    "autoCandidate": false,
+    "autoVerified": false,
+    "nativePlaybackVerified": false,
+    "exactMinecraftGeometryVerified": false,
+    "completionVerified": false,
+    "compressionRoundtripVerified": true,
+    "samples": [
+      {
+        "id": 35,
+        "x": 345.0,
+        "y": 90.0,
+        "editorY": 0.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "yellow jump pad"
+      },
+      {
+        "id": 36,
+        "x": 705.0,
+        "y": 165.0,
+        "editorY": 75.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "yellow jump orb; native press required"
+      },
+      {
+        "id": 13,
+        "x": 1065.0,
+        "y": 135.0,
+        "editorY": 45.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "ship mode portal"
+      },
+      {
+        "id": 12,
+        "x": 1485.0,
+        "y": 135.0,
+        "editorY": 45.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "cube return portal"
+      },
+      {
+        "id": 1,
+        "x": 1845.0,
+        "y": 195.0,
+        "editorY": 105.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "isolated elevated unit block reference"
+      }
+    ],
+    "sourceEvidence": {
+      "localNativeSerializer": "outputs/bridge/gd-world-authority-next/src/main.cpp: objectRecord keys 1/2/3/6/32; native Y = serialized editor Y + 90",
+      "localNativeLoader": "outputs/bridge/gd-world-authority-next/src/main.cpp: LevelLoader.beginData decompresses levelString and creates a temporary native PlayLayer without saving",
+      "objectSerialization": "https://github.com/nekitdev/gd.py/blob/master/gd/api/objects.py",
+      "nativeObjectIDs": "https://github.com/nekitdev/gd.py/blob/master/gd/enums.py",
+      "headerSerialization": "https://github.com/nekitdev/gd.py/blob/master/gd/api/header.py",
+      "note": "gd.py sources establish the fixture format and conventional IDs; actual behavior in the installed GD build remains a separate runtime test."
+    },
+    "verification": "Load native GD source first, capture fresh blueprint/framebuffer evidence, compare every center/scale/rotation and actual collision bounds, then test exact Minecraft reproduction. Current voxel import may snap fractional/half-scale samples and is not proof of exact conversion."
+  }
+}

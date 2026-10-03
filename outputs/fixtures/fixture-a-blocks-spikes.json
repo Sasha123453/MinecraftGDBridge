@@ -1,0 +1,178 @@
+{
+  "fixture": true,
+  "fixtureVersion": 1,
+  "provenance": "Original hand-authored bridge test geometry, not a downloaded level",
+  "license": "CC0-1.0 for authored fixture geometry and metadata; no game assets included",
+  "id": 900000101,
+  "levelId": 900000101,
+  "name": "Bridge fixture A - blocks and spikes",
+  "creator": "MinecraftGDBridge fixtures",
+  "songId": 0,
+  "audioTrack": 0,
+  "downloadMusic": false,
+  "levelString": "H4sIAAAAAAAACnWPuw3EMAxDF2IhSv4ilWfIGN6_P0jOAQEcN3oCSRH2HArBHBYzxSwg5qgxWyiUBQY0Tm6iOhSUjHkbmJwJ3eUMirOAdFZodrs97A8pUIs6_hf15SIsQ2Epwx9XIDAFL4JQJHGZ-a1Hvuz5BkU95ft3nvJxsAw7NNHiZK-ycqiyfjCS7ob_mnUZ8nJ-5Tu_csIBAAA=",
+  "rawLevelString": "kA2,0,kA3,0,kA4,0,kA6,1,kA7,1,kA8,0,kA10,0,kA11,0,kA22,0,kS1,70,kS2,105,kS3,145,kS4,90,kS5,100,kS6,110,kS7,255,kS8,255,kS9,255,kS10,230,kS11,230,kS12,230;1,35,2,345,3,0,6,0,32,1;1,1,2,405,3,15,6,0,32,1;1,35,2,645,3,0,6,0,32,1;1,8,2,705,3,15,6,0,32,1;1,35,2,945,3,0,6,0,32,1;1,8,2,1005,3,15,6,0,32,1;1,8,2,1035,3,15,6,0,32,1;1,35,2,1305,3,0,6,0,32,1;1,8,2,1365,3,15,6,0,32,1;1,8,2,1395,3,15,6,0,32,1;1,8,2,1425,3,15,6,0,32,1;1,1,2,1725,3,105,6,0,32,1;",
+  "fixtureMetadata": {
+    "purpose": "Full cubes and single/double/triple standard spikes, separated by long clear sections. Yellow pads are candidate automatic jump launchers; AUTO is unverified.",
+    "sourceObjectCount": 12,
+    "counts": {
+      "solid": 2,
+      "spike": 6,
+      "pad": 4,
+      "orb": 0,
+      "portal": 0
+    },
+    "coordinates": "x/y are native world GD units; serialized key 3 is y - 90; 30 units = one Minecraft block",
+    "nativeImplicitFloorY": 90,
+    "floorVerifiedInThisFixture": false,
+    "autoCandidate": true,
+    "autoVerified": false,
+    "nativePlaybackVerified": false,
+    "exactMinecraftGeometryVerified": false,
+    "completionVerified": false,
+    "compressionRoundtripVerified": true,
+    "samples": [
+      {
+        "id": 35,
+        "x": 345.0,
+        "y": 90.0,
+        "editorY": 0.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "candidate automatic jump pad before full block"
+      },
+      {
+        "id": 1,
+        "x": 405.0,
+        "y": 105.0,
+        "editorY": 15.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "full block on native floor"
+      },
+      {
+        "id": 35,
+        "x": 645.0,
+        "y": 90.0,
+        "editorY": 0.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "candidate automatic jump pad before single spike"
+      },
+      {
+        "id": 8,
+        "x": 705.0,
+        "y": 105.0,
+        "editorY": 15.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "single spike"
+      },
+      {
+        "id": 35,
+        "x": 945.0,
+        "y": 90.0,
+        "editorY": 0.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "candidate automatic jump pad before double spikes"
+      },
+      {
+        "id": 8,
+        "x": 1005.0,
+        "y": 105.0,
+        "editorY": 15.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "double spike 1"
+      },
+      {
+        "id": 8,
+        "x": 1035.0,
+        "y": 105.0,
+        "editorY": 15.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "double spike 2"
+      },
+      {
+        "id": 35,
+        "x": 1305.0,
+        "y": 90.0,
+        "editorY": 0.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "candidate automatic jump pad before triple spikes"
+      },
+      {
+        "id": 8,
+        "x": 1365.0,
+        "y": 105.0,
+        "editorY": 15.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "triple spike 1"
+      },
+      {
+        "id": 8,
+        "x": 1395.0,
+        "y": 105.0,
+        "editorY": 15.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "triple spike 2"
+      },
+      {
+        "id": 8,
+        "x": 1425.0,
+        "y": 105.0,
+        "editorY": 15.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "triple spike 3"
+      },
+      {
+        "id": 1,
+        "x": 1725.0,
+        "y": 195.0,
+        "editorY": 105.0,
+        "scale": 1.0,
+        "rotation": 0.0,
+        "flipX": false,
+        "flipY": false,
+        "role": "isolated elevated full block"
+      }
+    ],
+    "sourceEvidence": {
+      "localNativeSerializer": "outputs/bridge/gd-world-authority-next/src/main.cpp: objectRecord keys 1/2/3/6/32; native Y = serialized editor Y + 90",
+      "localNativeLoader": "outputs/bridge/gd-world-authority-next/src/main.cpp: LevelLoader.beginData decompresses levelString and creates a temporary native PlayLayer without saving",
+      "objectSerialization": "https://github.com/nekitdev/gd.py/blob/master/gd/api/objects.py",
+      "nativeObjectIDs": "https://github.com/nekitdev/gd.py/blob/master/gd/enums.py",
+      "headerSerialization": "https://github.com/nekitdev/gd.py/blob/master/gd/api/header.py",
+      "note": "gd.py sources establish the fixture format and conventional IDs; actual behavior in the installed GD build remains a separate runtime test."
+    },
+    "verification": "Load native GD source first, capture fresh blueprint/framebuffer evidence, compare every center/scale/rotation and actual collision bounds, then test exact Minecraft reproduction. Current voxel import may snap fractional/half-scale samples and is not proof of exact conversion."
+  }
+}

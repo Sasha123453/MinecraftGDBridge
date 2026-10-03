@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-10-03T12:42:44.6039061Z",
+  "world": "GDBridge-GeometryTests",
+  "minecraftFrom": [
+    17,
+    71,
+    0
+  ],
+  "minecraftTo": [
+    18,
+    71,
+    0
+  ],
+  "expectedGDPositions": [
+    554.25,
+    565.25
+  ],
+  "nativePositions": [
+    554.25,
+    565.25
+  ],
+  "movedTogether": true,
+  "oldPositionsAbsent": true,
+  "nativeSizes": [
+    {
+      "x": 554.25,
+      "y": 225,
+      "w": 7.5,
+      "h": 7.5,
+      "scale": 0.25,
+      "rotation": 0
+    },
+    {
+      "x": 565.25,
+      "y": 225,
+      "w": 7.5,
+      "h": 7.5,
+      "scale": 0.25,
+      "rotation": 0
+    }
+  ],
+  "geometryAuthority": "minecraft-world"
+}

@@ -53,13 +53,14 @@ public class GDBridge implements ClientModInitializer {
         Thread thread=new Thread(GDBridge::listen,"GD-Bridge-IPC"); thread.setDaemon(true); thread.start();
         EntityRendererRegistry.register(GDBridgeCommon.PLAYER,GDPlayerRenderer::new);
         net.minecraft.client.render.block.entity.BlockEntityRendererFactories.register(GDBridgeCommon.STONE_SPIKE_ENTITY,StoneSpikeRenderer::new);
+        net.minecraft.client.render.block.entity.BlockEntityRendererFactories.register(GDBridgeCommon.COMPOUND_OBSTACLE_ENTITY,CompoundObstacleRenderer::new);
         HudRenderCallback.EVENT.register((draw,delta)->{
             MinecraftClient mc=MinecraftClient.getInstance(); Frame f=FRAME.get();
             if(f!=null&&!WorldEditor.editing){String percent=String.format(Locale.ROOT,"%.1f%%",f.percent);int width=mc.textRenderer.getWidth(percent),cx=draw.getScaledWindowWidth()/2;draw.drawTextWithShadow(mc.textRenderer,percent,cx-width/2,8,0xFFFFFF);}
             if(f!=null&&bool(f.packet,"levelCompleted")){String caption=bool(f.packet,"levelCompletedDiagnosticNoclip")||bool(f.packet,"diagnosticNoclip")?"Проверочный проход завершён":"Уровень пройден";String finished=String.format(Locale.ROOT,"%s | %s | %.1f%%",caption,f.name,f.percent);int width=mc.textRenderer.getWidth(finished),cx=draw.getScaledWindowWidth()/2;draw.fill(cx-width/2-10,36,cx+width/2+10,63,0xD0000000);draw.drawTextWithShadow(mc.textRenderer,finished,cx-width/2,45,0x55FFAA);}
             if(f!=null&&bool(f.packet,"diagnosticNoclip")){draw.fill(5,5,174,25,0xC0000000);draw.drawTextWithShadow(mc.textRenderer,"VISUAL CHECK / NOCLIP",9,11,0xFFFF55);if(!WorldEditor.editing&&!BridgeCamera.debugHud)return;}
             if(f!=null&&!WorldEditor.editing&&!BridgeCamera.debugHud)return;
-            String line=WorldEditor.editing?"BUILD | z=0, x=0..512, y=67..100 | full cubes=solid, magma=spike | F6 play":f==null?connection:String.format(Locale.ROOT,"GD LIVE | %s | %.1f%% | F7 build | F6 play | %s%s",f.name,f.percent,WorldEditor.message,f.dead?" | DEAD":"");
+            String line=WorldEditor.editing?"BUILD | "+WorldEditor.region().label()+" | cubes=solid, stone spike=hazard | F6 play | "+WorldEditor.message:f==null?connection:String.format(Locale.ROOT,"GD LIVE | %s | %.1f%% | F7 build | F6 play | %s%s",f.name,f.percent,WorldEditor.message,f.dead?" | DEAD":"");
             draw.fill(5,5,Math.min(mc.getWindow().getScaledWidth()-5,mc.textRenderer.getWidth(line)+13),25,0xB0000000);
             draw.drawTextWithShadow(mc.textRenderer,line,9,11,f==null?0xFFFFFF:(System.nanoTime()-f.received>1000000000?0xFFAA55:f.dead?0xFF5555:0x55FFAA));
         });
@@ -68,7 +69,7 @@ public class GDBridge implements ClientModInitializer {
             BridgeCamera.reload(mc);BridgeVisualStyle.reload(mc);BridgeControl.tick(mc);BridgeRecorder.tick(mc);
             if(!autoLoaded && mc.currentScreen instanceof net.minecraft.client.gui.screen.TitleScreen){
                 autoLoaded=true;
-                String selected="GDBridge";try{Path choice=mc.runDirectory.toPath().resolve("config/gdbridge/selected-world.json");if(Files.exists(choice)){String candidate=JsonParser.parseString(Files.readString(choice)).getAsJsonObject().get("world").getAsString();if(Set.of("GDBridge","GDBridge-XO").contains(candidate))selected=candidate;}}catch(Exception ignored){}WorldEditor.resetWorld(selected);
+                String selected="GDBridge";try{Path choice=mc.runDirectory.toPath().resolve("config/gdbridge/selected-world.json");if(Files.exists(choice)){String candidate=JsonParser.parseString(Files.readString(choice)).getAsJsonObject().get("world").getAsString();if(Set.of("GDBridge","GDBridge-XO","GDBridge-GeometryTests").contains(candidate))selected=candidate;}}catch(Exception ignored){}WorldEditor.resetWorld(selected);
                 if(Files.exists(mc.runDirectory.toPath().resolve("saves/"+selected+"/level.dat"))) mc.createIntegratedServerLoader().start(mc.currentScreen,selected);
                 else {
                     net.minecraft.world.GameRules rules=new net.minecraft.world.GameRules();
@@ -118,6 +119,7 @@ public class GDBridge implements ClientModInitializer {
                     j.addProperty("objectLayers",f.packet.has("objectLayers")?f.packet.getAsJsonArray("objectLayers").size():-1);j.addProperty("worldTime",mc.world.getTimeOfDay());j.addProperty("ambientDarkness",mc.world.getAmbientDarkness());j.addProperty("packedWorldLight",WorldRenderer.getLightmapCoordinates(mc.world,BlockPos.ofFloored(f.x/30,64+f.y/30,.5)));j.addProperty("avatarRenderPath","native-entity-world-lit");j.addProperty("fps",mc.getCurrentFps());
                     }
                     if(f!=null){j.addProperty("authority",str(f.packet,"authority","geometry-dash"));j.addProperty("worldGeometryActive",WorldEditor.worldGeometryActive(f));}
+                    j.add("authoringRegion",WorldEditor.region().json());j.addProperty("worldOperationBusy",WorldWorkQueue.busy());j.addProperty("worldOperation",WorldWorkQueue.operation);j.addProperty("worldOperationProgress",WorldWorkQueue.progress);j.addProperty("worldOperationTotal",WorldWorkQueue.total);
                     j.addProperty("world",WorldEditor.worldName);j.addProperty("visualStyle",BridgeVisualStyle.mode);j.addProperty("cameraDistance",BridgeCamera.distance);j.addProperty("cameraYaw",BridgeCamera.yaw);j.addProperty("cameraPitch",BridgeCamera.pitch);j.addProperty("controlResult",BridgeControl.result);j.addProperty("recording",BridgeRecorder.active());if(f!=null)j.addProperty("diagnosticNoclip",bool(f.packet,"diagnosticNoclip"));j.addProperty("gpu",org.lwjgl.opengl.GL11.glGetString(org.lwjgl.opengl.GL11.GL_RENDERER));Files.writeString(dir.resolve("status.json"),j.toString());
                 }catch(Exception ignored) {}
             }

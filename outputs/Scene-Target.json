@@ -1,7 +1,7 @@
 {
   "selectedAt": "2026-10-03T06:22:19.426Z",
   "reference": "outputs/Scene-Target-Selected.png",
-  "direction": "Sunlit layered Minecraft forest; near-side gameplay camera; native GD icons; pixel-textured volumetric portals and pads; natural Minecraft lighting; foreground and background scenery",
+  "direction": "Sunlit layered Minecraft forest; near-side camera; native GD icons and original portals/orbs/pads; Minecraft lighting; foreground and background scenery. Volumetric specials are optional.",
   "levelBase": {
     "id": 58898913,
     "name": "xo easy",
@@ -10,9 +10,9 @@
     "songId": 766165,
     "nasgubbExactVersionVerified": false
   },
-  "importGoal": "Reusable native GD source import; keep physics and native triggers in GD; Minecraft geometry/decorations from actual native object records",
+  "importGoal": "Minecraft-authored world obstacles compile to native GD colliders. Native XO import is an auxiliary initial course seed.",
   "status": "Implementation in progress; selected reference is generated concept, not current game screenshot",
-  "updatedAt": "2026-10-03T10:03:53.905Z",
+  "updatedAt": "2026-10-03T11:42:46.3957052Z",
   "currentDirection": {
     "geometry": "Actual placed Minecraft world blocks and gdbridge:stone_spike blocks define GD collision geometry",
     "nativeGD": "Physics, character/trails and original specials bound to placed Minecraft authoring markers; volumetric specials optional",
@@ -22,6 +22,6 @@
     "reference": "outputs/Scene-Target-Selected.png",
     "generatorDeferred": true,
     "defaultStyle": "hybrid",
-    "authority": "Minecraft server block states in x0..512/y67..100/z0; original GD continuation outside this first region"
+    "authority": "Actual Minecraft server block states within GameplayRegion; native GD continuation outside its X/Y bounds"
   }
 }

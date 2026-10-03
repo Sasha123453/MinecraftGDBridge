@@ -1,0 +1,77 @@
+{
+  "schema": "gdbridge-scenery-plan-v1",
+  "name": "XO full scene 1/15",
+  "targetWorld": "GDBridge-XO",
+  "seed": 20261003,
+  "batchIndex": 1,
+  "batchCount": 15,
+  "cellBudget": 7067,
+  "notes": "Scenery only. Apply sequentially after existing intro plans and foreground-caps-cleanup; exact authored roof cleanup first. Native gameplay plane Z0 is forbidden.",
+  "boxes": [
+    {
+      "from": [
+        0,
+        89,
+        -10
+      ],
+      "to": [
+        120,
+        90,
+        -1
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        0,
+        89,
+        1
+      ],
+      "to": [
+        120,
+        90,
+        12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        0,
+        86,
+        12
+      ],
+      "to": [
+        120,
+        88,
+        12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        132,
+        81,
+        -6
+      ],
+      "to": [
+        262,
+        81,
+        -1
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        274,
+        79,
+        -6
+      ],
+      "to": [
+        372,
+        79,
+        -1
+      ],
+      "block": "minecraft:air"
+    }
+  ]
+}

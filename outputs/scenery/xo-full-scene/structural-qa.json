@@ -1,0 +1,20 @@
+{
+  "schema": "gdbridge-scenery-structural-qa-v1",
+  "passed": true,
+  "generatorRerun": {
+    "stderr": ""
+  },
+  "deterministicPlans": true,
+  "planCount": 15,
+  "requestedCells": 184081,
+  "maxBatch": 15999,
+  "routeZ0Touched": false,
+  "outdoorContinuousWalls": false,
+  "negativeStartBackground": true,
+  "chaptersCoverNativeEndpoint": true,
+  "highSolidTop": 146.25,
+  "indoorRoofY": 152,
+  "issues": [],
+  "liveApply": false,
+  "renderValidationPending": true
+}

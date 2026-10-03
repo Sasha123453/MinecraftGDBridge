@@ -5,7 +5,7 @@
   },
   "id": "experiment.minecraft_bridge",
   "name": "Minecraft GD Bridge",
-  "version": "v0.4.3",
+  "version": "v0.4.6",
   "developer": "Local experiment",
   "description": "Minecraft-authored levels, original GD visuals and native level blueprints on localhost:18471."
 }

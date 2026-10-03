@@ -84,6 +84,7 @@ namespace {
 bool buildMode = false;
 bool minecraftMenuPaused = false;
 bool bridgeMusicPaused = false;
+bool latestLevelCompleted = false;
 bool bridgePaused() { return buildMode || minecraftMenuPaused; }
 void syncBridgeMusicPause(bool force=false) {
     auto play=PlayLayer::get();if(!play)return;
@@ -192,6 +193,7 @@ struct NativeSceneTransition {
     bool authored=false;
     size_t authoredObjects=0;
     std::string authority="geometry-dash";
+    bool preservePause=false,heldBuildMode=false,heldMinecraftMenu=false;
 };
 NativeSceneTransition sceneTransition;
 void stopRetiringNodeActions(CCNode* node,std::unordered_set<CCNode*>& visited) {
@@ -205,10 +207,11 @@ void stopRetiringNodeActions(CCNode* node,std::unordered_set<CCNode*>& visited) 
     if(auto sprite=geode::cast::typeinfo_cast<CCSpritePlus*>(node);sprite && sprite->m_followers)
         for(auto follower:CCArrayExt<CCNode*>(sprite->m_followers))stopRetiringNodeActions(follower,visited);
 }
-bool queueNativeScene(GJGameLevel* level,bool authored=false,size_t count=0,std::string authority="minecraft-blueprint") {
+bool queueNativeScene(GJGameLevel* level,bool authored=false,size_t count=0,std::string authority="minecraft-blueprint",bool preservePause=false) {
     if(!level || sceneTransition.level){log::warn("Bridge scene request ignored: transition already pending");return false;}
     level->retain();sceneTransition.level=level;sceneTransition.authored=authored;sceneTransition.authoredObjects=count;
     sceneTransition.authority=authored && authority=="minecraft-world"?"minecraft-world":authored?"minecraft-blueprint":"geometry-dash";
+    sceneTransition.preservePause=preservePause;sceneTransition.heldBuildMode=buildMode;sceneTransition.heldMinecraftMenu=minecraftMenuPaused;
     return true;
 }
 void advanceNativeSceneTransition() {
@@ -225,7 +228,7 @@ void advanceNativeSceneTransition() {
             }
             stopRetiringNodeActions(play->m_player1,visited);stopRetiringNodeActions(play->m_player2,visited);
         }
-        disableDiagnosticNoclip();buildMode=false;minecraftMenuPaused=false;
+        disableDiagnosticNoclip();if(!sceneTransition.preservePause){buildMode=false;minecraftMenuPaused=false;}
         auto parking=CCScene::create();parking->retain();sceneTransition.parking=parking;
         director->replaceScene(parking);
         log::info("Bridge scene retirement queued: {} native nodes, next level {}",visited.size(),sceneTransition.level->m_levelID.value());
@@ -238,7 +241,8 @@ void advanceNativeSceneTransition() {
     sceneAuthority=transition.authority;
     auto next=PlayLayer::scene(transition.level,false,false);
     if(next) {
-        if(transition.authored)++buildRevision;
+        if(transition.authored && !transition.preservePause)++buildRevision;
+        if(transition.preservePause){buildMode=transition.heldBuildMode;minecraftMenuPaused=transition.heldMinecraftMenu;syncBridgeMusicPause(true);}
         director->replaceScene(next);
         log::info("Bridge native scene activated after retirement: level {} authored {} objects {} revision {}",transition.level->m_levelID.value(),transition.authored,transition.authoredObjects,buildRevision);
     }else{log::warn("Bridge native scene creation failed after retirement");director->replaceScene(MenuLayer::scene(false));}
@@ -549,6 +553,29 @@ void nativeVisuals(PlayerObject* player,matjson::Value& frame) {
     auto primary=matjson::Value::array();primary.push(main.r);primary.push(main.g);primary.push(main.b);frame["primaryColor"]=std::move(primary);
     auto secondary=matjson::Value::array();secondary.push(detail.r);secondary.push(detail.g);secondary.push(detail.b);frame["secondaryColor"]=std::move(secondary);
     auto layers = matjson::Value::array(); avatarNodes(player,player,layers); frame["avatarLayers"] = std::move(layers);
+    // Observe native hidden/culled state without forcing visibility or alpha.
+    // Breadth-first rows include the actual hierarchy even when avatarNodes
+    // correctly skips an invisible root. Keep telemetry deliberately small.
+    auto diagnostic=matjson::Value::object();diagnostic["visible"]=player->isVisible();diagnostic["hidden"]=player->m_isHidden;
+    diagnostic["invisible"]=player->m_isInvisible;diagnostic["dead"]=player->m_isDead;diagnostic["opacity"]=player->getOpacity();diagnostic["displayedOpacity"]=player->getDisplayedOpacity();
+    auto rows=matjson::Value::array();std::vector<std::pair<CCNode*,int>> pending{{player,0}};std::unordered_set<CCNode*> visited;
+    for(size_t index=0;index<pending.size() && rows.size()<16;++index){
+        auto [node,depth]=pending[index];if(!node || depth>8 || !visited.insert(node).second)continue;
+        auto row=matjson::Value::object();row["depth"]=depth;row["visible"]=node->isVisible();row["parentVisible"]=!node->getParent() || node->getParent()->isVisible();
+        row["role"]=node==player?"player":node==player->m_mainLayer?"main-layer":node==player->m_iconSprite?"icon":node==player->m_iconSpriteSecondary?"icon-secondary":node==player->m_iconSpriteWhitener?"icon-whitener":node==player->m_iconGlow?"icon-glow":node==player->m_vehicleSprite?"vehicle":node==player->m_vehicleSpriteSecondary?"vehicle-secondary":node==player->m_birdVehicle?"bird":"child";
+        row["scaleX"]=node->getScaleX();row["scaleY"]=node->getScaleY();
+        if(auto rgba=geode::cast::typeinfo_cast<CCNodeRGBA*>(node)){row["opacity"]=rgba->getOpacity();row["displayedOpacity"]=rgba->getDisplayedOpacity();}
+        if(auto sprite=geode::cast::typeinfo_cast<CCSprite*>(node)){
+            row["dontDraw"]=sprite->getDontDraw();row["hasTexture"]=sprite->getTexture()!=nullptr;
+            row["texturePath"]=sprite->getTexture()?exportTexture(sprite->getTexture()):std::string();
+            auto quad=sprite->getQuad();auto alpha=matjson::Value::array();for(auto value:{quad.bl.colors.a,quad.br.colors.a,quad.tr.colors.a,quad.tl.colors.a})alpha.push(value);row["quadAlpha"]=std::move(alpha);
+            auto rect=sprite->getTextureRect();auto frameRect=matjson::Value::array();for(double value:{double(rect.origin.x),double(rect.origin.y),double(rect.size.width),double(rect.size.height)})frameRect.push(value);row["textureRect"]=std::move(frameRect);
+        }
+        auto children=node->getChildren();row["childCount"]=children?children->count():0;
+        if(children && depth<8)for(auto child:CCArrayExt<CCNode*>(children))if(pending.size()<128)pending.emplace_back(child,depth+1);
+        rows.push(std::move(row));
+    }
+    diagnostic["nodes"]=std::move(rows);frame["playerNativeDiagnostics"]=std::move(diagnostic);
     auto trails = matjson::Value::array();
     streakMesh(player->m_regularTrail,player,"regular",trails);
     streakMesh(player->m_shipStreak,player,"ship",trails);
@@ -571,7 +598,17 @@ char const* mode(PlayerObject* p) {
     if (p->m_isSwing) return "swing";
     return "cube";
 }
-char const* kind(GameObjectType t) {
+char const* kind(GameObject* object) {
+    if (!object) return "decor";
+    auto t = object->m_objectType;
+    // Modifier is shared by speed portals and editor triggers. Treating every
+    // modifier as a portal moves/removes alpha and other triggers on MC export.
+    if (t == GameObjectType::Modifier) {
+        switch (object->m_objectID) {
+        case 200: case 201: case 202: case 203: case 1334: return "portal";
+        default: return "decor";
+        }
+    }
     switch (t) {
     case GameObjectType::Solid: case GameObjectType::Breakable: case GameObjectType::Slope: return "solid";
     case GameObjectType::Hazard: case GameObjectType::AnimatedHazard: return "hazard";
@@ -587,7 +624,7 @@ char const* kind(GameObjectType t) {
     case GameObjectType::RegularSizePortal: case GameObjectType::MiniSizePortal: case GameObjectType::UfoPortal:
     case GameObjectType::DualPortal: case GameObjectType::SoloPortal: case GameObjectType::WavePortal:
     case GameObjectType::RobotPortal: case GameObjectType::TeleportPortal: case GameObjectType::SpiderPortal:
-    case GameObjectType::SwingPortal: case GameObjectType::GravityTogglePortal: case GameObjectType::Modifier: return "portal";
+    case GameObjectType::SwingPortal: case GameObjectType::GravityTogglePortal: return "portal";
     default: return "decor";
     }
 }
@@ -668,8 +705,8 @@ class $modify(BridgePlayLayer, PlayLayer) {
             auto name=actualFrameName(object);auto size=object->getContentSize();
             if(!name.empty())if(auto frame=CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(name.c_str())){auto original=frame->getOriginalSize();if(original.width>0 && original.height>0)size=original;}
             auto rgb=object->m_colorSprite?object->m_colorSprite->getDisplayedColor():object->getDisplayedColor();
-            StableVisual visual{std::max(1.f,size.width*std::abs(object->getScaleX())),std::max(1.f,size.height*std::abs(object->getScaleY())),rgb,name,actualSpikePeaks(name)};
-            auto type=std::string_view(kind(object->m_objectType));
+            StableVisual visual{std::max(0.f,size.width*std::abs(object->getScaleX())),std::max(0.f,size.height*std::abs(object->getScaleY())),rgb,name,actualSpikePeaks(name)};
+            auto type=std::string_view(kind(object));
             if(type=="orb" || type=="portal") {
                 auto baked=actualAtlasColor(object);
                 if(!baked.saturated && object->m_colorSprite)baked=actualAtlasColor(object->m_colorSprite);
@@ -679,8 +716,40 @@ class $modify(BridgePlayLayer, PlayLayer) {
         }
         return found->second;
     }
+    void appendNativeGeometry(matjson::Value& item,GameObject* object) {
+        // Initialized native geometry only; visual extents never replace the
+        // smaller GD collision hitbox (e.g. a 30x30 spike with a 6x12 hitbox).
+        auto visual=stableVisual(object);auto rect=object->getObjectRect();
+        auto type=object->m_objectType;auto semantic=std::string_view(kind(object));
+        char const* shape="unsupported";
+        char const* nativeTypeName=kind(object);
+        if(type==GameObjectType::Slope){shape="native-slope";nativeTypeName="slope";}
+        else if(type==GameObjectType::Solid || type==GameObjectType::Breakable){shape="solid-rect";nativeTypeName=type==GameObjectType::Breakable?"breakable":"solid";}
+        else if(semantic=="hazard" && visual.spikePeaks>0)shape=visual.spikePeaks>1?"spike-strip":"spike";
+        item["shape"]=shape;item["nativeType"]=static_cast<int>(type);item["nativeTypeName"]=nativeTypeName;
+        item["hitboxX"]=rect.origin.x+rect.size.width/2;item["hitboxY"]=rect.origin.y+rect.size.height/2;
+        item["hitboxW"]=rect.size.width;item["hitboxH"]=rect.size.height;
+        item["nativeRotation"]=object->getRotation();item["nativeScaleX"]=object->getScaleX();item["nativeScaleY"]=object->getScaleY();
+        item["nativeFlipX"]=object->isFlipX();item["nativeFlipY"]=object->isFlipY();
+        item["bodyWidth"]=visual.width;item["bodyHeight"]=visual.height;
+        item["vw"]=visual.width;item["vh"]=visual.height;
+        item["nativeFrameName"]=visual.frameName;item["spikePeaks"]=visual.spikePeaks;
+        auto content=object->getContentSize();CCPoint center{content.width/2,content.height/2};
+        float sx=std::abs(object->getScaleX()),sy=std::abs(object->getScaleY());
+        float halfWidth=sx>1e-8f?visual.width/(2*sx):0,halfHeight=sy>1e-8f?visual.height/(2*sy):0;
+        CCPoint corners[4]={{center.x-halfWidth,center.y-halfHeight},{center.x+halfWidth,center.y-halfHeight},
+            {center.x+halfWidth,center.y+halfHeight},{center.x-halfWidth,center.y+halfHeight}};
+        auto quad=matjson::Value::array();
+        for(auto corner:corners){auto p=gdPoint(object,corner,m_player1);auto point=matjson::Value::array();point.push(p.x);point.push(p.y);quad.push(std::move(point));}
+        auto worldCenter=gdPoint(object,center,m_player1);
+        item["bodyX"]=worldCenter.x;item["bodyY"]=worldCenter.y;item["visualQuad"]=std::move(quad);
+        if(!item.contains("bodyRotation"))item["bodyRotation"]=object->getRotation();
+        if(type==GameObjectType::Slope){item["slopeDirection"]=object->m_slopeDirection;item["slopeUphill"]=object->m_slopeUphill;item["slopeIsHazard"]=object->m_slopeIsHazard;}
+        item["geometryMetadataSource"]="initialized-native-object";item["geometryMetadataVersion"]=1;
+    }
     bool init(GJGameLevel* level,bool replay,bool dontCreateObjects) {
         disableDiagnosticNoclip();
+        latestLevelCompleted=false;
         minecraftAuthored = level && level->m_dontSave && level->m_creatorName == "Minecraft Bridge" && level->m_levelID.value() == 0;
         if(!minecraftAuthored)sceneAuthority="geometry-dash";
         buildMode = false;
@@ -717,7 +786,7 @@ class $modify(BridgePlayLayer, PlayLayer) {
             size_t nativePhysical=0;
             for(auto object:CCArrayExt<GameObject*>(m_objects)) {
                 if(!object || object==m_anticheatSpike)continue;
-                auto type=kind(object->m_objectType);
+                auto type=kind(object);
                 stableVisual(object);
                 auto known=initializedObjectKinds.find(object->m_objectID);
                 if(known==initializedObjectKinds.end())initializedObjectKinds[object->m_objectID]=type;
@@ -737,7 +806,7 @@ class $modify(BridgePlayLayer, PlayLayer) {
                 auto found=nativeObjects.find(blueprintObjectKey(objectId,x,y));
                 if(found==nativeObjects.end() || found->second.empty()){++unmatchedSource;continue;}
                 auto object=found->second.back();found->second.pop_back();
-                auto type=kind(object->m_objectType);
+                auto type=kind(object);
                 auto p=object->getPosition();auto size=object->getContentSize();auto rect=object->getObjectRect();
                 auto item=matjson::Value::object();item["id"]=objectId;item["type"]=type;
                 // Authoring transforms come from the exact matched source
@@ -748,6 +817,13 @@ class $modify(BridgePlayLayer, PlayLayer) {
                 item["vw"]=size.width*std::abs(object->getScaleX());item["vh"]=size.height*std::abs(object->getScaleY());
                 item["w"]=rect.size.width;item["h"]=rect.size.height;
                 item["invisible"]=object->m_isInvisible;item["disabled"]=object->m_isDisabled;
+                item["noTouch"]=object->m_isNoTouch;item["groupDisabled"]=object->m_isGroupDisabled;item["groupDisabledTemp"]=object->m_isGroupDisabledTemp;
+                item["passable"]=object->m_isPassable;item["invisibleBlock"]=object->m_isInvisibleBlock;
+                bool active=!object->m_isDisabled && !object->m_isGroupDisabled && !object->m_isGroupDisabledTemp;
+                item["collisionEnabled"]=active && !object->m_isNoTouch;
+                item["visualOpacity"]=logicalSpriteOpacity(object,object);
+                item["visualEnabled"]=active && !object->m_isInvisible && !object->m_isInvisibleBlock && logicalSpriteOpacity(object,object)>0;
+                appendNativeGeometry(item,object);
                 // Preserve the exact original input record. Runtime serialization
                 // can touch editor-only state absent in a gameplay PlayLayer.
                 item["data"]=record;objects.push(std::move(item));
@@ -820,12 +896,12 @@ class $modify(BridgePlayLayer, PlayLayer) {
             auto visualDiagnostics=matjson::Value::array();
             std::vector<GameObject*> nearby;
             if(m_objects)for(auto object:CCArrayExt<GameObject*>(m_objects))if(object && object!=m_anticheatSpike && std::abs(object->getPositionX()-pos.x)<=1200)nearby.push_back(object);
-            auto priority=[](GameObject* object){auto type=std::string_view(kind(object->m_objectType));return type=="orb" || type=="portal"?0:type=="hazard"?1:2;};
+            auto priority=[](GameObject* object){auto type=std::string_view(kind(object));return type=="orb" || type=="portal"?0:type=="hazard"?1:2;};
             std::stable_sort(nearby.begin(),nearby.end(),[&](GameObject* a,GameObject* b){int ar=priority(a),br=priority(b);if(ar!=br)return ar<br;return std::abs(a->getPositionX()-pos.x)<std::abs(b->getPositionX()-pos.x);});
             for (auto object : nearby) {
                 auto p = object->getPosition();
                 if (std::abs(p.x-pos.x) > 1200) continue;
-                auto type = kind(object->m_objectType);
+                auto type = kind(object);
                 if (std::string_view(type) == "decor") continue;
                 auto rect = object->getObjectRect();
                 matjson::Value item = matjson::Value::object();
@@ -854,6 +930,7 @@ class $modify(BridgePlayLayer, PlayLayer) {
                 auto local=object->getContentSize();auto bodyCenter=gdPoint(object,{local.width/2,local.height/2},m_player1);
                 item["bodyX"]=bodyCenter.x;item["bodyY"]=bodyCenter.y;item["bodyWidth"]=visual.width;item["bodyHeight"]=visual.height;
                 item["bodyRotation"]=object->getRotation()+((object->isFlipY()!=(object->getScaleY()<0))?180.f:0.f);
+                appendNativeGeometry(item,object);
                 item["nativeFrameName"]=visual.frameName;item["visualShape"]=std::string_view(type)=="hazard" && visual.spikePeaks>0?(visual.spikePeaks>1?"spike-strip":"spike"):"native";item["spikePeaks"]=visual.spikePeaks;
                 item["visualColorSource"]=visual.atlasColor?"native-atlas-pixels-times-displayed-tint":"native-displayed-tint";
                 auto bodyRgb=matjson::Value::array();bodyRgb.push(visual.color.r);bodyRgb.push(visual.color.g);bodyRgb.push(visual.color.b);item["visualColor"]=std::move(bodyRgb);
@@ -909,8 +986,8 @@ class $modify(BridgePlayLayer, PlayLayer) {
     void pauseGame(bool unfocused) {
         PlayLayer::pauseGame(unfocused); publishFrame(true);
     }
-    void levelComplete() {m_fields->levelCompletedDiagnosticNoclip=diagnosticNoclipActive();PlayLayer::levelComplete();m_fields->levelCompleted=true;publishFrame(true);}
-    void resetLevel() {m_fields->levelCompleted=false;m_fields->levelCompletedDiagnosticNoclip=false;PlayLayer::resetLevel();syncBridgeMusicPause(true);publishFrame(true);}
+    void levelComplete() {m_fields->levelCompletedDiagnosticNoclip=diagnosticNoclipActive();PlayLayer::levelComplete();latestLevelCompleted=true;m_fields->levelCompleted=true;publishFrame(true);}
+    void resetLevel() {latestLevelCompleted=false;m_fields->levelCompleted=false;m_fields->levelCompletedDiagnosticNoclip=false;PlayLayer::resetLevel();syncBridgeMusicPause(true);publishFrame(true);}
     void destroyPlayer(PlayerObject* p, GameObject* o) {
         if(diagnosticNoclipActive() && p && (p==m_player1 || p==m_player2))return;
         PlayLayer::destroyPlayer(p,o); publishFrame(true);
@@ -928,10 +1005,14 @@ void loadMinecraftLevel(matjson::Value const& request) {
     auto baselineRaw=request["baseRawLevelString"].asString().unwrapOr("");
     if(baseline.size()>20*1024*1024 || baselineRaw.size()>20*1024*1024){log::warn("Bridge baseline too large");return;}
     if(auto null=baseline.find('\0');null!=std::string::npos)baseline.resize(null);
+    for(auto key:{"rangeMinX","rangeMaxX","rangeMinY","rangeMaxY"})if(request.contains(key)&&!request[key].asDouble()){
+        log::warn("Bridge non-numeric Minecraft region field {}",key);return;
+    }
+    double rangeMinX=request["rangeMinX"].asDouble().unwrapOr(0);
     double rangeMaxX=request["rangeMaxX"].asDouble().unwrapOr(100000);
-    if(!std::isfinite(rangeMaxX) || rangeMaxX<30 || rangeMaxX>100000)rangeMaxX=100000;
+    if(!std::isfinite(rangeMinX) || !std::isfinite(rangeMaxX) || rangeMinX < -480 || rangeMaxX>122880 || rangeMinX>=rangeMaxX){log::warn("Bridge invalid Minecraft X region");return;}
     double rangeMinY=request["rangeMinY"].asDouble().unwrapOr(90),rangeMaxY=request["rangeMaxY"].asDouble().unwrapOr(1080);
-    if(!std::isfinite(rangeMinY) || !std::isfinite(rangeMaxY) || rangeMinY < -100000 || rangeMaxY>100000 || rangeMinY>rangeMaxY){rangeMinY=90;rangeMaxY=1080;}
+    if(!std::isfinite(rangeMinY) || !std::isfinite(rangeMaxY) || rangeMinY < -100000 || rangeMaxY>100000 || rangeMinY>rangeMaxY){log::warn("Bridge invalid Minecraft Y region");return;}
     if(!baselineRaw.empty() || !baseline.empty()) {
         std::string decoded=baselineRaw.empty()?std::string(ZipUtils::decompressString(baseline,false,0)):baselineRaw;
         if(auto null=decoded.find('\0');null!=std::string::npos)decoded.resize(null);
@@ -942,7 +1023,7 @@ void loadMinecraftLevel(matjson::Value const& request) {
             // non-physical/unknown records. Serialized editor Y is world Y-90.
             for(size_t i=1;i<records.size();++i)if(!records[i].empty()) {
                 double x=recordX(records[i]),worldY=recordY(records[i])+90;
-                if(!std::isfinite(x) || !std::isfinite(worldY) || x<0 || x>rangeMaxX || worldY<rangeMinY || worldY>rangeMaxY || !physicalID(recordID(records[i])))raw+=records[i]+";";
+                if(!std::isfinite(x) || !std::isfinite(worldY) || x<rangeMinX || x>rangeMaxX || worldY<rangeMinY || worldY>rangeMaxY || !physicalID(recordID(records[i])))raw+=records[i]+";";
             }
         }
     }
@@ -953,7 +1034,7 @@ void loadMinecraftLevel(matjson::Value const& request) {
         double rotation=object["rotation"].asDouble().unwrapOr(0),scale=object["scale"].asDouble().unwrapOr(1);
         // GD stores mirrored objects using signed key 32 scale. Preserve the
         // sign; accepting only positive scale deleted 208 original XO objects.
-        if(!physicalID(id) || !std::isfinite(x) || !std::isfinite(y) || !std::isfinite(rotation) || !std::isfinite(scale) || std::abs(x)>100000 || std::abs(y)>100000 || std::abs(scale)<.01 || std::abs(scale)>100)continue;
+        if(!physicalID(id) || !std::isfinite(x) || !std::isfinite(y) || !std::isfinite(rotation) || !std::isfinite(scale) || x < -480 || x>122880 || std::abs(y)>100000 || std::abs(scale)<.01 || std::abs(scale)>100)continue;
         raw+=objectRecord(object,id,x,y,rotation,scale);++count;
     }
     // Non-colliding offscreen decoration gives the authored empty course a native finish boundary.
@@ -1013,7 +1094,15 @@ void drainCommands() {
         if (!play) continue;
         if (cmd == "input") input = "jump";
         if (input == "jump" && !bridgePaused()) play->handleButton(request["down"].asBool().unwrapOr(false),1,true);
-        if (input == "restart") play->resetLevel();
+        if (input == "restart") {
+            if(latestLevelCompleted && play->m_level){
+                // A completed PlayLayer retains native end-animation state.
+                // Retain this same level and use the existing safe retirement
+                // boundary to create a fresh native player, preserving both
+                // independent Minecraft pause reasons and build revision.
+                queueNativeScene(play->m_level,minecraftAuthored,play->m_objects?static_cast<size_t>(play->m_objects->count()):0,sceneAuthority,true);
+            }else play->resetLevel();
+        }
     }
 }
 }

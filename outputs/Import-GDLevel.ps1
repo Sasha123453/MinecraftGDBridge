@@ -1,24 +1,24 @@
 #Requires -Version 7.0
 <#
 .SYNOPSIS
-Loads downloaded native GD level data and imports its first-region Minecraft markers.
+Loads native GD level data and imports its Minecraft geometry within the derived region.
 .EXAMPLE
 .\Import-GDLevel.ps1 -Path "$PSScriptRoot\bridge\levels\xo-easy-jukaras-source.json"
 .EXAMPLE
 .\Import-GDLevel.ps1 -Path 'C:\...\outputs\bridge\levels\downloaded-source.json' -EditableMinecraft
 .NOTES
-Default playback keeps the full original native level. Marker authoring currently covers
-Minecraft x=0..512, y=67..100. EditableMinecraft explicitly requests a Minecraft export;
-it is not a lossless full-level conversion. Requires GD bridge 0.3.4 and MC relay 0.3.5.
+Default playback keeps the original native level. EditableMinecraft requests a server-world
+export afterward. Exact geometry support is version-dependent and must be verified separately.
 #>
 param(
     [Parameter(Mandatory=$true)][string]$Path,
     [switch]$EditableMinecraft,
-    [ValidateRange(1,45)][int]$WaitSeconds=45
+    [ValidateRange(1,180)][int]$WaitSeconds=120
 )
 $ErrorActionPreference='Stop'
+. (Join-Path $PSScriptRoot 'Runtime-Paths.ps1')
 if(-not [IO.Path]::IsPathFullyQualified($Path)){throw 'Path must be an absolute downloaded source JSON under outputs/bridge/levels.'}
-$levelsRoot=(Resolve-Path -LiteralPath (Join-Path $PSScriptRoot 'bridge/levels')).ProviderPath
+$levelsRoot=(Resolve-Path -LiteralPath (Join-Path (Get-BridgeRuntimeOutputs) 'bridge/levels')).ProviderPath
 $sourcePath=(Resolve-Path -LiteralPath $Path).ProviderPath
 $prefix=$levelsRoot.TrimEnd('\','/')+[IO.Path]::DirectorySeparatorChar
 if(-not $sourcePath.StartsWith($prefix,[StringComparison]::OrdinalIgnoreCase)){throw 'Source JSON must be under outputs/bridge/levels.'}
@@ -29,12 +29,18 @@ if($source -isnot [pscustomobject]){throw 'Source must contain a JSON object.'}
 $levelId=if($source.PSObject.Properties['id']){[int]$source.id}elseif($source.PSObject.Properties['levelId']){[int]$source.levelId}else{0}
 if($levelId -le 0 -or -not $source.PSObject.Properties['levelString'] -or -not [string]$source.levelString -or ([string]$source.levelString).Length -gt 4MB -or ([string]$source.levelString).Contains([char]0)){throw 'Source requires a positive native level ID and a compressed levelString up to 4 MiB.'}
 $controlScript=Join-Path $PSScriptRoot 'Control-Bridge.ps1'
-$profileRoot=Join-Path $PSScriptRoot 'launcher/data/instances/gdbridge/.minecraft'
+$profileRoot=Join-Path (Get-BridgeRuntimeOutputs) 'launcher/data/instances/gdbridge/.minecraft'
 $statusPath=Join-Path $profileRoot 'config/gdbridge/status.json'
-$scenePath=Join-Path $profileRoot 'config/gdbridge/scene-GDBridge-XO.json'
 if(-not(Test-Path -LiteralPath $statusPath -PathType Leaf)){throw 'Minecraft bridge status is unavailable. Start the isolated bridge first.'}
 $initialStatus=Get-Content -Raw -LiteralPath $statusPath | ConvertFrom-Json
-if(-not $initialStatus.worldLoaded -or [string]$initialStatus.world -ne 'GDBridge-XO'){throw 'Open the isolated GDBridge-XO world before importing.'}
+if(-not $initialStatus.worldLoaded -or [string]$initialStatus.world -notin @('GDBridge-XO','GDBridge-GeometryTests')){throw 'Open an isolated GDBridge-XO or GDBridge-GeometryTests world before importing.'}
+$scenePath=Join-Path $profileRoot ('config/gdbridge/scene-'+[string]$initialStatus.world+'.json')
+$readyTimer=[Diagnostics.Stopwatch]::StartNew()
+while($initialStatus.worldOperationBusy -and $readyTimer.Elapsed.TotalSeconds -lt $WaitSeconds){
+    Start-Sleep -Milliseconds 200
+    $initialStatus=Get-Content -Raw -LiteralPath $statusPath | ConvertFrom-Json
+}
+if($initialStatus.worldOperationBusy){throw 'A previous Minecraft world operation did not finish; source import was not started.'}
 $prepared=[ordered]@{}
 foreach($property in $source.PSObject.Properties){$prepared[$property.Name]=$property.Value}
 $prepared.id=$levelId;$prepared.downloadMusic=$false
@@ -68,7 +74,7 @@ try{
             try{
                 $scene=Get-Content -Raw -LiteralPath $scenePath | ConvertFrom-Json
                 $status=Get-Content -Raw -LiteralPath $statusPath | ConvertFrom-Json
-                if((Get-Item -LiteralPath $scenePath).LastWriteTimeUtc -ge $importStarted -and [int]$scene.levelId -eq $levelId -and $status.editing -and [string]$status.message -match '^Imported \d+ Minecraft markers; \d+ outside range$'){$importStatus=$status;break}
+                if((Get-Item -LiteralPath $scenePath).LastWriteTimeUtc -ge $importStarted -and [int]$scene.levelId -eq $levelId -and $status.editing -and -not $status.worldOperationBusy -and [string]$status.message -match '^Imported \d+ (cells;|Minecraft markers;|exact pieces in)'){$importStatus=$status;break}
             }catch{}
         }
         Start-Sleep -Milliseconds 200
@@ -80,7 +86,7 @@ try{
 }
 $exportAck=$null
 if($EditableMinecraft){
-    Write-Warning 'Minecraft export replaces the physical objects inside its first 512-block authoring region; it is not a lossless full-level conversion.'
+    Write-Host 'Compiling actual Minecraft world pieces; exact transfer and native physics are verified separately.'
     $exportAck=& $controlScript -Action export
 }
 [pscustomobject]@{
@@ -96,5 +102,5 @@ if($EditableMinecraft){
     markerImportAcknowledgement=$importAck
     nativePlayAcknowledgement=$playAck
     exportAcknowledgement=$exportAck
-    note=if($EditableMinecraft){'Limited Minecraft authoring export was explicitly queued. Native GD controls its physics.'}else{'Full original GD level remains active. Minecraft markers cover only the supported first region; no custom level export was sent.'}
+    note=if($EditableMinecraft){'Minecraft authoring export was explicitly queued within the derived GameplayRegion. Native GD controls its physics; queued export completion must be verified separately.'}else{'Original GD level remains active. Minecraft cells were imported within the derived GameplayRegion; no world-authority export was sent. Voxel conversion changes the course.'}
 } | ConvertTo-Json -Depth 12

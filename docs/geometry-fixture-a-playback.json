@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-10-03T12:45:27.5421439Z",
+  "versions": {
+    "minecraft": "0.4.6",
+    "geometryDash": "0.4.6"
+  },
+  "packageHashes": {
+    "minecraft": "9A50D811E186C29FC6B9570E9F1079DF58D484D7496512577F577931CCE3A801",
+    "geometryDash": "5074C5FDABDFB781A0BD22110D5730754ADC09E79A7B3D4715BE7E58E67C782C"
+  },
+  "fixture": "A blocks/spikes/pads",
+  "geometryAuthority": "minecraft-world",
+  "recordingFrames": 239,
+  "actualFps": 20.004666634838514,
+  "firstX": 7.789502143859863,
+  "lastX": 2715.0,
+  "deadFrames": 0,
+  "noclipFrames": 0,
+  "normalCompletionObserved": true,
+  "manualInputUsed": false,
+  "desktopCaptureUsed": false,
+  "avatarVisibleInReviewedFrames": true,
+  "sampledDuplicateFaces": false,
+  "sampledFlicker": false,
+  "reviewedFrames": [
+    0,
+    20,
+    26,
+    30,
+    44,
+    45,
+    46,
+    79,
+    80,
+    81,
+    120,
+    160,
+    238
+  ],
+  "nativeTextureLoadErrors": 0,
+  "videoSHA256": "CA4CDCDD36909CF48794DD649307F2898EF348E07A1648A21E1397C48CD3726B",
+  "limitations": "Sampled visual QA of a simple static fixture; complex shapes, moving groups, particle effects and full XO remain unverified."
+}

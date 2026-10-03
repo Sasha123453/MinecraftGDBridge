@@ -27,6 +27,7 @@ public final class BridgeControl {
                 case "gd-pause" -> {JsonObject command=new JsonObject();command.addProperty("cmd","build-mode");command.addProperty("active",j.get("active").getAsBoolean());result=GDBridge.send(command)?"Native GD pause requested":"GD disconnected";}
                 case "shutdown-gd" -> {JsonObject command=new JsonObject();command.addProperty("cmd","shutdown-gd");result=GDBridge.send(command)?"Native GD save/exit requested":"GD disconnected";}
                 case "quit" -> {mc.scheduleStop();result="Minecraft save/exit requested";}
+                case "resume-world" -> {if(mc.world==null)throw new IllegalStateException("No local world");if(mc.currentScreen instanceof net.minecraft.client.gui.screen.GameMenuScreen){mc.setScreen(null);result="Minecraft pause menu closed through native API";}else if(mc.currentScreen==null){result="Minecraft world already active";}else throw new IllegalStateException("Resume supports only the Minecraft pause menu");}
                 case "load-level" -> {JsonObject command=new JsonObject();command.addProperty("input","load-level");command.addProperty("id",j.get("id").getAsInt());result=GDBridge.send(command)?"GD level request sent":"GD disconnected";}
                 case "load-level-data" -> {JsonObject source=SceneBlueprint.readSource(j.get("path").getAsString());JsonObject command=new JsonObject();command.addProperty("input","load-level-data");for(String field:java.util.List.of("id","name","songId","audioTrack","levelString","rawLevelString","downloadMusic"))if(source.has(field))command.add(field,source.get(field));if(!command.has("id")&&source.has("levelId"))command.add("id",source.get("levelId"));result=GDBridge.send(command)?"Original GD data load requested":"GD disconnected";}
                 case "set-time" -> {if(mc.getServer()==null)throw new IllegalStateException("No local world");long time=j.get("time").getAsLong();mc.getServer().execute(()->mc.getServer().getOverworld().setTimeOfDay(time));result="World time requested: "+time;}
@@ -86,7 +87,7 @@ public final class BridgeControl {
         return command;
     }
     private static void openWorld(MinecraftClient mc,String name){
-        if(!Set.of("GDBridge","GDBridge-XO").contains(name))throw new IllegalArgumentException("Use an isolated bridge world");
+        if(!Set.of("GDBridge","GDBridge-XO","GDBridge-GeometryTests").contains(name))throw new IllegalArgumentException("Use an isolated bridge world");
         if(mc.world!=null){mc.world.disconnect();mc.disconnect(new net.minecraft.client.gui.screen.ProgressScreen(true));}WorldEditor.resetWorld(name);WorldEditor.editing=true;
         try{Path selected=mc.runDirectory.toPath().resolve("config/gdbridge/selected-world.json");Files.createDirectories(selected.getParent());Files.writeString(selected,"{\"world\":\""+name+"\"}");}catch(Exception ignored){}
         JsonObject pause=new JsonObject();pause.addProperty("cmd","build-mode");pause.addProperty("active",true);GDBridge.send(pause);

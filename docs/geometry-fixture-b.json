@@ -1,0 +1,410 @@
+{
+  "checkedAt": "2026-10-03T12:42:46.7732639Z",
+  "fixtureId": 900000102,
+  "fixtureName": "Bridge fixture B - fractional transforms",
+  "authority": "minecraft-world",
+  "world": "GDBridge-GeometryTests",
+  "passed": true,
+  "sourceMatchUnchanged": true,
+  "originalSourceCount": 11,
+  "storedTotal": 163,
+  "nativeTotal": 163,
+  "storedMatched": 11,
+  "nativeMatched": 11,
+  "storedPositionMatched": 11,
+  "nativePositionMatched": 11,
+  "storedRotationMatched": 11,
+  "nativeRotationMatched": 11,
+  "storedScaleMatched": 11,
+  "nativeScaleMatched": 11,
+  "storedFlipMatched": 11,
+  "nativeFlipMatched": 11,
+  "authoredRecordUnavailable": {
+    "stored": 0,
+    "native": 0
+  },
+  "storedExtras": 152,
+  "nativeExtras": 152,
+  "geometryFieldsChecked": 55,
+  "geometryMismatches": 0,
+  "geometryUnavailablePieces": 0,
+  "geometryFullyAvailable": true,
+  "sameCellPieces": {
+    "ownerCell": [
+      17,
+      71,
+      0
+    ],
+    "expectedDistinctPieces": 2,
+    "storedCellPieceCount": 2,
+    "matchedDistinctPieces": 2,
+    "passed": true
+  },
+  "storedSamples": [
+    {
+      "id": 1,
+      "x": 345.0,
+      "y": 165.0,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 1,
+      "x": 525.25,
+      "y": 165.75,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 1,
+      "x": 524.25,
+      "y": 225.0,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 1,
+      "x": 535.25,
+      "y": 225.0,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 1,
+      "x": 705.25,
+      "y": 285.75,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 1,
+      "x": 705.5,
+      "y": 180.25,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 8,
+      "x": 885.25,
+      "y": 165.75,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 8,
+      "x": 1065.5,
+      "y": 180.25,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 8,
+      "x": 1245.25,
+      "y": 180.75,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 8,
+      "x": 1425.5,
+      "y": 180.25,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 8,
+      "x": 1605.25,
+      "y": 180.75,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    }
+  ],
+  "nativeSamples": [
+    {
+      "id": 1,
+      "x": 345.0,
+      "y": 165.0,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 1,
+      "x": 525.25,
+      "y": 165.75,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 1,
+      "x": 524.25,
+      "y": 225.0,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 1,
+      "x": 535.25,
+      "y": 225.0,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 1,
+      "x": 705.25,
+      "y": 285.75,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 1,
+      "x": 705.5,
+      "y": 180.25,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 8,
+      "x": 885.25,
+      "y": 165.75,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 8,
+      "x": 1065.5,
+      "y": 180.25,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 8,
+      "x": 1245.25,
+      "y": 180.75,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 8,
+      "x": 1425.5,
+      "y": 180.25,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    },
+    {
+      "id": 8,
+      "x": 1605.25,
+      "y": 180.75,
+      "positionMatch": true,
+      "recordAvailable": true,
+      "rotationMatch": true,
+      "scaleMatch": true,
+      "flipMatch": true,
+      "sourceMatchUnchanged": true
+    }
+  ],
+  "geometry": [
+    {
+      "id": 1,
+      "x": 345.0,
+      "y": 165.0,
+      "comparedFields": 5,
+      "unavailableFields": [
+        "triangleVertices"
+      ],
+      "mismatchedFields": []
+    },
+    {
+      "id": 1,
+      "x": 525.25,
+      "y": 165.75,
+      "comparedFields": 5,
+      "unavailableFields": [
+        "triangleVertices"
+      ],
+      "mismatchedFields": []
+    },
+    {
+      "id": 1,
+      "x": 524.25,
+      "y": 225.0,
+      "comparedFields": 5,
+      "unavailableFields": [
+        "triangleVertices"
+      ],
+      "mismatchedFields": []
+    },
+    {
+      "id": 1,
+      "x": 535.25,
+      "y": 225.0,
+      "comparedFields": 5,
+      "unavailableFields": [
+        "triangleVertices"
+      ],
+      "mismatchedFields": []
+    },
+    {
+      "id": 1,
+      "x": 705.25,
+      "y": 285.75,
+      "comparedFields": 5,
+      "unavailableFields": [
+        "triangleVertices"
+      ],
+      "mismatchedFields": []
+    },
+    {
+      "id": 1,
+      "x": 705.5,
+      "y": 180.25,
+      "comparedFields": 5,
+      "unavailableFields": [
+        "triangleVertices"
+      ],
+      "mismatchedFields": []
+    },
+    {
+      "id": 8,
+      "x": 885.25,
+      "y": 165.75,
+      "comparedFields": 5,
+      "unavailableFields": [
+        "triangleVertices"
+      ],
+      "mismatchedFields": []
+    },
+    {
+      "id": 8,
+      "x": 1065.5,
+      "y": 180.25,
+      "comparedFields": 5,
+      "unavailableFields": [
+        "triangleVertices"
+      ],
+      "mismatchedFields": []
+    },
+    {
+      "id": 8,
+      "x": 1245.25,
+      "y": 180.75,
+      "comparedFields": 5,
+      "unavailableFields": [
+        "triangleVertices"
+      ],
+      "mismatchedFields": []
+    },
+    {
+      "id": 8,
+      "x": 1425.5,
+      "y": 180.25,
+      "comparedFields": 5,
+      "unavailableFields": [
+        "triangleVertices"
+      ],
+      "mismatchedFields": []
+    },
+    {
+      "id": 8,
+      "x": 1605.25,
+      "y": 180.75,
+      "comparedFields": 5,
+      "unavailableFields": [
+        "triangleVertices"
+      ],
+      "mismatchedFields": []
+    }
+  ],
+  "positionToleranceGDUnits": 0.005,
+  "scalarTolerance": 0.0001,
+  "geometryToleranceGDUnits": 0.01,
+  "fixtureSHA256": "3698E3DF504CCA299456830B5A6F9E8002940C913948686001F5B4E157A65513",
+  "manifestSHA256": "6D7E9C970CBB49EAD80A55336C8F2910BF2CCA34B11DF0BF6EE0BA6B1BF02869",
+  "nativeSHA256": "45B6E3979E2D49E4E53507C6AC4610F9FC14A2908C2F98615996E6090C6FE01E",
+  "manifestWrittenUtc": "2026-10-03T12:42:45.2312869Z",
+  "nativeWrittenUtc": "2026-10-03T12:42:45.3559435Z",
+  "limitation": "Verifies fixture piece preservation and available stored-versus-native geometry metadata. Extra floor/continuation objects are reported separately. Missing metadata is not a geometry pass. Does not prove visual quality, normal completion, AUTO, or implicit-floor/ceiling authority."
+}

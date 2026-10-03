@@ -1,0 +1,73 @@
+{
+  "schema": "gdbridge-scenery-plan-v1",
+  "name": "Restore only earlier owned roof footprints",
+  "targetWorld": "GDBridge-XO",
+  "notes": "Optional roof-only restore. Full scene rollback requires root world backup; this does not remove new owned scenery.",
+  "boxes": [
+    {
+      "from": [
+        0,
+        89,
+        -10
+      ],
+      "to": [
+        120,
+        90,
+        -1
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        0,
+        89,
+        1
+      ],
+      "to": [
+        120,
+        90,
+        12
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        0,
+        86,
+        12
+      ],
+      "to": [
+        120,
+        88,
+        12
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        132,
+        81,
+        -6
+      ],
+      "to": [
+        262,
+        81,
+        -1
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        274,
+        79,
+        -6
+      ],
+      "to": [
+        372,
+        79,
+        -1
+      ],
+      "block": "minecraft:netherrack"
+    }
+  ]
+}

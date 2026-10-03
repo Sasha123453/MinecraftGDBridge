@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory=$true)]
-    [ValidateSet('build-mode','export','restart','jump','gd-pause','shutdown-gd','quit','load-level','load-level-data','set-time','camera','screenshot','shaders','open-world','set-demo','import-blueprint','scenery','move-marker','music-config','diagnostic-noclip','record','visual-style')]
+    [ValidateSet('build-mode','export','restart','jump','gd-pause','shutdown-gd','quit','resume-world','load-level','load-level-data','set-time','camera','screenshot','shaders','open-world','set-demo','import-blueprint','scenery','move-marker','music-config','diagnostic-noclip','record','visual-style')]
     [string]$Action,
     [ValidateLength(1,96)][string]$Nonce=([guid]::NewGuid().ToString('N')),
     [string]$PayloadJson='{}',
@@ -8,7 +8,8 @@ param(
     [ValidateRange(1,10)][int]$WaitSeconds=10
 )
 $ErrorActionPreference='Stop'
-$mcProfilePath=Join-Path $PSScriptRoot 'launcher\data\instances\gdbridge\.minecraft'
+. (Join-Path $PSScriptRoot 'Runtime-Paths.ps1')
+$mcProfilePath=Join-Path (Get-BridgeRuntimeOutputs) 'launcher\data\instances\gdbridge\.minecraft'
 $controlDir=Join-Path $mcProfilePath 'config\gdbridge'
 if($PayloadFile -and $PSBoundParameters.ContainsKey('PayloadJson')){throw 'Choose PayloadJson or PayloadFile, not both.'}
 $json=if($PayloadFile){Get-Content -Raw -LiteralPath $PayloadFile}else{$PayloadJson}

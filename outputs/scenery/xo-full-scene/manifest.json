@@ -1,0 +1,285 @@
+{
+  "schema": "gdbridge-xo-scene-manifest-v1",
+  "generatedBy": "tools/scenery/Build-XOScene.cjs",
+  "deterministic": true,
+  "seed": 20261003,
+  "sourceBlueprint": "outputs/bridge/levels/level-58835426.json",
+  "sourceSha256": "0f462c3e6ef2529afa257ba57a1ecf8f78afd2f35ac9755080837b47c3a43886",
+  "nativeLengthBlocks": 1610.5,
+  "nativeHighestObjectY": 146.5,
+  "requiredSceneryBounds": {
+    "minX": -16,
+    "maxX": 1632,
+    "minY": 50,
+    "maxY": 160,
+    "minZ": -16,
+    "maxZ": 24,
+    "forbiddenZ": 0
+  },
+  "chapters": [
+    {
+      "id": "cave",
+      "from": -16,
+      "to": 120,
+      "style": "cave"
+    },
+    {
+      "id": "library",
+      "from": 121,
+      "to": 270,
+      "style": "library"
+    },
+    {
+      "id": "nether",
+      "from": 271,
+      "to": 383,
+      "style": "nether"
+    },
+    {
+      "id": "sunny-forest",
+      "from": 384,
+      "to": 640,
+      "style": "forest",
+      "elevatedTiers": []
+    },
+    {
+      "id": "deep-mines",
+      "from": 641,
+      "to": 860,
+      "style": "cave"
+    },
+    {
+      "id": "lush-ravine",
+      "from": 861,
+      "to": 1040,
+      "style": "ravine",
+      "elevatedTiers": [
+        {
+          "x": 893,
+          "ground": 96,
+          "nativeSolids": 23
+        },
+        {
+          "x": 989,
+          "ground": 92,
+          "nativeSolids": 24
+        },
+        {
+          "x": 1021,
+          "ground": 93,
+          "nativeSolids": 121
+        }
+      ]
+    },
+    {
+      "id": "nether-fortress",
+      "from": 1041,
+      "to": 1190,
+      "style": "nether"
+    },
+    {
+      "id": "forest-river",
+      "from": 1191,
+      "to": 1440,
+      "style": "forest",
+      "elevatedTiers": [
+        {
+          "x": 1191,
+          "ground": 93,
+          "nativeSolids": 58
+        },
+        {
+          "x": 1223,
+          "ground": 91,
+          "nativeSolids": 28
+        },
+        {
+          "x": 1255,
+          "ground": 120,
+          "nativeSolids": 127
+        }
+      ]
+    },
+    {
+      "id": "forest-finale",
+      "from": 1441,
+      "to": 1632,
+      "style": "forest",
+      "elevatedTiers": [
+        {
+          "x": 1569,
+          "ground": 141,
+          "nativeSolids": 24
+        },
+        {
+          "x": 1601,
+          "ground": 141,
+          "nativeSolids": 20
+        }
+      ]
+    }
+  ],
+  "applyOrder": [
+    {
+      "file": "xo-scene-01.json",
+      "cells": 7067,
+      "boxes": 5,
+      "sha256": "1e63be0050232d8f861c1666a22ca92d90547d3547e270c4ed2c1a189edc89f0",
+      "chapters": [
+        "owned-roof-cleanup"
+      ]
+    },
+    {
+      "file": "xo-scene-02.json",
+      "cells": 14774,
+      "boxes": 153,
+      "sha256": "8398a6729fdaec5d164bde2ad0f34acc464936bad08bb462a5735edc95a3c0f7",
+      "chapters": [
+        "cave"
+      ]
+    },
+    {
+      "file": "xo-scene-03.json",
+      "cells": 15983,
+      "boxes": 16,
+      "sha256": "8c35aa4df8988a96aec404ab0fb1f2505544da68f3572bce8ddb87f214af1238",
+      "chapters": [
+        "library"
+      ]
+    },
+    {
+      "file": "xo-scene-04.json",
+      "cells": 6825,
+      "boxes": 141,
+      "sha256": "632443d363f444b63da30eceb8aef117f454550a477b8bfffea2836ff73b49d3",
+      "chapters": [
+        "library"
+      ]
+    },
+    {
+      "file": "xo-scene-05.json",
+      "cells": 15810,
+      "boxes": 81,
+      "sha256": "17f450ce03d2ba535b6aa51a516816797e541969fe25743473da26227fe9ccae",
+      "chapters": [
+        "nether"
+      ]
+    },
+    {
+      "file": "xo-scene-06.json",
+      "cells": 15999,
+      "boxes": 30,
+      "sha256": "8b2d98d1fb7be51fc89b6338ec0b763e35cff4eb79a13e36826b65f5ab2f2f13",
+      "chapters": [
+        "sunny-forest"
+      ]
+    },
+    {
+      "file": "xo-scene-07.json",
+      "cells": 3095,
+      "boxes": 95,
+      "sha256": "daf02a9b5a04546e12c129841682e3ef7abf41d1b772ff29e59eec766cd1623a",
+      "chapters": [
+        "sunny-forest"
+      ]
+    },
+    {
+      "file": "xo-scene-08.json",
+      "cells": 14964,
+      "boxes": 1,
+      "sha256": "1e8b5b17d01f43746c3e476a6d32750e96853969927a6b34301105df82200b25",
+      "chapters": [
+        "deep-mines"
+      ]
+    },
+    {
+      "file": "xo-scene-09.json",
+      "cells": 8756,
+      "boxes": 243,
+      "sha256": "cc92ca28df9f71b1dec360103a93879c9dc81ad26b650a9bf6dd7b721d7d1032",
+      "chapters": [
+        "deep-mines"
+      ]
+    },
+    {
+      "file": "xo-scene-10.json",
+      "cells": 15907,
+      "boxes": 110,
+      "sha256": "150da138f2967add7b77a50f92a89025506779a8d95327919ebb399e05e0a8bc",
+      "chapters": [
+        "lush-ravine"
+      ]
+    },
+    {
+      "file": "xo-scene-11.json",
+      "cells": 15186,
+      "boxes": 23,
+      "sha256": "4e84d75fa324a26105309a7d0f23aeb05e65cff13e852f25f0c96bad42ebb26b",
+      "chapters": [
+        "lush-ravine",
+        "nether-fortress"
+      ]
+    },
+    {
+      "file": "xo-scene-12.json",
+      "cells": 7962,
+      "boxes": 106,
+      "sha256": "66bcb50e4a65f7fa57c64a088c0a299288be6914cb69851a5560ae14a3b3fa49",
+      "chapters": [
+        "nether-fortress"
+      ]
+    },
+    {
+      "file": "xo-scene-13.json",
+      "cells": 15964,
+      "boxes": 36,
+      "sha256": "f48e6d30473f5ae0509622b81ca719ba20caf6f86981d3557af647803d53a7cc",
+      "chapters": [
+        "forest-river"
+      ]
+    },
+    {
+      "file": "xo-scene-14.json",
+      "cells": 15948,
+      "boxes": 110,
+      "sha256": "bc673016dc92308a535fda75ddbd841cd43b1f9830d91dd290aa1741b729ff1e",
+      "chapters": [
+        "forest-river",
+        "forest-finale"
+      ]
+    },
+    {
+      "file": "xo-scene-15.json",
+      "cells": 9841,
+      "boxes": 107,
+      "sha256": "aad1b1a1a9dd66d76eae178c3b11fa86bd4bbf9751588bb6ee8db274bad89cf2",
+      "chapters": [
+        "forest-finale",
+        "seam-cave-library",
+        "seam-library-nether",
+        "forest-river"
+      ]
+    }
+  ],
+  "totalRequestedCells": 184081,
+  "totalBoxes": 1257,
+  "preconditions": [
+    "Isolated GDBridge-XO world",
+    "Existing multi-location and cave-height-expansion plans already applied",
+    "Existing foreground-caps-cleanup applied",
+    "MC scenery validator supports manifest bounds",
+    "Root copies only numbered plans into runtime outputs/bridge/levels and applies in order"
+  ],
+  "verification": {
+    "liveApplied": false,
+    "renderVerified": false,
+    "physicsChanged": false,
+    "routeSliceTouched": false
+  },
+  "designLimits": [
+    "XO-only fixed chapter layout; general level autogeneration remains deferred",
+    "Native original groups/move effects are not inferred as terrain changes",
+    "High rear tiers use original native solids, including some group-disabled objects not identifiable from this static blueprint",
+    "Background roofs remain above highest native object; full playability requires normal input test of Minecraft quantized geometry"
+  ]
+}

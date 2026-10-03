@@ -5,23 +5,26 @@ param(
     [Parameter(Mandatory=$true)][ValidatePattern('^[A-Fa-f0-9]{64}$')][string]$GeometryDashSha256
 )
 $ErrorActionPreference='Stop'
+. (Join-Path $PSScriptRoot 'Runtime-Paths.ps1')
 $taskOutputs=[IO.Path]::GetFullPath($PSScriptRoot)
+$runtimeOutputs=[IO.Path]::GetFullPath((Get-BridgeRuntimeOutputs))
 $mcSource=[IO.Path]::GetFullPath((Join-Path $taskOutputs ('bridge\minecraft\'+$MinecraftPackage)))
 $gdSource=Join-Path $taskOutputs ('bridge\'+$GeometryDashStage+'\experiment.minecraft_bridge.geode')
-$mcMods=Join-Path $taskOutputs 'launcher\data\instances\gdbridge\.minecraft\mods'
+$mcMods=Join-Path $runtimeOutputs 'launcher\data\instances\gdbridge\.minecraft\mods'
 $mcTarget=Join-Path $mcMods ([IO.Path]::GetFileName($MinecraftPackage))
 $gdTarget='D:\SteamLibrary\steamapps\common\Geometry Dash\geode\mods\experiment.minecraft_bridge.geode'
 function AssertHash([string]$File,[string]$Expected) {
     if(-not(Test-Path -LiteralPath $File -PathType Leaf) -or (Get-FileHash -LiteralPath $File -Algorithm SHA256).Hash -ne $Expected){throw "Package missing or hash mismatch: $File"}
 }
 function AssertTaskOutput([string]$File) {
-    if(-not [IO.Path]::GetFullPath($File).StartsWith($taskOutputs+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)){throw "Path outside task outputs: $File"}
+    $resolvedFile=[IO.Path]::GetFullPath($File)
+    if(-not $resolvedFile.StartsWith($taskOutputs+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase) -and -not $resolvedFile.StartsWith($runtimeOutputs+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)){throw "Path outside project/runtime outputs: $File"}
 }
 AssertTaskOutput $mcSource; AssertTaskOutput $mcTarget; AssertTaskOutput $gdSource
 if([IO.Path]::GetExtension($mcSource) -ne '.jar'){throw 'Minecraft package must be a JAR.'}
 if(Get-Process -Name GeometryDash -ErrorAction SilentlyContinue){throw 'Close Geometry Dash before installation.'}
 if(@([Net.NetworkInformation.IPGlobalProperties]::GetIPGlobalProperties().GetActiveTcpListeners() | Where-Object Port -eq 18471).Count){throw 'Minecraft bridge is still running.'}
-$javaBinary=Join-Path (Split-Path -Parent $taskOutputs) 'work\toolchains\jdk-17.0.20.1+1\bin\javaw.exe'
+$javaBinary=Join-Path (Get-BridgeRuntimeRoot) 'work\toolchains\jdk-17.0.20.1+1\bin\javaw.exe'
 if(Get-Process -Name javaw -ErrorAction SilentlyContinue | Where-Object {-not $_.Path -or $_.Path -eq $javaBinary -or $_.Path -like 'P:\work\toolchains\jdk-17.0.20.1+1\bin\javaw.exe'}){throw 'Minecraft is running, or its process path could not be verified.'}
 AssertHash $mcSource $MinecraftSha256; AssertHash $gdSource $GeometryDashSha256
 if(-not(Test-Path -LiteralPath $mcMods -PathType Container) -or -not(Test-Path -LiteralPath (Split-Path -Parent $gdTarget) -PathType Container)){throw 'Installed game directories are missing.'}

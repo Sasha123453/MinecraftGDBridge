@@ -7,7 +7,8 @@ param(
     [switch]$Force
 )
 $ErrorActionPreference='Stop'
-$recordingRoot=(Resolve-Path -LiteralPath (Join-Path $PSScriptRoot 'bridge/recordings')).ProviderPath
+. (Join-Path $PSScriptRoot 'Runtime-Paths.ps1')
+$recordingRoot=(Resolve-Path -LiteralPath (Join-Path (Get-BridgeRuntimeOutputs) 'bridge/recordings')).ProviderPath
 $recording=(Resolve-Path -LiteralPath $RecordingDirectory).ProviderPath
 $rootPrefix=$recordingRoot.TrimEnd('\','/')+[IO.Path]::DirectorySeparatorChar
 if(-not $recording.StartsWith($rootPrefix,[StringComparison]::OrdinalIgnoreCase)){throw 'Choose an owned recording directory under outputs/bridge/recordings.'}
@@ -53,7 +54,7 @@ if(-not $metadata){throw "Recording or complete PNGs unavailable within ${WaitSe
 if(-not $FfmpegPath){
     $ffmpegCommand=Get-Command ffmpeg -ErrorAction SilentlyContinue
     if($ffmpegCommand){$FfmpegPath=$ffmpegCommand.Source}else{
-        $videoTools=Join-Path (Split-Path $PSScriptRoot -Parent) 'work/video-tools'
+        $videoTools=Join-Path (Get-BridgeRuntimeRoot) 'work/video-tools'
         $bundledFfmpeg=Join-Path $videoTools 'imageio_ffmpeg/binaries/ffmpeg-win-x86_64-v7.1.exe'
         if(Test-Path -LiteralPath $bundledFfmpeg -PathType Leaf){$FfmpegPath=$bundledFfmpeg}else{
             $candidate=Get-ChildItem -LiteralPath $videoTools -Recurse -File -Filter '*ffmpeg*.exe' -ErrorAction SilentlyContinue | Select-Object -First 1

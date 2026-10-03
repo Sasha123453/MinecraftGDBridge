@@ -1,0 +1,1845 @@
+{
+  "schema": "gdbridge-scenery-plan-v1",
+  "name": "XO full scene 4/15",
+  "targetWorld": "GDBridge-XO",
+  "seed": 20261003,
+  "batchIndex": 4,
+  "batchCount": 15,
+  "cellBudget": 6825,
+  "notes": "Scenery only. Apply sequentially after existing intro plans and foreground-caps-cleanup; exact authored roof cleanup first. Native gameplay plane Z0 is forbidden.",
+  "boxes": [
+    {
+      "from": [
+        127,
+        132,
+        -6
+      ],
+      "to": [
+        136,
+        138,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        127,
+        139,
+        -6
+      ],
+      "to": [
+        136,
+        139,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        130,
+        133,
+        -6
+      ],
+      "to": [
+        132,
+        133,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        131,
+        134,
+        -3
+      ],
+      "to": [
+        131,
+        134,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        140,
+        66,
+        -6
+      ],
+      "to": [
+        141,
+        151,
+        -5
+      ],
+      "block": "minecraft:oak_log"
+    },
+    {
+      "from": [
+        143,
+        67,
+        -6
+      ],
+      "to": [
+        152,
+        73,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        143,
+        74,
+        -6
+      ],
+      "to": [
+        152,
+        74,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        146,
+        68,
+        -6
+      ],
+      "to": [
+        148,
+        68,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        147,
+        69,
+        -3
+      ],
+      "to": [
+        147,
+        69,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        143,
+        88,
+        -6
+      ],
+      "to": [
+        152,
+        94,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        143,
+        95,
+        -6
+      ],
+      "to": [
+        152,
+        95,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        146,
+        89,
+        -6
+      ],
+      "to": [
+        148,
+        89,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        147,
+        90,
+        -3
+      ],
+      "to": [
+        147,
+        90,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        143,
+        110,
+        -6
+      ],
+      "to": [
+        152,
+        116,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        143,
+        117,
+        -6
+      ],
+      "to": [
+        152,
+        117,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        146,
+        111,
+        -6
+      ],
+      "to": [
+        148,
+        111,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        147,
+        112,
+        -3
+      ],
+      "to": [
+        147,
+        112,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        143,
+        132,
+        -6
+      ],
+      "to": [
+        152,
+        138,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        143,
+        139,
+        -6
+      ],
+      "to": [
+        152,
+        139,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        146,
+        133,
+        -6
+      ],
+      "to": [
+        148,
+        133,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        147,
+        134,
+        -3
+      ],
+      "to": [
+        147,
+        134,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        156,
+        66,
+        -6
+      ],
+      "to": [
+        157,
+        151,
+        -5
+      ],
+      "block": "minecraft:oak_log"
+    },
+    {
+      "from": [
+        159,
+        67,
+        -6
+      ],
+      "to": [
+        168,
+        73,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        159,
+        74,
+        -6
+      ],
+      "to": [
+        168,
+        74,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        162,
+        68,
+        -6
+      ],
+      "to": [
+        164,
+        68,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        163,
+        69,
+        -3
+      ],
+      "to": [
+        163,
+        69,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        159,
+        88,
+        -6
+      ],
+      "to": [
+        168,
+        94,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        159,
+        95,
+        -6
+      ],
+      "to": [
+        168,
+        95,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        162,
+        89,
+        -6
+      ],
+      "to": [
+        164,
+        89,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        163,
+        90,
+        -3
+      ],
+      "to": [
+        163,
+        90,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        159,
+        110,
+        -6
+      ],
+      "to": [
+        168,
+        116,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        159,
+        117,
+        -6
+      ],
+      "to": [
+        168,
+        117,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        162,
+        111,
+        -6
+      ],
+      "to": [
+        164,
+        111,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        163,
+        112,
+        -3
+      ],
+      "to": [
+        163,
+        112,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        159,
+        132,
+        -6
+      ],
+      "to": [
+        168,
+        138,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        159,
+        139,
+        -6
+      ],
+      "to": [
+        168,
+        139,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        162,
+        133,
+        -6
+      ],
+      "to": [
+        164,
+        133,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        163,
+        134,
+        -3
+      ],
+      "to": [
+        163,
+        134,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        172,
+        66,
+        -6
+      ],
+      "to": [
+        173,
+        151,
+        -5
+      ],
+      "block": "minecraft:oak_log"
+    },
+    {
+      "from": [
+        175,
+        67,
+        -6
+      ],
+      "to": [
+        184,
+        73,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        175,
+        74,
+        -6
+      ],
+      "to": [
+        184,
+        74,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        178,
+        68,
+        -6
+      ],
+      "to": [
+        180,
+        68,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        179,
+        69,
+        -3
+      ],
+      "to": [
+        179,
+        69,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        175,
+        88,
+        -6
+      ],
+      "to": [
+        184,
+        94,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        175,
+        95,
+        -6
+      ],
+      "to": [
+        184,
+        95,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        178,
+        89,
+        -6
+      ],
+      "to": [
+        180,
+        89,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        179,
+        90,
+        -3
+      ],
+      "to": [
+        179,
+        90,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        175,
+        110,
+        -6
+      ],
+      "to": [
+        184,
+        116,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        175,
+        117,
+        -6
+      ],
+      "to": [
+        184,
+        117,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        178,
+        111,
+        -6
+      ],
+      "to": [
+        180,
+        111,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        179,
+        112,
+        -3
+      ],
+      "to": [
+        179,
+        112,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        175,
+        132,
+        -6
+      ],
+      "to": [
+        184,
+        138,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        175,
+        139,
+        -6
+      ],
+      "to": [
+        184,
+        139,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        178,
+        133,
+        -6
+      ],
+      "to": [
+        180,
+        133,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        179,
+        134,
+        -3
+      ],
+      "to": [
+        179,
+        134,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        188,
+        66,
+        -6
+      ],
+      "to": [
+        189,
+        151,
+        -5
+      ],
+      "block": "minecraft:oak_log"
+    },
+    {
+      "from": [
+        191,
+        67,
+        -6
+      ],
+      "to": [
+        200,
+        73,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        191,
+        74,
+        -6
+      ],
+      "to": [
+        200,
+        74,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        194,
+        68,
+        -6
+      ],
+      "to": [
+        196,
+        68,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        195,
+        69,
+        -3
+      ],
+      "to": [
+        195,
+        69,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        191,
+        88,
+        -6
+      ],
+      "to": [
+        200,
+        94,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        191,
+        95,
+        -6
+      ],
+      "to": [
+        200,
+        95,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        194,
+        89,
+        -6
+      ],
+      "to": [
+        196,
+        89,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        195,
+        90,
+        -3
+      ],
+      "to": [
+        195,
+        90,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        191,
+        110,
+        -6
+      ],
+      "to": [
+        200,
+        116,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        191,
+        117,
+        -6
+      ],
+      "to": [
+        200,
+        117,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        194,
+        111,
+        -6
+      ],
+      "to": [
+        196,
+        111,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        195,
+        112,
+        -3
+      ],
+      "to": [
+        195,
+        112,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        191,
+        132,
+        -6
+      ],
+      "to": [
+        200,
+        138,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        191,
+        139,
+        -6
+      ],
+      "to": [
+        200,
+        139,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        194,
+        133,
+        -6
+      ],
+      "to": [
+        196,
+        133,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        195,
+        134,
+        -3
+      ],
+      "to": [
+        195,
+        134,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        204,
+        66,
+        -6
+      ],
+      "to": [
+        205,
+        151,
+        -5
+      ],
+      "block": "minecraft:oak_log"
+    },
+    {
+      "from": [
+        207,
+        67,
+        -6
+      ],
+      "to": [
+        216,
+        73,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        207,
+        74,
+        -6
+      ],
+      "to": [
+        216,
+        74,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        210,
+        68,
+        -6
+      ],
+      "to": [
+        212,
+        68,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        211,
+        69,
+        -3
+      ],
+      "to": [
+        211,
+        69,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        207,
+        88,
+        -6
+      ],
+      "to": [
+        216,
+        94,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        207,
+        95,
+        -6
+      ],
+      "to": [
+        216,
+        95,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        210,
+        89,
+        -6
+      ],
+      "to": [
+        212,
+        89,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        211,
+        90,
+        -3
+      ],
+      "to": [
+        211,
+        90,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        207,
+        110,
+        -6
+      ],
+      "to": [
+        216,
+        116,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        207,
+        117,
+        -6
+      ],
+      "to": [
+        216,
+        117,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        210,
+        111,
+        -6
+      ],
+      "to": [
+        212,
+        111,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        211,
+        112,
+        -3
+      ],
+      "to": [
+        211,
+        112,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        207,
+        132,
+        -6
+      ],
+      "to": [
+        216,
+        138,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        207,
+        139,
+        -6
+      ],
+      "to": [
+        216,
+        139,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        210,
+        133,
+        -6
+      ],
+      "to": [
+        212,
+        133,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        211,
+        134,
+        -3
+      ],
+      "to": [
+        211,
+        134,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        220,
+        66,
+        -6
+      ],
+      "to": [
+        221,
+        151,
+        -5
+      ],
+      "block": "minecraft:oak_log"
+    },
+    {
+      "from": [
+        223,
+        67,
+        -6
+      ],
+      "to": [
+        232,
+        73,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        223,
+        74,
+        -6
+      ],
+      "to": [
+        232,
+        74,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        226,
+        68,
+        -6
+      ],
+      "to": [
+        228,
+        68,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        227,
+        69,
+        -3
+      ],
+      "to": [
+        227,
+        69,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        223,
+        88,
+        -6
+      ],
+      "to": [
+        232,
+        94,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        223,
+        95,
+        -6
+      ],
+      "to": [
+        232,
+        95,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        226,
+        89,
+        -6
+      ],
+      "to": [
+        228,
+        89,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        227,
+        90,
+        -3
+      ],
+      "to": [
+        227,
+        90,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        223,
+        110,
+        -6
+      ],
+      "to": [
+        232,
+        116,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        223,
+        117,
+        -6
+      ],
+      "to": [
+        232,
+        117,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        226,
+        111,
+        -6
+      ],
+      "to": [
+        228,
+        111,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        227,
+        112,
+        -3
+      ],
+      "to": [
+        227,
+        112,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        223,
+        132,
+        -6
+      ],
+      "to": [
+        232,
+        138,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        223,
+        139,
+        -6
+      ],
+      "to": [
+        232,
+        139,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        226,
+        133,
+        -6
+      ],
+      "to": [
+        228,
+        133,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        227,
+        134,
+        -3
+      ],
+      "to": [
+        227,
+        134,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        236,
+        66,
+        -6
+      ],
+      "to": [
+        237,
+        151,
+        -5
+      ],
+      "block": "minecraft:oak_log"
+    },
+    {
+      "from": [
+        239,
+        67,
+        -6
+      ],
+      "to": [
+        248,
+        73,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        239,
+        74,
+        -6
+      ],
+      "to": [
+        248,
+        74,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        242,
+        68,
+        -6
+      ],
+      "to": [
+        244,
+        68,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        243,
+        69,
+        -3
+      ],
+      "to": [
+        243,
+        69,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        239,
+        88,
+        -6
+      ],
+      "to": [
+        248,
+        94,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        239,
+        95,
+        -6
+      ],
+      "to": [
+        248,
+        95,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        242,
+        89,
+        -6
+      ],
+      "to": [
+        244,
+        89,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        243,
+        90,
+        -3
+      ],
+      "to": [
+        243,
+        90,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        239,
+        110,
+        -6
+      ],
+      "to": [
+        248,
+        116,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        239,
+        117,
+        -6
+      ],
+      "to": [
+        248,
+        117,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        242,
+        111,
+        -6
+      ],
+      "to": [
+        244,
+        111,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        243,
+        112,
+        -3
+      ],
+      "to": [
+        243,
+        112,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        239,
+        132,
+        -6
+      ],
+      "to": [
+        248,
+        138,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        239,
+        139,
+        -6
+      ],
+      "to": [
+        248,
+        139,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        242,
+        133,
+        -6
+      ],
+      "to": [
+        244,
+        133,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        243,
+        134,
+        -3
+      ],
+      "to": [
+        243,
+        134,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        252,
+        66,
+        -6
+      ],
+      "to": [
+        253,
+        151,
+        -5
+      ],
+      "block": "minecraft:oak_log"
+    },
+    {
+      "from": [
+        255,
+        67,
+        -6
+      ],
+      "to": [
+        264,
+        73,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        255,
+        74,
+        -6
+      ],
+      "to": [
+        264,
+        74,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        258,
+        68,
+        -6
+      ],
+      "to": [
+        260,
+        68,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        259,
+        69,
+        -3
+      ],
+      "to": [
+        259,
+        69,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        255,
+        88,
+        -6
+      ],
+      "to": [
+        264,
+        94,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        255,
+        95,
+        -6
+      ],
+      "to": [
+        264,
+        95,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        258,
+        89,
+        -6
+      ],
+      "to": [
+        260,
+        89,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        259,
+        90,
+        -3
+      ],
+      "to": [
+        259,
+        90,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        255,
+        110,
+        -6
+      ],
+      "to": [
+        264,
+        116,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        255,
+        117,
+        -6
+      ],
+      "to": [
+        264,
+        117,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        258,
+        111,
+        -6
+      ],
+      "to": [
+        260,
+        111,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        259,
+        112,
+        -3
+      ],
+      "to": [
+        259,
+        112,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        255,
+        132,
+        -6
+      ],
+      "to": [
+        264,
+        138,
+        -6
+      ],
+      "block": "minecraft:bookshelf"
+    },
+    {
+      "from": [
+        255,
+        139,
+        -6
+      ],
+      "to": [
+        264,
+        139,
+        -4
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        258,
+        133,
+        -6
+      ],
+      "to": [
+        260,
+        133,
+        -3
+      ],
+      "block": "minecraft:oak_planks"
+    },
+    {
+      "from": [
+        259,
+        134,
+        -3
+      ],
+      "to": [
+        259,
+        134,
+        -3
+      ],
+      "block": "minecraft:lantern"
+    },
+    {
+      "from": [
+        268,
+        66,
+        -6
+      ],
+      "to": [
+        269,
+        151,
+        -5
+      ],
+      "block": "minecraft:oak_log"
+    }
+  ]
+}

@@ -1,0 +1,311 @@
+{
+  "schema": "gdbridge-scenery-plan-v1",
+  "name": "XO full scene 11/15",
+  "targetWorld": "GDBridge-XO",
+  "seed": 20261003,
+  "batchIndex": 11,
+  "batchCount": 15,
+  "cellBudget": 15186,
+  "notes": "Scenery only. Apply sequentially after existing intro plans and foreground-caps-cleanup; exact authored roof cleanup first. Native gameplay plane Z0 is forbidden.",
+  "boxes": [
+    {
+      "from": [
+        902,
+        66,
+        -16
+      ],
+      "to": [
+        905,
+        90,
+        -15
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        902,
+        90,
+        -15
+      ],
+      "to": [
+        905,
+        91,
+        -14
+      ],
+      "block": "minecraft:oak_leaves"
+    },
+    {
+      "from": [
+        915,
+        66,
+        -16
+      ],
+      "to": [
+        918,
+        93,
+        -15
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        915,
+        93,
+        -15
+      ],
+      "to": [
+        918,
+        94,
+        -14
+      ],
+      "block": "minecraft:oak_leaves"
+    },
+    {
+      "from": [
+        928,
+        66,
+        -16
+      ],
+      "to": [
+        931,
+        81,
+        -15
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        928,
+        81,
+        -15
+      ],
+      "to": [
+        931,
+        82,
+        -14
+      ],
+      "block": "minecraft:oak_leaves"
+    },
+    {
+      "from": [
+        941,
+        66,
+        -16
+      ],
+      "to": [
+        944,
+        84,
+        -15
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        941,
+        84,
+        -15
+      ],
+      "to": [
+        944,
+        85,
+        -14
+      ],
+      "block": "minecraft:oak_leaves"
+    },
+    {
+      "from": [
+        954,
+        66,
+        -16
+      ],
+      "to": [
+        957,
+        87,
+        -15
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        954,
+        87,
+        -15
+      ],
+      "to": [
+        957,
+        88,
+        -14
+      ],
+      "block": "minecraft:oak_leaves"
+    },
+    {
+      "from": [
+        967,
+        66,
+        -16
+      ],
+      "to": [
+        970,
+        90,
+        -15
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        967,
+        90,
+        -15
+      ],
+      "to": [
+        970,
+        91,
+        -14
+      ],
+      "block": "minecraft:oak_leaves"
+    },
+    {
+      "from": [
+        980,
+        66,
+        -16
+      ],
+      "to": [
+        983,
+        93,
+        -15
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        980,
+        93,
+        -15
+      ],
+      "to": [
+        983,
+        94,
+        -14
+      ],
+      "block": "minecraft:oak_leaves"
+    },
+    {
+      "from": [
+        993,
+        66,
+        -16
+      ],
+      "to": [
+        996,
+        81,
+        -15
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        993,
+        81,
+        -15
+      ],
+      "to": [
+        996,
+        82,
+        -14
+      ],
+      "block": "minecraft:oak_leaves"
+    },
+    {
+      "from": [
+        1006,
+        66,
+        -16
+      ],
+      "to": [
+        1009,
+        84,
+        -15
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        1006,
+        84,
+        -15
+      ],
+      "to": [
+        1009,
+        85,
+        -14
+      ],
+      "block": "minecraft:oak_leaves"
+    },
+    {
+      "from": [
+        1019,
+        66,
+        -16
+      ],
+      "to": [
+        1022,
+        87,
+        -15
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        1019,
+        87,
+        -15
+      ],
+      "to": [
+        1022,
+        88,
+        -14
+      ],
+      "block": "minecraft:oak_leaves"
+    },
+    {
+      "from": [
+        1032,
+        66,
+        -16
+      ],
+      "to": [
+        1035,
+        90,
+        -15
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        1032,
+        90,
+        -15
+      ],
+      "to": [
+        1035,
+        91,
+        -14
+      ],
+      "block": "minecraft:oak_leaves"
+    },
+    {
+      "from": [
+        1041,
+        65,
+        -7
+      ],
+      "to": [
+        1190,
+        151,
+        -7
+      ],
+      "block": "minecraft:netherrack"
+    }
+  ]
+}

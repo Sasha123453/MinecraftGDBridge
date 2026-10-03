@@ -1,7 +1,7 @@
 plugins { id 'fabric-loom' version '1.7.4' }
-version = '0.4.2'
+version = '0.4.6'
 group = 'local.gdbridge'
-layout.buildDirectory = file('../../../work/minecraft-build')
+layout.buildDirectory = file(providers.gradleProperty('gdbridgeBuildDirectory').getOrElse('../../../work/minecraft-build'))
 loom { accessWidenerPath = file('src/main/resources/gdbridge.accesswidener'); runs { client { runDir '../../launcher/data/instances/gdbridge/.minecraft' } } }
 repositories { mavenCentral() }
 dependencies {

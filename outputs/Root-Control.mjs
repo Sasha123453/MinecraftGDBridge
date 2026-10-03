@@ -1,7 +1,13 @@
 import fs from 'node:fs/promises';
 import { randomUUID } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
-const directory = fileURLToPath(new URL('./launcher/data/instances/gdbridge/.minecraft/config/gdbridge/', import.meta.url));
+const projectRoot = fileURLToPath(new URL('../', import.meta.url));
+let runtimeRoot = projectRoot;
+try {
+  const settings = JSON.parse(await fs.readFile(new URL('../.local.json', import.meta.url), 'utf8'));
+  if (settings.runtimeRoot) runtimeRoot = settings.runtimeRoot;
+} catch (error) { if (error.code !== 'ENOENT') throw error; }
+const directory = runtimeRoot + '/outputs/launcher/data/instances/gdbridge/.minecraft/config/gdbridge';
 export async function request(action, payload = {}) {
   const nonce = randomUUID().replaceAll('-', '');
   const temporary = directory + '/request-' + nonce + '.tmp';

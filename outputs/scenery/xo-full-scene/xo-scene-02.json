@@ -1,0 +1,2001 @@
+{
+  "schema": "gdbridge-scenery-plan-v1",
+  "name": "XO full scene 2/15",
+  "targetWorld": "GDBridge-XO",
+  "seed": 20261003,
+  "batchIndex": 2,
+  "batchCount": 15,
+  "cellBudget": 14774,
+  "notes": "Scenery only. Apply sequentially after existing intro plans and foreground-caps-cleanup; exact authored roof cleanup first. Native gameplay plane Z0 is forbidden.",
+  "boxes": [
+    {
+      "from": [
+        -16,
+        65,
+        -7
+      ],
+      "to": [
+        120,
+        151,
+        -7
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        -16,
+        152,
+        -9
+      ],
+      "to": [
+        120,
+        152,
+        -1
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        -16,
+        65,
+        -6
+      ],
+      "to": [
+        120,
+        65,
+        -1
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        -12,
+        68,
+        -6
+      ],
+      "to": [
+        -9,
+        70,
+        -6
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        -8,
+        68,
+        -6
+      ],
+      "to": [
+        -8,
+        68,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        -8,
+        69,
+        -4
+      ],
+      "to": [
+        -8,
+        69,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        -12,
+        85,
+        -6
+      ],
+      "to": [
+        -9,
+        87,
+        -6
+      ],
+      "block": "minecraft:coal_ore"
+    },
+    {
+      "from": [
+        -8,
+        85,
+        -6
+      ],
+      "to": [
+        -8,
+        85,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        -8,
+        86,
+        -4
+      ],
+      "to": [
+        -8,
+        86,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        -12,
+        104,
+        -6
+      ],
+      "to": [
+        -9,
+        106,
+        -6
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        -8,
+        104,
+        -6
+      ],
+      "to": [
+        -8,
+        104,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        -8,
+        105,
+        -4
+      ],
+      "to": [
+        -8,
+        105,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        -12,
+        125,
+        -6
+      ],
+      "to": [
+        -9,
+        127,
+        -6
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        -8,
+        125,
+        -6
+      ],
+      "to": [
+        -8,
+        125,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        -8,
+        126,
+        -4
+      ],
+      "to": [
+        -8,
+        126,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        -12,
+        143,
+        -6
+      ],
+      "to": [
+        -9,
+        145,
+        -6
+      ],
+      "block": "minecraft:diamond_ore"
+    },
+    {
+      "from": [
+        -8,
+        143,
+        -6
+      ],
+      "to": [
+        -8,
+        143,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        -8,
+        144,
+        -4
+      ],
+      "to": [
+        -8,
+        144,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        2,
+        68,
+        -6
+      ],
+      "to": [
+        5,
+        70,
+        -6
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        6,
+        68,
+        -6
+      ],
+      "to": [
+        6,
+        68,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        6,
+        69,
+        -4
+      ],
+      "to": [
+        6,
+        69,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        2,
+        85,
+        -6
+      ],
+      "to": [
+        5,
+        87,
+        -6
+      ],
+      "block": "minecraft:diamond_ore"
+    },
+    {
+      "from": [
+        6,
+        85,
+        -6
+      ],
+      "to": [
+        6,
+        85,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        6,
+        86,
+        -4
+      ],
+      "to": [
+        6,
+        86,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        2,
+        104,
+        -6
+      ],
+      "to": [
+        5,
+        106,
+        -6
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        6,
+        104,
+        -6
+      ],
+      "to": [
+        6,
+        104,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        6,
+        105,
+        -4
+      ],
+      "to": [
+        6,
+        105,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        2,
+        125,
+        -6
+      ],
+      "to": [
+        5,
+        127,
+        -6
+      ],
+      "block": "minecraft:coal_ore"
+    },
+    {
+      "from": [
+        6,
+        125,
+        -6
+      ],
+      "to": [
+        6,
+        125,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        6,
+        126,
+        -4
+      ],
+      "to": [
+        6,
+        126,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        2,
+        143,
+        -6
+      ],
+      "to": [
+        5,
+        145,
+        -6
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        6,
+        143,
+        -6
+      ],
+      "to": [
+        6,
+        143,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        6,
+        144,
+        -4
+      ],
+      "to": [
+        6,
+        144,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        16,
+        68,
+        -6
+      ],
+      "to": [
+        19,
+        70,
+        -6
+      ],
+      "block": "minecraft:coal_ore"
+    },
+    {
+      "from": [
+        20,
+        68,
+        -6
+      ],
+      "to": [
+        20,
+        68,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        20,
+        69,
+        -4
+      ],
+      "to": [
+        20,
+        69,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        16,
+        85,
+        -6
+      ],
+      "to": [
+        19,
+        87,
+        -6
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        20,
+        85,
+        -6
+      ],
+      "to": [
+        20,
+        85,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        20,
+        86,
+        -4
+      ],
+      "to": [
+        20,
+        86,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        16,
+        104,
+        -6
+      ],
+      "to": [
+        19,
+        106,
+        -6
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        20,
+        104,
+        -6
+      ],
+      "to": [
+        20,
+        104,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        20,
+        105,
+        -4
+      ],
+      "to": [
+        20,
+        105,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        16,
+        125,
+        -6
+      ],
+      "to": [
+        19,
+        127,
+        -6
+      ],
+      "block": "minecraft:diamond_ore"
+    },
+    {
+      "from": [
+        20,
+        125,
+        -6
+      ],
+      "to": [
+        20,
+        125,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        20,
+        126,
+        -4
+      ],
+      "to": [
+        20,
+        126,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        16,
+        143,
+        -6
+      ],
+      "to": [
+        19,
+        145,
+        -6
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        20,
+        143,
+        -6
+      ],
+      "to": [
+        20,
+        143,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        20,
+        144,
+        -4
+      ],
+      "to": [
+        20,
+        144,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        30,
+        68,
+        -6
+      ],
+      "to": [
+        33,
+        70,
+        -6
+      ],
+      "block": "minecraft:diamond_ore"
+    },
+    {
+      "from": [
+        34,
+        68,
+        -6
+      ],
+      "to": [
+        34,
+        68,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        34,
+        69,
+        -4
+      ],
+      "to": [
+        34,
+        69,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        30,
+        85,
+        -6
+      ],
+      "to": [
+        33,
+        87,
+        -6
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        34,
+        85,
+        -6
+      ],
+      "to": [
+        34,
+        85,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        34,
+        86,
+        -4
+      ],
+      "to": [
+        34,
+        86,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        30,
+        104,
+        -6
+      ],
+      "to": [
+        33,
+        106,
+        -6
+      ],
+      "block": "minecraft:coal_ore"
+    },
+    {
+      "from": [
+        34,
+        104,
+        -6
+      ],
+      "to": [
+        34,
+        104,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        34,
+        105,
+        -4
+      ],
+      "to": [
+        34,
+        105,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        30,
+        125,
+        -6
+      ],
+      "to": [
+        33,
+        127,
+        -6
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        34,
+        125,
+        -6
+      ],
+      "to": [
+        34,
+        125,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        34,
+        126,
+        -4
+      ],
+      "to": [
+        34,
+        126,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        30,
+        143,
+        -6
+      ],
+      "to": [
+        33,
+        145,
+        -6
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        34,
+        143,
+        -6
+      ],
+      "to": [
+        34,
+        143,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        34,
+        144,
+        -4
+      ],
+      "to": [
+        34,
+        144,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        44,
+        68,
+        -6
+      ],
+      "to": [
+        47,
+        70,
+        -6
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        48,
+        68,
+        -6
+      ],
+      "to": [
+        48,
+        68,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        48,
+        69,
+        -4
+      ],
+      "to": [
+        48,
+        69,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        44,
+        85,
+        -6
+      ],
+      "to": [
+        47,
+        87,
+        -6
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        48,
+        85,
+        -6
+      ],
+      "to": [
+        48,
+        85,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        48,
+        86,
+        -4
+      ],
+      "to": [
+        48,
+        86,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        44,
+        104,
+        -6
+      ],
+      "to": [
+        47,
+        106,
+        -6
+      ],
+      "block": "minecraft:diamond_ore"
+    },
+    {
+      "from": [
+        48,
+        104,
+        -6
+      ],
+      "to": [
+        48,
+        104,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        48,
+        105,
+        -4
+      ],
+      "to": [
+        48,
+        105,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        44,
+        125,
+        -6
+      ],
+      "to": [
+        47,
+        127,
+        -6
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        48,
+        125,
+        -6
+      ],
+      "to": [
+        48,
+        125,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        48,
+        126,
+        -4
+      ],
+      "to": [
+        48,
+        126,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        44,
+        143,
+        -6
+      ],
+      "to": [
+        47,
+        145,
+        -6
+      ],
+      "block": "minecraft:coal_ore"
+    },
+    {
+      "from": [
+        48,
+        143,
+        -6
+      ],
+      "to": [
+        48,
+        143,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        48,
+        144,
+        -4
+      ],
+      "to": [
+        48,
+        144,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        58,
+        68,
+        -6
+      ],
+      "to": [
+        61,
+        70,
+        -6
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        62,
+        68,
+        -6
+      ],
+      "to": [
+        62,
+        68,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        62,
+        69,
+        -4
+      ],
+      "to": [
+        62,
+        69,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        58,
+        85,
+        -6
+      ],
+      "to": [
+        61,
+        87,
+        -6
+      ],
+      "block": "minecraft:coal_ore"
+    },
+    {
+      "from": [
+        62,
+        85,
+        -6
+      ],
+      "to": [
+        62,
+        85,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        62,
+        86,
+        -4
+      ],
+      "to": [
+        62,
+        86,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        58,
+        104,
+        -6
+      ],
+      "to": [
+        61,
+        106,
+        -6
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        62,
+        104,
+        -6
+      ],
+      "to": [
+        62,
+        104,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        62,
+        105,
+        -4
+      ],
+      "to": [
+        62,
+        105,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        58,
+        125,
+        -6
+      ],
+      "to": [
+        61,
+        127,
+        -6
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        62,
+        125,
+        -6
+      ],
+      "to": [
+        62,
+        125,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        62,
+        126,
+        -4
+      ],
+      "to": [
+        62,
+        126,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        58,
+        143,
+        -6
+      ],
+      "to": [
+        61,
+        145,
+        -6
+      ],
+      "block": "minecraft:diamond_ore"
+    },
+    {
+      "from": [
+        62,
+        143,
+        -6
+      ],
+      "to": [
+        62,
+        143,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        62,
+        144,
+        -4
+      ],
+      "to": [
+        62,
+        144,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        72,
+        68,
+        -6
+      ],
+      "to": [
+        75,
+        70,
+        -6
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        76,
+        68,
+        -6
+      ],
+      "to": [
+        76,
+        68,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        76,
+        69,
+        -4
+      ],
+      "to": [
+        76,
+        69,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        72,
+        85,
+        -6
+      ],
+      "to": [
+        75,
+        87,
+        -6
+      ],
+      "block": "minecraft:diamond_ore"
+    },
+    {
+      "from": [
+        76,
+        85,
+        -6
+      ],
+      "to": [
+        76,
+        85,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        76,
+        86,
+        -4
+      ],
+      "to": [
+        76,
+        86,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        72,
+        104,
+        -6
+      ],
+      "to": [
+        75,
+        106,
+        -6
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        76,
+        104,
+        -6
+      ],
+      "to": [
+        76,
+        104,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        76,
+        105,
+        -4
+      ],
+      "to": [
+        76,
+        105,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        72,
+        125,
+        -6
+      ],
+      "to": [
+        75,
+        127,
+        -6
+      ],
+      "block": "minecraft:coal_ore"
+    },
+    {
+      "from": [
+        76,
+        125,
+        -6
+      ],
+      "to": [
+        76,
+        125,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        76,
+        126,
+        -4
+      ],
+      "to": [
+        76,
+        126,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        72,
+        143,
+        -6
+      ],
+      "to": [
+        75,
+        145,
+        -6
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        76,
+        143,
+        -6
+      ],
+      "to": [
+        76,
+        143,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        76,
+        144,
+        -4
+      ],
+      "to": [
+        76,
+        144,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        86,
+        68,
+        -6
+      ],
+      "to": [
+        89,
+        70,
+        -6
+      ],
+      "block": "minecraft:coal_ore"
+    },
+    {
+      "from": [
+        90,
+        68,
+        -6
+      ],
+      "to": [
+        90,
+        68,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        90,
+        69,
+        -4
+      ],
+      "to": [
+        90,
+        69,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        86,
+        85,
+        -6
+      ],
+      "to": [
+        89,
+        87,
+        -6
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        90,
+        85,
+        -6
+      ],
+      "to": [
+        90,
+        85,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        90,
+        86,
+        -4
+      ],
+      "to": [
+        90,
+        86,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        86,
+        104,
+        -6
+      ],
+      "to": [
+        89,
+        106,
+        -6
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        90,
+        104,
+        -6
+      ],
+      "to": [
+        90,
+        104,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        90,
+        105,
+        -4
+      ],
+      "to": [
+        90,
+        105,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        86,
+        125,
+        -6
+      ],
+      "to": [
+        89,
+        127,
+        -6
+      ],
+      "block": "minecraft:diamond_ore"
+    },
+    {
+      "from": [
+        90,
+        125,
+        -6
+      ],
+      "to": [
+        90,
+        125,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        90,
+        126,
+        -4
+      ],
+      "to": [
+        90,
+        126,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        86,
+        143,
+        -6
+      ],
+      "to": [
+        89,
+        145,
+        -6
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        90,
+        143,
+        -6
+      ],
+      "to": [
+        90,
+        143,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        90,
+        144,
+        -4
+      ],
+      "to": [
+        90,
+        144,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        100,
+        68,
+        -6
+      ],
+      "to": [
+        103,
+        70,
+        -6
+      ],
+      "block": "minecraft:diamond_ore"
+    },
+    {
+      "from": [
+        104,
+        68,
+        -6
+      ],
+      "to": [
+        104,
+        68,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        104,
+        69,
+        -4
+      ],
+      "to": [
+        104,
+        69,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        100,
+        85,
+        -6
+      ],
+      "to": [
+        103,
+        87,
+        -6
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        104,
+        85,
+        -6
+      ],
+      "to": [
+        104,
+        85,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        104,
+        86,
+        -4
+      ],
+      "to": [
+        104,
+        86,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        100,
+        104,
+        -6
+      ],
+      "to": [
+        103,
+        106,
+        -6
+      ],
+      "block": "minecraft:coal_ore"
+    },
+    {
+      "from": [
+        104,
+        104,
+        -6
+      ],
+      "to": [
+        104,
+        104,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        104,
+        105,
+        -4
+      ],
+      "to": [
+        104,
+        105,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        100,
+        125,
+        -6
+      ],
+      "to": [
+        103,
+        127,
+        -6
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        104,
+        125,
+        -6
+      ],
+      "to": [
+        104,
+        125,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        104,
+        126,
+        -4
+      ],
+      "to": [
+        104,
+        126,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        100,
+        143,
+        -6
+      ],
+      "to": [
+        103,
+        145,
+        -6
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        104,
+        143,
+        -6
+      ],
+      "to": [
+        104,
+        143,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        104,
+        144,
+        -4
+      ],
+      "to": [
+        104,
+        144,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        114,
+        68,
+        -6
+      ],
+      "to": [
+        117,
+        70,
+        -6
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        118,
+        68,
+        -6
+      ],
+      "to": [
+        118,
+        68,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        118,
+        69,
+        -4
+      ],
+      "to": [
+        118,
+        69,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        114,
+        85,
+        -6
+      ],
+      "to": [
+        117,
+        87,
+        -6
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        118,
+        85,
+        -6
+      ],
+      "to": [
+        118,
+        85,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        118,
+        86,
+        -4
+      ],
+      "to": [
+        118,
+        86,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        114,
+        104,
+        -6
+      ],
+      "to": [
+        117,
+        106,
+        -6
+      ],
+      "block": "minecraft:diamond_ore"
+    },
+    {
+      "from": [
+        118,
+        104,
+        -6
+      ],
+      "to": [
+        118,
+        104,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        118,
+        105,
+        -4
+      ],
+      "to": [
+        118,
+        105,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        114,
+        125,
+        -6
+      ],
+      "to": [
+        117,
+        127,
+        -6
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        118,
+        125,
+        -6
+      ],
+      "to": [
+        118,
+        125,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        118,
+        126,
+        -4
+      ],
+      "to": [
+        118,
+        126,
+        -4
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "from": [
+        114,
+        143,
+        -6
+      ],
+      "to": [
+        117,
+        145,
+        -6
+      ],
+      "block": "minecraft:coal_ore"
+    },
+    {
+      "from": [
+        118,
+        143,
+        -6
+      ],
+      "to": [
+        118,
+        143,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        118,
+        144,
+        -4
+      ],
+      "to": [
+        118,
+        144,
+        -4
+      ],
+      "block": "minecraft:torch"
+    }
+  ]
+}
