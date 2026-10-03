@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-03T17:36:35.0936751Z",
+  "minecraftVersion": "0.4.10",
+  "gdVersion": "0.4.7",
+  "minecraftSHA256": "969EC87FC3AB1DFC7C626F81601C2536C7699CE9B8185F259A7B5B6DF3456F2E",
+  "gdSHA256": "74D997507604F1DCA5E04C65A21E383FA925E91AD6ED1AE2D9A7C839FF7B074E",
+  "world": "GDBridge-Reference",
+  "worldTimeAfterRestart": 3000,
+  "geometryAuthority": "minecraft-world",
+  "geometryCheck": "docs/reference-world-authority.json",
+  "nativeBlueprintSHA256": "A2160FE8187F8E5C806F5430DFFCA5164749503472DB97CA997632AC7C373827",
+  "recordingFrames": 238,
+  "noInputAutoCompleted": true,
+  "deadFrames": 0,
+  "noclipFrames": 0,
+  "cubeDepthMaxFaces": 10.0,
+  "nativeParticleQuadsMax": 96.0,
+  "framesWithNativeParticles": 160,
+  "framesAtParticleCap": 11,
+  "videoSHA256": "43F507CA2DC5359A73C0E24B339CB9BCA8BFCE3E3D522426DD8AA280B4F3489F",
+  "desktopCapture": false,
+  "visualReviewedFrames": [
+    30,
+    50,
+    60,
+    80
+  ],
+  "cube": "Closed shallow body, graphite backing and dim beveled sides; original native GD front quad and icon retained. Depth scales with native quad.",
+  "particleSource": "Actual live unbatched GD particle quads, engine UV/RGBA/blend/positions; cyan reference skin recolors native cube-portal particles cosmetically.",
+  "extraEffects": "Procedural pixel pulse/halo/motes with pause/reset handling; native activation flags drive burst effects.",
+  "portalLight": "Vanilla marker emission8 and adjacent air7; optional colored depth-tested glow follows actual solid block tops. Surface glow is cosmetic, not colored global illumination.",
+  "orbActivationVisualVerified": false,
+  "orbProbe": "One ordinary jump input probe did not activate the optional orb; activation burst appearance remains unverified.",
+  "limits": [
+    "Not exhaustive temporal flicker/shape/effect verification.",
+    "Batched/global/invisible particle systems not fully supported; 96quad budget may truncate emitters.",
+    "Native implicit floor/ceiling unresolved; continuation near finish is not wholly Minecraft-authored.",
+    "Visual fidelity to concept remains incomplete."
+  ]
+}

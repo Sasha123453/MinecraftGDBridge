@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-03T18:16:49.9109249Z",
+  "stoppedAtUserRequest": true,
+  "recordingDeferred": true,
+  "world": "GDBridge-Reference",
+  "demoName": "Bridge Forest Demonstration",
+  "sourceLevelId": 900000105,
+  "sourceSHA256": "456ffa118d229832f64108bc0ae9c6b6b822e69bd5ac4c48496f8b3cf21ab90f",
+  "nativeSourceObjects": 348,
+  "estimatedDurationSeconds": 39.6,
+  "modes": [
+    "cube",
+    "ship",
+    "ball",
+    "wave",
+    "cube"
+  ],
+  "sourceVersions": {
+    "minecraft": "0.4.11",
+    "gd": "0.4.9"
+  },
+  "installedVersions": {
+    "minecraft": "0.4.11",
+    "gd": "0.4.8"
+  },
+  "installedHashes": {
+    "minecraft": "FE19E6E71CAFFEAFBA9BB104B309642DC29FF5F5CC9D8E0A7944DDC484A6FDF2",
+    "gd": "A266088814DFD0847BE426FF65E619D403E265AB3E56CD328068B9B79B498465"
+  },
+  "geometryCheck": "docs/demo-world-authority.json",
+  "matchedWorldCells": 1148,
+  "fullCompletionVerified": false,
+  "pilotEnabled": false,
+  "nativePaused": true,
+  "diagnosticNoclip": false,
+  "lastAttempt": "Pilot initially active then stopped before ship; ship collided at nativeX2966.55/Y105. Failed diagnostic recording is not completion evidence.",
+  "stagedFix": "GD0.4.9 replaces postUpdate dt timeout with unpaused steady-clock and preserves first stop reason. Source compiled separately, not installed/runtime-tested.",
+  "resumeSteps": [
+    "Install staged GD0.4.9 alongside MC0.4.11 after closing games.",
+    "Keep the current authored Minecraft world; do not reimport over later user edits.",
+    "Compile/export actual server cells and wait for native world-authority acknowledgement.",
+    "Restart with pilot off, resume and wait until intro ends/x>100, then enable pilot explicitly.",
+    "Verify ship/ball/wave transitions and normal full completion with noclip off before recording.",
+    "Record~40-second passage with native framebuffer; label automated native input honestly."
+  ],
+  "limits": [
+    "Duration remains an estimate until successful live completion.",
+    "Native implicit planes and broader effects remain incomplete.",
+    "Batched/global particles are not fully exported.",
+    "Existing custom-music configuration remains available; framebuffer recordings are silent unless audio is added separately."
+  ],
+  "stagedGdSHA256": "7F9C73F2CACA1BCD6ACDE1084118C7D44773D5755406123CDACAB17F189235E7"
+}

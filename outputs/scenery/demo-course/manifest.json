@@ -1,0 +1,136 @@
+{
+  "schema": "gdbridge-demo-course-manifest-v1",
+  "generator": "tools/scenery/Build-DemoCourse.cjs",
+  "deterministic": true,
+  "seed": 20261004,
+  "source": {
+    "file": "demo-course-source.json",
+    "sha256": "456ffa118d229832f64108bc0ae9c6b6b822e69bd5ac4c48496f8b3cf21ab90f"
+  },
+  "sourceObjectCount": 348,
+  "counts": {
+    "solid": 302,
+    "spike": 23,
+    "pad": 11,
+    "orb": 7,
+    "portal": 5
+  },
+  "sections": [
+    {
+      "name": "Cube forest opening",
+      "mode": "cube",
+      "fromX": 0,
+      "toX": 2565
+    },
+    {
+      "name": "Ship under the stone canopy",
+      "mode": "ship",
+      "fromX": 2565,
+      "toX": 5115
+    },
+    {
+      "name": "Ball clearing",
+      "mode": "ball",
+      "fromX": 5115,
+      "toX": 6915
+    },
+    {
+      "name": "Wave ruins corridor",
+      "mode": "wave",
+      "fromX": 6915,
+      "toX": 9915
+    },
+    {
+      "name": "Cube final jumps",
+      "mode": "cube",
+      "fromX": 9915,
+      "toX": 11325
+    }
+  ],
+  "approximateDurationSeconds": 39.6,
+  "normalSpeedGUPerSecond": 311.58,
+  "lastSourceObjectX": 11325,
+  "expectedAuthoringRegion": {
+    "minX": -2,
+    "maxX": 397,
+    "minY": 65,
+    "maxY": 104
+  },
+  "reference": "outputs/Scene-Target-Selected.png",
+  "sceneBounds": {
+    "minX": -16,
+    "maxX": 445,
+    "minY": 61,
+    "maxY": 78,
+    "minZ": -16,
+    "maxZ": 12,
+    "forbiddenNormalZ": 0
+  },
+  "applyOrder": [
+    {
+      "file": "demo-course-scene-01.json",
+      "sha256": "cb594011c807e4844a676bb2f32796bb398dfe818843445fcf9787ed63db5bfc",
+      "cells": 1848,
+      "boxes": 2
+    },
+    {
+      "file": "demo-course-scene-02.json",
+      "sha256": "674d898c65a7749109eebd8263b404812f9edd49b9ff6c2690dcbc9d343e2f5a",
+      "cells": 15246,
+      "boxes": 2
+    },
+    {
+      "file": "demo-course-scene-03.json",
+      "sha256": "d3bbef7a22cbe693fec51ab8c8cd97b80b7a6aa1baa92a01b2cf7cd689af7ead",
+      "cells": 5082,
+      "boxes": 1
+    },
+    {
+      "file": "demo-course-scene-04.json",
+      "sha256": "6af557206ac3121882d67e209e585f65223b5bdf63bf1fb2f5f870d9ceeb8f7f",
+      "cells": 14784,
+      "boxes": 2
+    },
+    {
+      "file": "demo-course-scene-05.json",
+      "sha256": "b187df1b9a3c21bc18d73cd755e5b339d1cfb186ddd4f2fce72f905e2d3699f8",
+      "cells": 15985,
+      "boxes": 257
+    },
+    {
+      "file": "demo-course-scene-06.json",
+      "sha256": "305777ff4a356bebf9f193476a5b74eae6575fa4eb13a0fa79cee2d29051c3a7",
+      "cells": 4605,
+      "boxes": 617
+    }
+  ],
+  "optionalRouteFloor": {
+    "file": "demo-course-route-floor.optional.json",
+    "sha256": "6fd6af7592bed83ad2b98efd476281aabb552dad22de30449473682840dbd817"
+  },
+  "presentation": {
+    "file": "presentation.json",
+    "sha256": "e5c687a74de7ef419bb78f7e731a553494c2dfc8bcd5c04f52281ba12a94e8e0"
+  },
+  "totalRequestedCells": 57550,
+  "totalBoxes": 881,
+  "verification": {
+    "liveApplied": false,
+    "renderVerified": false,
+    "geometryVerified": false,
+    "normalCompletionVerified": false
+  },
+  "preconditions": [
+    "Import original native seed into isolated GDBridge-Reference first, then inspect actual exported blueprint-derived bounds.",
+    "Off-plane validator needs Reference region+48 for the decorated finish; existing +16 only covers X413.",
+    "Apply numbered plans in order, then bounded route floor, and F6 compile actual server cells.",
+    "Do not import this seed over later user edits without explicit intent."
+  ],
+  "limits": [
+    "Duration is an estimate until genuine native playback is recorded.",
+    "Flight sections require real input; this is no longer a no-input AUTO course.",
+    "Native forgiving spike hitboxes are not enlarged.",
+    "Native implicit floor/ceiling authority and broader mode/effect support remain existing limitations.",
+    "Decoration is additive over the compatible short reference forest; no destructive huge cleanup."
+  ]
+}

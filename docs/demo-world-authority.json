@@ -1,32 +1,32 @@
 {
-  "checkedAt": "2026-10-03T17:29:32.8586318Z",
+  "checkedAt": "2026-10-03T18:04:36.1367858Z",
   "authority": "minecraft-world",
   "passed": true,
-  "scope": "z=0, x=-2..77, y=65..104",
+  "scope": "z=0, x=-2..397, y=65..104",
   "authoringRegion": {
     "minX": -2,
-    "maxX": 77,
+    "maxX": 397,
     "minY": 65,
     "maxY": 104
   },
-  "cells": 180,
+  "cells": 1148,
   "counts": {
-    "solid": 167,
-    "spike": 6,
-    "special": 7
+    "solid": 1102,
+    "spike": 23,
+    "special": 23
   },
   "unsupportedCells": 0,
-  "nativeTotal": 180,
-  "matchedCells": 180,
+  "nativeTotal": 1148,
+  "matchedCells": 1148,
   "missingCells": 0,
-  "dimensionCheckedCells": 167,
+  "dimensionCheckedCells": 1102,
   "dimensionMismatches": 0,
   "unmatchedNativeObjects": 0,
   "positionToleranceGDUnits": 0.005,
-  "manifestWrittenUtc": "2026-10-03T17:29:29.1515948Z",
-  "nativeWrittenUtc": "2026-10-03T17:29:29.2578175Z",
-  "manifestSHA256": "DDD309C533A39A5A447ACF2BE28139FBB27914D061B69588FE53272DA2B3FC07",
-  "nativeSHA256": "A2160FE8187F8E5C806F5430DFFCA5164749503472DB97CA997632AC7C373827",
+  "manifestWrittenUtc": "2026-10-03T18:04:25.2550177Z",
+  "nativeWrittenUtc": "2026-10-03T18:04:25.6042712Z",
+  "manifestSHA256": "33BA15D5A267B0657A5F436BDEADEB49090EE103FDC3669E135941CE7DA20C40",
+  "nativeSHA256": "4F364DCF5B78C717BE7C209785ED13B9B69A2E7F10F5C529DE8B044A59DEAD56",
   "mismatchExamples": [],
   "nativeSpikeBoundsExamples": [
     {

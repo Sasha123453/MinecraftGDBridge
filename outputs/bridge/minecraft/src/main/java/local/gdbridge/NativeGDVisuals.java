@@ -21,6 +21,7 @@ import org.lwjgl.opengl.GL14;
 
 /** Draws original GD sprites and native trail meshes; it never invents a replacement asset. */
 public final class NativeGDVisuals {
+    public static volatile int lastCubeDepthFaces,lastParticleQuads;
     private static final Path RUNTIME = Path.of("C:/Users/shelk/Documents/Codex/2026-10-02/minecraft-java-geometry-dash-nasgubb-xo/outputs/bridge/runtime").toAbsolutePath().normalize();
     private static final int MAX_LAYERS=96, MAX_TRAILS=3, MAX_STRIP_VERTICES=2048, MAX_WAVE_VERTICES=6144;
     private static final long MAX_CACHE_BYTES=256L*1024*1024;
@@ -58,8 +59,10 @@ public final class NativeGDVisuals {
 
     /** Standard entity buffers provide Minecraft lightmap, normals and Iris entity/shadow passes. */
     public static void renderWorldLit(MatrixStack matrices,VertexConsumerProvider buffers,JsonObject packet,double ox,double oy,double oz,int light){
+        lastCubeDepthFaces=0;lastParticleQuads=0;
         if(packet==null)return;collectRequested(packet,PINNED);retireUnused();JsonArray layers=array(packet,"avatarLayers");
         float front=(float)(1.085-oz);
+        if(BridgeVisualStyle.volume()&&string(packet,"mode").equals("cube"))renderCubeDepth(matrices,buffers,packet,layers,ox,oy,front,light);
         for(int i=0;layers!=null&&i<Math.min(MAX_LAYERS,layers.size());i++){
             JsonObject layer=layers.get(i).getAsJsonObject();Vertex[] quad=vertices(array(layer,"vertices"),4);if(quad==null||quad.length!=4)continue;
             int source=blend(number(layer,"blendSource",GL11.GL_ONE)),destination=blend(number(layer,"blendDestination",GL11.GL_ONE_MINUS_SRC_ALPHA));
@@ -90,6 +93,22 @@ public final class NativeGDVisuals {
             if(rank>=96)continue;
             float z=(float)(1.025-oz)+rank*.0005f;for(Vertex v:quad)litVertex(consumer,matrices,v,ox,oy,z,v.u*us,v.v*vs,materialLight,0,0,1);
         }
+        // Particle quads come from live GD emitters, including their UVs, RGBA
+        // and blend factors. They share the native texture cache and scene depth.
+        JsonArray particles=array(packet,"particleLayers");
+        for(int i=0;particles!=null&&i<Math.min(96,particles.size());i++){
+            JsonObject layer=particles.get(i).getAsJsonObject();Vertex[] points=vertices(array(layer,"vertices"),576);if(points==null||points.length<6||points.length%6!=0)continue;
+            // The reference's optional cyan cube-portal skin recolors its native
+            // particles too; their engine positions, timing and alpha stay native.
+            if(BridgeVisualStyle.volume()&&WorldEditor.worldName.equals("GDBridge-Reference")&&number(layer,"objectId",-1)==12){for(int p=0;p<points.length;p++){Vertex v=points[p];int peak=Math.max(v.r,Math.max(v.g,v.b));points[p]=new Vertex(v.x,v.y,v.u,v.v,peak*66/255,peak*230/255,peak*248/255,v.a);}}
+            int source=blend(number(layer,"blendSource",GL11.GL_ONE)),destination=blend(number(layer,"blendDestination",GL11.GL_ONE_MINUS_SRC_ALPHA));
+            Texture tex=texture(string(layer,"path"),source==GL11.GL_ONE);if(tex==null)continue;
+            VertexConsumer consumer=buffers.getBuffer(NativeGDRenderLayers.get(tex.id,source,destination));
+            float us=(float)number(layer,"textureWidth",tex.width)/tex.width,vs=(float)number(layer,"textureHeight",tex.height)/tex.height;
+            int materialLight=destination==GL11.GL_ONE?0xF000F0:quadLight(points,light);
+            for(int e=0;e+2<points.length;e+=3)litTriangle(consumer,matrices,points[e],points[e+1],points[e+2],ox,oy,(float)(1.04-oz),us,vs,materialLight);
+            lastParticleQuads+=points.length/6;
+        }
         // Real trail vertices remain native. Only native additive materials are emissive.
         JsonArray trails=array(packet,"trails");
         for(int i=0;trails!=null&&i<Math.min(MAX_TRAILS,trails.size());i++){
@@ -107,7 +126,7 @@ public final class NativeGDVisuals {
     private static int quadLight(Vertex[] quad,int fallback){var mc=MinecraftClient.getInstance();if(mc.world==null)return fallback;double x=0,y=0;for(Vertex v:quad){x+=v.x;y+=v.y;}return WorldRenderer.getLightmapCoordinates(mc.world,BlockPos.ofFloored(x/quad.length/30,64+y/quad.length/30,.5));}
     private static Vertex bodyTint(Vertex v,JsonArray color){return color!=null&&color.size()>=3?new Vertex(v.x,v.y,v.u,v.v,Math.max(0,Math.min(255,color.get(0).getAsInt())),Math.max(0,Math.min(255,color.get(1).getAsInt())),Math.max(0,Math.min(255,color.get(2).getAsInt())),v.a):v;}
     private static void collectRequested(JsonObject packet,Set<String> requested){
-        for(String field:List.of("avatarLayers","trails","objectLayers")){JsonArray layers=array(packet,field);if(layers!=null)for(JsonElement e:layers)if(e.isJsonObject()){JsonObject layer=e.getAsJsonObject();requested.add(string(layer,"path")+":"+(number(layer,"blendSource",GL11.GL_ONE)==GL11.GL_ONE));}}
+        for(String field:List.of("avatarLayers","trails","objectLayers","particleLayers")){JsonArray layers=array(packet,field);if(layers!=null)for(JsonElement e:layers)if(e.isJsonObject()){JsonObject layer=e.getAsJsonObject();requested.add(string(layer,"path")+":"+(number(layer,"blendSource",GL11.GL_ONE)==GL11.GL_ONE));}}
         if(packet.has("player2")&&packet.get("player2").isJsonObject())collectRequested(packet.getAsJsonObject("player2"),requested);
     }
     private static void retireUnused(){var frame=GDBridge.FRAME.get();if(frame==null)return;Set<String> requested=new HashSet<>();collectRequested(frame.packet(),requested);var jobs=LOADING.entrySet().iterator();while(jobs.hasNext()){var job=jobs.next();if(!requested.contains(job.getKey())&&job.getValue().isDone()){Decoded retired=job.getValue().getNow(null);if(retired!=null)retired.image.close();jobs.remove();}}}
@@ -116,6 +135,71 @@ public final class NativeGDVisuals {
     }
     private static void litVertex(VertexConsumer consumer,MatrixStack matrices,Vertex v,double ox,double oy,float z,float u,float vv,int light,float nx,float ny,float nz){
         consumer.vertex(matrices.peek().getPositionMatrix(),(float)(v.x/30-ox),(float)(64+v.y/30-oy),z).color(v.r,v.g,v.b,v.a).texture(u,vv).overlay(OverlayTexture.DEFAULT_UV).light(light).normal(matrices.peek().getNormalMatrix(),nx,ny,nz).next();
+    }
+    /** One shallow beveled cube using the native quad; original icon layers remain in front. */
+    private static void renderCubeDepth(MatrixStack m,VertexConsumerProvider buffers,JsonObject packet,JsonArray layers,double ox,double oy,float front,int fallbackLight){
+        if(layers==null||layers.isEmpty())return;
+        if(packet.has("dead")&&packet.get("dead").getAsBoolean())return;
+        String iconPath="";JsonArray iconRect=null;
+        if(packet.has("playerNativeDiagnostics")&&packet.get("playerNativeDiagnostics").isJsonObject()){
+            JsonObject diagnostic=packet.getAsJsonObject("playerNativeDiagnostics");
+            for(String flag:List.of("hidden","invisible","dead"))if(diagnostic.has(flag)&&diagnostic.get(flag).getAsBoolean())return;
+            if(diagnostic.has("visible")&&!diagnostic.get("visible").getAsBoolean())return;
+            JsonArray nodes=array(diagnostic,"nodes");
+            if(nodes!=null)for(JsonElement entry:nodes)if(entry.isJsonObject()&&string(entry.getAsJsonObject(),"role").equals("icon")){iconPath=string(entry.getAsJsonObject(),"texturePath");iconRect=array(entry.getAsJsonObject(),"textureRect");break;}
+        }
+        JsonArray primary=array(packet,"primaryColor");JsonObject selected=null;Vertex[] body=null;double best=-Double.MAX_VALUE;
+        for(int i=0;i<Math.min(MAX_LAYERS,layers.size());i++){
+            if(!layers.get(i).isJsonObject())continue;JsonObject layer=layers.get(i).getAsJsonObject();
+            if(number(layer,"blendDestination",GL11.GL_ONE_MINUS_SRC_ALPHA)==GL11.GL_ONE)continue;
+            Vertex[] q=vertices(array(layer,"vertices"),4);if(q==null||q.length!=4||q[0].a<2)continue;
+            double width=Math.hypot(q[1].x-q[0].x,q[1].y-q[0].y),height=Math.hypot(q[3].x-q[0].x,q[3].y-q[0].y);
+            if(width<2||height<2||width>90||height>90||width/height<.7||width/height>1.4)continue;
+            Vertex tint=bodyTint(q[0],primary);double alpha=q[0].a/255.0;
+            boolean premult=number(layer,"blendSource",GL11.GL_ONE)==GL11.GL_ONE;
+            double r=q[0].r/(premult?alpha:1),g=q[0].g/(premult?alpha:1),b=q[0].b/(premult?alpha:1);
+            double score=width*height*.001-(Math.abs(r-tint.r)+Math.abs(g-tint.g)+Math.abs(b-tint.b));
+            if(!iconPath.isEmpty()&&iconPath.equals(string(layer,"path"))&&iconRect!=null&&iconRect.size()==4){
+                double minU=1,minV=1,maxU=0,maxV=0;for(Vertex v:q){minU=Math.min(minU,v.u);minV=Math.min(minV,v.v);maxU=Math.max(maxU,v.u);maxV=Math.max(maxV,v.v);}
+                double tw=number(layer,"textureWidth",1),th=number(layer,"textureHeight",1);
+                double error=Math.abs(minU*tw-iconRect.get(0).getAsDouble())+Math.abs(minV*th-iconRect.get(1).getAsDouble());
+                double uvArea=(maxU-minU)*tw*(maxV-minV)*th,rectArea=iconRect.get(2).getAsDouble()*iconRect.get(3).getAsDouble();
+                if(error<4&&Math.abs(uvArea-rectArea)<Math.max(8,rectArea*.1))score+=10000;
+            }
+            if(score>best){best=score;selected=layer;body=q;}
+        }
+        if(selected==null)return;
+        Texture texture=texture(string(selected,"path"),number(selected,"blendSource",GL11.GL_ONE)==GL11.GL_ONE);if(texture==null)return;
+        double size=Math.min(Math.hypot(body[1].x-body[0].x,body[1].y-body[0].y),Math.hypot(body[3].x-body[0].x,body[3].y-body[0].y))/30;
+        float near=front-.002f,back=near-(float)Math.min(.20,.20*size),shoulder=near-(float)(.035*size);
+        double bevel=.035;
+        Vertex primaryTint=bodyTint(body[0],primary);
+        Vertex side=new Vertex(0,0,0,0,(int)(primaryTint.r*.55),(int)(primaryTint.g*.55),(int)(primaryTint.b*.55),primaryTint.a);
+        Vertex edge=new Vertex(0,0,0,0,(int)(primaryTint.r*.42),(int)(primaryTint.g*.42),(int)(primaryTint.b*.42),primaryTint.a);
+        Vertex graphite=new Vertex(0,0,0,0,Math.max(16,(int)(primaryTint.r*.08)),Math.max(24,(int)(primaryTint.g*.08)),Math.max(16,(int)(primaryTint.b*.08)),primaryTint.a);
+        int light=quadLight(body,fallbackLight);
+        VertexConsumer consumer=buffers.getBuffer(NativeGDRenderLayers.get(whiteTexture().id,GL11.GL_SRC_ALPHA,GL11.GL_ONE_MINUS_SRC_ALPHA));
+        // A single closed body: native alpha holes reveal a sober dark backing,
+        // rather than turning every decorative island into a separate green bar.
+        cubeFace(m,consumer,body,ox,oy,bevel,bevel,near,1-bevel,bevel,near,1-bevel,1-bevel,near,bevel,1-bevel,near,graphite,light);
+        cubeFace(m,consumer,body,ox,oy,1,0,back,0,0,back,0,1,back,1,1,back,graphite,light);
+        cubeFace(m,consumer,body,ox,oy,0,0,back,0,0,shoulder,0,1,shoulder,0,1,back,side,light);
+        cubeFace(m,consumer,body,ox,oy,1,0,shoulder,1,0,back,1,1,back,1,1,shoulder,side,light);
+        cubeFace(m,consumer,body,ox,oy,0,0,shoulder,0,0,back,1,0,back,1,0,shoulder,side,light);
+        cubeFace(m,consumer,body,ox,oy,0,1,back,0,1,shoulder,1,1,shoulder,1,1,back,side,light);
+        cubeFace(m,consumer,body,ox,oy,0,0,shoulder,bevel,bevel,near,bevel,1-bevel,near,0,1,shoulder,edge,light);
+        cubeFace(m,consumer,body,ox,oy,1-bevel,bevel,near,1,0,shoulder,1,1,shoulder,1-bevel,1-bevel,near,edge,light);
+        cubeFace(m,consumer,body,ox,oy,0,0,shoulder,1,0,shoulder,1-bevel,bevel,near,bevel,bevel,near,edge,light);
+        cubeFace(m,consumer,body,ox,oy,bevel,1-bevel,near,1-bevel,1-bevel,near,1,1,shoulder,0,1,shoulder,edge,light);
+    }
+    private static void cubeFace(MatrixStack m,VertexConsumer consumer,Vertex[] q,double ox,double oy,double ax,double ay,float az,double bx,double by,float bz,double cx,double cy,float cz,double dx,double dy,float dz,Vertex tint,int light){
+        lastCubeDepthFaces++;
+        double[][] local={{ax,ay,az},{bx,by,bz},{cx,cy,cz},{dx,dy,dz}};org.joml.Vector3f[] p=new org.joml.Vector3f[4];
+        for(int i=0;i<4;i++)p[i]=new org.joml.Vector3f((float)((q[0].x+(q[1].x-q[0].x)*local[i][0]+(q[3].x-q[0].x)*local[i][1])/30-ox),(float)(64+(q[0].y+(q[1].y-q[0].y)*local[i][0]+(q[3].y-q[0].y)*local[i][1])/30-oy),(float)local[i][2]);
+        var normal=new org.joml.Vector3f(p[1]).sub(p[0]).cross(new org.joml.Vector3f(p[2]).sub(p[0]));if(normal.lengthSquared()<1e-12f)return;normal.normalize();
+        // Signed native scales can reverse winding; keep surface normals outward.
+        if((q[1].x-q[0].x)*(q[3].y-q[0].y)-(q[1].y-q[0].y)*(q[3].x-q[0].x)<0)normal.negate();
+        for(var v:p)consumer.vertex(m.peek().getPositionMatrix(),v.x,v.y,v.z).color(tint.r,tint.g,tint.b,tint.a).texture(0,0).overlay(OverlayTexture.DEFAULT_UV).light(light).normal(m.peek().getNormalMatrix(),normal.x,normal.y,normal.z).next();
     }
     private static Texture whiteTexture(){
         PINNED.add("white");

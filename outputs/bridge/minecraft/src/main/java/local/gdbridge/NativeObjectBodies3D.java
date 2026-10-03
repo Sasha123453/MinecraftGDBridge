@@ -23,7 +23,7 @@ public final class NativeObjectBodies3D {
         m.multiply(RotationAxis.POSITIVE_Z.rotationDegrees((float)-o.bodyRotation()));
         // A separate texture layer can flush Immediate's shared builder. Draw
         // the entire interior first, atlas geometry second, and additive last.
-        if(portal)pixelDisc(m,PixelSpecialMaterials.interior(buffers),width*.405,height*.405,.245,0x185F69,light,24,portalRows(width,height));
+        if(portal)pixelDisc(m,PixelSpecialMaterials.interior(buffers),width*.405,height*.405,.245,0x238C9C,FULL_LIGHT,24,portalRows(width,height));
         VertexConsumer white=PixelSpecialMaterials.block(buffers,"white_concrete");
         VertexConsumer stone=PixelSpecialMaterials.block(buffers,"stone_bricks");
         VertexConsumer obsidian=PixelSpecialMaterials.block(buffers,"obsidian");
@@ -42,20 +42,19 @@ public final class NativeObjectBodies3D {
             VertexConsumer metal=yellow?gold:white;int metalColor=yellow?0xFFFFFF:color;
             pixelRing(m,metal,metal,width*.46,height*.46,.79,.18,.27,metalColor,metalColor,light,24,24);
             pixelRing(m,white,metal,width*.405,height*.405,.91,.264,.284,PixelSpecialMaterials.whiteMix(color,.65),metalColor,light,24,24);
-            pixelCore(m,white,width*.315,height*.315,color,light);
+            pixelCore(m,white,width*.315,height*.315,color,FULL_LIGHT);
         }
         if(showcase||o.nativeAdditive()){
             VertexConsumer glow=PixelSpecialMaterials.glow(buffers);
             if(portal){
                 pixelRingFace(m,glow,width*.448,height*.448,.91,.308,PixelSpecialMaterials.tint(color,.55),24,portalRows(width,height));
-                if(showcase)motes(m,glow,width,height,color);
             }else if(pad){
                 double rx=width*.36,y=padTop(height);
                 quad(m,glow,p(-rx,y,-.19),p(-rx,y,.297),p(rx,y,.297),p(rx,y,-.19),PixelSpecialMaterials.tint(color,.36),FULL_LIGHT);
                 rect(m,glow,-rx,y-height*.17,rx,y,.301,PixelSpecialMaterials.tint(color,.34),FULL_LIGHT);
             }else{
                 pixelRingFace(m,glow,width*.438,height*.438,.92,.291,PixelSpecialMaterials.tint(color,.27),24,24);
-                pixelDisc(m,glow,width*.255,height*.255,.307,PixelSpecialMaterials.tint(color,.22),FULL_LIGHT,16,16);
+                pixelDisc(m,glow,width*.255,height*.255,.307,PixelSpecialMaterials.tint(color,.40),FULL_LIGHT,16,16);
             }
         }
         m.pop();

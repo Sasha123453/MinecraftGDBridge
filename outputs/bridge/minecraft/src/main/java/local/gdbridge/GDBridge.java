@@ -118,7 +118,7 @@ public class GDBridge implements ClientModInitializer {
                     j.addProperty("level",num(f.packet,"level",0));j.addProperty("levelCompleted",bool(f.packet,"levelCompleted"));j.addProperty("source",str(f.packet,"source","geometry-dash"));j.addProperty("buildRevision",num(f.packet,"buildRevision",0));j.addProperty("avatarLayers",f.packet.has("avatarLayers")?f.packet.getAsJsonArray("avatarLayers").size():-1);j.addProperty("trailLayers",f.packet.has("trails")?f.packet.getAsJsonArray("trails").size():-1);
                     j.addProperty("objectLayers",f.packet.has("objectLayers")?f.packet.getAsJsonArray("objectLayers").size():-1);j.addProperty("worldTime",mc.world.getTimeOfDay());j.addProperty("ambientDarkness",mc.world.getAmbientDarkness());j.addProperty("packedWorldLight",WorldRenderer.getLightmapCoordinates(mc.world,BlockPos.ofFloored(f.x/30,64+f.y/30,.5)));j.addProperty("avatarRenderPath","native-entity-world-lit");j.addProperty("fps",mc.getCurrentFps());
                     }
-                    if(f!=null){j.addProperty("authority",str(f.packet,"authority","geometry-dash"));j.addProperty("worldGeometryActive",WorldEditor.worldGeometryActive(f));}
+                    if(f!=null){j.addProperty("authority",str(f.packet,"authority","geometry-dash"));j.addProperty("worldGeometryActive",WorldEditor.worldGeometryActive(f));j.addProperty("cubeDepthFaces",NativeGDVisuals.lastCubeDepthFaces);j.addProperty("particleQuadsDrawn",NativeGDVisuals.lastParticleQuads);}
                     j.add("authoringRegion",WorldEditor.region().json());j.addProperty("worldOperationBusy",WorldWorkQueue.busy());j.addProperty("worldOperation",WorldWorkQueue.operation);j.addProperty("worldOperationProgress",WorldWorkQueue.progress);j.addProperty("worldOperationTotal",WorldWorkQueue.total);
                     j.addProperty("world",WorldEditor.worldName);j.addProperty("visualStyle",BridgeVisualStyle.mode);j.addProperty("cameraDistance",BridgeCamera.distance);j.addProperty("cameraYaw",BridgeCamera.yaw);j.addProperty("cameraPitch",BridgeCamera.pitch);j.addProperty("controlResult",BridgeControl.result);j.addProperty("recording",BridgeRecorder.active());if(f!=null)j.addProperty("diagnosticNoclip",bool(f.packet,"diagnosticNoclip"));j.addProperty("gpu",org.lwjgl.opengl.GL11.glGetString(org.lwjgl.opengl.GL11.GL_RENDERER));Files.writeString(dir.resolve("status.json"),j.toString());
                 }catch(Exception ignored) {}
@@ -193,6 +193,8 @@ public class GDBridge implements ClientModInitializer {
             else if(o.type.equals("hazard")&&o.collisionEnabled()&&o.visualEnabled())NativeSpikes3D.render(m,buffers,o,ox,oy,oz,light);
             else if(BridgeVisualStyle.volume()&&o.visualEnabled()&&(o.type.equals("orb")||o.type.equals("portal")))NativeObjectBodies3D.render(m,buffers,o,ox,oy,oz,light);
         }
+        NativeSpecialEffects.render(m,buffers,frame,ox,oy,oz);
+        PortalSurfaceGlow.render(m,buffers,frame,ox,oy,oz);
     }
     private static void blockLit(MatrixStack m,VertexConsumerProvider buffers,double x,double y,double z,double w,double h,double d,net.minecraft.block.Block block,int light){m.push();m.translate(x,y,z);m.scale((float)w,(float)h,(float)d);MinecraftClient.getInstance().getBlockRenderManager().renderBlockAsEntity(block.getDefaultState(),m,buffers,light,OverlayTexture.DEFAULT_UV);m.pop();}
     private static void triangleLit(VertexConsumer consumer,MatrixStack m,double[] a,double[] b,double[] c,int light){

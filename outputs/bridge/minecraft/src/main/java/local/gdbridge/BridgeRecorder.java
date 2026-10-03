@@ -29,8 +29,8 @@ public final class BridgeRecorder {
         if(mc.world==null)throw new IllegalStateException("No Minecraft world");
         double duration=request.has("durationSeconds")?request.get("durationSeconds").getAsDouble():10;
         fps=request.has("fps")?request.get("fps").getAsInt():8;
-        if(!Double.isFinite(duration)||duration<1||duration>20||fps<1||fps>20)throw new IllegalArgumentException("Recording requires duration 1..20 seconds and fps 1..20");
-        limit=Math.min(400,(int)Math.ceil(duration*fps));index=0;
+        if(!Double.isFinite(duration)||duration<1||duration>60||fps<1||fps>20)throw new IllegalArgumentException("Recording requires duration1..60 seconds and fps1..20");
+        limit=Math.min(1200,(int)Math.ceil(duration*fps));index=0;
         directory=ROOT.resolve("recording-"+Instant.now().toEpochMilli()+"-"+UUID.randomUUID().toString().substring(0,8));Files.createDirectories(directory);
         frames=new JsonArray();metadata=new JsonObject();metadata.addProperty("state","capturing");metadata.addProperty("startedUtc",Instant.now().toString());metadata.addProperty("fps",fps);metadata.addProperty("durationSeconds",duration);metadata.addProperty("maximumFrames",limit);metadata.addProperty("screenshots",directory.resolve("screenshots").toString());metadata.add("frames",frames);
         recordedWorld=mc.world;previousScreen=null;restoreEligible=false;
@@ -50,6 +50,8 @@ public final class BridgeRecorder {
             ScreenshotRecorder.saveScreenshot(directory.toFile(),filename,mc.getFramebuffer(),text->{});
             JsonObject item=new JsonObject();item.addProperty("index",index-1);item.addProperty("timeSeconds",(now-started)/1_000_000_000.0);item.addProperty("path",directory.resolve("screenshots").resolve(filename).toString());
             var frame=GDBridge.FRAME.get();if(frame!=null){item.addProperty("seq",frame.seq());item.addProperty("x",frame.x());item.addProperty("y",frame.y());item.addProperty("name",frame.name());item.addProperty("dead",frame.dead());item.addProperty("levelId",frame.packet().has("level")?frame.packet().get("level").getAsInt():0);item.addProperty("diagnosticNoclip",frame.packet().has("diagnosticNoclip")&&frame.packet().get("diagnosticNoclip").getAsBoolean());}
+            item.addProperty("cubeDepthFaces",NativeGDVisuals.lastCubeDepthFaces);item.addProperty("nativeParticleQuadsDrawn",NativeGDVisuals.lastParticleQuads);
+            if(frame!=null){item.addProperty("mode",frame.mode());if(frame.packet().has("demoPilotActive"))item.add("demoPilotActive",frame.packet().get("demoPilotActive"));if(frame.packet().has("demoPilotHolding"))item.add("demoPilotHolding",frame.packet().get("demoPilotHolding"));item.addProperty("levelCompleted",frame.packet().has("levelCompleted")&&frame.packet().get("levelCompleted").getAsBoolean());}
             frames.add(item);metadata.addProperty("capturedFrames",index);if(index%fps==0)save();
         }catch(Exception error){recording=false;restoreScreen(mc);metadata.addProperty("state","failed");metadata.addProperty("error",error.getMessage());try{save();}catch(Exception ignored){}}
     }

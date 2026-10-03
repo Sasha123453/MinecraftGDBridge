@@ -16,9 +16,11 @@ public final class PixelSpecialMaterials {
         if(initialized)return;
         NativeImage interior=new NativeImage(32,64,false),light=new NativeImage(16,16,false);
         for(int y=0;y<64;y++)for(int x=0;x<32;x++){
-            int noise=Math.floorMod((x*73)^(y*37),5),value=9+noise;
-            if((x+y*3)%29==0&&x>5&&x<27)value=24;
-            if((x*11+y*7)%113==0)value=55;
+            int noise=Math.floorMod((x*73)^(y*37),5);
+            double edge=Math.pow((x-15.5)/15.5,2)+.35*Math.pow((y-31.5)/31.5,2);
+            int value=24+noise+(int)(120*Math.min(1,edge));
+            if((x+y*3)%29==0&&x>5&&x<27)value=Math.min(170,value+24);
+            if((x*11+y*7)%113==0)value=170;
             interior.setColor(x,y,0xFF000000|(value<<16)|(value<<8)|value);
         }
         for(int y=0;y<16;y++)for(int x=0;x<16;x++){

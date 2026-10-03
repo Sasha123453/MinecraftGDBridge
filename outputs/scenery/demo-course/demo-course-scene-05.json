@@ -1,0 +1,3354 @@
+{
+  "schema": "gdbridge-scenery-plan-v1",
+  "name": "Forest demonstration decoration 5/6",
+  "targetWorld": "GDBridge-Reference",
+  "seed": 20261004,
+  "timeOfDay": 3000,
+  "batchIndex": 5,
+  "batchCount": 6,
+  "cellBudget": 15985,
+  "notes": "Off-plane only; additive warm forest, foreground terraces and mossy flight ruins. Does not overwrite authored Z0 obstacle cells.",
+  "boxes": [
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        -16,
+        66,
+        -16
+      ],
+      "to": [
+        445,
+        66,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        -9,
+        67,
+        -6
+      ],
+      "to": [
+        -9,
+        71,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        -12,
+        70,
+        -9
+      ],
+      "to": [
+        -6,
+        72,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        -11,
+        73,
+        -8
+      ],
+      "to": [
+        -7,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        -10,
+        74,
+        -7
+      ],
+      "to": [
+        -8,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        -13,
+        71,
+        -7
+      ],
+      "to": [
+        -13,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        1,
+        67,
+        -7
+      ],
+      "to": [
+        1,
+        72,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        -2,
+        71,
+        -10
+      ],
+      "to": [
+        4,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        -1,
+        74,
+        -9
+      ],
+      "to": [
+        3,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        0,
+        75,
+        -8
+      ],
+      "to": [
+        2,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        -3,
+        72,
+        -8
+      ],
+      "to": [
+        -3,
+        73,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        12,
+        67,
+        -8
+      ],
+      "to": [
+        12,
+        73,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        9,
+        72,
+        -11
+      ],
+      "to": [
+        15,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        10,
+        75,
+        -10
+      ],
+      "to": [
+        14,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        11,
+        76,
+        -9
+      ],
+      "to": [
+        13,
+        76,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        8,
+        73,
+        -9
+      ],
+      "to": [
+        8,
+        74,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        24,
+        67,
+        -6
+      ],
+      "to": [
+        24,
+        71,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        21,
+        70,
+        -9
+      ],
+      "to": [
+        27,
+        72,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        22,
+        73,
+        -8
+      ],
+      "to": [
+        26,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        23,
+        74,
+        -7
+      ],
+      "to": [
+        25,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        20,
+        71,
+        -7
+      ],
+      "to": [
+        20,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        43,
+        67,
+        -8
+      ],
+      "to": [
+        43,
+        73,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        40,
+        72,
+        -11
+      ],
+      "to": [
+        46,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        41,
+        75,
+        -10
+      ],
+      "to": [
+        45,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        42,
+        76,
+        -9
+      ],
+      "to": [
+        44,
+        76,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        39,
+        73,
+        -9
+      ],
+      "to": [
+        39,
+        74,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        54,
+        67,
+        -6
+      ],
+      "to": [
+        54,
+        71,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        51,
+        70,
+        -9
+      ],
+      "to": [
+        57,
+        72,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        52,
+        73,
+        -8
+      ],
+      "to": [
+        56,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        53,
+        74,
+        -7
+      ],
+      "to": [
+        55,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        50,
+        71,
+        -7
+      ],
+      "to": [
+        50,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        66,
+        67,
+        -7
+      ],
+      "to": [
+        66,
+        72,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        63,
+        71,
+        -10
+      ],
+      "to": [
+        69,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        64,
+        74,
+        -9
+      ],
+      "to": [
+        68,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        65,
+        75,
+        -8
+      ],
+      "to": [
+        67,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        62,
+        72,
+        -8
+      ],
+      "to": [
+        62,
+        73,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        75,
+        67,
+        -8
+      ],
+      "to": [
+        75,
+        73,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        72,
+        72,
+        -11
+      ],
+      "to": [
+        78,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        73,
+        75,
+        -10
+      ],
+      "to": [
+        77,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        74,
+        76,
+        -9
+      ],
+      "to": [
+        76,
+        76,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        71,
+        73,
+        -9
+      ],
+      "to": [
+        71,
+        74,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        85,
+        67,
+        -6
+      ],
+      "to": [
+        85,
+        71,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        82,
+        70,
+        -9
+      ],
+      "to": [
+        88,
+        72,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        83,
+        73,
+        -8
+      ],
+      "to": [
+        87,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        84,
+        74,
+        -7
+      ],
+      "to": [
+        86,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        81,
+        71,
+        -7
+      ],
+      "to": [
+        81,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        96,
+        67,
+        -7
+      ],
+      "to": [
+        96,
+        72,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        93,
+        71,
+        -10
+      ],
+      "to": [
+        99,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        94,
+        74,
+        -9
+      ],
+      "to": [
+        98,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        95,
+        75,
+        -8
+      ],
+      "to": [
+        97,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        92,
+        72,
+        -8
+      ],
+      "to": [
+        92,
+        73,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        117,
+        67,
+        -6
+      ],
+      "to": [
+        117,
+        71,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        114,
+        70,
+        -9
+      ],
+      "to": [
+        120,
+        72,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        115,
+        73,
+        -8
+      ],
+      "to": [
+        119,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        116,
+        74,
+        -7
+      ],
+      "to": [
+        118,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        113,
+        71,
+        -7
+      ],
+      "to": [
+        113,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        127,
+        67,
+        -7
+      ],
+      "to": [
+        127,
+        72,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        124,
+        71,
+        -10
+      ],
+      "to": [
+        130,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        125,
+        74,
+        -9
+      ],
+      "to": [
+        129,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        126,
+        75,
+        -8
+      ],
+      "to": [
+        128,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        123,
+        72,
+        -8
+      ],
+      "to": [
+        123,
+        73,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        138,
+        67,
+        -8
+      ],
+      "to": [
+        138,
+        73,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        135,
+        72,
+        -11
+      ],
+      "to": [
+        141,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        136,
+        75,
+        -10
+      ],
+      "to": [
+        140,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        137,
+        76,
+        -9
+      ],
+      "to": [
+        139,
+        76,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        134,
+        73,
+        -9
+      ],
+      "to": [
+        134,
+        74,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        150,
+        67,
+        -6
+      ],
+      "to": [
+        150,
+        71,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        147,
+        70,
+        -9
+      ],
+      "to": [
+        153,
+        72,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        148,
+        73,
+        -8
+      ],
+      "to": [
+        152,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        149,
+        74,
+        -7
+      ],
+      "to": [
+        151,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        146,
+        71,
+        -7
+      ],
+      "to": [
+        146,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        159,
+        67,
+        -7
+      ],
+      "to": [
+        159,
+        72,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        156,
+        71,
+        -10
+      ],
+      "to": [
+        162,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        157,
+        74,
+        -9
+      ],
+      "to": [
+        161,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        158,
+        75,
+        -8
+      ],
+      "to": [
+        160,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        155,
+        72,
+        -8
+      ],
+      "to": [
+        155,
+        73,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        169,
+        67,
+        -8
+      ],
+      "to": [
+        169,
+        73,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        166,
+        72,
+        -11
+      ],
+      "to": [
+        172,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        167,
+        75,
+        -10
+      ],
+      "to": [
+        171,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        168,
+        76,
+        -9
+      ],
+      "to": [
+        170,
+        76,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        165,
+        73,
+        -9
+      ],
+      "to": [
+        165,
+        74,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        192,
+        67,
+        -7
+      ],
+      "to": [
+        192,
+        72,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        189,
+        71,
+        -10
+      ],
+      "to": [
+        195,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        190,
+        74,
+        -9
+      ],
+      "to": [
+        194,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        191,
+        75,
+        -8
+      ],
+      "to": [
+        193,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        188,
+        72,
+        -8
+      ],
+      "to": [
+        188,
+        73,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        201,
+        67,
+        -8
+      ],
+      "to": [
+        201,
+        73,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        198,
+        72,
+        -11
+      ],
+      "to": [
+        204,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        199,
+        75,
+        -10
+      ],
+      "to": [
+        203,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        200,
+        76,
+        -9
+      ],
+      "to": [
+        202,
+        76,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        197,
+        73,
+        -9
+      ],
+      "to": [
+        197,
+        74,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        211,
+        67,
+        -6
+      ],
+      "to": [
+        211,
+        71,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        208,
+        70,
+        -9
+      ],
+      "to": [
+        214,
+        72,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        209,
+        73,
+        -8
+      ],
+      "to": [
+        213,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        210,
+        74,
+        -7
+      ],
+      "to": [
+        212,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        207,
+        71,
+        -7
+      ],
+      "to": [
+        207,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        222,
+        67,
+        -7
+      ],
+      "to": [
+        222,
+        72,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        219,
+        71,
+        -10
+      ],
+      "to": [
+        225,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        220,
+        74,
+        -9
+      ],
+      "to": [
+        224,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        221,
+        75,
+        -8
+      ],
+      "to": [
+        223,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        218,
+        72,
+        -8
+      ],
+      "to": [
+        218,
+        73,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        234,
+        67,
+        -8
+      ],
+      "to": [
+        234,
+        73,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        231,
+        72,
+        -11
+      ],
+      "to": [
+        237,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        232,
+        75,
+        -10
+      ],
+      "to": [
+        236,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        233,
+        76,
+        -9
+      ],
+      "to": [
+        235,
+        76,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        230,
+        73,
+        -9
+      ],
+      "to": [
+        230,
+        74,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        243,
+        67,
+        -6
+      ],
+      "to": [
+        243,
+        71,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        240,
+        70,
+        -9
+      ],
+      "to": [
+        246,
+        72,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        241,
+        73,
+        -8
+      ],
+      "to": [
+        245,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        242,
+        74,
+        -7
+      ],
+      "to": [
+        244,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        239,
+        71,
+        -7
+      ],
+      "to": [
+        239,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        264,
+        67,
+        -8
+      ],
+      "to": [
+        264,
+        73,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        261,
+        72,
+        -11
+      ],
+      "to": [
+        267,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        262,
+        75,
+        -10
+      ],
+      "to": [
+        266,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        263,
+        76,
+        -9
+      ],
+      "to": [
+        265,
+        76,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        260,
+        73,
+        -9
+      ],
+      "to": [
+        260,
+        74,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        276,
+        67,
+        -6
+      ],
+      "to": [
+        276,
+        71,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        273,
+        70,
+        -9
+      ],
+      "to": [
+        279,
+        72,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        274,
+        73,
+        -8
+      ],
+      "to": [
+        278,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        275,
+        74,
+        -7
+      ],
+      "to": [
+        277,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        272,
+        71,
+        -7
+      ],
+      "to": [
+        272,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        285,
+        67,
+        -7
+      ],
+      "to": [
+        285,
+        72,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        282,
+        71,
+        -10
+      ],
+      "to": [
+        288,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        283,
+        74,
+        -9
+      ],
+      "to": [
+        287,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        284,
+        75,
+        -8
+      ],
+      "to": [
+        286,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        281,
+        72,
+        -8
+      ],
+      "to": [
+        281,
+        73,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        295,
+        67,
+        -8
+      ],
+      "to": [
+        295,
+        73,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        292,
+        72,
+        -11
+      ],
+      "to": [
+        298,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        293,
+        75,
+        -10
+      ],
+      "to": [
+        297,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        294,
+        76,
+        -9
+      ],
+      "to": [
+        296,
+        76,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        291,
+        73,
+        -9
+      ],
+      "to": [
+        291,
+        74,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        306,
+        67,
+        -6
+      ],
+      "to": [
+        306,
+        71,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        303,
+        70,
+        -9
+      ],
+      "to": [
+        309,
+        72,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        304,
+        73,
+        -8
+      ],
+      "to": [
+        308,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        305,
+        74,
+        -7
+      ],
+      "to": [
+        307,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        302,
+        71,
+        -7
+      ],
+      "to": [
+        302,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        318,
+        67,
+        -7
+      ],
+      "to": [
+        318,
+        72,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        315,
+        71,
+        -10
+      ],
+      "to": [
+        321,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        316,
+        74,
+        -9
+      ],
+      "to": [
+        320,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        317,
+        75,
+        -8
+      ],
+      "to": [
+        319,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        314,
+        72,
+        -8
+      ],
+      "to": [
+        314,
+        73,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        337,
+        67,
+        -6
+      ],
+      "to": [
+        337,
+        71,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        334,
+        70,
+        -9
+      ],
+      "to": [
+        340,
+        72,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        335,
+        73,
+        -8
+      ],
+      "to": [
+        339,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        336,
+        74,
+        -7
+      ],
+      "to": [
+        338,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        333,
+        71,
+        -7
+      ],
+      "to": [
+        333,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        348,
+        67,
+        -7
+      ],
+      "to": [
+        348,
+        72,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        345,
+        71,
+        -10
+      ],
+      "to": [
+        351,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        346,
+        74,
+        -9
+      ],
+      "to": [
+        350,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        347,
+        75,
+        -8
+      ],
+      "to": [
+        349,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        344,
+        72,
+        -8
+      ],
+      "to": [
+        344,
+        73,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        360,
+        67,
+        -8
+      ],
+      "to": [
+        360,
+        73,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        357,
+        72,
+        -11
+      ],
+      "to": [
+        363,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        358,
+        75,
+        -10
+      ],
+      "to": [
+        362,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        359,
+        76,
+        -9
+      ],
+      "to": [
+        361,
+        76,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        356,
+        73,
+        -9
+      ],
+      "to": [
+        356,
+        74,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        369,
+        67,
+        -6
+      ],
+      "to": [
+        369,
+        71,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        366,
+        70,
+        -9
+      ],
+      "to": [
+        372,
+        72,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        367,
+        73,
+        -8
+      ],
+      "to": [
+        371,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        368,
+        74,
+        -7
+      ],
+      "to": [
+        370,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        365,
+        71,
+        -7
+      ],
+      "to": [
+        365,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        379,
+        67,
+        -7
+      ],
+      "to": [
+        379,
+        72,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        376,
+        71,
+        -10
+      ],
+      "to": [
+        382,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        377,
+        74,
+        -9
+      ],
+      "to": [
+        381,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        378,
+        75,
+        -8
+      ],
+      "to": [
+        380,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        375,
+        72,
+        -8
+      ],
+      "to": [
+        375,
+        73,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        390,
+        67,
+        -8
+      ],
+      "to": [
+        390,
+        73,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        387,
+        72,
+        -11
+      ],
+      "to": [
+        393,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        388,
+        75,
+        -10
+      ],
+      "to": [
+        392,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        389,
+        76,
+        -9
+      ],
+      "to": [
+        391,
+        76,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        386,
+        73,
+        -9
+      ],
+      "to": [
+        386,
+        74,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        411,
+        67,
+        -7
+      ],
+      "to": [
+        411,
+        72,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        408,
+        71,
+        -10
+      ],
+      "to": [
+        414,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        409,
+        74,
+        -9
+      ],
+      "to": [
+        413,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        410,
+        75,
+        -8
+      ],
+      "to": [
+        412,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        407,
+        72,
+        -8
+      ],
+      "to": [
+        407,
+        73,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        421,
+        67,
+        -8
+      ],
+      "to": [
+        421,
+        73,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        418,
+        72,
+        -11
+      ],
+      "to": [
+        424,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        419,
+        75,
+        -10
+      ],
+      "to": [
+        423,
+        75,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        420,
+        76,
+        -9
+      ],
+      "to": [
+        422,
+        76,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        417,
+        73,
+        -9
+      ],
+      "to": [
+        417,
+        74,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        432,
+        67,
+        -6
+      ],
+      "to": [
+        432,
+        71,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        429,
+        70,
+        -9
+      ],
+      "to": [
+        435,
+        72,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        430,
+        73,
+        -8
+      ],
+      "to": [
+        434,
+        73,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        431,
+        74,
+        -7
+      ],
+      "to": [
+        433,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        428,
+        71,
+        -7
+      ],
+      "to": [
+        428,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        -3,
+        67,
+        -12
+      ],
+      "to": [
+        -3,
+        70,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        -5,
+        69,
+        -14
+      ],
+      "to": [
+        -1,
+        71,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        -4,
+        72,
+        -13
+      ],
+      "to": [
+        -2,
+        72,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        -4,
+        73,
+        -13
+      ],
+      "to": [
+        -2,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        -6,
+        70,
+        -13
+      ],
+      "to": [
+        -6,
+        71,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        9,
+        67,
+        -13
+      ],
+      "to": [
+        9,
+        71,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        7,
+        70,
+        -15
+      ],
+      "to": [
+        11,
+        72,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        8,
+        73,
+        -14
+      ],
+      "to": [
+        10,
+        73,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        8,
+        74,
+        -14
+      ],
+      "to": [
+        10,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        6,
+        71,
+        -14
+      ],
+      "to": [
+        6,
+        72,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        22,
+        67,
+        -12
+      ],
+      "to": [
+        22,
+        70,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        20,
+        69,
+        -14
+      ],
+      "to": [
+        24,
+        71,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        21,
+        72,
+        -13
+      ],
+      "to": [
+        23,
+        72,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        21,
+        73,
+        -13
+      ],
+      "to": [
+        23,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        19,
+        70,
+        -13
+      ],
+      "to": [
+        19,
+        71,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        33,
+        67,
+        -13
+      ],
+      "to": [
+        33,
+        71,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        31,
+        70,
+        -15
+      ],
+      "to": [
+        35,
+        72,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        32,
+        73,
+        -14
+      ],
+      "to": [
+        34,
+        73,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        32,
+        74,
+        -14
+      ],
+      "to": [
+        34,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        30,
+        71,
+        -14
+      ],
+      "to": [
+        30,
+        72,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        45,
+        67,
+        -12
+      ],
+      "to": [
+        45,
+        70,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        43,
+        69,
+        -14
+      ],
+      "to": [
+        47,
+        71,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        44,
+        72,
+        -13
+      ],
+      "to": [
+        46,
+        72,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        44,
+        73,
+        -13
+      ],
+      "to": [
+        46,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        42,
+        70,
+        -13
+      ],
+      "to": [
+        42,
+        71,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        58,
+        67,
+        -13
+      ],
+      "to": [
+        58,
+        71,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        56,
+        70,
+        -15
+      ],
+      "to": [
+        60,
+        72,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        57,
+        73,
+        -14
+      ],
+      "to": [
+        59,
+        73,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        57,
+        74,
+        -14
+      ],
+      "to": [
+        59,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        55,
+        71,
+        -14
+      ],
+      "to": [
+        55,
+        72,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        69,
+        67,
+        -12
+      ],
+      "to": [
+        69,
+        70,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        67,
+        69,
+        -14
+      ],
+      "to": [
+        71,
+        71,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        68,
+        72,
+        -13
+      ],
+      "to": [
+        70,
+        72,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        68,
+        73,
+        -13
+      ],
+      "to": [
+        70,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        66,
+        70,
+        -13
+      ],
+      "to": [
+        66,
+        71,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        81,
+        67,
+        -13
+      ],
+      "to": [
+        81,
+        71,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        79,
+        70,
+        -15
+      ],
+      "to": [
+        83,
+        72,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        80,
+        73,
+        -14
+      ],
+      "to": [
+        82,
+        73,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        80,
+        74,
+        -14
+      ],
+      "to": [
+        82,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        78,
+        71,
+        -14
+      ],
+      "to": [
+        78,
+        72,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        94,
+        67,
+        -12
+      ],
+      "to": [
+        94,
+        70,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        92,
+        69,
+        -14
+      ],
+      "to": [
+        96,
+        71,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        93,
+        72,
+        -13
+      ],
+      "to": [
+        95,
+        72,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        93,
+        73,
+        -13
+      ],
+      "to": [
+        95,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        91,
+        70,
+        -13
+      ],
+      "to": [
+        91,
+        71,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        105,
+        67,
+        -13
+      ],
+      "to": [
+        105,
+        71,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        103,
+        70,
+        -15
+      ],
+      "to": [
+        107,
+        72,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        104,
+        73,
+        -14
+      ],
+      "to": [
+        106,
+        73,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        104,
+        74,
+        -14
+      ],
+      "to": [
+        106,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        102,
+        71,
+        -14
+      ],
+      "to": [
+        102,
+        72,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        117,
+        67,
+        -12
+      ],
+      "to": [
+        117,
+        70,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        115,
+        69,
+        -14
+      ],
+      "to": [
+        119,
+        71,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        116,
+        72,
+        -13
+      ],
+      "to": [
+        118,
+        72,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        116,
+        73,
+        -13
+      ],
+      "to": [
+        118,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        114,
+        70,
+        -13
+      ],
+      "to": [
+        114,
+        71,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        130,
+        67,
+        -13
+      ],
+      "to": [
+        130,
+        71,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        128,
+        70,
+        -15
+      ],
+      "to": [
+        132,
+        72,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        129,
+        73,
+        -14
+      ],
+      "to": [
+        131,
+        73,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        129,
+        74,
+        -14
+      ],
+      "to": [
+        131,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        127,
+        71,
+        -14
+      ],
+      "to": [
+        127,
+        72,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        141,
+        67,
+        -12
+      ],
+      "to": [
+        141,
+        70,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        139,
+        69,
+        -14
+      ],
+      "to": [
+        143,
+        71,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        140,
+        72,
+        -13
+      ],
+      "to": [
+        142,
+        72,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        140,
+        73,
+        -13
+      ],
+      "to": [
+        142,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        138,
+        70,
+        -13
+      ],
+      "to": [
+        138,
+        71,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        153,
+        67,
+        -13
+      ],
+      "to": [
+        153,
+        71,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        151,
+        70,
+        -15
+      ],
+      "to": [
+        155,
+        72,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        152,
+        73,
+        -14
+      ],
+      "to": [
+        154,
+        73,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        152,
+        74,
+        -14
+      ],
+      "to": [
+        154,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        150,
+        71,
+        -14
+      ],
+      "to": [
+        150,
+        72,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        166,
+        67,
+        -12
+      ],
+      "to": [
+        166,
+        70,
+        -12
+      ]
+    }
+  ]
+}

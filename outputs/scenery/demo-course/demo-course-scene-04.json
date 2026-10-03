@@ -1,0 +1,39 @@
+{
+  "schema": "gdbridge-scenery-plan-v1",
+  "name": "Forest demonstration decoration 4/6",
+  "targetWorld": "GDBridge-Reference",
+  "seed": 20261004,
+  "timeOfDay": 3000,
+  "batchIndex": 4,
+  "batchCount": 6,
+  "cellBudget": 14784,
+  "notes": "Off-plane only; additive warm forest, foreground terraces and mossy flight ruins. Does not overwrite authored Z0 obstacle cells.",
+  "boxes": [
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        -16,
+        64,
+        -16
+      ],
+      "to": [
+        436,
+        65,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        437,
+        64,
+        -16
+      ],
+      "to": [
+        445,
+        65,
+        -1
+      ]
+    }
+  ]
+}

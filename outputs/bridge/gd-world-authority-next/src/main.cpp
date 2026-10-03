@@ -23,6 +23,7 @@
 #include <cctype>
 #include <memory>
 #include <Geode/cocos/platform/CCImage.h>
+#include <Geode/cocos/particle_nodes/CCParticleSystemQuad.h>
 
 using namespace geode::prelude;
 using Clock = std::chrono::steady_clock;
@@ -84,12 +85,44 @@ namespace {
 bool buildMode = false;
 bool minecraftMenuPaused = false;
 bool bridgeMusicPaused = false;
+struct DemoPilotState {
+    bool active=false,holding=false,ballArmed=true;
+    double targetY=255,remainingSeconds=0;
+    Clock::time_point lastTick{};
+    std::string lastMode,stopReason="disabled";
+} demoPilot;
+void demoPilotButton(PlayLayer* play,bool down) {
+    if(!play || !play->m_player1){demoPilot.holding=false;return;}
+    auto player=play->m_player1;auto found=player->m_holdingButtons.find(1);
+    bool actual=found!=player->m_holdingButtons.end() && found->second;
+    // Use the same native edge API as bridge input; never alter a physics field.
+    if(actual!=down)play->handleButton(down,1,true);
+    demoPilot.holding=down;
+}
+void releaseDemoPilotInput(PlayLayer* play) {
+    if(demoPilot.holding)demoPilotButton(play,false);
+    demoPilot.holding=false;
+}
+void disableDemoPilot(char const* reason,PlayLayer* play=nullptr) {
+    auto current=play?play:PlayLayer::get();
+    bool wasActive=demoPilot.active;
+    releaseDemoPilotInput(current);
+    // Keep the first actual stop reason through later inactive deaths/resets.
+    if(!wasActive)return;
+    double remaining=demoPilot.remainingSeconds;
+    auto player=current?current->m_player1:nullptr;
+    log::info("Bridge demo pilot stopped: reason={} mode={} x={} y={} remaining={}s",
+              reason,demoPilot.lastMode,player?player->getPositionX():0.f,
+              player?player->getPositionY():0.f,std::max(0.0,remaining));
+    demoPilot.active=false;demoPilot.remainingSeconds=0;demoPilot.ballArmed=true;
+    demoPilot.lastMode.clear();demoPilot.stopReason=reason;demoPilot.lastTick=Clock::now();
+}
 bool latestLevelCompleted = false;
 bool bridgePaused() { return buildMode || minecraftMenuPaused; }
 void syncBridgeMusicPause(bool force=false) {
     auto play=PlayLayer::get();if(!play)return;
     bool hold=bridgePaused();if(!force && hold==bridgeMusicPaused)return;
-    if(hold){play->handleButton(false,1,true);FMODAudioEngine::sharedEngine()->pauseAllMusic(true);}
+    if(hold){releaseDemoPilotInput(play);play->handleButton(false,1,true);FMODAudioEngine::sharedEngine()->pauseAllMusic(true);}
     else if(!play->m_isPaused)FMODAudioEngine::sharedEngine()->resumeAllMusic();
     bridgeMusicPaused=hold;
 }
@@ -216,6 +249,7 @@ bool queueNativeScene(GJGameLevel* level,bool authored=false,size_t count=0,std:
 }
 void advanceNativeSceneTransition() {
     if(!sceneTransition.level)return;
+    if(demoPilot.active)disableDemoPilot("scene-transition");
     auto director=CCDirector::sharedDirector();
     if(!sceneTransition.parking) {
         std::unordered_set<CCNode*> visited;
@@ -515,6 +549,87 @@ bool worldVisible(CCNode* node) {
     for(auto p=node;p;p=p->getParent())if(!p->isVisible())return false;
     return true;
 }
+// Snapshot actual engine render quads only; no emitters, visibility or timing are changed.
+struct NativeParticleExport {
+    matjson::Value layers=matjson::Value::array();
+    std::unordered_set<CCNode*> visited;
+    unsigned quads=0,nodes=0,batchedSkipped=0,invalidSkipped=0;
+};
+bool particleWorldVisible(CCNode* node) {
+    if(!node || !node->getParent())return false;
+    unsigned depth=0;
+    for(auto parent=node;parent && depth<64;parent=parent->getParent(),++depth)
+        if(!parent->isVisible())return false;
+    return depth<64;
+}
+void nativeParticleNodes(CCNode* node,PlayerObject* player,NativeParticleExport& output,
+                         GameObject* owner=nullptr,unsigned depth=0) {
+    if(!node || depth>6 || output.nodes>=512 || output.quads>=96 || output.layers.size()>=12 ||
+       !output.visited.insert(node).second || !particleWorldVisible(node))return;
+    ++output.nodes;
+    if(auto emitter=geode::cast::typeinfo_cast<CCParticleSystemQuad*>(node)) {
+        // Batched emitters use the batch texture-atlas buffer, not this pointer.
+        // Their different ownership is deliberately not guessed here.
+        if(emitter->getBatchNode()){++output.batchedSkipped;return;}
+        auto count=emitter->getParticleCount(),capacity=emitter->m_uAllocatedParticles;
+        auto texture=emitter->getTexture();
+        if(count && (!emitter->m_pQuads || !texture || !capacity || capacity>65536 ||
+                     count>capacity || count>emitter->getTotalParticles())){++output.invalidSkipped;return;}
+        if(count && texture) {
+            auto path=exportTexture(texture);
+            if(path.empty())return;
+            auto vertices=matjson::Value::array();unsigned copied=0;
+            // A finished emitter can retain live particles: count, not isActive,
+            // controls the bounds. Ignore the two differently typed particleIdx fields.
+            for(unsigned i=0;i<count && copied<24 && output.quads<96;++i) {
+                auto const& quad=emitter->m_pQuads[i];
+                ccV3F_C4B_T2F points[4]={quad.bl,quad.br,quad.tr,quad.tl};
+                CCPoint world[4];bool valid=true,visible=false;
+                for(int corner=0;corner<4;++corner){
+                    auto const& v=points[corner];
+                    if(!std::isfinite(v.vertices.x)||!std::isfinite(v.vertices.y)||
+                       !std::isfinite(v.texCoords.u)||!std::isfinite(v.texCoords.v)||
+                       std::abs(v.vertices.x)>1000000||std::abs(v.vertices.y)>1000000||
+                       v.texCoords.u<-.01f||v.texCoords.u>1.01f||v.texCoords.v<-.01f||v.texCoords.v>1.01f){valid=false;break;}
+                    // Engine quads already include Free/Relative/Grouped particle
+                    // position handling. Apply only the same draw-node transform.
+                    world[corner]=gdPoint(emitter,{v.vertices.x,v.vertices.y},player);
+                    if(!std::isfinite(world[corner].x)||!std::isfinite(world[corner].y)||
+                       std::abs(world[corner].x-player->getPositionX())>1200||std::abs(world[corner].y)>100000){valid=false;break;}
+                    visible|=v.colors.a!=0;
+                }
+                if(!valid){++output.invalidSkipped;continue;}if(!visible)continue;
+                for(int corner:{0,1,2,0,2,3})vertices.push(vertex(world[corner],points[corner].texCoords.u,points[corner].texCoords.v,points[corner].colors));
+                ++copied;++output.quads;
+            }
+            if(copied){
+                auto layer=matjson::Value::object();layer["kind"]="particles";layer["topology"]="triangles";
+                layer["path"]=path;layer["vertices"]=std::move(vertices);
+                layer["textureWidth"]=texture->getPixelsWide();layer["textureHeight"]=texture->getPixelsHigh();
+                auto blend=emitter->getBlendFunc();layer["blendSource"]=blend.src;layer["blendDestination"]=blend.dst;
+                layer["particleCount"]=copied;layer["nativeParticleCount"]=count;
+                layer["positionType"]=static_cast<int>(emitter->getPositionType());
+                layer["source"]="native-particle-quads";
+                if(owner){layer["id"]=owner->m_uniqueID;layer["objectId"]=owner->m_objectID;}
+                output.layers.push(std::move(layer));
+            }
+        }
+    }
+    if(auto children=node->getChildren())for(auto child:CCArrayExt<CCNode*>(children)) {
+        if(output.nodes>=512 || output.quads>=96)break;
+        nativeParticleNodes(child,player,output,owner,depth+1);
+    }
+}
+void nativePlayerParticles(PlayerObject* player,NativeParticleExport& output) {
+    if(!player)return;
+    nativeParticleNodes(player,player,output);
+    // These initialized typed native owners can live directly on a game layer.
+    for(auto emitter:{player->m_playerGroundParticles,player->m_trailingParticles,
+        player->m_shipClickParticles,player->m_vehicleGroundParticles,player->m_ufoClickParticles,
+        player->m_robotBurstParticles,player->m_dashParticles,player->m_swingBurstParticles1,
+        player->m_swingBurstParticles2,player->m_landParticles0,player->m_landParticles1})
+        nativeParticleNodes(emitter,player,output);
+}
 void nativeObjectVisuals(GameObject* object,PlayerObject* player,matjson::Value& layers) {
     // Logical visibility is independent of GD's narrower native camera culling.
     // Bypass only the object/fill/glow root visibility bit, leaving descendants,
@@ -597,6 +712,76 @@ char const* mode(PlayerObject* p) {
     if (p->m_isSpider) return "spider";
     if (p->m_isSwing) return "swing";
     return "cube";
+}
+bool configureDemoPilot(matjson::Value const& request) {
+    bool active=request["active"].asBool().unwrapOr(request["enabled"].asBool().unwrapOr(false));
+    auto play=PlayLayer::get();
+    if(!active){disableDemoPilot("command-disabled",play);return true;}
+    double target=request["targetY"].asDouble().unwrapOr(255),seconds=request["durationSeconds"].asDouble().unwrapOr(60);
+    if((request.contains("targetY")&&!request["targetY"].asDouble()) ||
+       (request.contains("durationSeconds")&&!request["durationSeconds"].asDouble()) ||
+       !std::isfinite(target)||target<135||target>330||!std::isfinite(seconds)||seconds<1||seconds>120){
+        log::warn("Bridge demo pilot rejected: targetY135..330 and durationSeconds1..120 required");return false;
+    }
+    if(!play || !play->m_player1 || play->m_player1->m_isDead || play->m_isPaused ||
+       latestLevelCompleted || play->m_gameState.m_isDualMode || diagnosticNoclipActive()){
+        log::warn("Bridge demo pilot rejected: requires a live single-player level with normal collisions");return false;
+    }
+    releaseDemoPilotInput(play);demoPilot.active=true;demoPilot.targetY=target;
+    demoPilot.remainingSeconds=seconds;demoPilot.lastTick=Clock::now();demoPilot.ballArmed=true;demoPilot.lastMode.clear();demoPilot.stopReason="";
+    log::info("Bridge demo pilot enabled: targetY={} duration={}s, native inputs only",target,seconds);return true;
+}
+void updateDemoPilot(PlayLayer* play,float dt) {
+    if(!demoPilot.active)return;
+    if(!play || !play->m_player1){disableDemoPilot("no-player",play);return;}
+    auto player=play->m_player1;
+    if(player->m_isDead || latestLevelCompleted){disableDemoPilot(player->m_isDead?"death":"completion",play);return;}
+    if(play->m_gameState.m_isDualMode){disableDemoPilot("dual-unsupported",play);return;}
+    auto now=Clock::now();
+    double elapsed=demoPilot.lastTick==Clock::time_point{}?0.0:std::chrono::duration<double>(now-demoPilot.lastTick).count();
+    demoPilot.lastTick=now;
+    if(play->m_isPaused || bridgePaused() || !std::isfinite(dt) || dt<=0){releaseDemoPilotInput(play);return;}
+    // GD postUpdate dt can use normalized simulation units. Never treat it as
+    // seconds; scheduler ticks refresh this clock while either pause is active.
+    demoPilot.remainingSeconds-=std::max(0.0,elapsed);
+    if(demoPilot.remainingSeconds<=0){disableDemoPilot("duration-expired",play);return;}
+    double y=player->getPositionY(),velocity=player->m_yVelocity;
+    if(!std::isfinite(y)||!std::isfinite(velocity)){disableDemoPilot("nonfinite-native-state",play);return;}
+    auto current=std::string_view(mode(player));
+    if(demoPilot.lastMode!=current){releaseDemoPilotInput(play);demoPilot.ballArmed=true;demoPilot.lastMode=current;}
+    bool upsideDown=player->m_isUpsideDown;
+    if(current=="ship") {
+        bool upward=upsideDown?!demoPilot.holding:demoPilot.holding;
+        // Native vertical velocity is expressed in GD simulation units. A short
+        // predictive horizon brakes before the target without changing velocity.
+        double predicted=y+std::clamp(velocity,-20.0,20.0)*10.0;
+        double error=demoPilot.targetY-predicted;
+        if(y<175)upward=true;else if(y>330)upward=false;
+        else if(error>5)upward=true;else if(error< -5)upward=false;
+        demoPilotButton(play,upsideDown?!upward:upward);
+    } else if(current=="wave") {
+        bool upward=upsideDown?!demoPilot.holding:demoPilot.holding;
+        if(y<demoPilot.targetY-22)upward=true;
+        else if(y>demoPilot.targetY+22)upward=false;
+        demoPilotButton(play,upsideDown?!upward:upward);
+    } else if(current=="ball") {
+        // A real native fresh press flips ball gravity; release on the next
+        // simulation update. Grounded contact prevents invented midair flips.
+        if(demoPilot.holding){demoPilotButton(play,false);return;}
+        if(!player->m_isOnGround || (y>140 && y<340))demoPilot.ballArmed=true;
+        bool bottom=!upsideDown && y<=125;
+        // Some native modes impose a lower implicit ceiling. Honor an actual
+        // grounded upside-down contact there rather than overriding that plane.
+        bool top=upsideDown && (y>=350 || (player->m_isOnGround && y>=demoPilot.targetY+20));
+        if(demoPilot.ballArmed && player->m_isOnGround && (bottom||top)){
+            demoPilotButton(play,true);demoPilot.ballArmed=false;
+        }
+    } else if(current=="cube") {
+        // Cube sections use authored native pads. No generated jump/orb clicks.
+        demoPilotButton(play,false);
+    } else {
+        disableDemoPilot("unsupported-mode",play);
+    }
 }
 char const* kind(GameObject* object) {
     if (!object) return "decor";
@@ -749,6 +934,7 @@ class $modify(BridgePlayLayer, PlayLayer) {
     }
     bool init(GJGameLevel* level,bool replay,bool dontCreateObjects) {
         disableDiagnosticNoclip();
+        demoPilot=DemoPilotState{}; // New launches always require an explicit pilot command.
         latestLevelCompleted=false;
         minecraftAuthored = level && level->m_dontSave && level->m_creatorName == "Minecraft Bridge" && level->m_levelID.value() == 0;
         if(!minecraftAuthored)sceneAuthority="geometry-dash";
@@ -861,6 +1047,10 @@ class $modify(BridgePlayLayer, PlayLayer) {
         frame["nativePostUpdateHz"]=m_fields->postUpdateHz;frame["publishedHz"]=m_fields->publishedHz;frame["publishMinIntervalMs"]=8;
         frame["attempts"]=m_attempts;frame["jumps"]=m_jumps;
         auto held=m_player1->m_holdingButtons.find(1);frame["jumpHeld"]=held!=m_player1->m_holdingButtons.end()&&held->second;
+        frame["demoPilotActive"]=demoPilot.active;frame["demoPilotTargetY"]=demoPilot.targetY;frame["demoPilotMode"]=mode(m_player1);
+        frame["demoPilotInput"]=demoPilot.holding;frame["demoPilotHolding"]=demoPilot.active && frame["jumpHeld"].asBool().unwrapOr(false);
+        frame["demoPilotClock"]="unpaused-steady-clock";frame["demoPilotRemainingSeconds"]=std::max(0.0,demoPilot.remainingSeconds);frame["demoPilotStopReason"]=demoPilot.stopReason;
+        frame["demoPilotNativePhysicsUntouched"]=true;frame["nativePhysicsUntouched"]=!diagnosticNoclipActive();
         frame["verticalVelocity"]=m_player1->m_yVelocity;frame["onGround"]=m_player1->m_isOnGround;frame["touchedRing"]=m_player1->m_touchedRing;frame["touchedPad"]=m_player1->m_touchedPad;
         frame["t"] = std::chrono::duration<double>(now.time_since_epoch()).count();
         frame["level"] = static_cast<int>(m_level->m_levelID.value());
@@ -888,6 +1078,26 @@ class $modify(BridgePlayLayer, PlayLayer) {
         auto second=matjson::Value::object(); second["active"]=m_gameState.m_isDualMode && m_player2;
         if(m_gameState.m_isDualMode && m_player2){auto p=m_player2->getPosition();second["x"]=p.x;second["y"]=p.y;second["rotation"]=m_player2->getRotation();second["scale"]=m_player2->m_vehicleSize;second["mode"]=mode(m_player2);second["dead"]=m_player2->m_isDead;nativeVisuals(m_player2,second);}
         frame["player2"]=std::move(second);
+        NativeParticleExport particles;
+        // Prefer nearby live special effects before the bounded player budget.
+        unsigned particleObjectsScanned=0;
+        if(m_objects)for(auto object:CCArrayExt<GameObject*>(m_objects)){
+            if(++particleObjectsScanned>8192 || particles.quads>=96 || particles.nodes>=512)break;
+            if(!object || object==m_anticheatSpike || std::abs(object->getPositionX()-pos.x)>1200)continue;
+            auto type=std::string_view(kind(object));
+            if((type!="orb" && type!="portal") || object->m_isDisabled || object->m_isGroupDisabled ||
+               object->m_isGroupDisabledTemp || object->m_isInvisible || object->m_isInvisibleBlock ||
+               object->m_hasNoParticles || logicalSpriteOpacity(object,object)<=0)continue;
+            nativeParticleNodes(object,m_player1,particles,object);
+            nativeParticleNodes(object->m_particle,m_player1,particles,object);
+            nativeParticleNodes(object->m_colorSprite,m_player1,particles,object);
+            if(!object->m_hasNoGlow)nativeParticleNodes(object->m_glowSprite,m_player1,particles,object);
+        }
+        nativePlayerParticles(m_player1,particles);
+        if(m_gameState.m_isDualMode && m_player2)nativePlayerParticles(m_player2,particles);
+        frame["particleQuadCount"]=particles.quads;frame["particleLayerCount"]=particles.layers.size();
+        frame["particleBatchedSkipped"]=particles.batchedSkipped;frame["particleInvalidSkipped"]=particles.invalidSkipped;
+        frame["particleNodesScanned"]=particles.nodes;frame["particleLayers"]=std::move(particles.layers);
         if (force || now-m_fields->objectsTime >= std::chrono::milliseconds(150)) {
             m_fields->objectsTime = now;
             matjson::Value objects = matjson::Value::array();
@@ -969,7 +1179,7 @@ class $modify(BridgePlayLayer, PlayLayer) {
         if (now-m_fields->logTime >= std::chrono::seconds(1)) {
             m_fields->logTime = now;
             auto stats = frame;
-            stats.erase("objects"); stats.erase("objectLayers"); stats.erase("player2"); stats["objectCount"] = m_fields->objectCount;
+            stats.erase("objects"); stats.erase("objectLayers"); stats.erase("player2"); stats.erase("particleLayers"); stats["objectCount"] = m_fields->objectCount;
             stats["avatarLayerCount"] = frame["avatarLayers"].size(); stats.erase("avatarLayers");
             stats["trailMeshCount"] = frame["trails"].size(); stats.erase("trails");
             std::ofstream(Mod::get()->getSaveDir()/"sender-status.json") << stats.dump();
@@ -980,19 +1190,20 @@ class $modify(BridgePlayLayer, PlayLayer) {
     void postUpdate(float dt) {
         ++m_fields->postUpdates;
         PlayLayer::postUpdate(dt);
+        updateDemoPilot(this,dt);
         if(m_fields->objectSetupFinished && !m_fields->blueprintExported)exportBlueprint();
         publishFrame();
     }
     void pauseGame(bool unfocused) {
-        PlayLayer::pauseGame(unfocused); publishFrame(true);
+        releaseDemoPilotInput(this);PlayLayer::pauseGame(unfocused); publishFrame(true);
     }
-    void levelComplete() {m_fields->levelCompletedDiagnosticNoclip=diagnosticNoclipActive();PlayLayer::levelComplete();latestLevelCompleted=true;m_fields->levelCompleted=true;publishFrame(true);}
-    void resetLevel() {latestLevelCompleted=false;m_fields->levelCompleted=false;m_fields->levelCompletedDiagnosticNoclip=false;PlayLayer::resetLevel();syncBridgeMusicPause(true);publishFrame(true);}
+    void levelComplete() {disableDemoPilot("completion",this);m_fields->levelCompletedDiagnosticNoclip=diagnosticNoclipActive();PlayLayer::levelComplete();latestLevelCompleted=true;m_fields->levelCompleted=true;publishFrame(true);}
+    void resetLevel() {disableDemoPilot("restart",this);latestLevelCompleted=false;m_fields->levelCompleted=false;m_fields->levelCompletedDiagnosticNoclip=false;PlayLayer::resetLevel();syncBridgeMusicPause(true);publishFrame(true);}
     void destroyPlayer(PlayerObject* p, GameObject* o) {
         if(diagnosticNoclipActive() && p && (p==m_player1 || p==m_player2))return;
-        PlayLayer::destroyPlayer(p,o); publishFrame(true);
+        PlayLayer::destroyPlayer(p,o);if(p==m_player1)disableDemoPilot("death",this);publishFrame(true);
     }
-    void onQuit() {disableDiagnosticNoclip();minecraftMenuPaused=false;buildMode=false;bridgeMusicPaused=false;PlayLayer::onQuit();}
+    void onQuit() {disableDemoPilot("quit",this);disableDiagnosticNoclip();minecraftMenuPaused=false;buildMode=false;bridgeMusicPaused=false;PlayLayer::onQuit();}
 };
 
 
@@ -1074,6 +1285,7 @@ void drainCommands() {
             else disableDiagnosticNoclip();
             continue;
         }
+        if(cmd=="demo-pilot" || input=="demo-pilot"){configureDemoPilot(request);continue;}
         if(cmd=="music-config" || input=="music-config"){configureMusic(request,true);continue;}
         if(cmd=="shutdown-gd" || input=="shutdown-gd"){
             disableDiagnosticNoclip();
@@ -1093,7 +1305,7 @@ void drainCommands() {
         auto play = PlayLayer::get();
         if (!play) continue;
         if (cmd == "input") input = "jump";
-        if (input == "jump" && !bridgePaused()) play->handleButton(request["down"].asBool().unwrapOr(false),1,true);
+        if (input == "jump" && !bridgePaused()){if(demoPilot.active)disableDemoPilot("manual-input",play);play->handleButton(request["down"].asBool().unwrapOr(false),1,true);}
         if (input == "restart") {
             if(latestLevelCompleted && play->m_level){
                 // A completed PlayLayer retains native end-animation state.
@@ -1107,7 +1319,12 @@ void drainCommands() {
 }
 }
 class $modify(BridgeScheduler, CCScheduler) {
-    void update(float dt) { drainCommands();if(minecraftMenuPaused&&!transport().connected){minecraftMenuPaused=false;syncBridgeMusicPause();}diagnosticNoclipActive();levelLoader().tick();CCScheduler::update(dt);advanceNativeSceneTransition(); }
+    void update(float dt) {
+        drainCommands();
+        if(minecraftMenuPaused&&!transport().connected){minecraftMenuPaused=false;syncBridgeMusicPause();}
+        if(demoPilot.active){auto play=PlayLayer::get();if(bridgePaused() || (play && play->m_isPaused))demoPilot.lastTick=Clock::now();}
+        diagnosticNoclipActive();levelLoader().tick();CCScheduler::update(dt);advanceNativeSceneTransition();
+    }
 };
 class $modify(BridgeNativeMusic, FMODAudioEngine) {
     void loadMusic(gd::string path,float speed,float unknown,float volume,bool loop,int musicID,int channelID,bool dontReset) {

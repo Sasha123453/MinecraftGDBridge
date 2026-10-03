@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory=$true)]
-    [ValidateSet('build-mode','export','restart','jump','gd-pause','shutdown-gd','quit','resume-world','load-level','load-level-data','set-time','camera','screenshot','shaders','open-world','set-demo','import-blueprint','scenery','move-marker','music-config','diagnostic-noclip','record','visual-style')]
+    [ValidateSet('build-mode','export','restart','jump','gd-pause','shutdown-gd','quit','resume-world','load-level','load-level-data','set-time','camera','screenshot','shaders','open-world','set-demo','import-blueprint','scenery','move-marker','music-config','diagnostic-noclip','demo-pilot','record','visual-style')]
     [string]$Action,
     [ValidateLength(1,96)][string]$Nonce=([guid]::NewGuid().ToString('N')),
     [string]$PayloadJson='{}',
