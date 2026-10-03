@@ -1,0 +1,28 @@
+Selection: existing Complementary Reimagined r5.9.3, custom reference preset.
+Exact sidecar: ComplementaryReimagined_r5.9.3.zip.txt in this directory.
+Replace the entire live pack sidecar with this file when root is ready to test.
+No shaderpack ZIP, live config, Minecraft source, or Geometry Dash source was modified by this selection task.
+
+Visual evidence inspected, in order:
+1. outputs/Scene-Target-Selected.png
+2. outputs/Scene-Live.png
+3. outputs/Scene-Live-XO-Forest.png
+
+The target has a clear pale-blue sky; sparse flat white block clouds; warm yellow-green highlights; distinct, darker shaded leaf faces; soft scene depth; and restrained localized glow around yellow/cyan game objects. Vanilla Minecraft texture pixels remain readable. The existing live captures have a grayer, foggier sky and substantially denser/thicker dimensional clouds. Warm terrain illumination is broadly in the correct family, but foliage lacks the reference's layered background composition. Shader settings cannot create missing scene geometry, object emission, or portal sprites.
+
+The reviewed reference draft is a suitable first live trial without new downloads:
+- CLOUD_STYLE_DEFINE=50 is the pack's explicitly documented Vanilla option. It stops shaders.properties from forcing clouds off. Vanilla clouds still require Video Settings clouds enabled; use Fast for the target's flat cloud shape when possible.
+- ATM_FOG_MULT=0.50 is the author's Very Subtle setting. BORDER_FOG=false removes horizon whiteout; CAVE_FOG=false prevents haze from flattening cave stone.
+- ATM_NOON_R/G/B=0.90/0.95/1.10 shifts atmosphere toward clean blue. LIGHT_NOON_R/G/B=1.10/1.00/0.95 warms direct sunlight moderately.
+- SHADOW_SMOOTHING=4 is Very Smooth. SSAO_I=85 and VANILLAAO_I=100 retain object grounding without excessive dark corners.
+- CAVE_LIGHTING=120 adds a small amount of neutral/cool fill to unlit areas. XLIGHT_I=1.10 and XLIGHT_CURVE=0.90 improve local torch readability. XLIGHT_R/G/B=1.00/0.95/0.85 makes already-warm pack blocklight slightly warmer.
+- BLOOM_STRENGTH=0.072 is author-labeled 40%, below the default 0.12. Motion blur, world blur, chromatic aberration, vignette and lens flare are off. Generated normals and coated textures are off so original texture surfaces remain familiar.
+- TAA_DEFINE=1, TAA_SMOOTHING=2 and IMAGE_SHARPENING=2 balance moving-leaf stability with crisp texture detail. The no-temporal-filter draft is a fallback for a measured motion-softness issue, not the first recommendation; the author internally limits shadow quality with temporal filtering disabled.
+
+Local author-source verification:
+All 53 sidecar option keys and values were checked against the exact installed ZIP's shaders/lib/common.glsl plus shaders/lang/en_US.lang. validation.json records every definition, line number and allowed value. shadowDistance is const float at common.glsl:19, so a checker that considers only #define falsely marks it missing. COLORED_LIGHTING=0 is the default at common.glsl:31 and documented OFF at en_US.lang:285 even though the bracketed value list starts at 128.
+
+Pack SHA256: FED6C879E732CF7FC7BC6570EBB1DEF43235AA7E96F62859FBDBDBFA0B484B38
+Preset SHA256: 72849E5BE1E127FCB7043FEFA1C8E68AC43D21B1D418BB3258C33EE043814379
+
+Acceptance status: NOT visually accepted yet. Root owns the actual live forest and cave comparison, FPS/bridge stability check and shader compile-error check. Do not describe option validation or successful shader compilation as visual completion.

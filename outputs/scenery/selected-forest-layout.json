@@ -1,0 +1,4585 @@
+{
+  "schema": "gdbridge-scenery-plan-v1",
+  "name": "Selected sunny layered Minecraft forest",
+  "state": "generated-ready-for-applyScenery",
+  "targetWorld": "GDBridge-XO",
+  "referenceImage": "outputs/Scene-Target-Selected.png",
+  "coordinateSystem": "Minecraft integer block coordinates; positive Z foreground; negative Z background",
+  "preserve": {
+    "gameplaySliceZ": 0,
+    "nativePhysics": true,
+    "existingAuthoringMarkers": true
+  },
+  "timeOfDay": 3000,
+  "cleanupOwnedBackWalls": {},
+  "boxes": [
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        8,
+        66,
+        -13
+      ],
+      "to": [
+        8,
+        72,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        6,
+        71,
+        -15
+      ],
+      "to": [
+        10,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        7,
+        74,
+        -14
+      ],
+      "to": [
+        9,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        32,
+        66,
+        -13
+      ],
+      "to": [
+        32,
+        73,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        30,
+        72,
+        -15
+      ],
+      "to": [
+        34,
+        74,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        31,
+        75,
+        -14
+      ],
+      "to": [
+        33,
+        75,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        56,
+        66,
+        -13
+      ],
+      "to": [
+        56,
+        72,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        54,
+        71,
+        -15
+      ],
+      "to": [
+        58,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        55,
+        74,
+        -14
+      ],
+      "to": [
+        57,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        80,
+        66,
+        -13
+      ],
+      "to": [
+        80,
+        73,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        78,
+        72,
+        -15
+      ],
+      "to": [
+        82,
+        74,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        79,
+        75,
+        -14
+      ],
+      "to": [
+        81,
+        75,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        104,
+        66,
+        -13
+      ],
+      "to": [
+        104,
+        72,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        102,
+        71,
+        -15
+      ],
+      "to": [
+        106,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        103,
+        74,
+        -14
+      ],
+      "to": [
+        105,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        128,
+        66,
+        -13
+      ],
+      "to": [
+        128,
+        73,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        126,
+        72,
+        -15
+      ],
+      "to": [
+        130,
+        74,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        127,
+        75,
+        -14
+      ],
+      "to": [
+        129,
+        75,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        152,
+        66,
+        -13
+      ],
+      "to": [
+        152,
+        72,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        150,
+        71,
+        -15
+      ],
+      "to": [
+        154,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        151,
+        74,
+        -14
+      ],
+      "to": [
+        153,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        176,
+        66,
+        -13
+      ],
+      "to": [
+        176,
+        73,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        174,
+        72,
+        -15
+      ],
+      "to": [
+        178,
+        74,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        175,
+        75,
+        -14
+      ],
+      "to": [
+        177,
+        75,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        200,
+        66,
+        -13
+      ],
+      "to": [
+        200,
+        72,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        198,
+        71,
+        -15
+      ],
+      "to": [
+        202,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        199,
+        74,
+        -14
+      ],
+      "to": [
+        201,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        224,
+        66,
+        -13
+      ],
+      "to": [
+        224,
+        73,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        222,
+        72,
+        -15
+      ],
+      "to": [
+        226,
+        74,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        223,
+        75,
+        -14
+      ],
+      "to": [
+        225,
+        75,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        248,
+        66,
+        -13
+      ],
+      "to": [
+        248,
+        72,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        246,
+        71,
+        -15
+      ],
+      "to": [
+        250,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        247,
+        74,
+        -14
+      ],
+      "to": [
+        249,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        272,
+        66,
+        -13
+      ],
+      "to": [
+        272,
+        73,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        270,
+        72,
+        -15
+      ],
+      "to": [
+        274,
+        74,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        271,
+        75,
+        -14
+      ],
+      "to": [
+        273,
+        75,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        296,
+        66,
+        -13
+      ],
+      "to": [
+        296,
+        72,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        294,
+        71,
+        -15
+      ],
+      "to": [
+        298,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        295,
+        74,
+        -14
+      ],
+      "to": [
+        297,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        320,
+        66,
+        -13
+      ],
+      "to": [
+        320,
+        73,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        318,
+        72,
+        -15
+      ],
+      "to": [
+        322,
+        74,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        319,
+        75,
+        -14
+      ],
+      "to": [
+        321,
+        75,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        344,
+        66,
+        -13
+      ],
+      "to": [
+        344,
+        72,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        342,
+        71,
+        -15
+      ],
+      "to": [
+        346,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        343,
+        74,
+        -14
+      ],
+      "to": [
+        345,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        368,
+        66,
+        -13
+      ],
+      "to": [
+        368,
+        73,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        366,
+        72,
+        -15
+      ],
+      "to": [
+        370,
+        74,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        367,
+        75,
+        -14
+      ],
+      "to": [
+        369,
+        75,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        392,
+        66,
+        -13
+      ],
+      "to": [
+        392,
+        72,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        390,
+        71,
+        -15
+      ],
+      "to": [
+        394,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        391,
+        74,
+        -14
+      ],
+      "to": [
+        393,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        416,
+        66,
+        -13
+      ],
+      "to": [
+        416,
+        73,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        414,
+        72,
+        -15
+      ],
+      "to": [
+        418,
+        74,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        415,
+        75,
+        -14
+      ],
+      "to": [
+        417,
+        75,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        440,
+        66,
+        -13
+      ],
+      "to": [
+        440,
+        72,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        438,
+        71,
+        -15
+      ],
+      "to": [
+        442,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        439,
+        74,
+        -14
+      ],
+      "to": [
+        441,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        464,
+        66,
+        -13
+      ],
+      "to": [
+        464,
+        73,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        462,
+        72,
+        -15
+      ],
+      "to": [
+        466,
+        74,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        463,
+        75,
+        -14
+      ],
+      "to": [
+        465,
+        75,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        488,
+        66,
+        -13
+      ],
+      "to": [
+        488,
+        72,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        486,
+        71,
+        -15
+      ],
+      "to": [
+        490,
+        73,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        487,
+        74,
+        -14
+      ],
+      "to": [
+        489,
+        74,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        28,
+        66,
+        -12
+      ],
+      "to": [
+        28,
+        73,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        26,
+        72,
+        -14
+      ],
+      "to": [
+        30,
+        74,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        27,
+        75,
+        -13
+      ],
+      "to": [
+        29,
+        75,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        100,
+        66,
+        -12
+      ],
+      "to": [
+        100,
+        73,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        98,
+        72,
+        -14
+      ],
+      "to": [
+        102,
+        74,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        99,
+        75,
+        -13
+      ],
+      "to": [
+        101,
+        75,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        172,
+        66,
+        -12
+      ],
+      "to": [
+        172,
+        73,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        170,
+        72,
+        -14
+      ],
+      "to": [
+        174,
+        74,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        171,
+        75,
+        -13
+      ],
+      "to": [
+        173,
+        75,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        244,
+        66,
+        -12
+      ],
+      "to": [
+        244,
+        73,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        242,
+        72,
+        -14
+      ],
+      "to": [
+        246,
+        74,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        243,
+        75,
+        -13
+      ],
+      "to": [
+        245,
+        75,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        316,
+        66,
+        -12
+      ],
+      "to": [
+        316,
+        73,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        314,
+        72,
+        -14
+      ],
+      "to": [
+        318,
+        74,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        315,
+        75,
+        -13
+      ],
+      "to": [
+        317,
+        75,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        388,
+        66,
+        -12
+      ],
+      "to": [
+        388,
+        73,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        386,
+        72,
+        -14
+      ],
+      "to": [
+        390,
+        74,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        387,
+        75,
+        -13
+      ],
+      "to": [
+        389,
+        75,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        460,
+        66,
+        -12
+      ],
+      "to": [
+        460,
+        73,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        458,
+        72,
+        -14
+      ],
+      "to": [
+        462,
+        74,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        459,
+        75,
+        -13
+      ],
+      "to": [
+        461,
+        75,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        10,
+        65,
+        -7
+      ],
+      "to": [
+        19,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        10,
+        67,
+        -7
+      ],
+      "to": [
+        19,
+        67,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        13,
+        68,
+        -6
+      ],
+      "to": [
+        16,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        46,
+        65,
+        -7
+      ],
+      "to": [
+        55,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        46,
+        67,
+        -7
+      ],
+      "to": [
+        55,
+        67,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        49,
+        68,
+        -6
+      ],
+      "to": [
+        52,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        82,
+        65,
+        -7
+      ],
+      "to": [
+        91,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        82,
+        67,
+        -7
+      ],
+      "to": [
+        91,
+        67,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        85,
+        68,
+        -6
+      ],
+      "to": [
+        88,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        118,
+        65,
+        -7
+      ],
+      "to": [
+        127,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        118,
+        67,
+        -7
+      ],
+      "to": [
+        127,
+        67,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        121,
+        68,
+        -6
+      ],
+      "to": [
+        124,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        154,
+        65,
+        -7
+      ],
+      "to": [
+        163,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        154,
+        67,
+        -7
+      ],
+      "to": [
+        163,
+        67,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        157,
+        68,
+        -6
+      ],
+      "to": [
+        160,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        190,
+        65,
+        -7
+      ],
+      "to": [
+        199,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        190,
+        67,
+        -7
+      ],
+      "to": [
+        199,
+        67,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        193,
+        68,
+        -6
+      ],
+      "to": [
+        196,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        226,
+        65,
+        -7
+      ],
+      "to": [
+        235,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        226,
+        67,
+        -7
+      ],
+      "to": [
+        235,
+        67,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        229,
+        68,
+        -6
+      ],
+      "to": [
+        232,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        262,
+        65,
+        -7
+      ],
+      "to": [
+        271,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        262,
+        67,
+        -7
+      ],
+      "to": [
+        271,
+        67,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        265,
+        68,
+        -6
+      ],
+      "to": [
+        268,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        298,
+        65,
+        -7
+      ],
+      "to": [
+        307,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        298,
+        67,
+        -7
+      ],
+      "to": [
+        307,
+        67,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        301,
+        68,
+        -6
+      ],
+      "to": [
+        304,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        334,
+        65,
+        -7
+      ],
+      "to": [
+        343,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        334,
+        67,
+        -7
+      ],
+      "to": [
+        343,
+        67,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        337,
+        68,
+        -6
+      ],
+      "to": [
+        340,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        370,
+        65,
+        -7
+      ],
+      "to": [
+        379,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        370,
+        67,
+        -7
+      ],
+      "to": [
+        379,
+        67,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        373,
+        68,
+        -6
+      ],
+      "to": [
+        376,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        406,
+        65,
+        -7
+      ],
+      "to": [
+        415,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        406,
+        67,
+        -7
+      ],
+      "to": [
+        415,
+        67,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        409,
+        68,
+        -6
+      ],
+      "to": [
+        412,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        442,
+        65,
+        -7
+      ],
+      "to": [
+        451,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        442,
+        67,
+        -7
+      ],
+      "to": [
+        451,
+        67,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        445,
+        68,
+        -6
+      ],
+      "to": [
+        448,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        478,
+        65,
+        -7
+      ],
+      "to": [
+        487,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        478,
+        67,
+        -7
+      ],
+      "to": [
+        487,
+        67,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        481,
+        68,
+        -6
+      ],
+      "to": [
+        484,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        8,
+        64,
+        3
+      ],
+      "to": [
+        13,
+        65,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        8,
+        66,
+        3
+      ],
+      "to": [
+        13,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        38,
+        64,
+        4
+      ],
+      "to": [
+        43,
+        65,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        38,
+        66,
+        4
+      ],
+      "to": [
+        43,
+        66,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        68,
+        64,
+        3
+      ],
+      "to": [
+        73,
+        65,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        68,
+        66,
+        3
+      ],
+      "to": [
+        73,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        98,
+        64,
+        4
+      ],
+      "to": [
+        103,
+        65,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        98,
+        66,
+        4
+      ],
+      "to": [
+        103,
+        66,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        128,
+        64,
+        3
+      ],
+      "to": [
+        133,
+        65,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        128,
+        66,
+        3
+      ],
+      "to": [
+        133,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        158,
+        64,
+        4
+      ],
+      "to": [
+        163,
+        65,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        158,
+        66,
+        4
+      ],
+      "to": [
+        163,
+        66,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        188,
+        64,
+        3
+      ],
+      "to": [
+        193,
+        65,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        188,
+        66,
+        3
+      ],
+      "to": [
+        193,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        218,
+        64,
+        4
+      ],
+      "to": [
+        223,
+        65,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        218,
+        66,
+        4
+      ],
+      "to": [
+        223,
+        66,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        248,
+        64,
+        3
+      ],
+      "to": [
+        253,
+        65,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        248,
+        66,
+        3
+      ],
+      "to": [
+        253,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        278,
+        64,
+        4
+      ],
+      "to": [
+        283,
+        65,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        278,
+        66,
+        4
+      ],
+      "to": [
+        283,
+        66,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        308,
+        64,
+        3
+      ],
+      "to": [
+        313,
+        65,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        308,
+        66,
+        3
+      ],
+      "to": [
+        313,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        338,
+        64,
+        4
+      ],
+      "to": [
+        343,
+        65,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        338,
+        66,
+        4
+      ],
+      "to": [
+        343,
+        66,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        368,
+        64,
+        3
+      ],
+      "to": [
+        373,
+        65,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        368,
+        66,
+        3
+      ],
+      "to": [
+        373,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        398,
+        64,
+        4
+      ],
+      "to": [
+        403,
+        65,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        398,
+        66,
+        4
+      ],
+      "to": [
+        403,
+        66,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        428,
+        64,
+        3
+      ],
+      "to": [
+        433,
+        65,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        428,
+        66,
+        3
+      ],
+      "to": [
+        433,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        458,
+        64,
+        4
+      ],
+      "to": [
+        463,
+        65,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        458,
+        66,
+        4
+      ],
+      "to": [
+        463,
+        66,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        488,
+        64,
+        3
+      ],
+      "to": [
+        493,
+        65,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        488,
+        66,
+        3
+      ],
+      "to": [
+        493,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        22,
+        64,
+        9
+      ],
+      "to": [
+        29,
+        64,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        22,
+        65,
+        9
+      ],
+      "to": [
+        29,
+        65,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        64,
+        64,
+        9
+      ],
+      "to": [
+        71,
+        64,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        64,
+        65,
+        9
+      ],
+      "to": [
+        71,
+        65,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        106,
+        64,
+        9
+      ],
+      "to": [
+        113,
+        64,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        106,
+        65,
+        9
+      ],
+      "to": [
+        113,
+        65,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        148,
+        64,
+        9
+      ],
+      "to": [
+        155,
+        64,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        148,
+        65,
+        9
+      ],
+      "to": [
+        155,
+        65,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        190,
+        64,
+        9
+      ],
+      "to": [
+        197,
+        64,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        190,
+        65,
+        9
+      ],
+      "to": [
+        197,
+        65,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        232,
+        64,
+        9
+      ],
+      "to": [
+        239,
+        64,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        232,
+        65,
+        9
+      ],
+      "to": [
+        239,
+        65,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        274,
+        64,
+        9
+      ],
+      "to": [
+        281,
+        64,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        274,
+        65,
+        9
+      ],
+      "to": [
+        281,
+        65,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        316,
+        64,
+        9
+      ],
+      "to": [
+        323,
+        64,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        316,
+        65,
+        9
+      ],
+      "to": [
+        323,
+        65,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        358,
+        64,
+        9
+      ],
+      "to": [
+        365,
+        64,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        358,
+        65,
+        9
+      ],
+      "to": [
+        365,
+        65,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        400,
+        64,
+        9
+      ],
+      "to": [
+        407,
+        64,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        400,
+        65,
+        9
+      ],
+      "to": [
+        407,
+        65,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        442,
+        64,
+        9
+      ],
+      "to": [
+        449,
+        64,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        442,
+        65,
+        9
+      ],
+      "to": [
+        449,
+        65,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        484,
+        64,
+        9
+      ],
+      "to": [
+        491,
+        64,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        484,
+        65,
+        9
+      ],
+      "to": [
+        491,
+        65,
+        12
+      ]
+    },
+    {
+      "block": "minecraft:mossy_stone_bricks",
+      "from": [
+        54,
+        66,
+        -5
+      ],
+      "to": [
+        56,
+        66,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone_bricks",
+      "from": [
+        72,
+        65,
+        7
+      ],
+      "to": [
+        74,
+        65,
+        8
+      ]
+    },
+    {
+      "block": "minecraft:mossy_stone_bricks",
+      "from": [
+        126,
+        66,
+        -5
+      ],
+      "to": [
+        128,
+        66,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone_bricks",
+      "from": [
+        144,
+        65,
+        7
+      ],
+      "to": [
+        146,
+        65,
+        8
+      ]
+    },
+    {
+      "block": "minecraft:mossy_stone_bricks",
+      "from": [
+        198,
+        66,
+        -5
+      ],
+      "to": [
+        200,
+        66,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone_bricks",
+      "from": [
+        216,
+        65,
+        7
+      ],
+      "to": [
+        218,
+        65,
+        8
+      ]
+    },
+    {
+      "block": "minecraft:mossy_stone_bricks",
+      "from": [
+        270,
+        66,
+        -5
+      ],
+      "to": [
+        272,
+        66,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone_bricks",
+      "from": [
+        288,
+        65,
+        7
+      ],
+      "to": [
+        290,
+        65,
+        8
+      ]
+    },
+    {
+      "block": "minecraft:mossy_stone_bricks",
+      "from": [
+        342,
+        66,
+        -5
+      ],
+      "to": [
+        344,
+        66,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone_bricks",
+      "from": [
+        360,
+        65,
+        7
+      ],
+      "to": [
+        362,
+        65,
+        8
+      ]
+    },
+    {
+      "block": "minecraft:mossy_stone_bricks",
+      "from": [
+        414,
+        66,
+        -5
+      ],
+      "to": [
+        416,
+        66,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone_bricks",
+      "from": [
+        432,
+        65,
+        7
+      ],
+      "to": [
+        434,
+        65,
+        8
+      ]
+    },
+    {
+      "block": "minecraft:mossy_stone_bricks",
+      "from": [
+        486,
+        66,
+        -5
+      ],
+      "to": [
+        488,
+        66,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone_bricks",
+      "from": [
+        504,
+        65,
+        7
+      ],
+      "to": [
+        506,
+        65,
+        8
+      ]
+    }
+  ],
+  "plants": [
+    {
+      "block": "minecraft:grass",
+      "at": [
+        11,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        17,
+        68,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        14,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        47,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        53,
+        68,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        50,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        83,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        89,
+        68,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        86,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        119,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        125,
+        68,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        122,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        155,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        161,
+        68,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        158,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        191,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        197,
+        68,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        194,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        227,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        233,
+        68,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        230,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        263,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        269,
+        68,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        266,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        299,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        305,
+        68,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        302,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        335,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        341,
+        68,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        338,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        371,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        377,
+        68,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        374,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        407,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        413,
+        68,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        410,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        443,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        449,
+        68,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        446,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        479,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        485,
+        68,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        482,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        9,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        11,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        12,
+        67,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        39,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        41,
+        67,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        42,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        69,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        71,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        72,
+        67,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        99,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        101,
+        67,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        102,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        129,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        131,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        132,
+        67,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        159,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        161,
+        67,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        162,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        189,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        191,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        192,
+        67,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        219,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        221,
+        67,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        222,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        249,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        251,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        252,
+        67,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        279,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        281,
+        67,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        282,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        309,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        311,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        312,
+        67,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        339,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        341,
+        67,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        342,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        369,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        371,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        372,
+        67,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        399,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        401,
+        67,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        402,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        429,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        431,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        432,
+        67,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        459,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        461,
+        67,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        462,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        489,
+        67,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        491,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        492,
+        67,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        24,
+        66,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        27,
+        66,
+        11
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        66,
+        66,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        69,
+        66,
+        11
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        108,
+        66,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        111,
+        66,
+        11
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        150,
+        66,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        153,
+        66,
+        11
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        192,
+        66,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        195,
+        66,
+        11
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        234,
+        66,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        237,
+        66,
+        11
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        276,
+        66,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        279,
+        66,
+        11
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        318,
+        66,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        321,
+        66,
+        11
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        360,
+        66,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        363,
+        66,
+        11
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        402,
+        66,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        405,
+        66,
+        11
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        444,
+        66,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        447,
+        66,
+        11
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        486,
+        66,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        489,
+        66,
+        11
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        3,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        5,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        3,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        15,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        17,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        15,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        27,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        29,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        27,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        39,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        41,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        39,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        51,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        53,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        51,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        63,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        65,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        63,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        75,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        77,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        75,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        87,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        89,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        87,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        99,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        101,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        99,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        111,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        113,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        111,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        123,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        125,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        123,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        135,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        137,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        135,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        147,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        149,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        147,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        159,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        161,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        159,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        171,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        173,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        171,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        183,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        185,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        183,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        195,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        197,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        195,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        207,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        209,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        207,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        219,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        221,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        219,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        231,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        233,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        231,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        243,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        245,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        243,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        255,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        257,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        255,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        267,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        269,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        267,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        279,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        281,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        279,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        291,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        293,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        291,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        303,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        305,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        303,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        315,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        317,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        315,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        327,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        329,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        327,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        339,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        341,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        339,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        351,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        353,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        351,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        363,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        365,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        363,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        375,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        377,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        375,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        387,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        389,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        387,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        399,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        401,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        399,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        411,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        413,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        411,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        423,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        425,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        423,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        435,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        437,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        435,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        447,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        449,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        447,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        459,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        461,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        459,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        471,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        473,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        471,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        483,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        485,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        483,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        495,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        497,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        495,
+        65,
+        2
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        507,
+        66,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        509,
+        66,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        507,
+        65,
+        2
+      ]
+    }
+  ],
+  "validation": {
+    "authoredCellsIncludingOverlaps": 6658,
+    "distinctAuthoredCells": 6501,
+    "maxBatchCells": 16384,
+    "gameplayCellsTouched": 0,
+    "materials": [
+      "minecraft:birch_leaves",
+      "minecraft:birch_log",
+      "minecraft:dirt",
+      "minecraft:grass",
+      "minecraft:grass_block",
+      "minecraft:mossy_stone_bricks",
+      "minecraft:oak_leaves",
+      "minecraft:oak_log",
+      "minecraft:stone_bricks"
+    ]
+  },
+  "applicationNotes": [
+    "Scenery only: no fixed gameplay blueprint, native icon, orb, portal or pad placement is requested by this plan.",
+    "Preserve generated nearer oaks at z=-9; add a layered oak/birch line farther behind.",
+    "All foreground surfaces stay at y=65..66 with grass above; no tall close foreground tree trunks or continuous background wall.",
+    "Warm Minecraft daylight time 3000. Camera, native sprite identities and gameplay remain under the existing controller.",
+    "Cleanup removes only the known generated stone-brick back-wall footprint implemented by applyScenery."
+  ]
+}

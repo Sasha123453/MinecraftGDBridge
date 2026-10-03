@@ -1,0 +1,15 @@
+Urgent compatibility fallback staged after actual live evidence.
+
+Observed: outputs/Scene-Live-Reference-Clouds.png has isolated pitch-black cloud polygons against blue sky at upper left. These are separate from the tall gray cave wall. Terrain sunlight, leaf illumination and stone textures remain visible.
+
+Exact fallback sidecar: ComplementaryReimagined_r5.9.3-cloudfix.zip.txt
+Apply it as the pack's normal ComplementaryReimagined_r5.9.3.zip.txt sidecar.
+Single option change from selected reference: CLOUD_STYLE_DEFINE=50 -> CLOUD_STYLE_DEFINE=1.
+53 option values are supported; cloudfix-validation.json records checks.
+Preset SHA256: DAF11D63EA54BB910D524D7AB31B2D966EA0A2C496B2AB0CB692502537CCF2DC
+
+Author code evidence: program/gbuffers_clouds.glsl:61 samples texture2D(tex, texCoord), then multiplies RGB by lighting and atmosphere. Cloud RGB options multiply that result, so they cannot recover zero RGB. common.glsl CLOUD_STYLE_DEFINE=1 selects Reimagined procedural clouds; shaders.properties forces vanilla clouds off for every value other than 50. Procedural cloud rendering uses lib/atmospherics/clouds/mainClouds.glsl and reimaginedClouds.glsl through deferred/composite passes, bypassing vanilla gbuffers_clouds texture input. Existing Scene-Live.png and Scene-Live-XO-Forest.png show the pack's dimensional block clouds rendering white on the established client.
+
+Diagnosis is an inference from actual black vanilla polygons plus author shader code: an old-client vanilla cloud texture/input compatibility problem. No sampler-level runtime diagnostic has been obtained, so the exact Iris defect is not established. Existing latest.log shows new-version missing biome/end uniforms, but no cloud shader compile error; those warnings do not explain black cloud polygons.
+
+Root must hotreload and inspect actual resulting clouds. This fallback is ready to test, not yet visually accepted. It keeps every other reference setting unchanged. Reimagined clouds are thicker than target flat vanilla clouds, but maintain Minecraft block cloud shapes and avoid introducing a new pack or changing the warm light preset.

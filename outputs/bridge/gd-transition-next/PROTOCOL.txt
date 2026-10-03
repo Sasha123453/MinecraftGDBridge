@@ -1,0 +1,135 @@
+Geode 5.9.0 / Geometry Dash 2.2081, Windows x64.
+
+v0.3.8 visual QA: explicit {"cmd":"diagnostic-noclip","enabled":true} or {"cmd":"diagnostic-noclip","active":true,"durationSeconds":60} skips native P1/P2 death only for at most 60 seconds, off by default. Optional durationSeconds is clamped to 1..60, default60. Disable with enabled:false or active:false; new level, onQuit and shutdown reset it. Native input, gravity, object activation and other physics remain native. telemetry diagnosticNoclip identifies QA output, not normal collision validation.
+objects[].vw/vh/visualColor cache actual initialized native width/height/displayed RGB while outside native camera, refreshed when nativeVisible; original sprite UV/RGBA unchanged. objects[] and telemetry objectVisualDiagnostics expose nativeVisible/nativeOpacity/nativeDontDraw/nativeSpriteLayers/nativeNonzeroAlphaVertices to audit culling versus genuine hidden/transparent state. No activateObject or visibility state mutation is used.
+
+v0.3.7 classification fix: objects[].type is taken from the matched fully initialized native GameObject, never the unconfigured factory default. Coverage fields are sourceRecords, unmatchedSourceRecords (includes non-physical original decoration/triggers), nativePhysicalObjects, matchedPhysicalObjects, unmatchedNativePhysicalObjects. Explicit authoring baseline replacement classifies IDs from the current native level's initialized objects; unknown/ambiguous IDs are preserved in baseline and rejected as new authoring objects. Default native playback remains unchanged.
+
+v0.3.6 crash fix: blueprint data is copied verbatim from actual decoded original level records, never GameObject::getSaveString or LevelSettingsObject::getSaveString. Physical IDs are classified through native GameObject factory and matched to live native ID/X/Y geometry (serialized editor Y +90). Blueprint export runs after the first native postUpdate following finished object setup. sourcePhysicalObjects/unmatchedPhysicalObjects explicitly report coverage.
+
+v0.3.5: baseline exports preserve all original records beyond rangeMaxX and all original non-physical records. Artificial finish marker is appended only for courses with no baseline. Physical objects inside the editable X window still come from Minecraft marker export; out-of-Y-range physical preservation is not yet implemented. Native load-level-data playback does not use this limited authoring conversion.
+
+v0.3.4: load-level-data accepts downloadMusic:false to launch the unchanged native level without waiting for missing original song. Enabled custom music also bypasses missing original-song download. Original song ID and level data are preserved. Default original-song metadata/download wait is bounded at 12 seconds, then native PlayLayer launches without waiting for music.
+
+v0.3.3 additions:
+objects[].visualColor: actual native displayed RGB [r,g,b], each 0..255, for orb/pad/portal.
+Enabled orb/pad/portal visuals ignore only known object/color/glow root camera-culling visibility; original native UV, RGBA, transforms, opacity and sprite dontDraw are preserved.
+music-config command: {"cmd":"music-config","enabled":true,"path":"<absolute workspace outputs/music/file.mp3>","offset":0,"volume":1}
+Allowed files: canonical regular MP3/OGG/WAV under outputs/music, 1 byte to 256 MiB. Offset is seconds 0..86400; volume is 0..1.
+Configuration persists at outputs/bridge/runtime/gd-music-config.json. It takes effect at the next native base music channel start/restart, without changing the paused player state.
+Music replacement uses native FMODAudioEngine loadMusic/queueStartMusic/startMusic; native music pause/restart/seek/fade/loop/channel lifecycle remains in charge. Runtime verification is required.
+TCP GD client -> Minecraft server 127.0.0.1:18471; newline-delimited UTF-8 JSON, compact single-line serialization (matjson::NO_INDENTATION).
+State <=125Hz (8ms minimum interval, actual rate in publishedHz telemetry); geometry snapshots every150ms. Native GD physics/collisions authoritative.
+v=1, seq counter per PlayLayer, t monotonic seconds, level=ID, name=title.
+x,y=player center in GD units; 30GDunits=1Minecraft block; ground=90 POC default.
+rotation clockwise degrees; scale=vehicle size1 or .6; mode=cube/ship/ball/ufo/wave/robot/spider/swing.
+dead/paused booleans; percent=native GD completion progress.
+objects present on geometry frames only; absent means preserve previous geometry.
+objects: id=unique runtimeID; objectId=GD object definitionID; type=solid/hazard/orb/portal;
+x,y=center native world collisionAABB; w,h=world collisionAABB already scaled;
+rotation=visual sprite rotation; scale=visual sprite scale(do not multiply bounds twice).
+Solids render AABB without rotating again. Hazards may use visual rotation.
+Slopes/complex hazards have approximate rendering while GD collisions stay exact.
+Nearby objects window +/-1200GDunits; decoration/invisible/disabled skipped.
+Reverse commands {"input":"jump","down":true/false} or {"v":1,"cmd":"input","button":1,"down":true/false}.
+Restart {"input":"restart"}. Commands applied via native handleButton on game main thread.
+When connected, AppDelegate suspension skipped so Minecraft may keep foreground.
+Menu button MC Bridge POC launches unmodified stock Stereo Madness.
+No noclip, replay simulation, or save-level edits.
+At load, GD process itself backs up CCGameManager.dat/CCLocalLevels.dat once:
+%LOCALAPPDATA%/GeometryDash/geode/mods/experiment.minecraft_bridge/first-run-backup.
+Telemetry every1s: %LOCALAPPDATA%/GeometryDash/geode/mods/experiment.minecraft_bridge/sender-status.json.
+Build output was compiled and linked successfully with Microsoft MSVC19.44 x64.
+Verified live on 2026-10-02 with installed Geode5.10.1/GD2.2081, Steam launch, Minecraft1.20.1 Fabric.
+Actual consumed coordinates and deaths/restarts recorded in ../verification/live-gd-frames.json.
+Installed 0.2 exported player1 only. Staged 0.3 adds actual player2 during native dual mode.
+Any playable level uses the same runtime bridge.
+
+Staged xo update (compiled; runtime not yet verified):
+Reverse {"input":"load-level","id":58825144} from menu or gameplay invokes native downloadLevel.
+Native song downloader fetches the level song before ordinary PlayLayer launch; a download failure logs a warning and launches without music.
+Another active level download delegate is respected; the bridge refuses to take ownership while it is non-null.
+MC Bridge XO menu button performs the same request.
+Object optional vx/vy = visual sprite center, vw/vh = contentSize * abs(scaleX/Y); existing x/y/w/h remain collision AABB.
+One-shot marker: C:/Users/shelk/Documents/Codex/2026-10-02/minecraft-java-geometry-dash-nasgubb-xo/outputs/bridge/gd/start-xo.flag
+Create this marker explicitly before a GD restart to request background xo loading. Menu init deletes only this marker and starts TCP before the native downloader. No marker = no automatic level start.
+Marker path is compiled for this workspace; rebuild after relocation.
+
+Minecraft authoring (0.2 runtime verified: source=minecraft, buildRevision1, original player texture exported; 0.3 extensions pending):
+{"v":1,"cmd":"load-minecraft-level","name":"Minecraft Build","objects":[{"id":1,"x":315,"y":105},{"id":8,"x":495,"y":105}]}
+IDs1=solid GDblock,8=normal GDspike in installed0.2. Staged0.3 accepts native factory objects classified solid/hazard/orb/portal/Modifier(speed), <=20000objects.
+Coordinate mapping x=(MCblockX+.5)*30, y=(MCblockY-64+.5)*30.
+Creates retained in-memory GJGameLevel ID0, Editor type, dontSave, creator Minecraft Bridge; no local/save manager writes.
+Native ZipUtils.compressString wraps raw GD level data; PlayLayer.scene performs real native gameplay.
+{"cmd":"build-mode","active":true/false} freezes only native PlayLayer physics update, preserving global command processing.
+CCScheduler drains commands even without a PlayLayer; MenuLayer always connects TCP. Entering build-mode releases the native jump button before freezing physics.
+Frames source="minecraft" or"geometry-dash", buildRevision=count of compiled MC scene requests.
+
+Actual native player rendering (0.2 original player47 atlas/two layers verified; trail/mode breadth and 0.3 dual/object layers still pending):
+avatarLayers:[{path,textureWidth,textureHeight,blendSource,blendDestination,vertices:[[x,y,u,v,r,g,b,a],...4]}].
+Vertex order BL,BR,TR,TL. x/y are already transformed into raw GD world coordinates INCLUDING player scale/rotation/animation. Do NOT apply player rotation/scale twice.
+UV normalized from native CCSprite quad, RGBA byte0..255 from native quad.
+PNG is original native texture atlas copied once from CCTextureCache source file by the GD process.
+Paths: C:/Users/shelk/Documents/Codex/2026-10-02/minecraft-java-geometry-dash-nasgubb-xo/outputs/bridge/runtime/gd-atlas-<GLtextureID>-<originalfilename>.png
+TextureWidth/Height are native GL texture dimensions; account for padding if PNG dimensions differ.
+trails:[{kind:regular|ship|wave,topology:strip|triangles,path,blendSource,blendDestination,textureWidth?,textureHeight?,vertices:[[x,y,u,v,r,g,b,a],...]}].
+Regular/ship meshes read actual CCMotionStreak vertex/UV/color buffers. Wave reads actual HardStreak triangle buffer; path empty=vertex-colored untextured triangles.
+Installed0.2 player1 only; particle emitters and ghost-trail effects are not yet exported.
+Export bounds: <=96sprite layers, <=1024points per regular/ship streak, <=6144wave triangle vertices.
+
+Staged0.3 frozen package protocol:
+Optional object rotation/scale/data; data=original native GameObject.getSaveString record. Compiler preserves other properties and overwrites native keys1/2/3/6/32 from id/x/y/rotation/scale.
+baseLevelString=original compressed native m_levelString; original header and nonphysical records/triggers/decor retained. Physical objects come from Minecraft objects array.
+songId/audioTrack selects native soundtrack; rangeMaxX optionally clips far baseline records and adds only a non-colliding offscreen Decoration for native finish length. No extra physical obstacle.
+player2:{active:false} outside native dual; otherwise {active:true,x,y,mode,dead,rotation,scale,avatarLayers,trails}. Player2 vertices already contain actual native world transforms.
+objectLayers:[{id,objectId,type,path,textureWidth,textureHeight,blendSource,blendDestination,vertices:[[x,y,u,v,r,g,b,a],...4]}]. Native portal/orb/pad/speed sprites; <=512layers per150ms geometry snapshot. Absent field=preserve previous objectLayers; empty array=clear.
+Geometry/portal animation snapshots150ms, player states/meshes<=62.5Hz. Transport holds one latest frame, not a full-frame backlog. Texture sources copied once perGLtextureID; PNG decoding stays on Minecraft's background loader.
+PlayLayer init atomic full blueprint: outputs/bridge/levels/level-<levelId>.json.
+Blueprint {v,levelId,name,songId,audioTrack,songPath,length,levelString,rawLevelString,header,objects:[{id,type,x,y,rotation,scale,vw,vh,w,h,invisible,disabled,data}]}.
+Includes ALL initial native physical objects, no +/-1200window. Original raw payload preserves triggers and original metadata. Download xo58825144/song766165 through native APIs; no fake data if network fails.
+Nasgubb reference uses an easier xo variant: original xo export is a reference. Final easy course changes actual Minecraft geometry; no noclip or altered GD physics.
+0.3 package versionv0.3.0 compiled successfully; snapshot/loader/object sprites/dual/extended import require the single batch runtime acceptance check.
+
+0.3.1 staged follow-up: menu TCP reconnect detects graceful FIN without frame sends; connected ordinary GD menu bypasses AppDelegate focus suspension. Native build passed. Not installed or runtime tested. Installed/frozen0.3.0 unchanged.
+Minecraft load-minecraft-level objects x/y are runtimeworldpositions. Serialized native key3 uses y-90 becausePlayLayeradds90. Fullnativeblueprintobjects remain runtimeworldx/y; original data/rawLevelString key3 stays editorcoordinates. Correction validatedagainst0.3 actual9object+90audit; nextbinaryruntimepending.
+
+0.3.2 isolatedvisualfollow-up: objectLayers includesvisibleactualGameObject.m_colorSprite/m_glowSprite referencedbatchsiblingsnotinobjectchildren, dedupnativeCCNodes96object/512packetcap. UV/quadRGBA/sourcePNG unchanged—nocolorapproximation. LogonceperID native detachedreferencepresenceanddisplayedRGB. Compilednotinstalled/runtimeuntested. Player8msplayercap; collider150mscadenceunchanged.
+
+Final0.3.2additions:
+- Playerframes minInterval8ms; physicsTPS unchanged. Nativeactual postUpdateHz/publishedHz diagnostics onceper1s, Geodelogonce10s.
+- Frame native fields: attempts,jumps,jumpHeld,verticalVelocity(rawPlayerObject.m_yVelocity),onGround,touchedRing,touchedPad.
+- objectActivations=[{id:runtimeUniqueID,objectId:GDdefinitionID,x,y,p1,p2,powered}] retainedcache fromnearbyorb/pad/portal nativehasBeenActivatedByPlayer() every150ms; max512. objects add activatedP1/activatedP2/powered.
+- Workspace gd-telemetry.json onceper1s holdsrealsenderstate+activation/cadencecounts; arraysavatar/trails/objectLayers stripped.
+- Request {cmd:"shutdown-gd"} or {input:"shutdown-gd"} releasesjumpandsavesexitsviaofficialSDKutils.game.exit(true), onlyuponexplicitrequest. Noautoshutdown.
+- load-minecraft-level optional baseRawLevelString wins overbaseLevelString; originalnativecompressedstrings truncatefirstNULbeforeZipUtilsdecode/export. Sceneauthoringpreservesactualnativeheader/nonphysicalrecords.
+Compiledstagednotinstalled/runtimeuntested; baseline0.3.1coordinate/collision/jump/padverified.
+Frame.primaryColor andsecondaryColor areRGBbytearraysfromactualPlayerObject.m_playerColor1/2. IncludedP1andplayer2; intendedfor3Dsideextrusionmatchingnativepalette. FacequadRGBA/UV arestillactualCCSpritevalues.
+
+Original reference loading: {v:1,cmd:"load-level-data",id:58825144,name:"xo",creator:"KrmaL",songId:766165,audioTrack:0,levelString:"<original compressed RobTop payload>"}. input:"load-level-data" is also accepted. Payload must be nonempty, <=4 MiB, no NUL, decode to <=20 MiB containing a header/objects delimiter. No geometry changes or saved-level insertion: native GJGameLevel/PlayLayer and music loader consume original data. Native full collision blueprint is written after createObjectsFromSetupFinished to outputs/bridge/levels/level-<id>.json. Missing song download falls back to native play without audio.
+
+
+GD 0.3.9 batch protocol additions:
+- cmd minecraft-pause, active bool: MC menu hold, OR with existing build-mode hold; global scheduler continues commands while held.
+- cmd/input restart now resets even while held; keeps hold reasons, force-reapplies native audio pause after reset and queued start.
+- snapshot paused = native m_isPaused OR both bridge holds; minecraftMenuPaused/minecraftPaused = MC hold; nativePaused = native flag; bridgeMusicPaused = bridge hold applied to native audio.
+- levelCompleted from actual native PlayLayer::levelComplete; levelCompletedDiagnosticNoclip captures QA status at completion, both reset on restart/new level.
+- native objectLayers include hazard as well as orb/portal; unchanged 512 packet layer cap.
+- native layer alphaSource = native-quad or logical-native-opacity; cullingCorrected true for offscreen alpha reconstruction; nativeDisplayedOpacity remains original native sprite alpha.
+- nativeNonzeroAlphaVertices remains original native count, exportNonzeroAlphaVertices counts exported visible vertices after logical alpha reconstruction.
+- FMOD diagnostic strings Bridge FMOD custom override-load/override-queue/override-start confirm hook routing, not audible decoding/playback success. Existing config applies on next native start.
+
+GD 0.4.0 metadata additions:
+objects bodyX/bodyY: actual sprite center in native GD coordinates; bodyWidth/bodyHeight: native spriteFrame original unrotated size times current absolute native scale; bodyRotation: native clockwise degrees, includes vertical flip, apply exactly once.
+nativeFrameName: ObjectToolbox native frame key. visualShape: spike for verified individual triangle frame family, spike-strip for verified native jagged-strip frame, otherwise native. spikePeaks: actual atlas verified strip peak count, no broad hazard guessing.
+visualColor: actual dominant saturated atlas pixel RGB multiplied by actual native displayed tint for orbs/pads/portals when available, otherwise actual native displayed tint. visualColorSource identifies provenance.
+Native object collision rect, physics, original quad UV/RGBA, trigger state and sprite state are unchanged. Compact objectVisualDiagnostics includes new metadata for controller runtime verification.
+
+GD 0.4.1 core protocol:
+GD coordinate transform: attached native camera/object-layer sprite trees receive the player-parent camera inverse; detached trees already produce GD level coordinates and receive no extra inverse. bodyX/bodyY and objectLayer vertices follow this same rule.
+Objects noTouch/groupDisabled/groupDisabledTemp/disabled/passable/invisible/invisibleBlock are actual native bool fields. collisionEnabled = !disabled && !groupDisabled && !groupDisabledTemp && !noTouch; invisibility never removes native collision. Exact native AABB x/y/w/h remains unchanged. visualEnabled also excludes invisible/invisibleBlock/dontDraw/logical zero opacity; visualOpacity is logical native 0..1.
+nativeAdditive bool is native root or actual glow sprite blendDestination==GL_ONE, not a semantic object-ID assumption.
+Native camera GD-unit fields nativeCameraX/Y (m_gameState.m_cameraPosition), nativeCameraWidth/Height, nativeCameraCenterX/Y, nativeCameraZoom/Angle; nativeCameraWorldOriginX/Y is actual player-parent inverse of world origin, provided to compare transform/camera state.
+Object sprite budget remains512 layers; closest orb/portal native sprites are collected first, then hazards, while every nearby classified object retains metadata.
+No native gameplay/object activation/sprite visibility mutation. Particles and custom shader uniforms deferred.
+
+GD 0.4.1 F6 baseline preservation: load-minecraft-level accepts rangeMinY/rangeMaxY in GD WORLD units (defaults90/1080). Original serialized editor record key3 is converted toworldY by+90 beforetestingbounds. Preserveoriginalphysicalrecords withX<0 orX>rangeMaxX orworldY<rangeMinY orworldY>rangeMaxY, plusallnonphysical/unknownIDs. Replaceonlyknownphysicalrecords insidetheeditablebounds. Originalfull continuation/levelend remainpreserved.

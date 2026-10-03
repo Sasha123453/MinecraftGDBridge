@@ -1,0 +1,4799 @@
+{
+  "schema": "gdbridge-scenery-plan-v1",
+  "name": "Video observed cave, library, Nether fortress and forest adaptation",
+  "state": "generated-ready-for-applyScenery",
+  "targetWorld": "GDBridge-XO",
+  "coordinateSystem": "Minecraft integer block coordinates; positive Z foreground; negative Z background",
+  "preserve": {
+    "gameplaySliceZ": 0,
+    "nativePhysics": true,
+    "existingAuthoringMarkers": true
+  },
+  "timeOfDay": 3000,
+  "cleanupOwnedBackWalls": {
+    "repeatX": {
+      "first": 8,
+      "last": 464,
+      "step": 24
+    },
+    "offsetBox": {
+      "from": [
+        0,
+        66,
+        -6
+      ],
+      "to": [
+        4,
+        68,
+        -6
+      ]
+    },
+    "allowedPreviousBlocks": [
+      "minecraft:stone_bricks",
+      "minecraft:mossy_stone_bricks"
+    ],
+    "replacement": "minecraft:air"
+  },
+  "boxes": [
+    {
+      "block": "minecraft:stone",
+      "from": [
+        0,
+        66,
+        -6
+      ],
+      "to": [
+        110,
+        79,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        0,
+        80,
+        -6
+      ],
+      "to": [
+        110,
+        80,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        0,
+        65,
+        -5
+      ],
+      "to": [
+        110,
+        65,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        0,
+        66,
+        -5
+      ],
+      "to": [
+        3,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:deepslate",
+      "from": [
+        4,
+        73,
+        -5
+      ],
+      "to": [
+        9,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        6,
+        76,
+        -4
+      ],
+      "to": [
+        7,
+        79,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        6,
+        74,
+        -4
+      ],
+      "to": [
+        6,
+        75,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        2,
+        64,
+        7
+      ],
+      "to": [
+        5,
+        66,
+        9
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        3,
+        67,
+        8
+      ],
+      "to": [
+        4,
+        68,
+        8
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        13,
+        66,
+        -5
+      ],
+      "to": [
+        16,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:deepslate",
+      "from": [
+        17,
+        73,
+        -5
+      ],
+      "to": [
+        22,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        19,
+        76,
+        -4
+      ],
+      "to": [
+        20,
+        79,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        19,
+        74,
+        -4
+      ],
+      "to": [
+        19,
+        75,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        15,
+        64,
+        7
+      ],
+      "to": [
+        18,
+        66,
+        9
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        16,
+        67,
+        8
+      ],
+      "to": [
+        17,
+        68,
+        8
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        26,
+        66,
+        -5
+      ],
+      "to": [
+        29,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:deepslate",
+      "from": [
+        30,
+        73,
+        -5
+      ],
+      "to": [
+        35,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        32,
+        76,
+        -4
+      ],
+      "to": [
+        33,
+        79,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        32,
+        74,
+        -4
+      ],
+      "to": [
+        32,
+        75,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        28,
+        64,
+        7
+      ],
+      "to": [
+        31,
+        66,
+        9
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        29,
+        67,
+        8
+      ],
+      "to": [
+        30,
+        68,
+        8
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        39,
+        66,
+        -5
+      ],
+      "to": [
+        42,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:deepslate",
+      "from": [
+        43,
+        73,
+        -5
+      ],
+      "to": [
+        48,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        45,
+        76,
+        -4
+      ],
+      "to": [
+        46,
+        79,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        45,
+        74,
+        -4
+      ],
+      "to": [
+        45,
+        75,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        41,
+        64,
+        7
+      ],
+      "to": [
+        44,
+        66,
+        9
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        42,
+        67,
+        8
+      ],
+      "to": [
+        43,
+        68,
+        8
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        52,
+        66,
+        -5
+      ],
+      "to": [
+        55,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:deepslate",
+      "from": [
+        56,
+        73,
+        -5
+      ],
+      "to": [
+        61,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        58,
+        76,
+        -4
+      ],
+      "to": [
+        59,
+        79,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        58,
+        74,
+        -4
+      ],
+      "to": [
+        58,
+        75,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        54,
+        64,
+        7
+      ],
+      "to": [
+        57,
+        66,
+        9
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        55,
+        67,
+        8
+      ],
+      "to": [
+        56,
+        68,
+        8
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        65,
+        66,
+        -5
+      ],
+      "to": [
+        68,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:deepslate",
+      "from": [
+        69,
+        73,
+        -5
+      ],
+      "to": [
+        74,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        71,
+        76,
+        -4
+      ],
+      "to": [
+        72,
+        79,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        71,
+        74,
+        -4
+      ],
+      "to": [
+        71,
+        75,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        67,
+        64,
+        7
+      ],
+      "to": [
+        70,
+        66,
+        9
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        68,
+        67,
+        8
+      ],
+      "to": [
+        69,
+        68,
+        8
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        78,
+        66,
+        -5
+      ],
+      "to": [
+        81,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:deepslate",
+      "from": [
+        82,
+        73,
+        -5
+      ],
+      "to": [
+        87,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        84,
+        76,
+        -4
+      ],
+      "to": [
+        85,
+        79,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        84,
+        74,
+        -4
+      ],
+      "to": [
+        84,
+        75,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        80,
+        64,
+        7
+      ],
+      "to": [
+        83,
+        66,
+        9
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        81,
+        67,
+        8
+      ],
+      "to": [
+        82,
+        68,
+        8
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        91,
+        66,
+        -5
+      ],
+      "to": [
+        94,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:deepslate",
+      "from": [
+        95,
+        73,
+        -5
+      ],
+      "to": [
+        100,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        97,
+        76,
+        -4
+      ],
+      "to": [
+        98,
+        79,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        97,
+        74,
+        -4
+      ],
+      "to": [
+        97,
+        75,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        93,
+        64,
+        7
+      ],
+      "to": [
+        96,
+        66,
+        9
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        94,
+        67,
+        8
+      ],
+      "to": [
+        95,
+        68,
+        8
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        0,
+        66,
+        -5
+      ],
+      "to": [
+        1,
+        79,
+        -2
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        0,
+        65,
+        5
+      ],
+      "to": [
+        1,
+        74,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        109,
+        66,
+        -5
+      ],
+      "to": [
+        110,
+        79,
+        -2
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        109,
+        65,
+        5
+      ],
+      "to": [
+        110,
+        74,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:deepslate",
+      "from": [
+        14,
+        69,
+        -5
+      ],
+      "to": [
+        20,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        16,
+        66,
+        -3
+      ],
+      "to": [
+        17,
+        68,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        15,
+        65,
+        3
+      ],
+      "to": [
+        16,
+        65,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:deepslate",
+      "from": [
+        42,
+        69,
+        -5
+      ],
+      "to": [
+        48,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        44,
+        66,
+        -3
+      ],
+      "to": [
+        45,
+        68,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        43,
+        65,
+        3
+      ],
+      "to": [
+        44,
+        65,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:deepslate",
+      "from": [
+        70,
+        69,
+        -5
+      ],
+      "to": [
+        76,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        72,
+        66,
+        -3
+      ],
+      "to": [
+        73,
+        68,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        71,
+        65,
+        3
+      ],
+      "to": [
+        72,
+        65,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:deepslate",
+      "from": [
+        98,
+        69,
+        -5
+      ],
+      "to": [
+        104,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        100,
+        66,
+        -3
+      ],
+      "to": [
+        101,
+        68,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:cobblestone",
+      "from": [
+        99,
+        65,
+        3
+      ],
+      "to": [
+        100,
+        65,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        111,
+        66,
+        -6
+      ],
+      "to": [
+        120,
+        79,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        111,
+        80,
+        -6
+      ],
+      "to": [
+        120,
+        80,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        111,
+        65,
+        -5
+      ],
+      "to": [
+        120,
+        65,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:coal_ore",
+      "from": [
+        8,
+        70,
+        -5
+      ],
+      "to": [
+        10,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:coal_ore",
+      "from": [
+        9,
+        72,
+        -5
+      ],
+      "to": [
+        9,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:diamond_ore",
+      "from": [
+        22,
+        70,
+        -5
+      ],
+      "to": [
+        24,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:diamond_ore",
+      "from": [
+        23,
+        72,
+        -5
+      ],
+      "to": [
+        23,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:iron_ore",
+      "from": [
+        40,
+        70,
+        -5
+      ],
+      "to": [
+        42,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:iron_ore",
+      "from": [
+        41,
+        72,
+        -5
+      ],
+      "to": [
+        41,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:redstone_ore",
+      "from": [
+        60,
+        70,
+        -5
+      ],
+      "to": [
+        62,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:redstone_ore",
+      "from": [
+        61,
+        72,
+        -5
+      ],
+      "to": [
+        61,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:diamond_ore",
+      "from": [
+        81,
+        70,
+        -5
+      ],
+      "to": [
+        83,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:diamond_ore",
+      "from": [
+        82,
+        72,
+        -5
+      ],
+      "to": [
+        82,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:coal_ore",
+      "from": [
+        102,
+        70,
+        -5
+      ],
+      "to": [
+        104,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:coal_ore",
+      "from": [
+        103,
+        72,
+        -5
+      ],
+      "to": [
+        103,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:deepslate",
+      "from": [
+        15,
+        69,
+        -8
+      ],
+      "to": [
+        21,
+        74,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        14,
+        69,
+        -7
+      ],
+      "to": [
+        14,
+        74,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        22,
+        69,
+        -7
+      ],
+      "to": [
+        22,
+        74,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        15,
+        69,
+        -7
+      ],
+      "to": [
+        21,
+        69,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        15,
+        74,
+        -7
+      ],
+      "to": [
+        21,
+        74,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:air",
+      "from": [
+        15,
+        70,
+        -6
+      ],
+      "to": [
+        21,
+        73,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:deepslate",
+      "from": [
+        48,
+        69,
+        -8
+      ],
+      "to": [
+        54,
+        74,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        47,
+        69,
+        -7
+      ],
+      "to": [
+        47,
+        74,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        55,
+        69,
+        -7
+      ],
+      "to": [
+        55,
+        74,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        48,
+        69,
+        -7
+      ],
+      "to": [
+        54,
+        69,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        48,
+        74,
+        -7
+      ],
+      "to": [
+        54,
+        74,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:air",
+      "from": [
+        48,
+        70,
+        -6
+      ],
+      "to": [
+        54,
+        73,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:deepslate",
+      "from": [
+        89,
+        69,
+        -8
+      ],
+      "to": [
+        95,
+        74,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        88,
+        69,
+        -7
+      ],
+      "to": [
+        88,
+        74,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        96,
+        69,
+        -7
+      ],
+      "to": [
+        96,
+        74,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        89,
+        69,
+        -7
+      ],
+      "to": [
+        95,
+        69,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        89,
+        74,
+        -7
+      ],
+      "to": [
+        95,
+        74,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:air",
+      "from": [
+        89,
+        70,
+        -6
+      ],
+      "to": [
+        95,
+        73,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:bedrock",
+      "from": [
+        4,
+        66,
+        -5
+      ],
+      "to": [
+        10,
+        67,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bedrock",
+      "from": [
+        6,
+        68,
+        -5
+      ],
+      "to": [
+        8,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bedrock",
+      "from": [
+        34,
+        66,
+        -5
+      ],
+      "to": [
+        40,
+        67,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bedrock",
+      "from": [
+        36,
+        68,
+        -5
+      ],
+      "to": [
+        38,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bedrock",
+      "from": [
+        72,
+        66,
+        -5
+      ],
+      "to": [
+        78,
+        67,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bedrock",
+      "from": [
+        74,
+        68,
+        -5
+      ],
+      "to": [
+        76,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bedrock",
+      "from": [
+        106,
+        66,
+        -5
+      ],
+      "to": [
+        112,
+        67,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bedrock",
+      "from": [
+        108,
+        68,
+        -5
+      ],
+      "to": [
+        110,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:granite",
+      "from": [
+        91,
+        75,
+        -5
+      ],
+      "to": [
+        104,
+        77,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:diorite",
+      "from": [
+        106,
+        69,
+        -5
+      ],
+      "to": [
+        119,
+        72,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        110,
+        69,
+        -7
+      ],
+      "to": [
+        115,
+        75,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        110,
+        69,
+        -6
+      ],
+      "to": [
+        115,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        110,
+        75,
+        -6
+      ],
+      "to": [
+        115,
+        75,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        110,
+        70,
+        -6
+      ],
+      "to": [
+        110,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        115,
+        70,
+        -6
+      ],
+      "to": [
+        115,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:glass",
+      "from": [
+        111,
+        70,
+        -5
+      ],
+      "to": [
+        114,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:lava",
+      "from": [
+        111,
+        70,
+        -6
+      ],
+      "to": [
+        114,
+        74,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:stone_bricks",
+      "from": [
+        124,
+        66,
+        -6
+      ],
+      "to": [
+        131,
+        76,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        129,
+        66,
+        -5
+      ],
+      "to": [
+        129,
+        80,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        128,
+        79,
+        -5
+      ],
+      "to": [
+        131,
+        80,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:stone_bricks",
+      "from": [
+        127,
+        65,
+        3
+      ],
+      "to": [
+        129,
+        67,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        132,
+        66,
+        -6
+      ],
+      "to": [
+        262,
+        80,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        132,
+        65,
+        -5
+      ],
+      "to": [
+        262,
+        65,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        132,
+        81,
+        -6
+      ],
+      "to": [
+        262,
+        81,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        134,
+        66,
+        -5
+      ],
+      "to": [
+        134,
+        80,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        135,
+        67,
+        -5
+      ],
+      "to": [
+        142,
+        70,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        135,
+        71,
+        -5
+      ],
+      "to": [
+        142,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        135,
+        72,
+        -5
+      ],
+      "to": [
+        142,
+        76,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        135,
+        77,
+        -5
+      ],
+      "to": [
+        142,
+        77,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        134,
+        80,
+        -4
+      ],
+      "to": [
+        134,
+        80,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        145,
+        66,
+        -5
+      ],
+      "to": [
+        145,
+        80,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        146,
+        67,
+        -5
+      ],
+      "to": [
+        153,
+        70,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        146,
+        71,
+        -5
+      ],
+      "to": [
+        153,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        146,
+        72,
+        -5
+      ],
+      "to": [
+        153,
+        76,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        146,
+        77,
+        -5
+      ],
+      "to": [
+        153,
+        77,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        145,
+        80,
+        -4
+      ],
+      "to": [
+        145,
+        80,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        156,
+        66,
+        -5
+      ],
+      "to": [
+        156,
+        80,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        157,
+        67,
+        -5
+      ],
+      "to": [
+        164,
+        70,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        157,
+        71,
+        -5
+      ],
+      "to": [
+        164,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        157,
+        72,
+        -5
+      ],
+      "to": [
+        164,
+        76,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        157,
+        77,
+        -5
+      ],
+      "to": [
+        164,
+        77,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        156,
+        80,
+        -4
+      ],
+      "to": [
+        156,
+        80,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        167,
+        66,
+        -5
+      ],
+      "to": [
+        167,
+        80,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        168,
+        67,
+        -5
+      ],
+      "to": [
+        175,
+        70,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        168,
+        71,
+        -5
+      ],
+      "to": [
+        175,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        168,
+        72,
+        -5
+      ],
+      "to": [
+        175,
+        76,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        168,
+        77,
+        -5
+      ],
+      "to": [
+        175,
+        77,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        167,
+        80,
+        -4
+      ],
+      "to": [
+        167,
+        80,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        178,
+        66,
+        -5
+      ],
+      "to": [
+        178,
+        80,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        179,
+        67,
+        -5
+      ],
+      "to": [
+        186,
+        70,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        179,
+        71,
+        -5
+      ],
+      "to": [
+        186,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        179,
+        72,
+        -5
+      ],
+      "to": [
+        186,
+        76,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        179,
+        77,
+        -5
+      ],
+      "to": [
+        186,
+        77,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        178,
+        80,
+        -4
+      ],
+      "to": [
+        178,
+        80,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        189,
+        66,
+        -5
+      ],
+      "to": [
+        189,
+        80,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        190,
+        67,
+        -5
+      ],
+      "to": [
+        197,
+        70,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        190,
+        71,
+        -5
+      ],
+      "to": [
+        197,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        190,
+        72,
+        -5
+      ],
+      "to": [
+        197,
+        76,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        190,
+        77,
+        -5
+      ],
+      "to": [
+        197,
+        77,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        189,
+        80,
+        -4
+      ],
+      "to": [
+        189,
+        80,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        200,
+        66,
+        -5
+      ],
+      "to": [
+        200,
+        80,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        201,
+        67,
+        -5
+      ],
+      "to": [
+        208,
+        70,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        201,
+        71,
+        -5
+      ],
+      "to": [
+        208,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        201,
+        72,
+        -5
+      ],
+      "to": [
+        208,
+        76,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        201,
+        77,
+        -5
+      ],
+      "to": [
+        208,
+        77,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        200,
+        80,
+        -4
+      ],
+      "to": [
+        200,
+        80,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        211,
+        66,
+        -5
+      ],
+      "to": [
+        211,
+        80,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        212,
+        67,
+        -5
+      ],
+      "to": [
+        219,
+        70,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        212,
+        71,
+        -5
+      ],
+      "to": [
+        219,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        212,
+        72,
+        -5
+      ],
+      "to": [
+        219,
+        76,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        212,
+        77,
+        -5
+      ],
+      "to": [
+        219,
+        77,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        211,
+        80,
+        -4
+      ],
+      "to": [
+        211,
+        80,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        222,
+        66,
+        -5
+      ],
+      "to": [
+        222,
+        80,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        223,
+        67,
+        -5
+      ],
+      "to": [
+        230,
+        70,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        223,
+        71,
+        -5
+      ],
+      "to": [
+        230,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        223,
+        72,
+        -5
+      ],
+      "to": [
+        230,
+        76,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        223,
+        77,
+        -5
+      ],
+      "to": [
+        230,
+        77,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        222,
+        80,
+        -4
+      ],
+      "to": [
+        222,
+        80,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        233,
+        66,
+        -5
+      ],
+      "to": [
+        233,
+        80,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        234,
+        67,
+        -5
+      ],
+      "to": [
+        241,
+        70,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        234,
+        71,
+        -5
+      ],
+      "to": [
+        241,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        234,
+        72,
+        -5
+      ],
+      "to": [
+        241,
+        76,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        234,
+        77,
+        -5
+      ],
+      "to": [
+        241,
+        77,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        233,
+        80,
+        -4
+      ],
+      "to": [
+        233,
+        80,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        244,
+        66,
+        -5
+      ],
+      "to": [
+        244,
+        80,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        245,
+        67,
+        -5
+      ],
+      "to": [
+        252,
+        70,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        245,
+        71,
+        -5
+      ],
+      "to": [
+        252,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        245,
+        72,
+        -5
+      ],
+      "to": [
+        252,
+        76,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        245,
+        77,
+        -5
+      ],
+      "to": [
+        252,
+        77,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        244,
+        80,
+        -4
+      ],
+      "to": [
+        244,
+        80,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        255,
+        66,
+        -5
+      ],
+      "to": [
+        255,
+        80,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        256,
+        67,
+        -5
+      ],
+      "to": [
+        261,
+        70,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        256,
+        71,
+        -5
+      ],
+      "to": [
+        261,
+        71,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        256,
+        72,
+        -5
+      ],
+      "to": [
+        261,
+        76,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        256,
+        77,
+        -5
+      ],
+      "to": [
+        261,
+        77,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        255,
+        80,
+        -4
+      ],
+      "to": [
+        255,
+        80,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        262,
+        66,
+        -5
+      ],
+      "to": [
+        262,
+        80,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        140,
+        66,
+        -3
+      ],
+      "to": [
+        140,
+        67,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        139,
+        68,
+        -4
+      ],
+      "to": [
+        141,
+        68,
+        -2
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        139,
+        78,
+        -4
+      ],
+      "to": [
+        141,
+        78,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        138,
+        65,
+        5
+      ],
+      "to": [
+        142,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        138,
+        67,
+        5
+      ],
+      "to": [
+        142,
+        67,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        162,
+        66,
+        -3
+      ],
+      "to": [
+        162,
+        67,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        161,
+        68,
+        -4
+      ],
+      "to": [
+        163,
+        68,
+        -2
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        161,
+        78,
+        -4
+      ],
+      "to": [
+        163,
+        78,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        160,
+        65,
+        5
+      ],
+      "to": [
+        164,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        160,
+        67,
+        5
+      ],
+      "to": [
+        164,
+        67,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        184,
+        66,
+        -3
+      ],
+      "to": [
+        184,
+        67,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        183,
+        68,
+        -4
+      ],
+      "to": [
+        185,
+        68,
+        -2
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        183,
+        78,
+        -4
+      ],
+      "to": [
+        185,
+        78,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        182,
+        65,
+        5
+      ],
+      "to": [
+        186,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        182,
+        67,
+        5
+      ],
+      "to": [
+        186,
+        67,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        206,
+        66,
+        -3
+      ],
+      "to": [
+        206,
+        67,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        205,
+        68,
+        -4
+      ],
+      "to": [
+        207,
+        68,
+        -2
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        205,
+        78,
+        -4
+      ],
+      "to": [
+        207,
+        78,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        204,
+        65,
+        5
+      ],
+      "to": [
+        208,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        204,
+        67,
+        5
+      ],
+      "to": [
+        208,
+        67,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        228,
+        66,
+        -3
+      ],
+      "to": [
+        228,
+        67,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        227,
+        68,
+        -4
+      ],
+      "to": [
+        229,
+        68,
+        -2
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        227,
+        78,
+        -4
+      ],
+      "to": [
+        229,
+        78,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        226,
+        65,
+        5
+      ],
+      "to": [
+        230,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        226,
+        67,
+        5
+      ],
+      "to": [
+        230,
+        67,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        250,
+        66,
+        -3
+      ],
+      "to": [
+        250,
+        67,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        249,
+        68,
+        -4
+      ],
+      "to": [
+        251,
+        68,
+        -2
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        249,
+        78,
+        -4
+      ],
+      "to": [
+        251,
+        78,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:bookshelf",
+      "from": [
+        248,
+        65,
+        5
+      ],
+      "to": [
+        252,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:oak_planks",
+      "from": [
+        248,
+        67,
+        5
+      ],
+      "to": [
+        252,
+        67,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        132,
+        65,
+        5
+      ],
+      "to": [
+        133,
+        78,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:stone_bricks",
+      "from": [
+        132,
+        64,
+        5
+      ],
+      "to": [
+        133,
+        65,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        260,
+        65,
+        5
+      ],
+      "to": [
+        261,
+        78,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:stone_bricks",
+      "from": [
+        260,
+        64,
+        5
+      ],
+      "to": [
+        261,
+        65,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:netherrack",
+      "from": [
+        274,
+        66,
+        -6
+      ],
+      "to": [
+        372,
+        78,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:netherrack",
+      "from": [
+        274,
+        79,
+        -6
+      ],
+      "to": [
+        372,
+        79,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        274,
+        65,
+        -5
+      ],
+      "to": [
+        372,
+        65,
+        -1
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        274,
+        66,
+        -5
+      ],
+      "to": [
+        372,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        274,
+        78,
+        -5
+      ],
+      "to": [
+        372,
+        78,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        274,
+        69,
+        -5
+      ],
+      "to": [
+        276,
+        77,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        274,
+        64,
+        6
+      ],
+      "to": [
+        276,
+        69,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:netherrack",
+      "from": [
+        278,
+        65,
+        9
+      ],
+      "to": [
+        281,
+        67,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        285,
+        69,
+        -5
+      ],
+      "to": [
+        287,
+        77,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        285,
+        64,
+        6
+      ],
+      "to": [
+        287,
+        69,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:netherrack",
+      "from": [
+        289,
+        65,
+        9
+      ],
+      "to": [
+        292,
+        67,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        296,
+        69,
+        -5
+      ],
+      "to": [
+        298,
+        77,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        296,
+        64,
+        6
+      ],
+      "to": [
+        298,
+        69,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:netherrack",
+      "from": [
+        300,
+        65,
+        9
+      ],
+      "to": [
+        303,
+        67,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        307,
+        69,
+        -5
+      ],
+      "to": [
+        309,
+        77,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        307,
+        64,
+        6
+      ],
+      "to": [
+        309,
+        69,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:netherrack",
+      "from": [
+        311,
+        65,
+        9
+      ],
+      "to": [
+        314,
+        67,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        318,
+        69,
+        -5
+      ],
+      "to": [
+        320,
+        77,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        318,
+        64,
+        6
+      ],
+      "to": [
+        320,
+        69,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:netherrack",
+      "from": [
+        322,
+        65,
+        9
+      ],
+      "to": [
+        325,
+        67,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        329,
+        69,
+        -5
+      ],
+      "to": [
+        331,
+        77,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        329,
+        64,
+        6
+      ],
+      "to": [
+        331,
+        69,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:netherrack",
+      "from": [
+        333,
+        65,
+        9
+      ],
+      "to": [
+        336,
+        67,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        340,
+        69,
+        -5
+      ],
+      "to": [
+        342,
+        77,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        340,
+        64,
+        6
+      ],
+      "to": [
+        342,
+        69,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:netherrack",
+      "from": [
+        344,
+        65,
+        9
+      ],
+      "to": [
+        347,
+        67,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        351,
+        69,
+        -5
+      ],
+      "to": [
+        353,
+        77,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        351,
+        64,
+        6
+      ],
+      "to": [
+        353,
+        69,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:netherrack",
+      "from": [
+        355,
+        65,
+        9
+      ],
+      "to": [
+        358,
+        67,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        362,
+        69,
+        -5
+      ],
+      "to": [
+        364,
+        77,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        362,
+        64,
+        6
+      ],
+      "to": [
+        364,
+        69,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:netherrack",
+      "from": [
+        366,
+        65,
+        9
+      ],
+      "to": [
+        369,
+        67,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        279,
+        69,
+        -7
+      ],
+      "to": [
+        285,
+        75,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        279,
+        69,
+        -6
+      ],
+      "to": [
+        285,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        279,
+        75,
+        -6
+      ],
+      "to": [
+        285,
+        75,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        279,
+        70,
+        -6
+      ],
+      "to": [
+        279,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        285,
+        70,
+        -6
+      ],
+      "to": [
+        285,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:glass",
+      "from": [
+        280,
+        70,
+        -5
+      ],
+      "to": [
+        284,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:lava",
+      "from": [
+        280,
+        70,
+        -6
+      ],
+      "to": [
+        284,
+        74,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        301,
+        69,
+        -7
+      ],
+      "to": [
+        307,
+        75,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        301,
+        69,
+        -6
+      ],
+      "to": [
+        307,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        301,
+        75,
+        -6
+      ],
+      "to": [
+        307,
+        75,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        301,
+        70,
+        -6
+      ],
+      "to": [
+        301,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        307,
+        70,
+        -6
+      ],
+      "to": [
+        307,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:glass",
+      "from": [
+        302,
+        70,
+        -5
+      ],
+      "to": [
+        306,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:lava",
+      "from": [
+        302,
+        70,
+        -6
+      ],
+      "to": [
+        306,
+        74,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        323,
+        69,
+        -7
+      ],
+      "to": [
+        329,
+        75,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        323,
+        69,
+        -6
+      ],
+      "to": [
+        329,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        323,
+        75,
+        -6
+      ],
+      "to": [
+        329,
+        75,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        323,
+        70,
+        -6
+      ],
+      "to": [
+        323,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        329,
+        70,
+        -6
+      ],
+      "to": [
+        329,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:glass",
+      "from": [
+        324,
+        70,
+        -5
+      ],
+      "to": [
+        328,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:lava",
+      "from": [
+        324,
+        70,
+        -6
+      ],
+      "to": [
+        328,
+        74,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        345,
+        69,
+        -7
+      ],
+      "to": [
+        351,
+        75,
+        -7
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        345,
+        69,
+        -6
+      ],
+      "to": [
+        351,
+        69,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        345,
+        75,
+        -6
+      ],
+      "to": [
+        351,
+        75,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        345,
+        70,
+        -6
+      ],
+      "to": [
+        345,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:obsidian",
+      "from": [
+        351,
+        70,
+        -6
+      ],
+      "to": [
+        351,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:glass",
+      "from": [
+        346,
+        70,
+        -5
+      ],
+      "to": [
+        350,
+        74,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:lava",
+      "from": [
+        346,
+        70,
+        -6
+      ],
+      "to": [
+        350,
+        74,
+        -6
+      ]
+    },
+    {
+      "block": "minecraft:nether_bricks",
+      "from": [
+        371,
+        66,
+        -5
+      ],
+      "to": [
+        372,
+        77,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        390,
+        66,
+        -13
+      ],
+      "to": [
+        390,
+        73,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        388,
+        72,
+        -15
+      ],
+      "to": [
+        392,
+        74,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        389,
+        75,
+        -14
+      ],
+      "to": [
+        391,
+        75,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        416,
+        66,
+        -13
+      ],
+      "to": [
+        416,
+        73,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        414,
+        72,
+        -15
+      ],
+      "to": [
+        418,
+        74,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        415,
+        75,
+        -14
+      ],
+      "to": [
+        417,
+        75,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        444,
+        66,
+        -13
+      ],
+      "to": [
+        444,
+        73,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        442,
+        72,
+        -15
+      ],
+      "to": [
+        446,
+        74,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        443,
+        75,
+        -14
+      ],
+      "to": [
+        445,
+        75,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        472,
+        66,
+        -13
+      ],
+      "to": [
+        472,
+        73,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        470,
+        72,
+        -15
+      ],
+      "to": [
+        474,
+        74,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        471,
+        75,
+        -14
+      ],
+      "to": [
+        473,
+        75,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        502,
+        66,
+        -13
+      ],
+      "to": [
+        502,
+        73,
+        -13
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        500,
+        72,
+        -15
+      ],
+      "to": [
+        504,
+        74,
+        -11
+      ]
+    },
+    {
+      "block": "minecraft:oak_leaves",
+      "from": [
+        501,
+        75,
+        -14
+      ],
+      "to": [
+        503,
+        75,
+        -12
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        392,
+        65,
+        4
+      ],
+      "to": [
+        399,
+        65,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:mossy_stone_bricks",
+      "from": [
+        402,
+        66,
+        -5
+      ],
+      "to": [
+        404,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        429,
+        65,
+        4
+      ],
+      "to": [
+        436,
+        65,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:mossy_stone_bricks",
+      "from": [
+        439,
+        66,
+        -5
+      ],
+      "to": [
+        441,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        468,
+        65,
+        4
+      ],
+      "to": [
+        475,
+        65,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:mossy_stone_bricks",
+      "from": [
+        478,
+        66,
+        -5
+      ],
+      "to": [
+        480,
+        68,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        504,
+        65,
+        4
+      ],
+      "to": [
+        511,
+        65,
+        7
+      ]
+    },
+    {
+      "block": "minecraft:stone_bricks",
+      "from": [
+        382,
+        66,
+        -5
+      ],
+      "to": [
+        385,
+        75,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:oak_log",
+      "from": [
+        384,
+        76,
+        -5
+      ],
+      "to": [
+        386,
+        79,
+        -5
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        398,
+        66,
+        -6
+      ],
+      "to": [
+        410,
+        67,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        398,
+        68,
+        -6
+      ],
+      "to": [
+        410,
+        68,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:dirt",
+      "from": [
+        401,
+        69,
+        -6
+      ],
+      "to": [
+        407,
+        69,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        401,
+        70,
+        -6
+      ],
+      "to": [
+        407,
+        70,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        410,
+        66,
+        -10
+      ],
+      "to": [
+        410,
+        72,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        408,
+        71,
+        -12
+      ],
+      "to": [
+        412,
+        73,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        409,
+        74,
+        -11
+      ],
+      "to": [
+        411,
+        74,
+        -9
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        454,
+        66,
+        -10
+      ],
+      "to": [
+        454,
+        72,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        452,
+        71,
+        -12
+      ],
+      "to": [
+        456,
+        73,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        453,
+        74,
+        -11
+      ],
+      "to": [
+        455,
+        74,
+        -9
+      ]
+    },
+    {
+      "block": "minecraft:birch_log",
+      "from": [
+        490,
+        66,
+        -10
+      ],
+      "to": [
+        490,
+        72,
+        -10
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        488,
+        71,
+        -12
+      ],
+      "to": [
+        492,
+        73,
+        -8
+      ]
+    },
+    {
+      "block": "minecraft:birch_leaves",
+      "from": [
+        489,
+        74,
+        -11
+      ],
+      "to": [
+        491,
+        74,
+        -9
+      ]
+    },
+    {
+      "block": "minecraft:stone",
+      "from": [
+        430,
+        63,
+        4
+      ],
+      "to": [
+        448,
+        63,
+        11
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        430,
+        64,
+        4
+      ],
+      "to": [
+        448,
+        65,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        430,
+        64,
+        11
+      ],
+      "to": [
+        448,
+        65,
+        11
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        430,
+        64,
+        5
+      ],
+      "to": [
+        430,
+        65,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:grass_block",
+      "from": [
+        448,
+        64,
+        5
+      ],
+      "to": [
+        448,
+        65,
+        10
+      ]
+    },
+    {
+      "block": "minecraft:water",
+      "from": [
+        431,
+        64,
+        5
+      ],
+      "to": [
+        447,
+        64,
+        10
+      ]
+    }
+  ],
+  "plants": [
+    {
+      "block": "minecraft:torch",
+      "at": [
+        16,
+        69,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:torch",
+      "at": [
+        15,
+        66,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:torch",
+      "at": [
+        44,
+        69,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:torch",
+      "at": [
+        43,
+        66,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:torch",
+      "at": [
+        72,
+        69,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:torch",
+      "at": [
+        71,
+        66,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:torch",
+      "at": [
+        100,
+        69,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:torch",
+      "at": [
+        99,
+        66,
+        3
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        128,
+        68,
+        4
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        140,
+        69,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        140,
+        79,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        140,
+        68,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        162,
+        69,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        162,
+        79,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        162,
+        68,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        184,
+        69,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        184,
+        79,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        184,
+        68,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        206,
+        69,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        206,
+        79,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        206,
+        68,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        228,
+        69,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        228,
+        79,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        228,
+        68,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        250,
+        69,
+        -3
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        250,
+        79,
+        -4
+      ]
+    },
+    {
+      "block": "minecraft:lantern",
+      "at": [
+        250,
+        68,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        393,
+        66,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        397,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        430,
+        66,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        434,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        469,
+        66,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        473,
+        66,
+        6
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        505,
+        66,
+        5
+      ]
+    },
+    {
+      "block": "minecraft:grass",
+      "at": [
+        509,
+        66,
+        6
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "name": "Ore cave",
+      "rangeX": [
+        0,
+        120
+      ],
+      "boxRange": [
+        0,
+        116
+      ],
+      "plantRange": [
+        0,
+        7
+      ]
+    },
+    {
+      "name": "Library entrance",
+      "rangeX": [
+        124,
+        131
+      ],
+      "boxRange": [
+        117,
+        120
+      ],
+      "plantRange": [
+        8,
+        8
+      ]
+    },
+    {
+      "name": "Oak library",
+      "rangeX": [
+        132,
+        262
+      ],
+      "boxRange": [
+        121,
+        230
+      ],
+      "plantRange": [
+        9,
+        26
+      ]
+    },
+    {
+      "name": "Nether fortress",
+      "rangeX": [
+        274,
+        372
+      ],
+      "boxRange": [
+        231,
+        291
+      ],
+      "plantRange": [
+        27,
+        26
+      ]
+    },
+    {
+      "name": "Forest hills and lake",
+      "rangeX": [
+        384,
+        512
+      ],
+      "boxRange": [
+        292,
+        334
+      ],
+      "plantRange": [
+        27,
+        34
+      ]
+    }
+  ],
+  "validation": {
+    "authoredCellsIncludingOverlaps": 16179,
+    "distinctAuthoredCells": 15628,
+    "maxBatchCells": 16384,
+    "gameplayCellsTouched": 0,
+    "materials": [
+      "minecraft:air",
+      "minecraft:bedrock",
+      "minecraft:birch_leaves",
+      "minecraft:birch_log",
+      "minecraft:bookshelf",
+      "minecraft:coal_ore",
+      "minecraft:cobblestone",
+      "minecraft:deepslate",
+      "minecraft:diamond_ore",
+      "minecraft:diorite",
+      "minecraft:dirt",
+      "minecraft:glass",
+      "minecraft:granite",
+      "minecraft:grass",
+      "minecraft:grass_block",
+      "minecraft:iron_ore",
+      "minecraft:lantern",
+      "minecraft:lava",
+      "minecraft:mossy_stone_bricks",
+      "minecraft:nether_bricks",
+      "minecraft:netherrack",
+      "minecraft:oak_leaves",
+      "minecraft:oak_log",
+      "minecraft:oak_planks",
+      "minecraft:obsidian",
+      "minecraft:redstone_ore",
+      "minecraft:stone",
+      "minecraft:stone_bricks",
+      "minecraft:torch",
+      "minecraft:water"
+    ]
+  },
+  "applicationNotes": [
+    "Chapter order corrected from root-observed video frames: cave, library, Nether fortress, natural forest.",
+    "Chapter widths are a compact 512-block adaptation, not a claimed exact timestamp-to-coordinate reconstruction.",
+    "All lava sources are enclosed by obsidian and glass; the forest water basin has a solid floor and raised walls.",
+    "Native GD gameplay geometry and z=0 remain unchanged; apply only through isolated GDBridge-XO integrated server.",
+    "Cave includes actual diamond, coal, iron, redstone ores, bedrock veins, granite, diorite, torches and deep recesses.",
+    "Library retains actual bookshelves and lanterns; Nether uses actual nether bricks/netherrack/lava; forest adds birch and a contained lake."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "selectedAt": "2026-10-03T06:22:19.426Z",
+  "reference": "outputs/Scene-Target-Selected.png",
+  "direction": "Sunlit layered Minecraft forest; near-side gameplay camera; native GD icons; pixel-textured volumetric portals and pads; natural Minecraft lighting; foreground and background scenery",
+  "levelBase": {
+    "id": 58898913,
+    "name": "xo easy",
+    "creator": "jukaras",
+    "copyOf": 58825144,
+    "songId": 766165,
+    "nasgubbExactVersionVerified": false
+  },
+  "importGoal": "Reusable native GD source import; keep physics and native triggers in GD; Minecraft geometry/decorations from actual native object records",
+  "status": "Implementation in progress; selected reference is generated concept, not current game screenshot",
+  "updatedAt": "2026-10-03T09:22:26.398Z",
+  "currentDirection": {
+    "geometry": "Minecraft platforms, collision obstacles and spikes with world materials/light/depth",
+    "nativeGD": "Authoritative physics, original character/icon, trail/wave, portals, orbs and pads; special-object volume is optional",
+    "camera": "Stable GD camera window with smooth chapter transitions; do not follow wave oscillations",
+    "qaLevel": 58835426,
+    "manualLevel": 58898913,
+    "reference": "outputs/Scene-Target-Selected.png",
+    "generatorDeferred": true,
+    "defaultStyle": "hybrid"
+  }
+}

@@ -1,0 +1,665 @@
+{
+  "v": 1,
+  "name": "Cave-height expansion for the first 120 blocks",
+  "notes": "Apply after multi-location-layout.json. Clears only its authored Y80 rear roof; new roof Y89..90. Native gameplay markers remain above terrainFloor Y66.",
+  "timeOfDay": 3000,
+  "boxes": [
+    {
+      "from": [
+        0,
+        80,
+        -6
+      ],
+      "to": [
+        120,
+        80,
+        -1
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        0,
+        80,
+        -8
+      ],
+      "to": [
+        120,
+        88,
+        -6
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        0,
+        89,
+        -10
+      ],
+      "to": [
+        120,
+        90,
+        -1
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        0,
+        89,
+        1
+      ],
+      "to": [
+        120,
+        90,
+        12
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        0,
+        86,
+        12
+      ],
+      "to": [
+        120,
+        88,
+        12
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        0,
+        80,
+        -10
+      ],
+      "to": [
+        1,
+        88,
+        -1
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        0,
+        80,
+        1
+      ],
+      "to": [
+        1,
+        88,
+        12
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        119,
+        80,
+        -10
+      ],
+      "to": [
+        120,
+        88,
+        -1
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        119,
+        80,
+        1
+      ],
+      "to": [
+        120,
+        88,
+        12
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        7,
+        86,
+        -5
+      ],
+      "to": [
+        11,
+        88,
+        -4
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        8,
+        83,
+        -5
+      ],
+      "to": [
+        10,
+        84,
+        -5
+      ],
+      "block": "minecraft:granite"
+    },
+    {
+      "from": [
+        9,
+        84,
+        -4
+      ],
+      "to": [
+        10,
+        84,
+        -4
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        24,
+        86,
+        -5
+      ],
+      "to": [
+        28,
+        88,
+        -4
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        25,
+        83,
+        -5
+      ],
+      "to": [
+        27,
+        84,
+        -5
+      ],
+      "block": "minecraft:granite"
+    },
+    {
+      "from": [
+        26,
+        84,
+        -4
+      ],
+      "to": [
+        27,
+        84,
+        -4
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        41,
+        86,
+        -5
+      ],
+      "to": [
+        45,
+        88,
+        -4
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        42,
+        83,
+        -5
+      ],
+      "to": [
+        44,
+        84,
+        -5
+      ],
+      "block": "minecraft:granite"
+    },
+    {
+      "from": [
+        43,
+        84,
+        -4
+      ],
+      "to": [
+        44,
+        84,
+        -4
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        58,
+        86,
+        -5
+      ],
+      "to": [
+        62,
+        88,
+        -4
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        59,
+        83,
+        -5
+      ],
+      "to": [
+        61,
+        84,
+        -5
+      ],
+      "block": "minecraft:granite"
+    },
+    {
+      "from": [
+        60,
+        84,
+        -4
+      ],
+      "to": [
+        61,
+        84,
+        -4
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        75,
+        86,
+        -5
+      ],
+      "to": [
+        79,
+        88,
+        -4
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        76,
+        83,
+        -5
+      ],
+      "to": [
+        78,
+        84,
+        -5
+      ],
+      "block": "minecraft:granite"
+    },
+    {
+      "from": [
+        77,
+        84,
+        -4
+      ],
+      "to": [
+        78,
+        84,
+        -4
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        92,
+        86,
+        -5
+      ],
+      "to": [
+        96,
+        88,
+        -4
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        93,
+        83,
+        -5
+      ],
+      "to": [
+        95,
+        84,
+        -5
+      ],
+      "block": "minecraft:granite"
+    },
+    {
+      "from": [
+        94,
+        84,
+        -4
+      ],
+      "to": [
+        95,
+        84,
+        -4
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        109,
+        86,
+        -5
+      ],
+      "to": [
+        113,
+        88,
+        -4
+      ],
+      "block": "minecraft:deepslate"
+    },
+    {
+      "from": [
+        110,
+        83,
+        -5
+      ],
+      "to": [
+        112,
+        84,
+        -5
+      ],
+      "block": "minecraft:granite"
+    },
+    {
+      "from": [
+        111,
+        84,
+        -4
+      ],
+      "to": [
+        112,
+        84,
+        -4
+      ],
+      "block": "minecraft:iron_ore"
+    },
+    {
+      "from": [
+        18,
+        81,
+        -5
+      ],
+      "to": [
+        20,
+        82,
+        -5
+      ],
+      "block": "minecraft:diamond_ore"
+    },
+    {
+      "from": [
+        55,
+        81,
+        -5
+      ],
+      "to": [
+        57,
+        82,
+        -5
+      ],
+      "block": "minecraft:diamond_ore"
+    },
+    {
+      "from": [
+        96,
+        81,
+        -5
+      ],
+      "to": [
+        98,
+        82,
+        -5
+      ],
+      "block": "minecraft:diamond_ore"
+    },
+    {
+      "from": [
+        6,
+        82,
+        -5
+      ],
+      "to": [
+        8,
+        82,
+        -5
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        18,
+        82,
+        -5
+      ],
+      "to": [
+        20,
+        82,
+        -5
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        30,
+        82,
+        -5
+      ],
+      "to": [
+        32,
+        82,
+        -5
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        42,
+        82,
+        -5
+      ],
+      "to": [
+        44,
+        82,
+        -5
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        54,
+        82,
+        -5
+      ],
+      "to": [
+        56,
+        82,
+        -5
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        66,
+        82,
+        -5
+      ],
+      "to": [
+        68,
+        82,
+        -5
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        78,
+        82,
+        -5
+      ],
+      "to": [
+        80,
+        82,
+        -5
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        90,
+        82,
+        -5
+      ],
+      "to": [
+        92,
+        82,
+        -5
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        102,
+        82,
+        -5
+      ],
+      "to": [
+        104,
+        82,
+        -5
+      ],
+      "block": "minecraft:cobblestone"
+    },
+    {
+      "from": [
+        114,
+        82,
+        -5
+      ],
+      "to": [
+        116,
+        82,
+        -5
+      ],
+      "block": "minecraft:cobblestone"
+    }
+  ],
+  "plants": [
+    {
+      "at": [
+        7,
+        83,
+        -5
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "at": [
+        19,
+        83,
+        -5
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "at": [
+        31,
+        83,
+        -5
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "at": [
+        43,
+        83,
+        -5
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "at": [
+        55,
+        83,
+        -5
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "at": [
+        67,
+        83,
+        -5
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "at": [
+        79,
+        83,
+        -5
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "at": [
+        91,
+        83,
+        -5
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "at": [
+        103,
+        83,
+        -5
+      ],
+      "block": "minecraft:torch"
+    },
+    {
+      "at": [
+        115,
+        83,
+        -5
+      ],
+      "block": "minecraft:torch"
+    }
+  ],
+  "terrainFloor": [
+    {
+      "from": [
+        0,
+        66,
+        -1
+      ],
+      "to": [
+        120,
+        66,
+        1
+      ],
+      "block": "minecraft:deepslate"
+    }
+  ],
+  "authoredCells": 11159
+}

@@ -1,0 +1,40 @@
+# Staged BSL 10.1.8: warm readable cave/daylight, crisp native GD sprites.
+# Every option below is present in this zip's shaders/lib/settings.glsl.
+# Installation and runtime render check remain with the controller.
+SHADOW=true
+SHADOW_FILTER=true
+SHADOW_COLOR=true
+SHADOW_ENTITY=true
+SHADOW_BLOCK_ENTITY=true
+SHADOW_VEGETATION=true
+shadowMapResolution=2048
+shadowDistance=192.0
+AO=true
+AO_STRENGTH=0.75
+LIGHT_SHAFT=true
+LIGHT_SHAFT_STRENGTH=0.50
+TAA=false
+FXAA=false
+SHARPEN=0
+MOTION_BLUR=false
+DOF=false
+DIRTY_LENS=false
+LENS_FLARE=false
+VIGNETTE=false
+BLOOM_RADIUS=2
+BLOOM_STRENGTH=0.50
+FOG_DENSITY=0.50
+FOG_DENSITY_NETHER=0.50
+MINLIGHT_I=0.70
+BLOCKLIGHT_I=1.00
+LIGHT_DR=255
+LIGHT_DG=244
+LIGHT_DB=220
+LIGHT_DI=1.40
+AMBIENT_DR=196
+AMBIENT_DG=204
+AMBIENT_DB=220
+AMBIENT_DI=0.70
+EXPOSURE=0.25
+AUTO_EXPOSURE=false
+SATURATION=1.00

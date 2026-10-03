@@ -1,0 +1,380 @@
+{
+  "sourceStage": "gd-transition-next",
+  "files": [
+    {
+      "path": "outputs/bridge/minecraft/build.gradle",
+      "sha256": "88bc3a51bb3f92ba758c044f819b8e706651255d26e8802e0b73080e7c770d8f",
+      "bytes": 771
+    },
+    {
+      "path": "outputs/bridge/minecraft/gradle.properties",
+      "sha256": "ad1712c8d81281b65436660861d5f631d0ec90d159d3da62bd8a678e39c31135",
+      "bytes": 51
+    },
+    {
+      "path": "outputs/bridge/minecraft/README-Roundtrip.md",
+      "sha256": "d7694afe1ca319b4150117ef85e59dcdc5b7ea9a19f8113abf03ddc15551a758",
+      "bytes": 4133
+    },
+    {
+      "path": "outputs/bridge/minecraft/README.txt",
+      "sha256": "17af6b43de4f608842fd3628b0db81f496ffe20d1bc6d45a497486f7fcc7472b",
+      "bytes": 2139
+    },
+    {
+      "path": "outputs/bridge/minecraft/settings.gradle",
+      "sha256": "387aaa81c60529d9b24fc4100439316d2adeef3d4c49c6104f5b6f5aa4159ad8",
+      "bytes": 145
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/resources/fabric.mod.json",
+      "sha256": "bdfa41725bf709cf0d1939163b05825bd376e7792f4b4d935cef8a217a8e03be",
+      "bytes": 532
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/resources/gdbridge.accesswidener",
+      "sha256": "dd9c2f4ad065896b90952c0f8c1d418927741936dc90c09c4de29b319bc95060",
+      "bytes": 383
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/resources/gdbridge.mixins.json",
+      "sha256": "f9ef8846c001c498838c6517e7828f64c101af242922cd7fbfa2810f97b82dee",
+      "bytes": 198
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/BridgeCamera.java",
+      "sha256": "76a1b3d7706109dc85d4e88df625de1e0ce8ef3dadf928c2d3ff8da4180980d6",
+      "bytes": 3180
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/BridgeControl.java",
+      "sha256": "a36cd7062534417888c1293684435734526e4d618a9474c75a0048845a9139cf",
+      "bytes": 12407
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/BridgeRecorder.java",
+      "sha256": "d885cacdfd10b383aed9d1c0e2687354616796d6ea0355c1bf5974441292e027",
+      "bytes": 5901
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/BridgeVisualStyle.java",
+      "sha256": "90e65458048e7d3220df54116151e73a938b5d7ccb1e676e15a76569e1a66899",
+      "bytes": 1558
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/GDBridge.java",
+      "sha256": "84b908ad3e9d529c43e21bc632c7125016a981a2cbf5b84806aac0d89be534cd",
+      "bytes": 21279
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/GDBridgeCommon.java",
+      "sha256": "5648c57cb0e18408b67c65960c06096b1dacbbdc6e43f168fb1a4c17a3245294",
+      "bytes": 594
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/GDPlayerRenderer.java",
+      "sha256": "f19233f7d856fab2ceb92e478864d8c083ee5c7ea0e90b78086fe48655cfb33e",
+      "bytes": 1697
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/GDRenderEntity.java",
+      "sha256": "196f77bc73cee240bec895028869c4988cdb8b64a14628426498790443186eff",
+      "bytes": 1110
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/NativeGDRenderLayers.java",
+      "sha256": "da1d68d163b931b91a146036fb75a9a124cc356fd15fef0dc8c844725e996869",
+      "bytes": 1713
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/NativeGDVisuals.java",
+      "sha256": "3db48cd97c39a4c9a771fad8732c122e9320a42411e46d88329393f25d12af96",
+      "bytes": 20932
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/NativeObjectBodies3D.java",
+      "sha256": "519f82da92a369fbcd8a3ca2e8a99afd320fc168c3fbf3f53475036d889a449a",
+      "bytes": 9489
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/NativeSpikes3D.java",
+      "sha256": "5ee00966a4eb243afe4f934c678d4697c24cc3806dc81f7b8f0952959551357c",
+      "bytes": 4039
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/SceneBlueprint.java",
+      "sha256": "27d272453cb7e7b61d5912da8b8bd31c314279e448166b6d02069d1c0a49d63d",
+      "bytes": 4969
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/WorldEditor.java",
+      "sha256": "0f7e39314c19ac9d2aecf9ad3d933657257c4cfcc90ec66d7d1cd8cf83305b54",
+      "bytes": 19603
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/mixin/CameraMixin.java",
+      "sha256": "f1ed69db21b63ddbb817c1e1976148977328c982130c37b6b8300718a82f0cfe",
+      "bytes": 1033
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/mixin/HudMixin.java",
+      "sha256": "f95f1cb9c28c40a5c270d2afbb516e3a880daae42b1497971713a7d286bac30a",
+      "bytes": 723
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/mixin/KeyboardMixin.java",
+      "sha256": "fd6a35cdb22a7b5341bb4f3d4d0787dd6bbfe41fd74884820d53e77df83431e4",
+      "bytes": 1172
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/mixin/MouseMixin.java",
+      "sha256": "63e4243cd1123e6070b9c62275041a486d651abf78041bc30689fa93c75f8d24",
+      "bytes": 965
+    },
+    {
+      "path": "outputs/bridge/minecraft/src/main/java/local/gdbridge/mixin/PlayerHideMixin.java",
+      "sha256": "010a03673c7ebeb0071cb47df6636fc335748f5022544375e9d2b8278c62849f",
+      "bytes": 979
+    },
+    {
+      "path": "outputs/bridge/minecraft/work/mc-project-cache/8.8/gc.properties",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "outputs/bridge/minecraft/work/mc-project-cache/buildOutputCleanup/cache.properties",
+      "sha256": "5dba7418ad9ae3a16d48b0af648d8371483d9f026e5c0fdabd4b112499e1d5ab",
+      "bytes": 51
+    },
+    {
+      "path": "outputs/bridge/minecraft/work/mc-project-cache/vcs-1/gc.properties",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "outputs/bridge/minecraft/work/mc-project-cache/8.8/dependencies-accessors/gc.properties",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "outputs/bridge/gd-transition-next/build.py",
+      "sha256": "73a1ebb28e303be0d33f2b7156480b6cd83407424dc08d9bea749a8b1cdb5e72",
+      "bytes": 1500
+    },
+    {
+      "path": "outputs/bridge/gd-transition-next/CMakeLists.txt",
+      "sha256": "e00d8b951521860fa12a01591429a301b7c3a6984ccda627f89b4998bf756b72",
+      "bytes": 830
+    },
+    {
+      "path": "outputs/bridge/gd-transition-next/mod.json",
+      "sha256": "0db93061ca4c476baf38d56e66cc0b3ebb12b5c61ab55b44aeb8e07f0e59df40",
+      "bytes": 313
+    },
+    {
+      "path": "outputs/bridge/gd-transition-next/PROTOCOL.txt",
+      "sha256": "80a58e34a2d552dd97efded080269608abe54e55acacc7a5ebd12b05ca3281e0",
+      "bytes": 18518
+    },
+    {
+      "path": "outputs/bridge/gd-transition-next/src/main.cpp",
+      "sha256": "24d32aac34465d049d23523cacceba03edbc3b5dcb4b502e7697cbbac324abae",
+      "bytes": 73277
+    },
+    {
+      "path": "outputs/Add-Music.ps1",
+      "sha256": "55f1a5e31ab0777f1447db20517ddfe7cd07b15b7f9b76397f953a39b5e2a358",
+      "bytes": 5412
+    },
+    {
+      "path": "outputs/Build-LevelOverview.cjs",
+      "sha256": "6fd47876e66d8883899a076b76daf7d76da4ce6f30e3ddf59528092b0f90e0ed",
+      "bytes": 8288
+    },
+    {
+      "path": "outputs/Control-Bridge.ps1",
+      "sha256": "f05cd5f38123eecf1c2c7f0eda0edd7458dc2726020dfdf467c813c16a5b8afd",
+      "bytes": 3976
+    },
+    {
+      "path": "outputs/Encode-BridgeRecording.ps1",
+      "sha256": "e3a55d4ff9718e5d024249f07b06b324b61f4c328fc0ac96c41211de463a01f7",
+      "bytes": 6015
+    },
+    {
+      "path": "outputs/Import-GDLevel.ps1",
+      "sha256": "1148fbf14e40c5b78cb67c25e9d1965f5f0ea254ca9f691bd28928170be0cef5",
+      "bytes": 6253
+    },
+    {
+      "path": "outputs/Inspect-MinecraftProfile.ps1",
+      "sha256": "9d29338d6472c764a02872a825370b0a8f2c91e1d2067ea1e7091cdd45021542",
+      "bytes": 2186
+    },
+    {
+      "path": "outputs/Install-Shaders.ps1",
+      "sha256": "297883062b51ac110c6a9241a500aeb4a6934f942e37dff31be5de790b2cafa2",
+      "bytes": 4308
+    },
+    {
+      "path": "outputs/Install-VisualBatch.ps1",
+      "sha256": "da162da49999dad4b87c841f670268dbeb11deaab121d3182d03947d0fe37146",
+      "bytes": 4684
+    },
+    {
+      "path": "outputs/Polish-Status.txt",
+      "sha256": "33d99dc2decbb19e90d22aa5fb4414a7003cb047da3ac602390022ce9dc9979c",
+      "bytes": 3182
+    },
+    {
+      "path": "outputs/Read-BridgeStatus.ps1",
+      "sha256": "e2225101c30333cf6f4e26fae78a5b15a6d67c970b90bc2085dcc81673fd94e5",
+      "bytes": 2484
+    },
+    {
+      "path": "outputs/README-next.txt",
+      "sha256": "b46e838cd2e3d000c9f467367093400b18427996a140c40140610554cab61d02",
+      "bytes": 8691
+    },
+    {
+      "path": "outputs/README.txt",
+      "sha256": "b46e838cd2e3d000c9f467367093400b18427996a140c40140610554cab61d02",
+      "bytes": 8691
+    },
+    {
+      "path": "outputs/Root-Control.mjs",
+      "sha256": "140baf0d2f33e7521ad490bcd4d249ea427fcc610da931b7d003f98d23776939",
+      "bytes": 1222
+    },
+    {
+      "path": "outputs/Scene-Concept-prompt.txt",
+      "sha256": "b97915f4e707b2f9a0c9dd75239b37d859db469da270138a543fbe8fe83cba22",
+      "bytes": 4078
+    },
+    {
+      "path": "outputs/Start-Bridge.ps1",
+      "sha256": "30a7a850ea2a700b88ec089f4470d2193df50894d24a0d25d006e30d46575bce",
+      "bytes": 1589
+    },
+    {
+      "path": "outputs/Update-Bridge.ps1",
+      "sha256": "4ed3945a1b729d9de5cb2be80aec356c9fa6f1c31985040d8e64034cc9188238",
+      "bytes": 3769
+    },
+    {
+      "path": "outputs/Update-NextBatch.ps1",
+      "sha256": "b7521c42c0d336d25c066a4687c8805ad69b24b93e369efe68d24c551183ea9e",
+      "bytes": 4630
+    },
+    {
+      "path": "outputs/Verify-NextBatch.ps1",
+      "sha256": "7bc8ec5c81416f4e57b3a98f89447b7f586cfc35bbc8c468c6562c821ef46396",
+      "bytes": 3920
+    },
+    {
+      "path": "tools/scenery/AnalyzeOriginalXO.ps1",
+      "sha256": "5d7c67fc1bb6c39812697f83d6a946d65fa1722a10fdc1b8859598f333f3ad17",
+      "bytes": 1318
+    },
+    {
+      "path": "tools/scenery/finalize-multi-location.cjs",
+      "sha256": "9ad04632e8ddb3527c50a982b7ad3b1a1d64ebd7101fa4998c05e033a42bd242",
+      "bytes": 5595
+    },
+    {
+      "path": "tools/scenery/generate-cave-forest-cleanup.cjs",
+      "sha256": "a7803ee5985981313047633b7cc1c4c678dc3850976761ac90d1f44214abc166",
+      "bytes": 1779
+    },
+    {
+      "path": "tools/scenery/generate-cave-height-expansion.ps1",
+      "sha256": "463bcd1a61f9b6fc5436d09afe00b5cf7123b62e57d9e81a7989398bd2c157c4",
+      "bytes": 2435
+    },
+    {
+      "path": "tools/scenery/generate-multi-location.cjs",
+      "sha256": "e8597f4f957880a35e203a01a14485d26b397010b2f7a153c6b60af9927d18e0",
+      "bytes": 7030
+    },
+    {
+      "path": "tools/scenery/generate-selected-forest.cjs",
+      "sha256": "930585ea0b25c1251eea4a02f548b896036f8166530aa1482ae320cdcd2988b3",
+      "bytes": 3913
+    },
+    {
+      "path": "tools/scenery/parse-xo-easy-candidates.py",
+      "sha256": "3319942566b338a9e3e21d58de9cf30341e68f0826348285556099fa2ce95e90",
+      "bytes": 3882
+    },
+    {
+      "path": "outputs/scenery/foreground-caps-cleanup.json",
+      "sha256": "739e4d69ce215d46b58d171bbca303a3bdd961a3f865c7e90f10649795932c24",
+      "bytes": 3341
+    },
+    {
+      "path": "outputs/shaders/BSL_v10.1.8.zip.txt",
+      "sha256": "17bdc821bd79bf761602fd841f0d49f63c52ad1ac7b648dfb5689b9f3e195f73",
+      "bytes": 828
+    },
+    {
+      "path": "outputs/shaders/README.txt",
+      "sha256": "98f469036ef32f8484f10faf3865eee5d559ff820cbe6086f739e03fa54a5b9b",
+      "bytes": 2223
+    },
+    {
+      "path": "outputs/shaders/reference-presets/profile-bsl-comparison.txt",
+      "sha256": "1030d323a7913b7899ef23dc64345e323c61910d6dfaedc848d86c7159cc8395",
+      "bytes": 730
+    },
+    {
+      "path": "outputs/shaders/reference-presets/profile-complementary-crisp.txt",
+      "sha256": "39f089e3e2790304287ef34e00e0786c4461a0cc3df6179b12e8bdb20e1f6e81",
+      "bytes": 1094
+    },
+    {
+      "path": "outputs/shaders/reference-presets/profile-complementary-reference.txt",
+      "sha256": "72849e5be1e127fcb7043fefa1c8e68ac43d21b1d418bb3258c33ee043814379",
+      "bytes": 1101
+    },
+    {
+      "path": "outputs/shaders/shader-selection/cloudfix-review.txt",
+      "sha256": "5ab8e064fc47babb560da8630c903613ebe9666412d3fa7f6cb7281384d69df1",
+      "bytes": 2126
+    },
+    {
+      "path": "outputs/shaders/shader-selection/ComplementaryReimagined_r5.9.3-cloudfix.zip.txt",
+      "sha256": "daf11d63ea54bb910d524d7ab31b2d966ea0a2c496b2ab0cb692502537ccf2dc",
+      "bytes": 1100
+    },
+    {
+      "path": "outputs/shaders/shader-selection/ComplementaryReimagined_r5.9.3.zip.txt",
+      "sha256": "72849e5be1e127fcb7043fefa1c8e68ac43d21b1d418bb3258c33ee043814379",
+      "bytes": 1101
+    },
+    {
+      "path": "outputs/shaders/shader-selection/selection-review.txt",
+      "sha256": "97452de35075b66a3b439b822812cbf9c2b582e81950778c2dfeb2263dd3d41e",
+      "bytes": 3497
+    },
+    {
+      "path": "outputs/shaders/profile/shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt",
+      "sha256": "abb1d960a94a2de34878d68b77f319e954f0e0988cb2e7668e5826c4ba22948f",
+      "bytes": 416
+    },
+    {
+      "path": "outputs/shaders/shader-selection/pack-source/HOW TO INSTALL.txt",
+      "sha256": "a5248fe3adfe646fb77d5c61b5628f9360239522d538ce1e51b238508d895f8d",
+      "bytes": 175
+    },
+    {
+      "path": "outputs/shaders/shader-selection/pack-source/License.txt",
+      "sha256": "e8d4ee004e2a706303e89651e5cafa2f06af4d04f373fa17fc8251880a995add",
+      "bytes": 5802
+    },
+    {
+      "path": "outputs/Scene-Target.json",
+      "sha256": "8d6cf4e4840b49eab938a6b4f78b366459f37747910c371d4d523407c7d7cb1c",
+      "bytes": 1335
+    }
+  ]
+}

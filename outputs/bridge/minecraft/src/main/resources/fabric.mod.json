@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "gdbridge",
+  "version": "0.4.1",
+  "accessWidener": "gdbridge.accesswidener",
+  "name": "Geometry Dash Minecraft Bridge",
+  "description": "Live Geometry Dash player and collision geometry rendered in Minecraft via loopback IPC.",
+  "environment": "client",
+  "entrypoints": {"main": ["local.gdbridge.GDBridgeCommon"],"client": ["local.gdbridge.GDBridge"]},
+  "mixins": ["gdbridge.mixins.json"],
+  "depends": {"fabricloader": ">=0.16.10", "minecraft": "1.20.1", "java": ">=17", "fabric-api": "*"}
+}

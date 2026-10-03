@@ -1,0 +1,185 @@
+{
+  "schema": "gdbridge-scenery-plan-v1",
+  "name": "Trim exact owned foreground cave caps and library pillars above playable floor",
+  "targetWorld": "GDBridge-XO",
+  "notes": "Apply after multi-location and cave-height-expansion plans. Exact original authored footprints only, positive Z and Y>=67. Keeps foreground pedestals at Y65..66, all background architecture, native geometry and authoring markers.",
+  "cellCount": 624,
+  "ownedSources": [
+    {
+      "file": "multi-location-layout.json",
+      "index": 52,
+      "originalBlock": "minecraft:stone",
+      "clearedFrom": [
+        0,
+        67,
+        5
+      ],
+      "clearedTo": [
+        1,
+        74,
+        7
+      ]
+    },
+    {
+      "file": "multi-location-layout.json",
+      "index": 54,
+      "originalBlock": "minecraft:stone",
+      "clearedFrom": [
+        109,
+        67,
+        5
+      ],
+      "clearedTo": [
+        110,
+        74,
+        7
+      ]
+    },
+    {
+      "file": "cave-height-expansion-layout.json",
+      "index": 6,
+      "originalBlock": "minecraft:stone",
+      "clearedFrom": [
+        0,
+        80,
+        1
+      ],
+      "clearedTo": [
+        1,
+        88,
+        12
+      ]
+    },
+    {
+      "file": "cave-height-expansion-layout.json",
+      "index": 8,
+      "originalBlock": "minecraft:stone",
+      "clearedFrom": [
+        119,
+        80,
+        1
+      ],
+      "clearedTo": [
+        120,
+        88,
+        12
+      ]
+    },
+    {
+      "file": "multi-location-layout.json",
+      "index": 227,
+      "originalBlock": "minecraft:oak_log",
+      "clearedFrom": [
+        132,
+        67,
+        5
+      ],
+      "clearedTo": [
+        133,
+        78,
+        6
+      ]
+    },
+    {
+      "file": "multi-location-layout.json",
+      "index": 229,
+      "originalBlock": "minecraft:oak_log",
+      "clearedFrom": [
+        260,
+        67,
+        5
+      ],
+      "clearedTo": [
+        261,
+        78,
+        6
+      ]
+    }
+  ],
+  "evidence": {
+    "recording": "recording-1791015459136-9f31b170",
+    "frame0": "Cave entrance cap covers approximately 32 percent of image width.",
+    "frame300": "Library entrance pillar covers approximately 17 percent of image width.",
+    "limits": "Only decorative occluders. Native physical platform density and incorrect old special-object rendering need separate renderer fixes."
+  },
+  "boxes": [
+    {
+      "from": [
+        0,
+        67,
+        5
+      ],
+      "to": [
+        1,
+        74,
+        7
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        109,
+        67,
+        5
+      ],
+      "to": [
+        110,
+        74,
+        7
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        0,
+        80,
+        1
+      ],
+      "to": [
+        1,
+        88,
+        12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        119,
+        80,
+        1
+      ],
+      "to": [
+        120,
+        88,
+        12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        132,
+        67,
+        5
+      ],
+      "to": [
+        133,
+        78,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        260,
+        67,
+        5
+      ],
+      "to": [
+        261,
+        78,
+        6
+      ],
+      "block": "minecraft:air"
+    }
+  ]
+}

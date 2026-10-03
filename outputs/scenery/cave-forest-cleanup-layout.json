@@ -1,0 +1,4621 @@
+{
+  "schema": "gdbridge-scenery-plan-v1",
+  "name": "Remove owned selected-forest decoration before indoor chapters",
+  "targetWorld": "GDBridge-XO",
+  "boxes": [
+    {
+      "from": [
+        8,
+        66,
+        -13
+      ],
+      "to": [
+        8,
+        72,
+        -13
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        6,
+        71,
+        -15
+      ],
+      "to": [
+        10,
+        73,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        7,
+        74,
+        -14
+      ],
+      "to": [
+        9,
+        74,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        32,
+        66,
+        -13
+      ],
+      "to": [
+        32,
+        73,
+        -13
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        30,
+        72,
+        -15
+      ],
+      "to": [
+        34,
+        74,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        31,
+        75,
+        -14
+      ],
+      "to": [
+        33,
+        75,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        56,
+        66,
+        -13
+      ],
+      "to": [
+        56,
+        72,
+        -13
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        54,
+        71,
+        -15
+      ],
+      "to": [
+        58,
+        73,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        55,
+        74,
+        -14
+      ],
+      "to": [
+        57,
+        74,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        80,
+        66,
+        -13
+      ],
+      "to": [
+        80,
+        73,
+        -13
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        78,
+        72,
+        -15
+      ],
+      "to": [
+        82,
+        74,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        79,
+        75,
+        -14
+      ],
+      "to": [
+        81,
+        75,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        104,
+        66,
+        -13
+      ],
+      "to": [
+        104,
+        72,
+        -13
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        102,
+        71,
+        -15
+      ],
+      "to": [
+        106,
+        73,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        103,
+        74,
+        -14
+      ],
+      "to": [
+        105,
+        74,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        128,
+        66,
+        -13
+      ],
+      "to": [
+        128,
+        73,
+        -13
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        126,
+        72,
+        -15
+      ],
+      "to": [
+        130,
+        74,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        127,
+        75,
+        -14
+      ],
+      "to": [
+        129,
+        75,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        152,
+        66,
+        -13
+      ],
+      "to": [
+        152,
+        72,
+        -13
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        150,
+        71,
+        -15
+      ],
+      "to": [
+        154,
+        73,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        151,
+        74,
+        -14
+      ],
+      "to": [
+        153,
+        74,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        176,
+        66,
+        -13
+      ],
+      "to": [
+        176,
+        73,
+        -13
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        174,
+        72,
+        -15
+      ],
+      "to": [
+        178,
+        74,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        175,
+        75,
+        -14
+      ],
+      "to": [
+        177,
+        75,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        200,
+        66,
+        -13
+      ],
+      "to": [
+        200,
+        72,
+        -13
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        198,
+        71,
+        -15
+      ],
+      "to": [
+        202,
+        73,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        199,
+        74,
+        -14
+      ],
+      "to": [
+        201,
+        74,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        224,
+        66,
+        -13
+      ],
+      "to": [
+        224,
+        73,
+        -13
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        222,
+        72,
+        -15
+      ],
+      "to": [
+        226,
+        74,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        223,
+        75,
+        -14
+      ],
+      "to": [
+        225,
+        75,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        248,
+        66,
+        -13
+      ],
+      "to": [
+        248,
+        72,
+        -13
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        246,
+        71,
+        -15
+      ],
+      "to": [
+        250,
+        73,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        247,
+        74,
+        -14
+      ],
+      "to": [
+        249,
+        74,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        272,
+        66,
+        -13
+      ],
+      "to": [
+        272,
+        73,
+        -13
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        270,
+        72,
+        -15
+      ],
+      "to": [
+        274,
+        74,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        271,
+        75,
+        -14
+      ],
+      "to": [
+        273,
+        75,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        296,
+        66,
+        -13
+      ],
+      "to": [
+        296,
+        72,
+        -13
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        294,
+        71,
+        -15
+      ],
+      "to": [
+        298,
+        73,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        295,
+        74,
+        -14
+      ],
+      "to": [
+        297,
+        74,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        320,
+        66,
+        -13
+      ],
+      "to": [
+        320,
+        73,
+        -13
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        318,
+        72,
+        -15
+      ],
+      "to": [
+        322,
+        74,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        319,
+        75,
+        -14
+      ],
+      "to": [
+        321,
+        75,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        344,
+        66,
+        -13
+      ],
+      "to": [
+        344,
+        72,
+        -13
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        342,
+        71,
+        -15
+      ],
+      "to": [
+        346,
+        73,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        343,
+        74,
+        -14
+      ],
+      "to": [
+        345,
+        74,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        368,
+        66,
+        -13
+      ],
+      "to": [
+        368,
+        73,
+        -13
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        366,
+        72,
+        -15
+      ],
+      "to": [
+        370,
+        74,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        367,
+        75,
+        -14
+      ],
+      "to": [
+        369,
+        75,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        28,
+        66,
+        -12
+      ],
+      "to": [
+        28,
+        73,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        26,
+        72,
+        -14
+      ],
+      "to": [
+        30,
+        74,
+        -10
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        27,
+        75,
+        -13
+      ],
+      "to": [
+        29,
+        75,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        100,
+        66,
+        -12
+      ],
+      "to": [
+        100,
+        73,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        98,
+        72,
+        -14
+      ],
+      "to": [
+        102,
+        74,
+        -10
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        99,
+        75,
+        -13
+      ],
+      "to": [
+        101,
+        75,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        172,
+        66,
+        -12
+      ],
+      "to": [
+        172,
+        73,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        170,
+        72,
+        -14
+      ],
+      "to": [
+        174,
+        74,
+        -10
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        171,
+        75,
+        -13
+      ],
+      "to": [
+        173,
+        75,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        244,
+        66,
+        -12
+      ],
+      "to": [
+        244,
+        73,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        242,
+        72,
+        -14
+      ],
+      "to": [
+        246,
+        74,
+        -10
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        243,
+        75,
+        -13
+      ],
+      "to": [
+        245,
+        75,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        316,
+        66,
+        -12
+      ],
+      "to": [
+        316,
+        73,
+        -12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        314,
+        72,
+        -14
+      ],
+      "to": [
+        318,
+        74,
+        -10
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        315,
+        75,
+        -13
+      ],
+      "to": [
+        317,
+        75,
+        -11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        10,
+        65,
+        -7
+      ],
+      "to": [
+        19,
+        65,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        10,
+        66,
+        -7
+      ],
+      "to": [
+        19,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        10,
+        67,
+        -7
+      ],
+      "to": [
+        19,
+        67,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        13,
+        68,
+        -6
+      ],
+      "to": [
+        16,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        46,
+        65,
+        -7
+      ],
+      "to": [
+        55,
+        65,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        46,
+        66,
+        -7
+      ],
+      "to": [
+        55,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        46,
+        67,
+        -7
+      ],
+      "to": [
+        55,
+        67,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        49,
+        68,
+        -6
+      ],
+      "to": [
+        52,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        82,
+        65,
+        -7
+      ],
+      "to": [
+        91,
+        65,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        82,
+        66,
+        -7
+      ],
+      "to": [
+        91,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        82,
+        67,
+        -7
+      ],
+      "to": [
+        91,
+        67,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        85,
+        68,
+        -6
+      ],
+      "to": [
+        88,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        118,
+        65,
+        -7
+      ],
+      "to": [
+        127,
+        65,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        118,
+        66,
+        -7
+      ],
+      "to": [
+        127,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        118,
+        67,
+        -7
+      ],
+      "to": [
+        127,
+        67,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        121,
+        68,
+        -6
+      ],
+      "to": [
+        124,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        154,
+        65,
+        -7
+      ],
+      "to": [
+        163,
+        65,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        154,
+        66,
+        -7
+      ],
+      "to": [
+        163,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        154,
+        67,
+        -7
+      ],
+      "to": [
+        163,
+        67,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        157,
+        68,
+        -6
+      ],
+      "to": [
+        160,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        190,
+        65,
+        -7
+      ],
+      "to": [
+        199,
+        65,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        190,
+        66,
+        -7
+      ],
+      "to": [
+        199,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        190,
+        67,
+        -7
+      ],
+      "to": [
+        199,
+        67,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        193,
+        68,
+        -6
+      ],
+      "to": [
+        196,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        226,
+        65,
+        -7
+      ],
+      "to": [
+        235,
+        65,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        226,
+        66,
+        -7
+      ],
+      "to": [
+        235,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        226,
+        67,
+        -7
+      ],
+      "to": [
+        235,
+        67,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        229,
+        68,
+        -6
+      ],
+      "to": [
+        232,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        262,
+        65,
+        -7
+      ],
+      "to": [
+        271,
+        65,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        262,
+        66,
+        -7
+      ],
+      "to": [
+        271,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        262,
+        67,
+        -7
+      ],
+      "to": [
+        271,
+        67,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        265,
+        68,
+        -6
+      ],
+      "to": [
+        268,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        298,
+        65,
+        -7
+      ],
+      "to": [
+        307,
+        65,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        298,
+        66,
+        -7
+      ],
+      "to": [
+        307,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        298,
+        67,
+        -7
+      ],
+      "to": [
+        307,
+        67,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        301,
+        68,
+        -6
+      ],
+      "to": [
+        304,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        334,
+        65,
+        -7
+      ],
+      "to": [
+        343,
+        65,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        334,
+        66,
+        -7
+      ],
+      "to": [
+        343,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        334,
+        67,
+        -7
+      ],
+      "to": [
+        343,
+        67,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        337,
+        68,
+        -6
+      ],
+      "to": [
+        340,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        370,
+        65,
+        -7
+      ],
+      "to": [
+        372,
+        65,
+        -4
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        370,
+        66,
+        -7
+      ],
+      "to": [
+        372,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        370,
+        67,
+        -7
+      ],
+      "to": [
+        372,
+        67,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        8,
+        64,
+        3
+      ],
+      "to": [
+        13,
+        64,
+        6
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        8,
+        65,
+        3
+      ],
+      "to": [
+        13,
+        65,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        8,
+        66,
+        3
+      ],
+      "to": [
+        13,
+        66,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        38,
+        64,
+        4
+      ],
+      "to": [
+        43,
+        64,
+        7
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        38,
+        65,
+        4
+      ],
+      "to": [
+        43,
+        65,
+        7
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        38,
+        66,
+        4
+      ],
+      "to": [
+        43,
+        66,
+        7
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        68,
+        64,
+        3
+      ],
+      "to": [
+        73,
+        64,
+        6
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        68,
+        65,
+        3
+      ],
+      "to": [
+        73,
+        65,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        68,
+        66,
+        3
+      ],
+      "to": [
+        73,
+        66,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        98,
+        64,
+        4
+      ],
+      "to": [
+        103,
+        64,
+        7
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        98,
+        65,
+        4
+      ],
+      "to": [
+        103,
+        65,
+        7
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        98,
+        66,
+        4
+      ],
+      "to": [
+        103,
+        66,
+        7
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        128,
+        64,
+        3
+      ],
+      "to": [
+        133,
+        64,
+        6
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        128,
+        65,
+        3
+      ],
+      "to": [
+        133,
+        65,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        128,
+        66,
+        3
+      ],
+      "to": [
+        133,
+        66,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        158,
+        64,
+        4
+      ],
+      "to": [
+        163,
+        64,
+        7
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        158,
+        65,
+        4
+      ],
+      "to": [
+        163,
+        65,
+        7
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        158,
+        66,
+        4
+      ],
+      "to": [
+        163,
+        66,
+        7
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        188,
+        64,
+        3
+      ],
+      "to": [
+        193,
+        64,
+        6
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        188,
+        65,
+        3
+      ],
+      "to": [
+        193,
+        65,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        188,
+        66,
+        3
+      ],
+      "to": [
+        193,
+        66,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        218,
+        64,
+        4
+      ],
+      "to": [
+        223,
+        64,
+        7
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        218,
+        65,
+        4
+      ],
+      "to": [
+        223,
+        65,
+        7
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        218,
+        66,
+        4
+      ],
+      "to": [
+        223,
+        66,
+        7
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        248,
+        64,
+        3
+      ],
+      "to": [
+        253,
+        64,
+        6
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        248,
+        65,
+        3
+      ],
+      "to": [
+        253,
+        65,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        248,
+        66,
+        3
+      ],
+      "to": [
+        253,
+        66,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        278,
+        64,
+        4
+      ],
+      "to": [
+        283,
+        64,
+        7
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        278,
+        65,
+        4
+      ],
+      "to": [
+        283,
+        65,
+        7
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        278,
+        66,
+        4
+      ],
+      "to": [
+        283,
+        66,
+        7
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        308,
+        64,
+        3
+      ],
+      "to": [
+        313,
+        64,
+        6
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        308,
+        65,
+        3
+      ],
+      "to": [
+        313,
+        65,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        308,
+        66,
+        3
+      ],
+      "to": [
+        313,
+        66,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        338,
+        64,
+        4
+      ],
+      "to": [
+        343,
+        64,
+        7
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        338,
+        65,
+        4
+      ],
+      "to": [
+        343,
+        65,
+        7
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        338,
+        66,
+        4
+      ],
+      "to": [
+        343,
+        66,
+        7
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        368,
+        64,
+        3
+      ],
+      "to": [
+        372,
+        64,
+        6
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        368,
+        65,
+        3
+      ],
+      "to": [
+        372,
+        65,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        368,
+        66,
+        3
+      ],
+      "to": [
+        372,
+        66,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        22,
+        64,
+        9
+      ],
+      "to": [
+        29,
+        64,
+        12
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        22,
+        65,
+        9
+      ],
+      "to": [
+        29,
+        65,
+        12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        64,
+        64,
+        9
+      ],
+      "to": [
+        71,
+        64,
+        12
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        64,
+        65,
+        9
+      ],
+      "to": [
+        71,
+        65,
+        12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        106,
+        64,
+        9
+      ],
+      "to": [
+        113,
+        64,
+        12
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        106,
+        65,
+        9
+      ],
+      "to": [
+        113,
+        65,
+        12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        148,
+        64,
+        9
+      ],
+      "to": [
+        155,
+        64,
+        12
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        148,
+        65,
+        9
+      ],
+      "to": [
+        155,
+        65,
+        12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        190,
+        64,
+        9
+      ],
+      "to": [
+        197,
+        64,
+        12
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        190,
+        65,
+        9
+      ],
+      "to": [
+        197,
+        65,
+        12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        232,
+        64,
+        9
+      ],
+      "to": [
+        239,
+        64,
+        12
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        232,
+        65,
+        9
+      ],
+      "to": [
+        239,
+        65,
+        12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        274,
+        64,
+        9
+      ],
+      "to": [
+        281,
+        64,
+        12
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        274,
+        65,
+        9
+      ],
+      "to": [
+        281,
+        65,
+        12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        316,
+        64,
+        9
+      ],
+      "to": [
+        323,
+        64,
+        12
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        316,
+        65,
+        9
+      ],
+      "to": [
+        323,
+        65,
+        12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        358,
+        64,
+        9
+      ],
+      "to": [
+        365,
+        64,
+        12
+      ],
+      "block": "minecraft:stone"
+    },
+    {
+      "from": [
+        358,
+        65,
+        9
+      ],
+      "to": [
+        365,
+        65,
+        12
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        54,
+        66,
+        -5
+      ],
+      "to": [
+        56,
+        66,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        72,
+        65,
+        7
+      ],
+      "to": [
+        74,
+        65,
+        8
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        126,
+        66,
+        -5
+      ],
+      "to": [
+        128,
+        66,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        144,
+        65,
+        7
+      ],
+      "to": [
+        146,
+        65,
+        8
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        198,
+        66,
+        -5
+      ],
+      "to": [
+        200,
+        66,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        216,
+        65,
+        7
+      ],
+      "to": [
+        218,
+        65,
+        8
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        270,
+        66,
+        -5
+      ],
+      "to": [
+        272,
+        66,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        288,
+        65,
+        7
+      ],
+      "to": [
+        290,
+        65,
+        8
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        342,
+        66,
+        -5
+      ],
+      "to": [
+        344,
+        66,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        360,
+        65,
+        7
+      ],
+      "to": [
+        362,
+        65,
+        8
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        11,
+        68,
+        -5
+      ],
+      "to": [
+        11,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        17,
+        68,
+        -6
+      ],
+      "to": [
+        17,
+        68,
+        -6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        14,
+        69,
+        -5
+      ],
+      "to": [
+        14,
+        69,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        47,
+        68,
+        -5
+      ],
+      "to": [
+        47,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        53,
+        68,
+        -6
+      ],
+      "to": [
+        53,
+        68,
+        -6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        50,
+        69,
+        -5
+      ],
+      "to": [
+        50,
+        69,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        83,
+        68,
+        -5
+      ],
+      "to": [
+        83,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        89,
+        68,
+        -6
+      ],
+      "to": [
+        89,
+        68,
+        -6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        86,
+        69,
+        -5
+      ],
+      "to": [
+        86,
+        69,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        119,
+        68,
+        -5
+      ],
+      "to": [
+        119,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        125,
+        68,
+        -6
+      ],
+      "to": [
+        125,
+        68,
+        -6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        122,
+        69,
+        -5
+      ],
+      "to": [
+        122,
+        69,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        155,
+        68,
+        -5
+      ],
+      "to": [
+        155,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        161,
+        68,
+        -6
+      ],
+      "to": [
+        161,
+        68,
+        -6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        158,
+        69,
+        -5
+      ],
+      "to": [
+        158,
+        69,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        191,
+        68,
+        -5
+      ],
+      "to": [
+        191,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        197,
+        68,
+        -6
+      ],
+      "to": [
+        197,
+        68,
+        -6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        194,
+        69,
+        -5
+      ],
+      "to": [
+        194,
+        69,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        227,
+        68,
+        -5
+      ],
+      "to": [
+        227,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        233,
+        68,
+        -6
+      ],
+      "to": [
+        233,
+        68,
+        -6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        230,
+        69,
+        -5
+      ],
+      "to": [
+        230,
+        69,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        263,
+        68,
+        -5
+      ],
+      "to": [
+        263,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        269,
+        68,
+        -6
+      ],
+      "to": [
+        269,
+        68,
+        -6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        266,
+        69,
+        -5
+      ],
+      "to": [
+        266,
+        69,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        299,
+        68,
+        -5
+      ],
+      "to": [
+        299,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        305,
+        68,
+        -6
+      ],
+      "to": [
+        305,
+        68,
+        -6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        302,
+        69,
+        -5
+      ],
+      "to": [
+        302,
+        69,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        335,
+        68,
+        -5
+      ],
+      "to": [
+        335,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        341,
+        68,
+        -6
+      ],
+      "to": [
+        341,
+        68,
+        -6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        338,
+        69,
+        -5
+      ],
+      "to": [
+        338,
+        69,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        371,
+        68,
+        -5
+      ],
+      "to": [
+        371,
+        68,
+        -5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        9,
+        67,
+        4
+      ],
+      "to": [
+        9,
+        67,
+        4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        11,
+        67,
+        5
+      ],
+      "to": [
+        11,
+        67,
+        5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        12,
+        67,
+        3
+      ],
+      "to": [
+        12,
+        67,
+        3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        39,
+        67,
+        5
+      ],
+      "to": [
+        39,
+        67,
+        5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        41,
+        67,
+        6
+      ],
+      "to": [
+        41,
+        67,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        42,
+        67,
+        4
+      ],
+      "to": [
+        42,
+        67,
+        4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        69,
+        67,
+        4
+      ],
+      "to": [
+        69,
+        67,
+        4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        71,
+        67,
+        5
+      ],
+      "to": [
+        71,
+        67,
+        5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        72,
+        67,
+        3
+      ],
+      "to": [
+        72,
+        67,
+        3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        99,
+        67,
+        5
+      ],
+      "to": [
+        99,
+        67,
+        5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        101,
+        67,
+        6
+      ],
+      "to": [
+        101,
+        67,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        102,
+        67,
+        4
+      ],
+      "to": [
+        102,
+        67,
+        4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        129,
+        67,
+        4
+      ],
+      "to": [
+        129,
+        67,
+        4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        131,
+        67,
+        5
+      ],
+      "to": [
+        131,
+        67,
+        5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        132,
+        67,
+        3
+      ],
+      "to": [
+        132,
+        67,
+        3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        159,
+        67,
+        5
+      ],
+      "to": [
+        159,
+        67,
+        5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        161,
+        67,
+        6
+      ],
+      "to": [
+        161,
+        67,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        162,
+        67,
+        4
+      ],
+      "to": [
+        162,
+        67,
+        4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        189,
+        67,
+        4
+      ],
+      "to": [
+        189,
+        67,
+        4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        191,
+        67,
+        5
+      ],
+      "to": [
+        191,
+        67,
+        5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        192,
+        67,
+        3
+      ],
+      "to": [
+        192,
+        67,
+        3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        219,
+        67,
+        5
+      ],
+      "to": [
+        219,
+        67,
+        5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        221,
+        67,
+        6
+      ],
+      "to": [
+        221,
+        67,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        222,
+        67,
+        4
+      ],
+      "to": [
+        222,
+        67,
+        4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        249,
+        67,
+        4
+      ],
+      "to": [
+        249,
+        67,
+        4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        251,
+        67,
+        5
+      ],
+      "to": [
+        251,
+        67,
+        5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        252,
+        67,
+        3
+      ],
+      "to": [
+        252,
+        67,
+        3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        279,
+        67,
+        5
+      ],
+      "to": [
+        279,
+        67,
+        5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        281,
+        67,
+        6
+      ],
+      "to": [
+        281,
+        67,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        282,
+        67,
+        4
+      ],
+      "to": [
+        282,
+        67,
+        4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        309,
+        67,
+        4
+      ],
+      "to": [
+        309,
+        67,
+        4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        311,
+        67,
+        5
+      ],
+      "to": [
+        311,
+        67,
+        5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        312,
+        67,
+        3
+      ],
+      "to": [
+        312,
+        67,
+        3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        339,
+        67,
+        5
+      ],
+      "to": [
+        339,
+        67,
+        5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        341,
+        67,
+        6
+      ],
+      "to": [
+        341,
+        67,
+        6
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        342,
+        67,
+        4
+      ],
+      "to": [
+        342,
+        67,
+        4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        369,
+        67,
+        4
+      ],
+      "to": [
+        369,
+        67,
+        4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        371,
+        67,
+        5
+      ],
+      "to": [
+        371,
+        67,
+        5
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        372,
+        67,
+        3
+      ],
+      "to": [
+        372,
+        67,
+        3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        24,
+        66,
+        10
+      ],
+      "to": [
+        24,
+        66,
+        10
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        27,
+        66,
+        11
+      ],
+      "to": [
+        27,
+        66,
+        11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        66,
+        66,
+        10
+      ],
+      "to": [
+        66,
+        66,
+        10
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        69,
+        66,
+        11
+      ],
+      "to": [
+        69,
+        66,
+        11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        108,
+        66,
+        10
+      ],
+      "to": [
+        108,
+        66,
+        10
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        111,
+        66,
+        11
+      ],
+      "to": [
+        111,
+        66,
+        11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        150,
+        66,
+        10
+      ],
+      "to": [
+        150,
+        66,
+        10
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        153,
+        66,
+        11
+      ],
+      "to": [
+        153,
+        66,
+        11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        192,
+        66,
+        10
+      ],
+      "to": [
+        192,
+        66,
+        10
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        195,
+        66,
+        11
+      ],
+      "to": [
+        195,
+        66,
+        11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        234,
+        66,
+        10
+      ],
+      "to": [
+        234,
+        66,
+        10
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        237,
+        66,
+        11
+      ],
+      "to": [
+        237,
+        66,
+        11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        276,
+        66,
+        10
+      ],
+      "to": [
+        276,
+        66,
+        10
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        279,
+        66,
+        11
+      ],
+      "to": [
+        279,
+        66,
+        11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        318,
+        66,
+        10
+      ],
+      "to": [
+        318,
+        66,
+        10
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        321,
+        66,
+        11
+      ],
+      "to": [
+        321,
+        66,
+        11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        360,
+        66,
+        10
+      ],
+      "to": [
+        360,
+        66,
+        10
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        363,
+        66,
+        11
+      ],
+      "to": [
+        363,
+        66,
+        11
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        3,
+        66,
+        -3
+      ],
+      "to": [
+        3,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        5,
+        66,
+        -4
+      ],
+      "to": [
+        5,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        3,
+        65,
+        2
+      ],
+      "to": [
+        3,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        15,
+        66,
+        -3
+      ],
+      "to": [
+        15,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        17,
+        66,
+        -4
+      ],
+      "to": [
+        17,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        15,
+        65,
+        2
+      ],
+      "to": [
+        15,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        27,
+        66,
+        -3
+      ],
+      "to": [
+        27,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        29,
+        66,
+        -4
+      ],
+      "to": [
+        29,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        27,
+        65,
+        2
+      ],
+      "to": [
+        27,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        39,
+        66,
+        -3
+      ],
+      "to": [
+        39,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        41,
+        66,
+        -4
+      ],
+      "to": [
+        41,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        39,
+        65,
+        2
+      ],
+      "to": [
+        39,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        51,
+        66,
+        -3
+      ],
+      "to": [
+        51,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        53,
+        66,
+        -4
+      ],
+      "to": [
+        53,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        51,
+        65,
+        2
+      ],
+      "to": [
+        51,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        63,
+        66,
+        -3
+      ],
+      "to": [
+        63,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        65,
+        66,
+        -4
+      ],
+      "to": [
+        65,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        63,
+        65,
+        2
+      ],
+      "to": [
+        63,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        75,
+        66,
+        -3
+      ],
+      "to": [
+        75,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        77,
+        66,
+        -4
+      ],
+      "to": [
+        77,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        75,
+        65,
+        2
+      ],
+      "to": [
+        75,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        87,
+        66,
+        -3
+      ],
+      "to": [
+        87,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        89,
+        66,
+        -4
+      ],
+      "to": [
+        89,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        87,
+        65,
+        2
+      ],
+      "to": [
+        87,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        99,
+        66,
+        -3
+      ],
+      "to": [
+        99,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        101,
+        66,
+        -4
+      ],
+      "to": [
+        101,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        99,
+        65,
+        2
+      ],
+      "to": [
+        99,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        111,
+        66,
+        -3
+      ],
+      "to": [
+        111,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        113,
+        66,
+        -4
+      ],
+      "to": [
+        113,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        111,
+        65,
+        2
+      ],
+      "to": [
+        111,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        123,
+        66,
+        -3
+      ],
+      "to": [
+        123,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        125,
+        66,
+        -4
+      ],
+      "to": [
+        125,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        123,
+        65,
+        2
+      ],
+      "to": [
+        123,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        135,
+        66,
+        -3
+      ],
+      "to": [
+        135,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        137,
+        66,
+        -4
+      ],
+      "to": [
+        137,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        135,
+        65,
+        2
+      ],
+      "to": [
+        135,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        147,
+        66,
+        -3
+      ],
+      "to": [
+        147,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        149,
+        66,
+        -4
+      ],
+      "to": [
+        149,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        147,
+        65,
+        2
+      ],
+      "to": [
+        147,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        159,
+        66,
+        -3
+      ],
+      "to": [
+        159,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        161,
+        66,
+        -4
+      ],
+      "to": [
+        161,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        159,
+        65,
+        2
+      ],
+      "to": [
+        159,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        171,
+        66,
+        -3
+      ],
+      "to": [
+        171,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        173,
+        66,
+        -4
+      ],
+      "to": [
+        173,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        171,
+        65,
+        2
+      ],
+      "to": [
+        171,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        183,
+        66,
+        -3
+      ],
+      "to": [
+        183,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        185,
+        66,
+        -4
+      ],
+      "to": [
+        185,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        183,
+        65,
+        2
+      ],
+      "to": [
+        183,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        195,
+        66,
+        -3
+      ],
+      "to": [
+        195,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        197,
+        66,
+        -4
+      ],
+      "to": [
+        197,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        195,
+        65,
+        2
+      ],
+      "to": [
+        195,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        207,
+        66,
+        -3
+      ],
+      "to": [
+        207,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        209,
+        66,
+        -4
+      ],
+      "to": [
+        209,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        207,
+        65,
+        2
+      ],
+      "to": [
+        207,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        219,
+        66,
+        -3
+      ],
+      "to": [
+        219,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        221,
+        66,
+        -4
+      ],
+      "to": [
+        221,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        219,
+        65,
+        2
+      ],
+      "to": [
+        219,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        231,
+        66,
+        -3
+      ],
+      "to": [
+        231,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        233,
+        66,
+        -4
+      ],
+      "to": [
+        233,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        231,
+        65,
+        2
+      ],
+      "to": [
+        231,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        243,
+        66,
+        -3
+      ],
+      "to": [
+        243,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        245,
+        66,
+        -4
+      ],
+      "to": [
+        245,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        243,
+        65,
+        2
+      ],
+      "to": [
+        243,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        255,
+        66,
+        -3
+      ],
+      "to": [
+        255,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        257,
+        66,
+        -4
+      ],
+      "to": [
+        257,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        255,
+        65,
+        2
+      ],
+      "to": [
+        255,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        267,
+        66,
+        -3
+      ],
+      "to": [
+        267,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        269,
+        66,
+        -4
+      ],
+      "to": [
+        269,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        267,
+        65,
+        2
+      ],
+      "to": [
+        267,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        279,
+        66,
+        -3
+      ],
+      "to": [
+        279,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        281,
+        66,
+        -4
+      ],
+      "to": [
+        281,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        279,
+        65,
+        2
+      ],
+      "to": [
+        279,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        291,
+        66,
+        -3
+      ],
+      "to": [
+        291,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        293,
+        66,
+        -4
+      ],
+      "to": [
+        293,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        291,
+        65,
+        2
+      ],
+      "to": [
+        291,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        303,
+        66,
+        -3
+      ],
+      "to": [
+        303,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        305,
+        66,
+        -4
+      ],
+      "to": [
+        305,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        303,
+        65,
+        2
+      ],
+      "to": [
+        303,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        315,
+        66,
+        -3
+      ],
+      "to": [
+        315,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        317,
+        66,
+        -4
+      ],
+      "to": [
+        317,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        315,
+        65,
+        2
+      ],
+      "to": [
+        315,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        327,
+        66,
+        -3
+      ],
+      "to": [
+        327,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        329,
+        66,
+        -4
+      ],
+      "to": [
+        329,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        327,
+        65,
+        2
+      ],
+      "to": [
+        327,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        339,
+        66,
+        -3
+      ],
+      "to": [
+        339,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        341,
+        66,
+        -4
+      ],
+      "to": [
+        341,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        339,
+        65,
+        2
+      ],
+      "to": [
+        339,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        351,
+        66,
+        -3
+      ],
+      "to": [
+        351,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        353,
+        66,
+        -4
+      ],
+      "to": [
+        353,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        351,
+        65,
+        2
+      ],
+      "to": [
+        351,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        363,
+        66,
+        -3
+      ],
+      "to": [
+        363,
+        66,
+        -3
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        365,
+        66,
+        -4
+      ],
+      "to": [
+        365,
+        66,
+        -4
+      ],
+      "block": "minecraft:air"
+    },
+    {
+      "from": [
+        363,
+        65,
+        2
+      ],
+      "to": [
+        363,
+        65,
+        2
+      ],
+      "block": "minecraft:air"
+    }
+  ],
+  "plants": [],
+  "validation": {
+    "authoredCellsIncludingOverlaps": 4966,
+    "maxBatchCells": 16384,
+    "gameplayCellsTouched": 0
+  },
+  "applicationNotes": [
+    "Apply this cleanup BEFORE multi-location-layout.json, as a separate scenery batch.",
+    "Touches only exact box/plant footprints in selected-forest-layout.json for X0..372. Removes generated forest decoration from the cave, library and Nether chapters.",
+    "Restores stone floor at Y64 foreground/Y65 background and removes generated decoration above. Never touches z=0.",
+    "Leaves X384..512 forest chapter in place. Do not apply after constructing the indoor chapters."
+  ]
+}
