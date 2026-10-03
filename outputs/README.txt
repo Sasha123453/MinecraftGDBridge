@@ -1,6 +1,6 @@
 Minecraft GD Bridge — текущая версия
 
-MC0.4.2 / GD0.4.3. Актуальный Git-проект: C:\MinecraftGDBridge. GitHub: https://github.com/Sasha123453/MinecraftGDBridge, ветка main; origin использует HTTPS. Runtime и инструменты пока лежат в исходной рабочей папке; Control.ps1 в Git-проекте использует .local.json.
+MC0.4.2 / GD0.4.3. Актуальный Git-проект: C:\MinecraftGDBridge. GitHub: https://github.com/Sasha123453/MinecraftGDBridge, ветка main; origin использует SSH через ssh.github.com:443. Runtime и инструменты пока лежат в исходной рабочей папке; Control.ps1 в Git-проекте использует .local.json.
 
 Теперь F6 компилирует настоящий игровой слой мира Minecraft. Обычный полный блок в z=0 остаётся видимым и становится GD solid ID1 с центром (x+.5)*30, (y+.5-64)*30 и размером30×30. gdbridge:stone_spike — настоящий размещаемый блок с четырьмя направлениями, собственным рендером и формой столкновения. Он становится nativeGD spike ID8. Рендер динамических GD-моделей для этих препятствий в построенной области отключён.
 

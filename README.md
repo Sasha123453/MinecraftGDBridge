@@ -6,7 +6,7 @@ Current versions: Minecraft1.20.1/Fabric bridge0.4.2 and GeometryDash2.2081/Geod
 
 ## Develop here
 
-Project: C:/MinecraftGDBridge. Current sources are outputs/bridge/minecraft and outputs/bridge/gd-world-authority-next. Previous transition-stage sources remain as a historical snapshot; use the world-authority stage. Runtime/toolchains remain in the original workspace while build paths are consolidated. The ignored .local.json points to that runtime. Control.ps1 sends background native commands. Remote: https://github.com/Sasha123453/MinecraftGDBridge (main). HTTPS is used for authenticated Git access on this machine.
+Project: C:/MinecraftGDBridge. Current sources are outputs/bridge/minecraft and outputs/bridge/gd-world-authority-next. Previous transition-stage sources remain as a historical snapshot; use the world-authority stage. Runtime/toolchains remain in the original workspace while build paths are consolidated. The ignored .local.json points to that runtime. Control.ps1 sends background native commands. Remote: https://github.com/Sasha123453/MinecraftGDBridge (main). SSH through ssh.github.com:443 is used for authenticated Git access on this machine.
 
 - outputs/README.txt: Russian usage and current verified limitations.
 - outputs/scenery: generated decoration plans.
